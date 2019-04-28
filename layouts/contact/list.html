@@ -28,16 +28,16 @@
                 {{ end }}
                 <h4>{{ i18n "repliestext" }} {{ .Params.answerTime }} {{ i18n "hours" }}.</h4>
                 <fieldset>
-                  <input placeholder="{{ .Params.placeholderName }}" type="text" name="name" tabindex="1" required autofocus>
+                  <input placeholder="{{ with .Params.placeholderName }}{{ . }}{{ else }}Name{{ end }}" type="text" name="name" tabindex="1" required autofocus>
                 </fieldset>
                 <fieldset>
-                  <input placeholder="{{ .Params.placeholderEmail }}" type="email" name="_replyto" tabindex="2" required>
+                  <input placeholder="{{ with .Params.placeholderEmail }}{{ . }}{{ else }}Email{{ end }}" type="email" name="_replyto" tabindex="2" required>
                 </fieldset>
                 <fieldset>
-                  <input placeholder="{{ .Params.placeholderSubject }}" type="text" name="_subject" tabindex="3" required>
+                  <input placeholder="{{ with .Params.placeholderSubject }}{{ . }}{{ else }}Subject{{ end }}" type="text" name="_subject" tabindex="3" required>
                 </fieldset>
                 <fieldset>
-                  <textarea placeholder="{{ .Params.placeholderMessage }}" name="message" tabindex="4" required></textarea>
+                  <textarea placeholder="{{ with .Params.placeholderMessage }}{{ . }}{{ else }}Message{{ end }}" name="message" tabindex="4" required></textarea>
                 </fieldset>
                 <fieldset>
                   <input type="hidden" name="_language" value="{{ .Params.placeholderLang }}">

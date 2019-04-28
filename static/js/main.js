@@ -26,7 +26,7 @@ $(document).on("click", function(e) {
   }
 });
 
-// Scroll to Top TODO: Glitch coming up.
+// Check to see if the window is top if not then display button
 $(window).scroll(function() {
     if ($(this).scrollTop()) {
         $('#back-to-top').fadeIn();
@@ -35,10 +35,8 @@ $(window).scroll(function() {
     }
 });
 
-$("#back-to-top").click(function () {
-   //1 second of animation time
-   //html works for FFX but not Chrome
-   //body works for Chrome but not FFX
-   //This strange selector seems to work universally
-   $("html, body").animate({scrollTop: 0}, 1000);
+// Click event to scroll to top
+$('#back-to-top').click(function() {
+    $('html, body').animate({scrollTop: 0}, 1000);
+    return false;
 });
