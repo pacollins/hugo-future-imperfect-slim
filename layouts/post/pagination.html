@@ -1,0 +1,8 @@
+<div class="pagination">
+  {{ if .PrevInSection }}
+    <a href="{{ .PrevInSection.RelPermalink }}" class="button big previous"><i class="fas fa-angle-left"></i> {{ .PrevInSection.Title }}</a>
+  {{ end }}
+  {{ if .NextInSection }}
+    <a href="{{ .NextInSection.RelPermalink }}" class="button big next">{{ .NextInSection.Title }} <i class="fas fa-angle-right"></i></a>
+  {{ end }}
+</div>

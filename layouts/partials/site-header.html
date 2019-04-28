@@ -1,0 +1,40 @@
+<!--[if IE]>
+  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+<header id="site-header">
+  <nav id="site-nav">
+    <h1 class="nav-title">
+      <a href="{{ "/" | relLangURL }}">
+        {{ if or .IsHome (not .Site.Params.header.dynamicTitles) }}
+          {{ .Site.Params.header.navbarTitle }}
+        {{ else if ne .Section "" }}
+          {{ if i18n .Section }}
+            {{ i18n .Section }}
+          {{ else }}
+            {{ .Section }}
+          {{ end }}
+        {{ else }}
+          {{ .Title }}
+        {{ end }}
+      </a>
+    </h1>
+    <menu id="site-nav-menu" class="flyout-menu">
+      {{ range .Site.Menus.main }}
+        <a href="{{ .URL | relLangURL }}" class="link"><i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}</a>
+      {{ end }}
+      {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>{{ end }}
+      {{ if .Site.Params.header.searchMenu }}{{ partial "search-menu" . }}{{ end }}
+    </menu>
+    {{ if .Site.Params.header.searchMenu }}{{ partial "search-menu" . }}{{ end }}
+    {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>{{ end }}
+    {{ if .Site.Params.header.languageMenu }}<a href="#lang-menu" class="lang-toggle" lang="{{ .Site.Language.Lang }}"><span class="flag-icon flag-icon-{{ .Site.Language.Lang }}" alt="{{ .Site.Language.Lang }}"></span></a>{{ end }}
+    <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+  </nav>
+  {{ if .Site.Params.header.languageMenu }}{{ partial "language-menu" . }}{{ end }}
+  {{ if .Site.Params.header.shareMenu }}
+    <menu id="share-menu" class="flyout-menu">
+      <h1>Share Post</h1>
+      {{ partial "share-buttons" . }}
+    </menu>
+  {{ end }}
+</header>

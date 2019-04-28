@@ -1,9 +1,11 @@
-{{ partial "general-title" . }}
-
-{{ partial "header" . }}
-    {{ partial "navbar" . }}
-    <!-- Main -->
-    <div id="main">
+<!doctype html>
+<html lang="{{ .Page.Language | default "en" }}">
+  {{ partial "head" . }}
+  <body>
+    {{ partial "site-header" . }}
+    <div id="wrapper">
+      {{ partial "site-intro" . }}
+      <main id="site-main">
         <article class="post">
             {{ $.Scratch.Set "h1" true }}
             {{ .Render "header" }}
@@ -11,6 +13,10 @@
                 {{ .Content }}
             </div>
         </article>
+      </main>
+      {{ partial "site-sidebar" . }}
+      {{ partial "site-footer" . }}
+      {{ partial "scripts" . }}
     </div>
-    {{ partial "sidebar" . }}
-{{ partial "footer" . }}
+  </body>
+</html>

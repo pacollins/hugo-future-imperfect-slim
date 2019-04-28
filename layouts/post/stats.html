@@ -1,0 +1,28 @@
+<ul class="stats">
+  {{ if isset .Params "categories" }}
+    {{ $categoriesLen := len .Params.categories }}
+    {{ if gt $categoriesLen 0 }}
+      <li class="categories">
+        <ul>
+          {{ range $k, $v := .Params.categories }}
+            {{ $url := printf "categories/%s" (. | urlize | lower) }}
+            <li><a class="article-category-link" href="{{ $url | absLangURL }}">{{ . }}</a></li>
+          {{ end }}
+        </ul>
+      </li>
+    {{ end }}
+  {{ end }}
+  {{ if isset .Params "tags" }}
+    {{ $tagsLen := len .Params.tags }}
+    {{ if gt $tagsLen 0 }}
+      <li class="tags">
+        <ul>
+          {{ range $k, $v := .Params.tags }}
+            {{ $url := printf "tags/%s" (. | urlize | lower) }}
+            <li><a class="article-category-link" href="{{ $url | absLangURL }}">{{ . }}</a></li>
+          {{ end }}
+        </ul>
+      </li>
+    {{ end }}
+  {{ end }}
+</ul>

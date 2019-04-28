@@ -1,24 +1,18 @@
 <!--
     Inside Double Brackets:
-
     fancybox path="path" file="file" caption="caption" gallery="gallery"
     fancybox "path" "file" "caption" "gallery"
-
     # of Params: 2-4
     Positional or Named
-
     position 0, name: path
         Can pass in the following values:
             title: will use /img/LinkTitle as the path
             date: will use /img/Year/Month as the path
             /path/to/img: can pass in explicit path to the image
-
     position 1, name: file
         Name of the file including the file extension
-
     position 2, name: caption
         Text for the caption of the image
-
     position 3, name: gallery
         Name of the gallery the image should be included in
 -->
@@ -42,18 +36,21 @@
     {{ else }}
       {{ $.Scratch.Set "gallery" ""}}
     {{ end }}
-
-    {{ $.Scratch.Set "structType" "shortcode" }}
-    {{ partial "img-path" . }}
-
-    {{ $path := $.Scratch.Get "path" }}
-    {{ $file := $.Scratch.Get "file" }}
-    {{ $caption  := $.Scratch.Get "caption" }}
-    {{ $gallery := $.Scratch.Get "gallery" }}
-
-    <div class="fancybox">
-      <a data-fancybox="{{ $gallery }}" href="{{ $path }}/{{ $file }}" data-caption="{{ $caption }}"><img src="{{ $path }}/{{ $file }}"></a>
-      <!--<div class="caption">{{ $caption }}</div>-->
-    </div>
   {{ end }}
+  {{ $.Scratch.Set "structType" "shortcode" }}
+  {{ $src := $.Scratch.Get "path" }}
+  {{ if eq $src "date" }}
+    {{ $.Scratch.Set "path" "/img/" }}
+    {{ $.Scratch.Add "path" (.Page.Date.Format "2006/01") }}
+  {{ else }}
+    {{ $.Scratch.Set "path" $src }}
+  {{ end }}
+  {{ $path := $.Scratch.Get "path" }}
+  {{ $file := $.Scratch.Get "file" }}
+  {{ $caption  := $.Scratch.Get "caption" }}
+  {{ $gallery := $.Scratch.Get "gallery" }}
+  <div class="fancybox">
+    <a data-fancybox="{{ $gallery }}" href="{{ $path }}/{{ $file }}" data-caption="{{ $caption }}"><img src="{{ $path }}/{{ $file }}"></a>
+    <div class="caption">{{ $caption }}</div>
+  </div>
 {{ end }}

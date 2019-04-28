@@ -1,21 +1,25 @@
-# theme.toml template for a Hugo theme
-# See https://github.com/spf13/hugoThemes#themetoml for an example
-
-name = "Hugo Future Imperfect"
+name = "Hugo Future Imperfect Slim"
 license = "MIT"
-licenselink = "https://github.com/jpescador/hugo-future-imperfect/blob/master/LICENSE.md"
-description = "Ported theme of HTML5 UP, future imperfect, with some extra goodies"
-homepage = "https://github.com/jpescador/hugo-future-imperfect"
-tags = ["blog", "responsive", "font awesome", "highlight.js", "fancybox 3", "staticman", "netlify"]
-features = ["html5", "css3", "responsive"]
-min_version = 0.15
+licenselink = "https://github.com/pacollins/hugo-future-imperfect-slim/blob/master/LICENSE.md"
+description = "Future Imperfect Theme - Slimmed Down"
+homepage = "https://github.com/pacollins/hugo-future-imperfect-slim"
+tags = ["HTML5", "CSS Grid", "Blog", "Responsive", "Portfolio", "Disqus",
+        "Syntax Highlighting", "Company", "Font Awesome", "Projects",
+        "Contact Form", "Highlight.js", "Gallery", "Multilingual", "Product",
+        "Fancybox", "Academicons", "Academic", "Google Analytics", "Twitter Cards",
+        "Open Graph", "Google News", "Jquery", "Skel", "Staticman", "Netlify"]
+features = ["Highlight.js v9.2", "Font Awesome v5.0", "Fancybox v3.5",
+            "Academicons v1.8", "Google Analytics", "Disqus", "Twitter Cards",
+            "Open Graph", "Google News", "Jquery v3.2", "Skel v3.0", "Staticman",
+            "Netlify"]
+min_version = 0.40
 
 [author]
-  name = "Julio Pescador"
-  homepage = "https://jpescador.com"
+  name = "Patrick Collins"
+  homepage = "https://pacollins.com"
 
 # If porting an existing theme
 [original]
   name = "Future Imperfect"
-  homepage = "http://html5up.net/future-imperfect"
-  repo = ""
+  homepage = "https://github.com/jpescador/hugo-future-imperfect"
+  repo = "https://github.com/jpescador/hugo-future-imperfect"

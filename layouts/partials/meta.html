@@ -1,0 +1,18 @@
+<meta charset="utf-8">
+<title>{{ .Title }}{{ if ne .Title .Site.Title }} - {{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Site.Params.meta.description }}{{ . }}{{ end }}{{ end }}">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- TODO: Do we want to add rel=author? -->
+{{ if .Site.Params.meta.favicon }}
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "favicon/apple-touch-icon.png" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon/favicon-32x32.png" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon/favicon-16x16.png" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
+  <link rel="manifest" href="{{ "favicon/site.webmanifest" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
+  {{ if .Site.Params.meta.svg }}
+    <link rel="mask-icon" href="{{ "favicon/safari-pinned-tab.svg" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}" color="{{ .Site.Params.meta.msColor }}">
+    <link rel="shortcut icon" href="{{ "favicon/favicon.ico" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
+    <meta name="msapplication-config" content="{{ "favicon/browserconfig.xml" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
+  {{ end }}
+  <meta name="msapplication-TileColor" content="{{ .Site.Params.meta.msColor }}">
+  <meta name="theme-color" content="{{ .Site.Params.meta.iOSColor }}">
+{{ end }}

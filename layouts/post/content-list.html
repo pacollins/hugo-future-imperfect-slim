@@ -4,9 +4,7 @@
   {{ $.Scratch.Set "summary" ((delimit (findRE "<p.*?>(.|\n)*?</p>" .Content 1) "") | truncate (default 500 .Site.Params.summary_length) (default "&hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
   {{ $.Scratch.Get "summary" }}
   <footer>
-    <ul class="actions">
-      <li><a href="{{ .RelPermalink }}" class="button big">Continue Reading</a></li>
-    </ul>
-  {{ .Render "footer-category" }}
+    <a href="{{ .RelPermalink }}" class="button big">{{ i18n "read_more" }}</a>
+    {{ .Render "stats" }}
   </footer>
 </article>

@@ -7,13 +7,25 @@
     <input required name="fields[name]" type="text" placeholder="Your name (Required)">
     <input name="fields[website]" type="text" placeholder="Your website">
     <input required name="fields[email]" type="email" placeholder="Your email address (Required for Gravatar)">
-    <textarea required name="fields[body]" placeholder='Your message. Feel free to use Markdown (Google "Markdown Cheat Sheet").' rows="10"></textarea>
-    <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ .Site.Params.staticman.recaptcha.sitekey }}">
-    <input type="hidden" name="options[reCaptcha][secret]" value="{{ .Site.Params.staticman.recaptcha.secret }}">
-    <div class="g-recaptcha" data-sitekey="{{ .Site.Params.staticman.recaptcha.sitekey }}"></div>
+    <textarea required name="fields[body]" placeholder="Your message. Feel free to use Markdown (Google 'Markdown Cheat Sheet')." rows="10"></textarea>
+    {{ if .Site.Params.staticman.recaptcha.recaptcha }}
+      <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ .Site.Params.staticman.recaptcha.sitekey }}">
+      <input type="hidden" name="options[reCaptcha][secret]" value="{{ .Site.Params.staticman.recaptcha.encryptedkey }}">
+      <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+    {{ end }}
     <input type="submit" value="Submit">
   </form>
-<script src='https://www.google.com/recaptcha/api.js'></script>
+  {{ if .Site.Params.staticman.recaptcha.recaptcha }}
+    <script>
+      grecaptcha.ready(function() {
+        grecaptcha.execute('{{ .Site.Params.staticman.recaptcha.sitekey }}', {action: 'homepage'})
+        .then(function(token) {
+           //console.log(token);
+           document.getElementByID('g-recaptcha-response').value=token;
+        });
+      });
+    </script>
+  {{ end }}
 
 <h2>Comments</h2>
 

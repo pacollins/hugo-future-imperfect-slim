@@ -1,38 +1,40 @@
-{{ partial "general-title" . }}
-
-{{ partial "header" . }}
-    {{ partial "navbar" . }}
-    <!-- Main -->
-    <div id="main">
+<!doctype html>
+<html lang="{{ .Page.Language | default "en" }}">
+  {{ partial "head" . }}
+  <body>
+    {{ partial "site-header" . }}
+    <div id="wrapper">
+      {{ partial "site-intro" . }}
+      <main id="site-main">
         {{ if .Site.Params.categoriesByCount }}
-            {{ $.Scratch.Set "categories" .Data.Terms.ByCount }}
+          {{ $.Scratch.Set "categories" .Data.Terms.ByCount }}
         {{ else }}
-            {{ $.Scratch.Set "categories" .Data.Terms.Alphabetical }}
+          {{ $.Scratch.Set "categories" .Data.Terms.Alphabetical }}
         {{ end }}
-
         <ul class="posts">
-            <header>
-                <h1>{{ .Data.Plural }}</h1>
-            </header>
-            {{ $data := .Data }}
-            {{ range $key, $value := $.Scratch.Get "categories" }}
-                <li>
-                    <article>
-                        <header>
-                            {{ if ne $value.Name "" }}
-                                <a href="{{"/" | relURL}}{{ $data.Plural }}/{{ $value.Name | urlize }}">{{ $value.Name }}</a>
-                                <span style="float:right;">{{ $value.Count }}</span>
-                            {{ else }}
-                                Uncategorized
-                                <span style="float:right;">{{ $value.Count }}</span>
-                            {{ end }}
-                        </header>
-                    </article>
-                </li>
-            {{ end }}
+          <header>
+            <h1>{{ i18n .Data.Plural }}</h1>
+          </header>
+          {{ $data := .Data }}
+          {{ range $key, $value := $.Scratch.Get "categories" }}
+            <li>
+              <article>
+                <header>
+                  {{ if ne $value.Name "" }}
+                    <a href="{{ printf "/%s/%s" $data.Plural $value.Name | urlize | relLangURL }}">{{ $value.Name }}<span style="float:right;">{{ $value.Count }}</span></a>
+                  {{ else }}
+                    {{ i18n "uncategorized" }}<span style="float:right;">{{ $value.Count }}</span>
+                  {{ end }}
+                </header>
+              </article>
+            </li>
+          {{ end }}
         </ul>
+      </main>
+      {{ $.Scratch.Set "showCategories" false }}
+      {{ partial "site-sidebar" . }}
+      {{ partial "site-footer" . }}
+      {{ partial "scripts" . }}
     </div>
-
-    {{ $.Scratch.Set "showCategories" false }}
-    {{ partial "sidebar" . }}
-{{ partial "footer" . }}
+  </body>
+</html>

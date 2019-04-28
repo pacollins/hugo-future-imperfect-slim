@@ -1,0 +1,17 @@
+<section id="site-intro">
+  {{ with .Site.Params.intro.pic }}<a href="{{ "/" | relLangURL}}"><img src="{{ .src | relURL }}" class="{{ .shape }}" width="{{ .width }}" alt="{{ .alt }}" /></a>{{ end }}
+  <header>
+    {{ with .Site.Params.intro.header }}<h1>{{ . | safeHTML }}</h1>{{ end }}
+  </header>
+  <main>
+    {{ with .Site.Params.intro.paragraph }}<p>{{ . | safeHTML }}</p>{{ end }}
+  </main>
+  {{ if or (.Site.Params.intro.rssIntro) (.Site.Params.intro.socialIntro) }}
+    <footer>
+      <ul class="social-icons">
+        {{ if .Site.Params.intro.rssIntro }}{{ partial "rss-icon" . }}{{ end }}
+        {{ if .Site.Params.intro.socialIntro }}{{ partial "social-icon" . }}{{ end }}
+      </ul>
+    </footer>
+  {{ end }}
+</section>

@@ -1,12 +1,16 @@
-{{ partial "header" . }}
-    {{ $.Scratch.Set "shareNav" true }}
-    {{ partial "navbar" . }}
-    {{ partial "share-menu" . }}
-    <!-- Main -->
-    <div id="main">
-        <!-- Post -->
-        {{ $.Scratch.Set "h1" true }}
-        {{ .Render "content-single" }}
+<!doctype html>
+<html lang="{{ .Page.Language | default "en" }}">
+  {{ partial "head" . }}
+  <body>
+    {{ partial "site-header" . }}
+    <div id="wrapper">
+      {{ partial "site-intro" . }}
+      <main id="site-main">
+        {{ .Render "content-single"}}
+      </main>
+      {{ partial "site-sidebar" . }}
+      {{ partial "site-footer" . }}
+      {{ partial "scripts" . }}
     </div>
-    {{ partial "sidebar" . }}
-{{ partial "footer" . }}
+  </body>
+</html>

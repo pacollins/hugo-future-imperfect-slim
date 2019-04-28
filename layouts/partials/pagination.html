@@ -1,16 +1,13 @@
 <!-- Pagination -->
-<ul class="actions pagination">
-    {{ if .Paginator.HasPrev }}
-        <li><a href="{{ .Paginator.Prev.URL }}"
-                class="button big previous">Previous Page</a></li>
-    {{ else }}
-        <li><a href="#" class="disabled button big previous">Previous Page</a></li>
-    {{ end }}
-
-    {{ if .Paginator.HasNext }}
-        <li><a href="{{ .Paginator.Next.URL }}"
-                class="button big next">Next Page</a></li>
-    {{ else }}
-        <li><a href="#" class="disabled button big next">Next Page</a></li>
-    {{ end }}
-</ul>
+<div class="pagination">
+  {{ if .Paginator.HasPrev }}
+    <a href="{{ .Paginator.Prev.URL }}" class="button big previous"><i class="fas fa-angle-left"></i></a>
+  {{ else }}
+    <a href="#" class="disabled button big previous"><i class="fas fa-angle-left"></i></a>
+  {{ end }}
+  {{ if .Paginator.HasNext }}
+    <a href="{{ .Paginator.Next.URL }}" class="button big next"><i class="fas fa-angle-right"></i></a>
+  {{ else }}
+    <a href="#" class="disabled button big next"><i class="fas fa-angle-right"></i></a>
+  {{ end }}
+</div>
