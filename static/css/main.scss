@@ -285,7 +285,6 @@ textarea {
    height: 4.8125em;
    letter-spacing: 0.25em;
    line-height: 4.8125em;
-   padding: 0 2.5em;
    -moz-transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
    -webkit-transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
    -ms-transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
@@ -1520,6 +1519,7 @@ textarea {
      display: flex;
      flex-wrap: wrap;
      justify-content: center;
+     padding-left: 0;
      li {
        margin: 0 .5em;
        min-width: 20px;
