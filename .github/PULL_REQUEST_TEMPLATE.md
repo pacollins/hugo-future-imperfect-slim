@@ -1,8 +1,8 @@
 <!--- Prerequisites -->
 <!--- I am running the latest version of [Hugo](https://github.com/gohugoio/hugo/releases) -->
-<!--- I am using the latest version of [Hugo-Future-Imperfect](https://github.com/jpescador/hugo-future-imperfect/releases) -->
-<!--- I checked the [issues](https://github.com/jpescador/hugo-future-imperfect/issues?utf8=%E2%9C%93&q=is%3Aissue) to make sure that this feature has not been rejected before -->
-<!--- I checked the [pull requests](https://github.com/jpescador/hugo-future-imperfect/pulls?utf8=%E2%9C%93&q=is%3Apr) to make sure that this feature is not already being developed -->
+<!--- I am using the latest version of [Hugo-Future-Imperfect](https://github.com/pacollins/hugo-future-imperfect-slim/releases) -->
+<!--- I checked the [issues](https://github.com/pacollins/hugo-future-imperfect-slim/issues?utf8=%E2%9C%93&q=is%3Aissue) to make sure that this feature has not been rejected before -->
+<!--- I checked the [pull requests](https://github.com/pacollins/hugo-future-imperfect-slim/pulls?utf8=%E2%9C%93&q=is%3Apr) to make sure that this feature is not already being developed -->
 
 <!--- Provide a general summary of your changes in the Title above -->
 
@@ -40,6 +40,6 @@
 - [ ] I have updated the documentation, including `theme.toml`, accordingly.
 - [ ] I have read the [Contributing Document].
 
-[Code Style]: https://github.com/jpescador/hugo-future-imperfect/blob/master/.github/CONTRIBUTING.md#Style-Guide
-[Contributing Document]: https://github.com/jpescador/hugo-future-imperfect/blob/master/.github/CONTRIBUTING.md
-[Documentation]: https://github.com/jpescador/hugo-future-imperfect/wiki
+[Code Style]: https://github.com/pacollins/hugo-future-imperfect-slim/blob/master/.github/CONTRIBUTING.md#Style-Guide
+[Contributing Document]: https://github.com/pacollins/hugo-future-imperfect-slim/blob/master/.github/CONTRIBUTING.md
+[Documentation]: https://github.com/pacollins/hugo-future-imperfect-slim/wiki

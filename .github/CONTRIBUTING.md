@@ -64,7 +64,7 @@ worked on and we can manage it that way.
 
    ```
    cd PATH/TO/YOUR/LOCATION
-   git clone https://github.com/YOUR-USERNAME/hugo-future-imperfect
+   git clone https://github.com/YOUR-USERNAME/hugo-future-imperfect-slim
    ```
 
    You have now cloned your fork to the location specified.
@@ -72,10 +72,10 @@ worked on and we can manage it that way.
 3. **Connecting Fork with Original**
 
    ```
-   git remote add upstream https://github.com/jpescador/hugo-future-imperfect.git
+   git remote add upstream https://github.com/pacollins/hugo-future-imperfect-slim.git
    ````
 
-   You have now connected your fork with `jpescador/hugo-future-imperfect`,
+   You have now connected your fork with `pacollins/hugo-future-imperfect-slim`,
    the `upstream`.
 
    To confirm this:
@@ -87,10 +87,10 @@ worked on and we can manage it that way.
    Which should return:
 
    ```
-   origin    https://github.com/YOUR_USERNAME/hugo-future-imperfect.git (fetch)
-   origin    https://github.com/YOUR_USERNAME/hugo-future-imperfect.git (push)
-   upstream  https://github.com/jpescador/hugo-future-imperfect.git (fetch)
-   upstream  https://github.com/jpescador/hugo-future-imperfect.git (push)
+   origin    https://github.com/YOUR_USERNAME/hugo-future-imperfect-slim.git (fetch)
+   origin    https://github.com/YOUR_USERNAME/hugo-future-imperfect-slim.git (push)
+   upstream  https://github.com/pacollins/hugo-future-imperfect-slim.git (fetch)
+   upstream  https://github.com/pacollins/hugo-future-imperfect-slim.git (push)
    ```
 
 4. **Keeping it synced**
@@ -124,7 +124,7 @@ worked on and we can manage it that way.
 1. **Create A Local Copy**
 
    1. **File** -> **Clone Repository...**
-   2. Select your fork, `YOUR_USERNAME\hugo-future-imperfect`
+   2. Select your fork, `YOUR_USERNAME\hugo-future-imperfect-slim`
    3. Choose your local path
    4. Press **Clone**
 
@@ -136,8 +136,8 @@ worked on and we can manage it that way.
    for [v1.1][GitHub Desktop 1.1]. Keep an eye out for that release.
 
    In the meantime, the *best* way to stay in sync is to create a pull request
-   where the `base fork` is `YOUR_USERNAME/hugo-future-imperfect` and the `head
-   fork` is `jpescador/hugo-future-imperfect`.
+   where the `base fork` is `YOUR_USERNAME/hugo-future-imperfect-slim` and the `head
+   fork` is `pacollins/hugo-future-imperfect-slim`.
 
 ## Creating an Issue Ticket
 
@@ -203,17 +203,6 @@ organization. A couple of things to note from that template are:
 
 For the sake of consistency, please use the [Google HTML 5 and CSS 3 Style Guide].
 
-You will notice that a large portion of the theme does not adhere to this style
-guide. The original HTML 5 UP theme uses 4 space tabs instead of 2 space tabs.
-This, again, adds to bloat, especially when using Hugo functions. If you are
-making a change to a file, please go ahead and fix any styling in the region
-relative to where you are working. This will help us slowly fix the theme. Once
-theme theme becomes more active with people constantly resyncing, we can look at
-doing an across the board change (we might actually look at doing this as part
-of [v0.30][Next Release] since that will be a rather large change requiring
-everyone to resync).
-
-
 ## Thank You
 
 Thank you again for your interest in contributing to the theme. Feel free to ask
@@ -221,18 +210,18 @@ any questions you may have. We are here to help.
 
 <!--- Project Specific References -->
 
-[Issue Template]: https://github.com/jpescador/hugo-future-imperfect/blob/master/.github/ISSUE_TEMPLATE.md
-[Issues]: https://github.com/jpescador/hugo-future-imperfect/issues
-[All Issues]: https://github.com/jpescador/hugo-future-imperfect/issues?utf8=%E2%9C%93&q=is%3Aissue
-[Pull Request Template]: https://github.com/jpescador/hugo-future-imperfect/blob/master/.github/PULL_REQUEST_TEMPLATE.md
-[Pull Requests]: https://github.com/jpescador/hugo-future-imperfect/pulls
-[All Pull Requests]: https://github.com/jpescador/hugo-future-imperfect/pulls?utf8=%E2%9C%93&q=is%3Apr
-[Contributors]: https://github.com/jpescador/hugo-future-imperfect/graphs/contributors
-[Documentation]: https://github.com/jpescador/hugo-future-imperfect/wiki
-[Head]: https://github.com/jpescador/hugo-future-imperfect
-[Network]: https://github.com/jpescador/hugo-future-imperfect/network
-[Next Release]: https://github.com/jpescador/hugo-future-imperfect/milestone/1
-[Projects]: https://github.com/jpescador/hugo-future-imperfect/projects
+[Issue Template]: https://github.com/pacollins/hugo-future-imperfect-slim/blob/master/.github/ISSUE_TEMPLATE.md
+[Issues]: https://github.com/pacollins/hugo-future-imperfect-slim/issues
+[All Issues]: https://github.com/pacollins/hugo-future-imperfect-slim/issues?utf8=%E2%9C%93&q=is%3Aissue
+[Pull Request Template]: https://github.com/pacollins/hugo-future-imperfect-slim/blob/master/.github/PULL_REQUEST_TEMPLATE.md
+[Pull Requests]: https://github.com/pacollins/hugo-future-imperfect-slim/pulls
+[All Pull Requests]: https://github.com/pacollins/hugo-future-imperfect-slim/pulls?utf8=%E2%9C%93&q=is%3Apr
+[Contributors]: https://github.com/pacollins/hugo-future-imperfect-slim/graphs/contributors
+[Documentation]: https://github.com/pacollins/hugo-future-imperfect-slim/wiki
+[Head]: https://github.com/pacollins/hugo-future-imperfect-slim
+[Network]: https://github.com/pacollins/hugo-future-imperfect-slim/network
+[Next Release]: https://github.com/pacollins/hugo-future-imperfect-slim/milestone/1
+[Projects]: https://github.com/pacollins/hugo-future-imperfect-slim/projects
 [Theme Sync]: #syncing
 
 <!--- External References -->
