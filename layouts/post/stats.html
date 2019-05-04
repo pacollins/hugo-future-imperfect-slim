@@ -11,6 +11,12 @@
         </ul>
       </li>
     {{ end }}
+  {{ else }}
+    <li class="categories">
+      <ul>
+        <li>None</li>
+      </ul>
+    </li>
   {{ end }}
   {{ if isset .Params "tags" }}
     {{ $tagsLen := len .Params.tags }}
@@ -24,5 +30,11 @@
         </ul>
       </li>
     {{ end }}
+  {{ else }}
+    <li class="tags">
+      <ul>
+        <li>None</li>
+      </ul>
+    </li>
   {{ end }}
 </ul>

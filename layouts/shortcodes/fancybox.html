@@ -38,12 +38,10 @@
     {{ end }}
   {{ end }}
   {{ $.Scratch.Set "structType" "shortcode" }}
-  {{ $src := $.Scratch.Get "path" }}
-  {{ if eq $src "date" }}
+  {{ $path := $.Scratch.Get "path" }}
+  {{ if eq $path "date" }}
     {{ $.Scratch.Set "path" "/img/" }}
     {{ $.Scratch.Add "path" (.Page.Date.Format "2006/01") }}
-  {{ else }}
-    {{ $.Scratch.Set "path" $src }}
   {{ end }}
   {{ $path := $.Scratch.Get "path" }}
   {{ $file := $.Scratch.Get "file" }}
