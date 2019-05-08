@@ -10,7 +10,7 @@
       </section>
       <header>
         <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-        <time class="published" datetime="">{{ default (i18n "date_format") }}</time>
+        <time class="published" datetime="">{{ default (i18n "date_format") | .Date.Format }}</time>
       </header>
     </article>
     {{ end }}
