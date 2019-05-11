@@ -1,25 +1,24 @@
 <section id="site-sidebar">
-  {{ if gt .Site.Params.sidebar.postAmount 0 }}
-    <section id="recent-posts">
+  <h1 class="visuallyhidden">Sidebar</h1>
+  <section id="recent-posts">
+    <header>
+      <h1>{{ i18n "recent_posts" }}</h1>
+    </header>
+    {{ range first (.Site.Params.sidebar.postAmount | default 5) (where .Site.Pages  "Type" "post") }}
+    <article class="mini-post">
       <header>
-        <h1>{{ i18n "recent_posts" }}</h1>
+        <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        <time class="published" datetime="{{ .Date }}">{{ default (i18n "date_format") }}</time>
       </header>
-      {{ range first (.Site.Params.sidebar.postAmount | default 5) (where .Site.Pages  "Type" "post") }}
-      <article class="mini-post">
-        <section>
-          {{ .Render "featured" }}
-        </section>
-        <header>
-          <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-          <time class="published" datetime="">{{ default (i18n "date_format") | .Date.Format }}</time>
-        </header>
-      </article>
-      {{ end }}
-      {{ if ge (len (where .Site.Pages "Type" "post")) (.Site.Params.sidebar.postAmount | default 5) }}
-        <a href="{{ with .Site.Params.viewMorePostsLink }}{{ . | relLangURL }}{{ else }}{{ "post" | relLangURL }}{{ end }}" class="button">{{ i18n "see_more" }}</a>
-      {{ end }}
-    </section>
-  {{ end }}
+      <div>
+        {{ .Render "featured" }}
+      </div>
+    </article>
+    {{ end }}
+    {{ if ge (len (where .Site.Pages "Type" "post")) (.Site.Params.sidebar.postAmount | default 5) }}
+      <a href="{{ with .Site.Params.viewMorePostsLink }}{{ . | relLangURL }}{{ else }}{{ "post" | relLangURL }}{{ end }}" class="button">{{ i18n "see_more" }}</a>
+    {{ end }}
+  </section>
 
   {{ if .Site.Params.sidebar.categories }}
     {{ if ne ($.Scratch.Get "showCategories") false }}
