@@ -90,6 +90,7 @@ disableLanguages        = [""]
   # prefer to use. See Staticman.yml for additional settings.
   [params.staticman]
     # Sets Statiman to be active
+    # https://github.com/apps/staticman-net
     staticman           = false
     # Sets the location for Staticman to connect to
     username            = ""
