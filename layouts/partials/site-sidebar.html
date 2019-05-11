@@ -1,17 +1,18 @@
 <section id="site-sidebar">
+  <h1 class="visuallyhidden">Sidebar</h1>
   <section id="recent-posts">
     <header>
       <h1>{{ i18n "recent_posts" }}</h1>
     </header>
     {{ range first (.Site.Params.sidebar.postAmount | default 5) (where .Site.Pages  "Type" "post") }}
     <article class="mini-post">
-      <section>
-        {{ .Render "featured" }}
-      </section>
       <header>
         <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-        <time class="published" datetime="">{{ default (i18n "date_format") }}</time>
+        <time class="published" datetime="{{ .Date }}">{{ default (i18n "date_format") }}</time>
       </header>
+      <div>
+        {{ .Render "featured" }}
+      </div>
     </article>
     {{ end }}
     {{ if ge (len (where .Site.Pages "Type" "post")) (.Site.Params.sidebar.postAmount | default 5) }}

@@ -1,7 +1,7 @@
 +++
 author = "Hugo Future Imperfect Slim"
 categories = ["Markdown"]
-date = "2019-01-01"
+date = "01-01-2019"
 description = "Markdown and Shortcode Examples"
 featured = ""
 featuredalt = ""

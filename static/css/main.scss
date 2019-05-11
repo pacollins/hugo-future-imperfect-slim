@@ -15,14 +15,83 @@
  */
 
  /* ==========================================================================
-    Variables
-    ========================================================================== */
+   Vendor Prefixer
+   ========================================================================== */
 
-$accent-color: #2ebaae;
+@mixin box-shadow($value) {
+  -webkit-box-shadow: #{$value};
+  box-shadow: #{$value};
+}
+@mixin box-sizing($value) {
+  -webkit-box-sizing: #{$value};
+  box-sizing: #{$value};
+}
+@mixin clip-path($value) {
+  -webkit-clip-path: #{$value};
+  clip-path: #{$value};
+}
+@mixin transform($value) {
+  -webkit-transform: #{$value};
+  transform: #{$value};
+}
+@mixin transition($value) {
+  -webkit-transition: #{$value};
+  -o-transition: #{$value};
+  transition: #{$value};
+}
 
- /* ==========================================================================
-    Breakpoints
-    ========================================================================== */
+/* ==========================================================================
+  Variables
+  ========================================================================== */
+
+/* Colors */
+$accent-color: hsl(175, 60%, 45%);
+$accent-color-hover: hsla(175, 60%, 45%, .5);
+$heading-color: hsl(0, 0%, 25%);
+$text-color: hsl(0, 0%, 20%);
+$border-color: hsla(0, 0%, 62.75%, 0.3);
+$seperator-color: hsl(0, 0%, 88%);
+$selection-color: hsl(212.88, 92.41%, 84.51%);
+$body-color: hsl(0, 0%, 95%);
+$caption-color: hsl(0, 0%, 46%);
+$form-background-color: hsla(0, 0%, 62.75%, 0.075);
+
+/* Fonts */
+
+$body-font: "Source Sans Pro";
+$header-font: Raleway;
+$secondary-font: Helvetica;
+$font-family: sans-serif;
+$code-font: "Courier New", monospace;
+$font-awesome: "Font Awesome 5 Free";
+
+/* Other */
+
+$box-shadow-t1: 0 1px 3px hsla(0, 0%, 0%, .12), 0 1px 2px hsla(0, 0%, 0%, .24);
+$box-shadow-t2: 0 3px 6px hsla(0, 0%, 0%, .16), 0 3px 6px hsla(0, 0%, 0%, .23);
+$box-shadow-t3: 0 10px 20px hsla(0, 0%, 0%, .19), 0 6px 6px hsla(0, 0%, 0%, .23);
+$box-shadow-t4: 0 14px 28px hsla(0, 0%, 0%, .25), 0 10px 10px hsla(0, 0%, 0%, .22);
+$box-shadow-t5: 0 19px 38px hsla(0, 0%, 0%, .30), 0 15px 12px hsla(0, 0%, 0%, .22);
+$webkit-box-shadow-util: inset 0 0 6px hsla(0, 0%, 0%, 0.3);
+$webkit-background-util: hsl(0, 0%, 66.27%);
+$webkit-outline-util: 1px solid  hsl(210, 12.6%, 50.2%);
+$border-solid: solid 1px $border-color;
+$border-solid-thick: solid 4px $border-color;
+$border-dotted: dotted 1px $accent-color;
+
+/* URLs */
+
+$en-flag-4x3: url("../flags/4x3/en.svg");
+$en-flag-1x1: url("../flags/1x1/en.svg");
+
+/* ==========================================================================
+  Extends
+  ========================================================================== */
+
+
+/* ==========================================================================
+  Breakpoints
+  ========================================================================== */
 
 
  @mixin for-mobile-m-up {
@@ -78,7 +147,7 @@ $accent-color: #2ebaae;
    ========================================================================== */
 
    html {
-    color: #222;
+    color: $text-color;
     font-size: 1em;
     line-height: 1.4;
 }
@@ -94,12 +163,12 @@ $accent-color: #2ebaae;
  */
 
 ::-moz-selection {
-    background: #b3d4fc;
+    background: $selection-color;
     text-shadow: none;
 }
 
 ::selection {
-    background: #b3d4fc;
+    background: $selection-color;
     text-shadow: none;
 }
 
@@ -111,7 +180,7 @@ hr {
     display: block;
     height: 1px;
     border: 0;
-    border-top: 1px solid #ccc;
+    border-top: 1px solid $selection-color;
     margin: 1em 0;
     padding: 0;
 }
@@ -155,8 +224,8 @@ textarea {
 
 .browserupgrade {
     margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
+    background: $seperator-color;
+    color: black;
     padding: 0.2em 0;
 }
 
@@ -165,7 +234,7 @@ textarea {
    ========================================================================== */
 
  body {
-   background: #f4f4f4;
+   background: $body-color;
    margin-top: 3.5em;
    max-width: 100vw;
    -ms-overflow-style: scrollbar;
@@ -174,34 +243,24 @@ textarea {
  /* Box Model */
 
  *, *:before, *:after {
-   -moz-box-sizing: border-box;
-   -webkit-box-sizing: border-box;
-   box-sizing: border-box;
+   @include box-sizing(border-box);
  }
 
  /* Type */
 
  body, input, select, textarea {
-   color: #333333;
-   font-family: "Source Sans Pro", Helvetica, sans-serif;
+   color: $text-color;
+   font-family: $body-font, $secondary-font, $font-family;
    line-height: 1.75em;
  }
 
  a {
-   border-bottom: dotted 1px rgba(160, 160, 160, 0.65);
+   border-bottom: $border-dotted;
    color: inherit;
    text-decoration: none;
-   -webkit-transition: color .2s ease, border-bottom-color 0.2s ease;
-   -moz-transition: color .2s ease, border-bottom-color 0.2s ease;
-   -ms-transition: color .2s ease, border-bottom-color 0.2s ease;
-   -o-transition: color .2s ease, border-bottom-color 0.2s ease;
-   transition: color .2s ease, border-bottom-color 0.2s ease;
+   @include transition("color .2s ease, border-bottom-color 0.2s ease");
    &:before {
-     -webkit-transition: color ease;
-     -moz-transition: color ease;
-     -ms-transition: color ease;
-     -o-transition: color ease;
-     transition: color ease;
+     @include transition("color ease");
    }
    &:hover {
      border-bottom-color: transparent;
@@ -210,8 +269,8 @@ textarea {
  }
 
  h1, h2, h3, h4, h5, h6 {
-   color: #3c3b3b;
-   font-family: "Raleway", Helvetica, sans-serif;
+   color: $heading-color;
+   font-family: $header-font, $secondary-font, $font-family;
    letter-spacing: 0.25em;
    line-height: 1.65;
    text-transform: uppercase;
@@ -221,7 +280,7 @@ textarea {
  }
 
  blockquote {
-   border-left: solid 4px rgba(160, 160, 160, 0.3);
+   border-left: $border-solid-thick;
    font-style: italic;
    margin: 0 2em;
    padding: 0.5em 0 0.5em 2em;
@@ -231,8 +290,8 @@ textarea {
  }
 
  code {
-   border: solid 1px rgba(160, 160, 160, 0.3);
-   font-family: "Courier New", monospace;
+   border: $border-solid;
+   font-family: $code-font;
    font-size: 0.9em;
    margin: 0 0.25em;
    padding: 0.25em 0.65em;
@@ -241,17 +300,17 @@ textarea {
      height: .25em;
    }
    &::-webkit-scrollbar-track {
-     -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+     -webkit-box-shadow: $webkit-box-shadow-util;
    }
    &::-webkit-scrollbar-thumb {
-     background-color: darkgrey;
-     outline: 1px solid slategrey;
+     background-color: $webkit-background-util;
+     outline: $webkit-outline-util;
    }
  }
 
  pre {
    display: table;
-   font-family: "Courier New", monospace;
+   font-family: $code-font;
    font-size: 0.9em;
    table-layout: fixed;
    width: 100%;
@@ -264,7 +323,7 @@ textarea {
 
  hr {
    border: 0;
-   border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+   border-bottom: $border-solid;
    margin: 2em 0;
  }
 
@@ -275,26 +334,24 @@ textarea {
  input[type="button"],
  .button {
    background-color: transparent;
-   border: solid 1px rgba(160, 160, 160, 0.3);
-   color: #3c3b3b;
+   border: $border-solid;
+   color: $heading-color;
    cursor: pointer;
    display: inline-block;
-   font-family: "Raleway", Helvetica, sans-serif;
+   font-family: $header-font, $secondary-font, $font-family;
    font-size: 0.6em;
    font-weight: 800;
    height: 4.8125em;
    letter-spacing: 0.25em;
-   line-height: 4.8125em;
-   -moz-transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
-   -webkit-transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
-   -ms-transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
-   transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
+   margin: auto;
+   padding: 1em;
+   @include transition("background-color 0.2s ease, border 0.2s ease, color 0.2s ease");
    text-transform: uppercase;
    &:hover {
      border: solid 1px $accent-color;
      color: $accent-color !important;
      &:active {
-       background-color: rgba(46, 186, 174, 0.05);
+       background-color: $border-color;
      }
    }
  }
@@ -302,26 +359,22 @@ textarea {
  /* Form */
 
  label {
- 	color: #3c3b3b;
+ 	color: $heading-color;
  	display: block;
  	font-size: 0.9em;
  	font-weight: 700;
  }
 
  input, select,	textarea {
- 	background: rgba(160, 160, 160, 0.075);
- 	border: solid 1px rgba(160, 160, 160, 0.3);
+ 	background: $form-background-color;
+ 	border: $border-solid;
  	outline: 0;
  	margin: .25em 0;
  	padding: 0 1em;
  	width: 100%;
    &:hover {
   	border-color: $accent-color;
- 		-webkit-transition:border-color 0.3s ease-in-out;
- 		-moz-transition:border-color 0.3s ease-in-out;
-    -ms-transition: border-color 0.3s ease-in-out;
-    -o-transition: border-color 0.3s ease-in-out;
- 		transition:border-color 0.3s ease-in-out;
+ 		@include transition("border-color 0.3s ease-in-out");
  	}
    &:focus, &:active {
  		border: solid 1px $accent-color;
@@ -338,25 +391,17 @@ textarea {
 
  ::-webkit-input-placeholder, :-moz-placeholder,
  ::-moz-placeholder, :-ms-input-placeholder, .formerize-placeholder {
- 	color: #aaaaaa;
+ 	color: hsl(0, 0%, 66.67%);
  	opacity: 1.0;
  }
 
  /* Table */
 
  table {
-   background-color: #fff;
-   -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-   -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-   -ms-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-   -o-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   background-color: white;
+   @include box-shadow($box-shadow-t2);
    margin: 1em auto;
-   -webkit-transition: all 0.5s ease;
-   -moz-transition: all 0.5s ease;
-   -ms-transition: all 0.5s ease;
-   -o-transition: all 0.5s ease;
-   transition: all 0.5s ease;
+   @include transition("all 0.5s ease");
    width: 75%;
    @include for-laptop-up {
  		width: 90%;
@@ -364,19 +409,20 @@ textarea {
    > thead {
      display: none;
      @include for-laptop-up {
-       background-color: #ececec;
+       background-color: $body-color;
        display: table-header-group;
      }
    }
    > tbody {
      > tr {
-       border-bottom: 1px solid #e0e0e0;
+       border-bottom: 1px solid $seperator-color;
        @include for-laptop-up {
          &:nth-child(even) {
-           background-color: #f4f4f4;
+           background-color: $body-color;
          }
          &:hover {
-           background-color: rgba(46, 187, 170, .5);
+           background-color: $accent-color-hover;
+           @include transition("all 0.5s ease");
          }
        }
        > td {
@@ -387,7 +433,7 @@ textarea {
            text-align: center;
          }
          &[data-header]:before {
-           color: #757575;
+           color: $caption-color;
            content: attr(data-header);
            float: left;
            font-size: inherit;
@@ -397,7 +443,7 @@ textarea {
            }
          }
          &:first-child {
-           background-color: #ececec;
+           background-color: $body-color;
            font-weight: bold;
            text-align: left;
            @include for-laptop-up {
@@ -407,24 +453,20 @@ textarea {
            &:after {
              content: "\f078";
              float: right;
-             font-family: "Font Awesome 5 Free";
+             font-family: $font-awesome;
              font-weight: 900;
              text-decoration: inherit;
-             transition: all .3s;
+             @include transition("all 0.5s ease");
              @include for-laptop-up {
                display: none;
              }
            }
          }
          &:not(:first-child) {
-           border-bottom: 1px solid #e0e0e0;
+           border-bottom: 1px solid $seperator-color;
            opacity: 0;
            position: absolute;
-           -moz-transition: none;
-           -ms-transition: none;
-           -o-transition: none;
-           -webkit-transition: none;
-           transition: none;
+           @include transition(none);
            z-index: -1;
            @include for-laptop-up {
              border: 0;
@@ -437,17 +479,13 @@ textarea {
        &.active > td {
          &:first-child {
            &:after {
-             transform: rotateX(180deg);
+             @include transform("rotateX(180deg)");
            }
          }
          &:not(:first-child) {
            opacity: 1;
            position: relative;
-           -webkit-transition: all 0.3s ease;
-           -moz-transition: all 0.3s ease;
-           -ms-transition: all 0.3s ease;
-           -o-transition: all 0.3s ease;
-           transition: all 0.3s ease;
+           @include transition("all 0.5s ease");
            z-index: auto;
          }
          &:last-child {
@@ -484,12 +522,8 @@ textarea {
  /* Fancybox */
 
  .fancybox {
-   background: #fff;
-   -webkit-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-   -moz-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-   -ms-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-   -o-box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+   background: white;
+   @include box-shadow($box-shadow-t2);
    margin: 10px auto;
    max-width: 85%;
    padding: .5em .5em 0 .5em;
@@ -501,7 +535,7 @@ textarea {
      max-width: 100%;
    }
    .caption {
-     color: #777;
+     color: $caption-color;
      font-size: 0.8em;
      font-style: italic;
      text-align: center;
@@ -554,203 +588,103 @@ textarea {
  /* Image Masks thanks to https://bennettfeely.com/clippy/ */
 
  .triangle {
-   -webkit-clip-path: polygon(0 100%, 100% 100%, 50% 0);
-   -moz-clip-path: polygon(0 100%, 100% 100%, 50% 0);
-   -ms-clip-path: polygon(0 100%, 100% 100%, 50% 0);
-   -o-clip-path: polygon(0 100%, 100% 100%, 50% 0);
-   clip-path: polygon(0 100%, 100% 100%, 50% 0);
+   @include clip-path("polygon(0 100%, 100% 100%, 50% 0)");
  }
 
  .trapezoid {
-   -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-   -moz-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-   -ms-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-   -o-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
-   clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+   @include clip-path("polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%)");
  }
 
  .parallelogram {
-   -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-   -moz-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-   -ms-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-   -o-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-   clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+   @include clip-path("polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%)");
  }
 
  .rhombus {
-   -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-   -moz-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-   -ms-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-   -o-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
-   clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+   @include clip-path("polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)");
  }
 
  .pentagon {
-   -webkit-clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-   -moz-clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-   -ms-clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-   -o-clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-   clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+   @include clip-path("polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)");
  }
 
  .hexagon {
-   -webkit-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-   -moz-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-   -ms-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-   -o-clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+   @include clip-path("polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)");
  }
 
  .heptagon {
-   -webkit-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-   -moz-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-   -ms-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-   -o-clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
-   clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+   @include clip-path("polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%)");
  }
 
  .octagon {
-   -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-   -moz-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-   -ms-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-   -o-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
-   clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+   @include clip-path("polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)");
  }
 
  .nonagon {
-   -webkit-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-   -moz-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-   -ms-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-   -o-clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
-   clip-path: polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%);
+   @include clip-path("polygon(50% 0%, 83% 12%, 100% 43%, 94% 78%, 68% 100%, 32% 100%, 6% 78%, 0% 43%, 17% 12%)");
  }
 
  .decagon {
-   -webkit-clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
-   -moz-clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
-   -ms-clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
-   -o-clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
-   clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
+   @include clip-path("polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%)");
  }
 
  .bevel {
-   -webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-   -moz-clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-   -ms-clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-   -o-clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
-   clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+   @include clip-path("polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)");
  }
 
  .rabbet {
-   -webkit-clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
-   -moz-clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
-   -ms-clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
-   -o-clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
-   clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+   @include clip-path("polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%)");
  }
 
  .left-arrow {
-   -webkit-clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
-   -moz-clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
-   -ms-clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
-   -o-clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
-   clip-path: polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%);
+   @include clip-path("polygon(40% 0%, 40% 20%, 100% 20%, 100% 80%, 40% 80%, 40% 100%, 0% 50%)");
  }
 
  .right-arrow {
-   -webkit-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
-   -moz-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
-   -ms-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
-   -o-clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
-   clip-path: polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%);
+   @include clip-path("polygon(0% 20%, 60% 20%, 60% 0%, 100% 50%, 60% 100%, 60% 80%, 0% 80%)");
  }
 
  .left-point {
-   -webkit-clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
-   -moz-clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
-   -ms-clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
-   -o-clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
-   clip-path: polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%);
+   @include clip-path("polygon(25% 0%, 100% 1%, 100% 100%, 25% 100%, 0% 50%)");
  }
 
  .right-point {
-   -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-   -moz-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-   -ms-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-   -o-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
-   clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+   @include clip-path("polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%)");
  }
 
  .left-cheveron {
-   -webkit-clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-   -moz-clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-   -ms-clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-   -o-clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
-   clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+   @include clip-path("polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%)");
  }
 
  .right-cheveron {
-   -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-   -moz-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-   -ms-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-   -o-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
-   clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+   @include clip-path("polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%)");
  }
 
  .star {
-   -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-   -moz-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-   -ms-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-   -o-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
-   clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+   @include clip-path("polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)");
  }
 
  .cross {
-   -webkit-clip-path: polygon(10% 25%, 35% 25%, 35% 0%, 65% 0%, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 100%, 35% 100%, 35% 50%, 10% 50%);
-   -moz-clip-path: polygon(10% 25%, 35% 25%, 35% 0%, 65% 0%, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 100%, 35% 100%, 35% 50%, 10% 50%);
-   -ms-clip-path: polygon(10% 25%, 35% 25%, 35% 0%, 65% 0%, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 100%, 35% 100%, 35% 50%, 10% 50%);
-   -o-clip-path: polygon(10% 25%, 35% 25%, 35% 0%, 65% 0%, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 100%, 35% 100%, 35% 50%, 10% 50%);
-   clip-path: polygon(10% 25%, 35% 25%, 35% 0%, 65% 0%, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 100%, 35% 100%, 35% 50%, 10% 50%);
+   @include clip-path("polygon(10% 25%, 35% 25%, 35% 0%, 65% 0%, 65% 25%, 90% 25%, 90% 50%, 65% 50%, 65% 100%, 35% 100%, 35% 50%, 10% 50%)");
  }
 
  .message {
-   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
-   -moz-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
-   -ms-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
-   -o-clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
-   clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+   @include clip-path("polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%)");
  }
 
  .close {
-   -webkit-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
-   -moz-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
-   -ms-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
-   -o-clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
-   clip-path: polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%);
+   @include clip-path("polygon(20% 0%, 0% 20%, 30% 50%, 0% 80%, 20% 100%, 50% 70%, 80% 100%, 100% 80%, 70% 50%, 100% 20%, 80% 0%, 50% 30%)");
  }
 
  .circle {
-   -webkit-clip-path: circle(50% at 50% 50%);
-   -moz-clip-path: circle(50% at 50% 50%);
-   -ms-clip-path: circle(50% at 50% 50%);
-   -o-clip-path: circle(50% at 50% 50%);
-   clip-path: circle(50% at 50% 50%);
+   @include clip-path("circle(50% at 50% 50%)");
  }
 
  .vertical-ellipse {
-   -webkit-clip-path: ellipse(25% 40% at 50% 50%);
-   -moz-clip-path: ellipse(25% 40% at 50% 50%);
-   -ms-clip-path: ellipse(25% 40% at 50% 50%);
-   -o-clip-path: ellipse(25% 40% at 50% 50%);
-   clip-path: ellipse(25% 40% at 50% 50%);
+   @include clip-path("ellipse(25% 40% at 50% 50%)");
  }
 
  .horizontal-ellipse {
-   -webkit-clip-path: ellipse(40% 25%at 50% 50%);
-   -moz-clip-path: ellipse(40% 25% at 50% 50%);
-   -ms-clip-path: ellipse(40% 25% at 50% 50%);
-   -o-clip-path: ellipse(40% 25% at 50% 50%);
-   clip-path: ellipse(40% 25% at 50% 50%);
+   @include clip-path("ellipse(40% 25% at 50% 50%)");
  }
 
  /* Flags */
@@ -760,9 +694,9 @@ textarea {
  }
 
  .flag-icon-en {
-   background-image: url(../flags/4x3/en.svg);
+   background-image: $en-flag-4x3;
    &.flag-icon-squared {
-     background-image: url(../flags/1x1/en.svg);
+     background-image: $en-flag-1x1;
    }
  }
 
@@ -771,18 +705,18 @@ textarea {
  .share-btn {
    border: none;
    border-radius: 4px;
-   box-shadow: 0 2px 0 0 rgba(0,0,0,0.2);
-   color: #ffffff;
+   @include box-shadow("0 2px 0 0 $box-shadow-1");
+   color: white;
    display: inline-block;
    text-align: center;
    &:hover {
-     color: #ffffff !important;
+     color: white !important;
    }
    &:active {
      position: relative;
      top: 2px;
-     box-shadow: none;
-     color: #e2e2e2;
+     @include box-shadow(none);
+     color: $seperator-color;
      outline: none;
    }
  }
@@ -790,59 +724,50 @@ textarea {
  /* Share Branding */
 
  .share-btn {
+   @include transition(0.5s);
+   &:hover {
+     @include box-shadow($box-shadow-t2);
+   }
    &.twitter {
-     background: #55acee;
+     background: hsl(203, 89.1, 53.1);
      &:hover {
-       background: #4c9ad6;
+       background: hsl(203, 89.1, 33.1);
      }
    }
-
-   &.google-plus {
-     background: #dd4b39;
-     &:hover {
-       background: #c64333;
-     }
-   }
-
    &.facebook    {
-     background: #3B5998;
+     background: hsl(221, 44.1%, 41.4%);
      &:hover    {
-       background: #2f4779;
+       background: hsl(221, 44.1%, 21.4%);
      }
    }
-
    &.linkedin    {
-     background: #4875B4;
+     background: hsl(201, 100%, 35.5%);
      &:hover    {
-       background: #4069a2;
+       background: hsl(201, 100%, 15.5%);
      }
    }
-
    &.stumbleupon {
-     background: #EB4823;
+     background: hsl(10, 81.6%, 53.1%);
      &:hover {
-       background: #d3401f;
+       background: hsl(10, 81.6%, 33.1%);
      }
    }
-
    &.pinterest {
-     background: #BD081C;
+     background: hsl(354, 90.9%, 38.8%);
      &:hover {
-       background: #AD0000;
+       background: hsl(354, 90.9%, 18.8%);
      }
    }
-
    &.reddit {
-     background: #ff5700;
+     background: hsl(16, 100%, 50%);
      &:hover {
-       background: #e54e00;
+       background: hsl(16, 100%, 30%);
      }
    }
-
    &.email {
-     background: #444444;
+     background: hsl(0, 0%, 50%);
      &:hover {
-       background: #363636;
+       background: hsl(0, 0%, 30%);
      }
    }
  }
@@ -876,11 +801,7 @@ textarea {
    margin: 0 auto;
    max-width: 90em;
    min-height: 100vh;
-   -moz-transition: .5s;
-   -ms-transition: .5s;
-   -o-transition: .5s;
-   -webkit-transition: .5s;
-   transition: .5s;
+   @include transition(.5s);
    @include for-desktop-up {
      grid-template-areas:
        'intro main'
@@ -899,12 +820,12 @@ textarea {
  /* ---------------------------------Classes--------------------------------- */
 
  .post {
-   background: #ffffff;
+   background: white;
    margin: 1.5em auto;
    padding: 1em;
    max-width: 55em;
    > header {
-     border-bottom: solid 1px rgba(160, 160, 160, 0.3);
+     border-bottom: $border-solid;
      margin: 1em 1em 0 1em;
      text-align: center;
      @include for-laptop-up {
@@ -928,19 +849,19 @@ textarea {
        display: flex;
        flex-direction: column;
        @include for-laptop-up {
-         border-left: solid 1px rgba(160, 160, 160, 0.3);
+         border-left: $border-solid;
          text-align: right;
          width: 17em;
        }
        .published {
-         font-family: "Raleway", Helvetica, sans-serif;
+         font-family: $header-font, $secondary-font, $font-family;
          font-size: 0.7em;
          font-weight: 800;
          letter-spacing: 0.25em;
          text-transform: uppercase;
        }
        p, .author, .format {
-         font-family: "Raleway", Helvetica, sans-serif;
+         font-family: $header-font, $secondary-font, $font-family;
          font-size: 0.6em;
          letter-spacing: 0.25em;
          text-transform: uppercase;
@@ -948,9 +869,6 @@ textarea {
      }
    }
    > div, > p {
-     h1, h2, h3, h4, h5, h6 {
-       font-size: 1em;
-     }
      @include for-desktop-up {
       margin: 0 1em;
     }
@@ -969,19 +887,11 @@ textarea {
        overflow: hidden;
        &:hover {
          img {
-           -webkit-transform: scale(1.05);
-           -moz-transform: scale(1.05);
-           -ms-transform: scale(1.05);
-           -o-transform: scale(1.05);
-           transform: scale(1.05);
+           @include transform("scale(1.05)");
          }
        }
        img {
-         -webkit-transition: -webkit-transform 0.2s ease-out;
-         -moz-transition: -moz-transform 0.2s ease-out;
-         -ms-transition: -ms-transform 0.2s ease-out;
-         -o-transition: -ms-transform 0.2s ease-out;
-         transition: transform 0.2s ease-out;
+         @include transition("transform 0.2s ease-out");
          width: 100%;
        }
      }
@@ -989,6 +899,9 @@ textarea {
    > footer {
      display: flex;
      flex-direction: column;
+     .button {
+       margin: 1em auto;
+     }
      .stats {
        display: flex;
        cursor: default;
@@ -999,7 +912,7 @@ textarea {
        li {
          display: flex;
          align-items: center;
-         font-family: "Font Awesome 5 Free";
+         font-family: $font-awesome;
          font-weight: 900;
          max-width: 50%;
          &:hover, &:active {
@@ -1028,12 +941,12 @@ textarea {
          ul {
            display: flex;
            flex-wrap: wrap;
-           border-left: solid 1px rgba(160, 160, 160, 0.3);
+           border-left: $border-solid;
            margin: 0 0 0 1em;
            padding: 0 0 0 1em;
            li {
              visibility: visible;
-             font-family: "Raleway", Helvetica, sans-serif;
+             font-family: $header-font, $secondary-font, $font-family;
              font-size: 0.6em;
              font-weight: 400;
              letter-spacing: 0.25em;
@@ -1041,11 +954,7 @@ textarea {
              margin: 0;
              width: 0;
              opacity: 0;
-             -webkit-transition: visibility 0s, opacity 0.5s linear, line-height 0.5s linear, margin 0.5s linear, width 0.5s linear;
-             -moz-transition: visibility 0s, opacity 0.5s linear, line-height 0.5s linear, margin 0.5s linear, width 0.5s linear;
-             -ms-transition: visibility 0s, opacity 0.5s linear, line-height 0.5s linear, margin 0.5s linear, width 0.5s linear;
-             -o-transition: visibility 0s, opacity 0.5s linear, line-height 0.5s linear, margin 0.5s linear, width 0.5s linear;
-             transition: visibility 0s, opacity 0.5s linear, line-height 0.5s linear, margin 0.5s linear, width 0.5s linear;
+             @include transition("visibility 0s, opacity 0.5s linear, line-height 0.5s linear, margin 0.5s linear, width 0.5s linear");
              text-transform: uppercase;
              &:nth-child(-n+3) {
                visibility: visible;
@@ -1077,13 +986,9 @@ textarea {
  /* Site Header */
 
  #site-header {
-   background-color: #ffffff;
-   border-bottom: solid 1px rgba(160, 160, 160, 0.3);
-   -webkit-box-shadow:  0 3px 6px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
-   -moz-box-shadow:  0 3px 6px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
-   -ms-box-shadow:  0 3px 6px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
-   -o-box-shadow:  0 3px 6px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
-   box-shadow: 0 3px 6px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
+   background-color: white;
+   border-bottom: $border-solid;
+   @include box-shadow($box-shadow-t2);
    height: 3.5em;
    line-height: 3.5em;
    position: fixed;
@@ -1093,8 +998,8 @@ textarea {
    z-index: 10000;
    a {
      border: 0;
-     border-left: 1px solid rgba(160, 160, 160, 0.3);
-     font-family: "Raleway", Helvetica, sans-serif;
+     border-left: $border-solid;
+     font-family: $header-font, $secondary-font, $font-family;
      font-size: 0.7em;
      font-weight: 400;
      letter-spacing: 0.25em;
@@ -1103,25 +1008,17 @@ textarea {
      text-transform: uppercase;
    }
    .flyout-menu {
-     background-color: #fff;
-     border-left: 1px solid rgba(160, 160, 160, 0.3);
+     background-color: white;
+     border-left: $border-solid;
      height: calc(100vh - 3.5em);
      margin-top: 3.5em;
      padding: 0;
      position: fixed;
      top: 0;
-     -webkit-transition: 0.5s;
-     -moz-transition: 0.5s;
-     -ms-transition: 0.5s;
-     -o-transition: 0.5s;
-     transition: 0.5s;
+     @include transition(0.5s);
      z-index: 20;
      &.active {
-       -webkit-box-shadow:  0 3px 6px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
-       -moz-box-shadow:  0 3px 6px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
-       -ms-box-shadow:  0 3px 6px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
-       -o-box-shadow:  0 3px 6px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
-       box-shadow: 0 3px 6px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
+       @include box-shadow($box-shadow-t2);
        right: 0 !important;
        a {
          border-left: 0;
@@ -1152,31 +1049,23 @@ textarea {
        margin: 0;
        overflow: auto;
        position: static;
-       -webkit-transition: none;
-       -moz-transition: none;
-       -ms-transition: none;
-       -o-transition: none;
-       transition: none;
+       @include transition(none);
        white-space: nowrap;
        &::-webkit-scrollbar {
          height: .25em;
        }
        &::-webkit-scrollbar-track {
-         -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+         -webkit-box-shadow: $webkit-box-shadow-util;
        }
        &::-webkit-scrollbar-thumb {
-         background-color: darkgrey;
-         outline: 1px solid slategrey;
+         background-color: $webkit-background-util;
+         outline: $webkit-outline-util;
        }
      }
      &.active {
        flex-wrap: wrap;
        @include for-desktop-up {
-           -webkit-box-shadow: none;
-           -moz-box-shadow:  none;
-           -ms-box-shadow:  none;
-           -o-box-shadow:  none;
-           box-shadow: none;
+           @include box-shadow(none);
        }
      }
      .search-toggle {
@@ -1185,7 +1074,7 @@ textarea {
        order: 1;
      }
      .link {
-       border-bottom: dotted 1px rgba(160, 160, 160, 0.3);
+       border-bottom: $border-dotted;
        display: block;
        flex-basis: 100%;
        order: 2;
@@ -1215,7 +1104,7 @@ textarea {
      @include for-desktop-up {
        flex-grow: 0;
        &:after {
-         background: rgba(160, 160, 160, 0.3);
+         background: $border-color;
          content: '';
          display: block;
          height: 56px;
@@ -1250,17 +1139,13 @@ textarea {
      width: 61px;
      &:hover {
        span {
-         box-shadow: inset 0 0 0 100px rgba(46, 187, 170, .5);
+         @include box-shadow("inset 0 0 0 100px $accent-color-hover");
        }
      }
      span {
        display: inline-block;
        font-size: 1.75em;
-       -webkit-transition: box-shadow 0.2s ease;
-       -moz-transition: box-shadow 0.2s ease;
-       -ms-transition: box-shadow 0.2s ease;
-       -o-transition: box-shadow 0.2s ease;
-       transition: box-shadow 0.2s ease;
+       @include transition("box-shadow 0.2s ease");
        vertical-align: middle;
      }
    }
@@ -1286,14 +1171,10 @@ textarea {
      span {
        display: inline-block;
        font-size: 1.75em;
-       -webkit-transition: box-shadow 0.2s ease;
-       -moz-transition: box-shadow 0.2s ease;
-       -ms-transition: box-shadow 0.2s ease;
-       -o-transition: box-shadow 0.2s ease;
-       transition: box-shadow 0.2s ease;
+       @include transition("box-shadow 0.2s ease");
        vertical-align: middle;
        &:hover {
-         box-shadow: inset 0 0 0 100px rgba(46, 187, 170, .5);
+         @include box-shadow("inset 0 0 0 100px $accent-color-hover");
        }
      }
      .no-lang {
@@ -1301,7 +1182,7 @@ textarea {
        opacity: .25;
        span {
          &:hover {
-           box-shadow: none;
+           @include box-shadow(none);
          }
        }
      }
@@ -1379,11 +1260,12 @@ textarea {
  /* Sidebar */
 
  #site-sidebar {
+   text-align: center;
    header h1 {
      font-size: 1em;
    }
    > * {
-     border-top: solid 1px rgba(160, 160, 160, 0.3);
+     border-top: $border-solid;
      margin: 3em 2em 0 2em;
      padding-top: 3em;
    }
@@ -1402,10 +1284,10 @@ textarea {
      flex: 1 1 100%;
    }
    .mini-post {
-     background: #ffffff;
-     border: solid 1px rgba(160, 160, 160, 0.3);
- display: flex;
- flex-direction: column;
+     background: white;
+     border: $border-color;
+     display: flex;
+     flex-direction: column-reverse;
      margin-bottom: 1em;
      width: 100%;
      @include for-laptop-up {
@@ -1419,7 +1301,7 @@ textarea {
        padding: 1.25em 1.25em 0.1em 1.25em;
        position: relative;
        @include for-laptop-up {
-         border-top: solid 1px rgba(160,160,160,0.3);
+         border-top: $border-solid;
        }
        @include for-desktop-up {
          border: 0;
@@ -1429,7 +1311,7 @@ textarea {
        }
        .published {
          display: block;
-         font-family: "Raleway", Helvetica, sans-serif;
+         font-family: $header-font, $secondary-font, $font-family;
          font-size: 0.6em;
          font-weight: 400;
          letter-spacing: 0.25em;
@@ -1442,26 +1324,20 @@ textarea {
          top: 2em;
        }
      }
-     section {
+     div {
        flex-grow: 1;
        overflow: hidden;
        .image {
          &:hover {
            img {
-             -moz-transform: scale(1.05);
-             -webkit-transform: scale(1.05);
-             -ms-transform: scale(1.05);
-             transform: scale(1.05);
+             @include transform("scale(1.05)");
            }
          }
          img {
            display: block;
            height: 100%;
            margin: 0;
-           -moz-transition: -moz-transform 0.2s ease-out;
-           -webkit-transition: -webkit-transform 0.2s ease-out;
-           -ms-transition: -ms-transform 0.2s ease-out;
-           transition: transform 0.2s ease-out;
+           @include transition("transform 0.2s ease-out");
            width: 100%;
          }
        }
@@ -1470,6 +1346,11 @@ textarea {
  }
 
  #categories {
+   ul {
+     list-style: none;
+     padding: 0;
+     text-align: left;
+   }
    .count {
      float: right;
    }
@@ -1481,31 +1362,28 @@ textarea {
      font-size: 0.9em;
      padding: 0;
    }
-   footer {
-     text-align: center;
-   }
  }
 
  /* Footer */
 
  #site-footer{
-   border-top: solid 1px rgba(160,160,160,0.3);
+   border-top: $border-solid;
    margin: 3em 2em 0 2em;
    padding-top: 3em;
+   text-align: center;
    .copyright {
-     color: #aaaaaa;
-     font-family: "Raleway", Helvetica, sans-serif;
+     color: $webkit-background-util;
+     font-family: $header-font, $secondary-font, $font-family;
      font-size: 0.5em;
      font-weight: 400;
      letter-spacing: 0.25em;
-     text-align: center;
      text-transform: uppercase;
    }
  }
 
  #back-to-top {
    bottom: 15px;
-   color: #aaaaaa;
+   color: $webkit-background-util;
    display: none;
    position: fixed;
    right: 15px;
@@ -1587,23 +1465,22 @@ textarea {
   position: absolute;
   width: 1px;
   white-space: nowrap; /* 1 */
-}
 
-/*
-* Extends the .visuallyhidden class to allow the element
-* to be focusable when navigated to via the keyboard:
-* https://www.drupal.org/node/897638
-*/
+  /*
+  * Extends the .visuallyhidden class to allow the element
+  * to be focusable when navigated to via the keyboard:
+  * https://www.drupal.org/node/897638
+  */
 
-.visuallyhidden.focusable:active,
-.visuallyhidden.focusable:focus {
-  clip: auto;
-  height: auto;
-  margin: 0;
-  overflow: visible;
-  position: static;
-  width: auto;
-  white-space: inherit;
+  &.focusable:active, &.focusable:focus {
+    clip: auto;
+    height: auto;
+    margin: 0;
+    overflow: visible;
+    position: static;
+    width: auto;
+    white-space: inherit;
+  }
 }
 
 /*
@@ -1626,8 +1503,7 @@ textarea {
 *    `:before` to contain the top-margins of child elements.
 */
 
-.clearfix:before,
-.clearfix:after {
+.clearfix:before, .clearfix:after {
   content: " "; /* 1 */
   display: table; /* 2 */
 }
@@ -1642,72 +1518,63 @@ textarea {
    https://www.phpied.com/delay-loading-your-print-css/
    ========================================================================== */
 
-   @media print {
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important; /* Black prints faster */
-        -webkit-box-shadow: none !important;
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+@media print {
+  *, *:before, *:after {
+    background: transparent !important;
+    color: black !important; /* Black prints faster */
+    @include box-shadow("none !important");
+    text-shadow: none !important;
+  }
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+  a, a:visited {
+    text-decoration: underline;
+  }
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
 
-    /*
-     * Don't show links that are fragment identifiers,
-     * or use the `javascript:` pseudo protocol
-     */
+  /*
+  * Don't show links that are fragment identifiers,
+  * or use the `javascript:` pseudo protocol
+  */
 
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
+  a[href^="#"]:after, a[href^="javascript:"]:after {
+    content: "";
+  }
 
-    pre {
-        white-space: pre-wrap !important;
-    }
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+  pre {
+    white-space: pre-wrap !important;
+  }
 
-    /*
-     * Printing Tables:
-     * http://css-discuss.incutio.com/wiki/Printing_Tables
-     */
+  pre, blockquote {
+    border: $border-solid;
+    page-break-inside: avoid;
+  }
 
-    thead {
-        display: table-header-group;
-    }
+  /*
+  * Printing Tables:
+  * http://css-discuss.incutio.com/wiki/Printing_Tables
+  */
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+  thead {
+    display: table-header-group;
+  }
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+  tr, img {
+    page-break-inside: avoid;
+  }
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2, h3 {
+    page-break-after: avoid;
+  }
 }

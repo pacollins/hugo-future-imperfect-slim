@@ -2,16 +2,18 @@
 <html lang="{{ .Page.Language | default "en" }}">
   {{ partial "head" . }}
   <body>
+    <h1 class="visuallyhidden">{{ .Site.Title }}</h1>
     {{ partial "site-header" . }}
     <div id="wrapper">
       {{ partial "site-intro" . }}
-      <main id="site-main">
+      <section id="site-main">
+        <h1 class="visuallyhidden">Articles</h1>
         {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
         {{ range $paginator.Pages }}
           {{ .Render "content-list" }}
         {{ end }}
         {{ partial "pagination" . }}
-      </main>
+      </section>
       {{ partial "site-sidebar" . }}
       {{ partial "site-footer" . }}
       {{ partial "scripts" . }}

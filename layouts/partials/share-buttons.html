@@ -3,7 +3,7 @@
 {{ $author := $.Scratch.Get "Author" }}
 {{ range .Site.Params.socialShare }}
   {{ if eq . "twitter" }}
-    <a href="//twitter.com/share?url={{ $permalink }}&amp;text={{ $title }}&amp" target="_blank" rel="noopener" class="share-btn twitter">
+    <a href="//twitter.com/share?url={{ $permalink }}&amp;text={{ $title }}&amp;" target="_blank" rel="noopener" class="share-btn twitter">
         <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
       </a>
   {{ else if eq . "facebook" }}

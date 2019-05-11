@@ -1,5 +1,9 @@
 {{ if .Params.featured }}
-<a href="{{ .RelPermalink }}" class="image featured">
-  <img src="/img{{ if eq .Params.featuredpath "date" }}{{ .Page.Date.Format "2006/01" | relURL }}{{ else }}/img/{{ .Params.featuredpath }}{{ end }}/{{ .Params.featured }}" alt="{{ .Params.featuredalt }}">
-</a>
+  <a href="{{ .RelPermalink }}" class="image featured">
+    <img src="/img{{ if eq .Params.featuredpath "date" }}{{ .Page.Date.Format "2006/01" | relURL }}{{ else }}/img/{{ .Params.featuredpath }}{{ end }}/{{ .Params.featured }}" {{ with .Params.featuredalt }} alt="{{ . }}" {{ end }}>
+  </a>
+<!-- TODO: Alt Pic
+<a href="{{ .RelPermalink }}" class="image featured-alt">
+    <img src="{{ .Site.Params.intro.pic.src | relURL }}" class="{{ .Site.Params.intro.pic.shape }}" {{ with .Site.Params.intro.pic.width }} width="{{ . }}" {{ end }} alt="{{ .Site.Params.intro.pic.alt }}">
+  </a> -->
 {{ end }}
