@@ -186,6 +186,16 @@ Hugo will build your site and host a server locally. You can view this live at
 In addition to the native [Hugo shortcodes](https://gohugo.io/extras/shortcodes/),
 the theme also includes additional shortcodes that you may find useful.
 
+## Source Code Highlighting
+
+You can enable source code hightlighting via [highlight.js](https://highlightjs.org).
+If you want to use a language which is not in the [common package](https://highlightjs.org/download/) of highlight.js
+you can enable that language via `highlightjsLang` and the additional packages with be added to your site.
+
+```
+highlightjsLang=["yaml", "groovy"]
+```
+
 ## About the Author
 
 [Hugo Future Imperfect](http://html5up.net/future-imperfect) is a theme by
