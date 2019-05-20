@@ -1,6 +1,6 @@
 {{ if .Site.Params.highlightjs }}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-  {{ range Site.Params.highlightjsLang }}<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/{{ . }}.min.js"></script>{{ end }}
+  {{ range .Site.Params.highlightjsLang }}<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/{{ . }}.min.js"></script>{{ end }}
   <script>hljs.initHighlightingOnLoad();</script>
 {{ end }}
 {{ range .Site.Params.jsFiles }}
