@@ -285,11 +285,15 @@ textarea {
    height: 4.8125em;
    letter-spacing: 0.25em;
    line-height: 4.8125em;
+   margin: auto;
+   padding: 0 2em;
    -moz-transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
    -webkit-transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
    -ms-transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
    transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
+   text-align: center;
    text-transform: uppercase;
+   width: fit-content;
    &:hover {
      border: solid 1px $accent-color;
      color: $accent-color !important;
@@ -948,9 +952,6 @@ textarea {
      }
    }
    > div, > p {
-     h1, h2, h3, h4, h5, h6 {
-       font-size: 1em;
-     }
      @include for-desktop-up {
       margin: 0 1em;
     }
