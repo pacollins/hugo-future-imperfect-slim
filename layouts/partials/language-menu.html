@@ -1,13 +1,13 @@
 <menu id="lang-menu" class="flyout-menu">
-  <a href="#" lang="{{ .Site.Language.Lang }}" class="link active">{{ .Site.Language.LanguageName }} ({{ .Site.Language.Lang }})</a>
+  <a href="#" lang="{{ .Site.Language.Lang }}" aria-label="Active Language: {{ .Site.Language.Lang }}" class="link active">>{{ .Site.Language.LanguageName }} ({{ .Site.Language.Lang }})</a>
   {{ if .IsTranslated -}}
     {{ range .Translations }}
-      <a href="{{ .Permalink }}" lang="{{ .Lang }}" class="link">{{ .Language.LanguageName }} ({{ .Site.Language.Lang }})</a>
+      <a href="{{ .Permalink }}" lang="{{ .Lang }}" aria-label="Translate to {{ .Lang }}" class="link">{{ .Language.LanguageName }} ({{ .Site.Language.Lang }})</a>
     {{ end }}
   {{ else }}
     {{ range .Site.Languages }}
       {{ if not (eq .Lang $.Site.Language.Lang) }}
-        <a href="{{ relURL .Lang }}" lang="{{ .Lang }}" class="no-lang link">{{ .LanguageName }} ({{ .Lang }})</a>
+        <a href="{{ relURL .Lang }}" lang="{{ .Lang }}" aria-label="No Translation for {{ .Lang }}" class="no-lang link">{{ .LanguageName }} ({{ .Lang }})</a>
       {{ end }}
     {{ end }}
   {{ end }}
