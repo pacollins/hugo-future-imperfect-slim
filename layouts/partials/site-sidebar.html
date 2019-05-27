@@ -7,7 +7,7 @@
     {{ range first (.Site.Params.sidebar.postAmount | default 5) (where .Site.Pages  "Type" "post") }}
     <article class="mini-post">
       <header>
-        <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
         <time class="published" datetime="{{ .Date }}">{{ default (i18n "date_format") }}</time>
       </header>
       <div>

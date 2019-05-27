@@ -3,31 +3,31 @@
 {{ $author := $.Scratch.Get "Author" }}
 {{ range .Site.Params.socialShare }}
   {{ if eq . "twitter" }}
-    <a href="//twitter.com/share?url={{ $permalink }}&amp;text={{ $title }}&amp;" target="_blank" rel="noopener" class="share-btn twitter">
+    <a href="//twitter.com/share?url={{ $permalink }}&amp;text={{ $title }}&amp;" target="_blank" rel="noopener" aria-label="Share on Twitter (New Window)" class="share-btn twitter">
         <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
       </a>
   {{ else if eq . "facebook" }}
-      <a href="//www.facebook.com/sharer/sharer.php?u={{ $permalink }}" target="_blank" rel="noopener" class="share-btn facebook">
+      <a href="//www.facebook.com/sharer/sharer.php?u={{ $permalink }}" target="_blank" rel="noopener" aria-label="Share on Facebook (New Window)" class="share-btn facebook">
         <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
         </a>
   {{ else if eq . "reddit" }}
-    <a href="//reddit.com/submit?url={{ $permalink }}&amp;title={{ $title }}" target="_blank" rel="noopener" class="share-btn reddit">
+    <a href="//reddit.com/submit?url={{ $permalink }}&amp;title={{ $title }}" target="_blank" rel="noopener" aria-label="Share on Reddit (New Window)" class="share-btn reddit">
           <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
         </a>
   {{ else if eq . "linkedin" }}
-        <a href="//www.linkedin.com/shareArticle?url={{ $permalink }}&amp;title={{ $title }}" target="_blank" rel="noopener" class="share-btn linkedin">
+        <a href="//www.linkedin.com/shareArticle?url={{ $permalink }}&amp;title={{ $title }}" target="_blank" rel="noopener" aria-label="Share on LinkedIn (New Window)" class="share-btn linkedin">
             <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
           </a>
   {{ else if eq . "stumbleupon" }}
-        <a href="//www.stumbleupon.com/submit?url={{ $permalink }}&amp;title={{ $title }}" target="_blank" rel="noopener" class="share-btn stumbleupon">
+        <a href="//www.stumbleupon.com/submit?url={{ $permalink }}&amp;title={{ $title }}" target="_blank" rel="noopener" aria-label="Share on StumbleUpon (New Window)" class="share-btn stumbleupon">
           <i class="fab fa-stumbleupon"></i><p>&nbsp;StumbleUpon</p>
         </a>
   {{ else if eq . "pinterest" }}
-        <a href="//www.pinterest.com/pin/create/button/?url={{ $permalink }}&amp;description={{ $title }}" target="_blank" rel="noopener" class="share-btn pinterest">
+        <a href="//www.pinterest.com/pin/create/button/?url={{ $permalink }}&amp;description={{ $title }}" target="_blank" rel="noopener" aria-label="Share on Pintrest (New Window)" class="share-btn pinterest">
           <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
         </a>
   {{ else if eq . "email" }}
-        <a href="mailto:?subject=Check out this post by {{ $author }}&amp;body={{ $permalink }}" target="_blank" class="share-btn email">
+        <a href="mailto:?subject=Check out this post by {{ $author }}&amp;body={{ $permalink }}" target="_blank" aria-label="Share via Email (New Window)" class="share-btn email">
           <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
         </a>
   {{ end }}

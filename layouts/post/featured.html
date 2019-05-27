@@ -1,6 +1,6 @@
 {{ if .Params.featured }}
   <a href="{{ .RelPermalink }}" class="image featured">
-    <img src="/img{{ if eq .Params.featuredpath "date" }}{{ .Page.Date.Format "2006/01" | relURL }}{{ else }}/img/{{ .Params.featuredpath }}{{ end }}/{{ .Params.featured }}" {{ with .Params.featuredalt }} alt="{{ . }}" {{ end }}>
+    <img src="/img{{ if eq .Params.featuredpath "date" }}{{ .Page.Date.Format "2006/01" | relURL }}{{ else }}/img/{{ .Params.featuredpath }}{{ end }}/{{ .Params.featured }}" alt="{{ with .Params.featuredalt }}{{ . }}{{ else }}Article Header Image{{ end }}">
   </a>
 <!-- TODO: Alt Pic
 <a href="{{ .RelPermalink }}" class="image featured-alt">

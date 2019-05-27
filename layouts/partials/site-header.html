@@ -26,8 +26,8 @@
       {{ if .Site.Params.header.searchMenu }}{{ partial "search-menu" . }}{{ end }}
     </menu>
     {{ if .Site.Params.header.searchMenu }}{{ partial "search-menu" . }}{{ end }}
-    {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>{{ end }}
-    {{ if .Site.Params.header.languageMenu }}<a href="#lang-menu" class="lang-toggle" lang="{{ .Site.Language.Lang }}"><span class="flag-icon flag-icon-{{ .Site.Language.Lang }}" alt="{{ .Site.Language.Lang }}"></span></a>{{ end }}
+    {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="share-toggle" aria-label="Share"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>{{ end }}
+    {{ if .Site.Params.header.languageMenu }}<a href="#lang-menu" class="lang-toggle" lang="{{ .Site.Language.Lang }}" aria-label="Translate Site: Active Translation is {{ .Site.Language.Lang }}"><span class="flag-icon flag-icon-{{ .Site.Language.Lang }}" alt="{{ .Site.Language.Lang }}"></span></a>{{ end }}
     <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
   </nav>
   {{ if .Site.Params.header.languageMenu }}{{ partial "language-menu" . }}{{ end }}
