@@ -25,9 +25,9 @@ disableLanguages        = [""]
   # Activate Estimated Reading Times, which appear in the post headers
   readingTime           = true
   # Sets which Social Share links appear in posts.
-  # Options are twitter, facebook, reddit, linkedin, stumbleupon, pinterest, email
+  # Options are twitter, facebook, reddit, linkedin, pinterest, email
   socialShare           = ["twitter", "facebook", "reddit", "linkedin",
-                          "stumbleupon", "pinterest", "email"]
+                          "pinterest", "email"]
 
   [params.meta]
     # Sets the meta tag description
