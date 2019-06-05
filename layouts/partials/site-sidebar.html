@@ -8,7 +8,7 @@
     <article class="mini-post">
       <header>
         <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        <time class="published" datetime="{{ .Date }}">{{ default (i18n "date_format") }}</time>
+        <time class="published" datetime="">{{ default (i18n "date_format") | .Date.Format }}</time>
       </header>
       <div>
         {{ .Render "featured" }}

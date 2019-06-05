@@ -347,6 +347,7 @@ textarea {
    padding: 1em;
    @include transition("background-color 0.2s ease, border 0.2s ease, color 0.2s ease");
    text-transform: uppercase;
+   width: fit-content;
    &:hover {
      border: solid 1px $accent-color;
      color: $accent-color !important;
