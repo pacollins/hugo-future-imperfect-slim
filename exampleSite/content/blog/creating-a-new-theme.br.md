@@ -12,8 +12,6 @@ type = "post"
 
 +++
 
-você
-
 ## Introdução
 
 Neste tutorial irei mostrar como criar um simples tema para o Hugo. Assumo que você esteja familiarizado com HTML, linha de comando bash e sinta-se confortável usando Markdown para formatar o conteúdo. Eu vou explicar como o Hugo utiliza templates e como você pode organizar seus templates para criar um tema. Não irei abordar como utilizar CSS para estilizar o seu tema.
@@ -74,49 +72,51 @@ Note que você pode usar este tutorial para criar uma skin dentro do diretório 
 
 A home page, or landing page, é a primeira página que os visitantes do seu site veem. É o arquivo index.html no diretório raiz do seu site. Já que o Hugo gera os arquivo no diretório public/, nossa home para é public/index.html.
 
-### Arquivos de configuração do site
+### Arquivo de configuração do site
 
-When Hugo runs, it looks for a configuration file that contains settings that override default values for the entire site. The file can use TOML, YAML, or JSON. I prefer to use TOML for my configuration files. If you prefer to use JSON or YAML, you’ll need to translate my examples. You’ll also need to change the name of the file since Hugo uses the extension to determine how to process it.
+Quando o Hugo executa, ele procura pelo arquivo de configuração que contém as opções que fazem override dos valores default para todo o site. O arquivo utilizado pode ser TOML, YAML ou JSON. Eu prefiro TOML para os meus arquivos de configuração. Se você prefere JSON ou YAML, irá precisar traduzir os meus exemplos. Também irá precisar trocar o nome do arquivo, já que o Hugo utiliza a extensão para determinar como processá-lo.
 
-Hugo translates Markdown files into HTML. By default, Hugo expects to find Markdown files in your ```content/``` directory and template files in your ```themes/``` directory. It will create HTML files in your ```public/``` directory. You can change this by specifying alternate locations in the configuration file.
+Hugo traduz os arquivos Markdown para HTML. Por padrão, Hugo espera encontrar arquivos Markdown no diretório ```content/``` e arquivos de template no seu diretório 
+```themes/```. Ele irá criar os arquivos HTML no diretório ```public/```. Você pode alterá-lo especificando o novo diretório no arquivo de configuração.
 
-### Content
+### Conteúdo
 
-Content is stored in text files that contain two sections. The first section is the “front matter,” which is the meta-information on the content. The second section contains Markdown that will be converted to HTML.
+Conteúdo é armazenado em arquivos de text que possuem duas seções. A primeira é a "front matter", que é a meta-informa'˜cao do conteúdo. A segunda contém o Markdown que será convertido para HTML.
 
 #### Front Matter
 
-The front matter is information about the content. Like the configuration file, it can be written in TOML, YAML, or JSON. Unlike the configuration file, Hugo doesn’t use the file’s extension to know the format. It looks for markers to signal the type. TOML is surrounded by “`+++`”, YAML by “`---`”, and JSON is enclosed in curly braces. I prefer to use TOML, so you’ll need to translate my examples if you prefer YAML or JSON.
+A front matter é a informação sobre o conteúdo. Assim como o arquivo de configuração
+, ela pode ser escrita em TOML, YAML ou JSON. Diferente do arquivo de configuração, Hugo não utiliza a extensão do arquivo para descobrir o formato. Ele procura por marcações para sinalizar o tipo. TOML é cercado por “`+++`”, YAML por “`---`” e JSON fechado por chaves "`{}`". Eu prefiro usar TOML, então você precisará traduzir os meus exemplos se preferir YAML ou JSON.
 
-The information in the front matter is passed into the template before the content is rendered into HTML.
+A informação na front matter é passada para o template antes do conteúdo ser renderizado em HTML.
 
 #### Markdown
 
-Content is written in Markdown which makes it easier to create the content. Hugo runs the content through a Markdown engine to create the HTML which will be written to the output file.
+Conteúdo é escrito em Markdown o que torna fácil a criação. Hugo executa o conteúdo direto do Markdown para criar o HTML que será escrito no arquivo de saída.
 
-### Template Files
+### Arquivos de Template
 
-Hugo uses template files to render content into HTML. Template files are a bridge between the content and presentation. Rules in the template define what content is published, where it's published to, and how it will rendered to the HTML file. The template guides the presentation by specifying the style to use.
+Hugo utiza arquivos de template para renderizar o conteúdo no HTML. Arquivos de template são a ponte entre o conteúdo e a apresentação. Regras no template definem qual conteúdo será publicado, onde ele será publicado e como será renderizado para o arquivo HTML. O template orienta a apresentação especificando o estilo a ser utilizado.
 
-There are three types of templates: single, list, and partial. Each type takes a bit of content as input and transforms it based on the commands in the template.
+Há três tipos de template: single, list e partial. Cada tipo pega um pouco do conteúdo como entrada e transforma-o baseado em comandos no template.
 
-Hugo uses its knowledge of the content to find the template file used to render the content. If it can’t find a template that is an exact match for the content, it will shift up a level and search from there. It will continue to do so until it finds a matching template or runs out of templates to try. If it can’t find a template, it will use the default template for the site.
+Hugo usa seu conhecimento sobre o conteúdo para encontrar o arquivo de template para renderizar o conteúdo. Se ele não encontrar o correspondente, ele troca para um nível acima e busca à partir de lá. Ele irá continuar até encontrar o template ou ficar sem templates para tentar. Caso ele não encontre, irá utilizar template default do site.
 
-Please note that you can use the front matter to influence Hugo’s choice of templates.
+Observe que você pode usar a front matter para influenciar a escolha do Hugo por templates.
 
 #### Single Template
 
-A single template is used to render a single piece of content. For example, an article or post would be a single piece of content and use a single template.
+Um single template é usado para renderizar um único pedaço de conteúdo. Por exemplo, um artigo ou post podem ser um único pedaço de conteúdo e utilizar um single template.
 
 #### List Template
 
-A list template renders a group of related content. That could be a summary of recent postings or all articles in a category. List templates can contain multiple groups.
+Uma list template renderiza um grupo de conteúdos relacionados. Pode ser um sumário de posts recentes ou todos os artigos de uma categoria. List templates podem conter múltiplos grupos.
 
-The homepage template is a special type of list template. Hugo assumes that the home page of your site will act as the portal for the rest of the content in the site.
+O template da homepage é um tipo especial list template. Hugo assumo que a homepage do seu site irá atuar como um portal para o resto do conteúdo do seu site.
 
 #### Partial Template
 
-A partial template is a template that can be included in other templates. Partial templates must be called using the “partial” template command. They are very handy for rolling up common behavior. For example, your site may have a banner that all pages use. Instead of copying the text of the banner into every single and list template, you could create a partial with the banner in it. That way if you decide to change the banner, you only have to change the partial template.
+Um partial template é um template que pode ser incluído dentro de outro template. Partial templates devem ser chamados utilizando o comando "partial". Eles são muito úteis para criar um comportamento comum. Por exemplo, seu site pode ter um banner que é utilizado por todas as páginas. Ao invés de copiar o texto do banner para cada um dos single e list templates, você pode criar um partial com o banner. Desta forma, se decidir mudar o banner, apenas terá que alterar apenas o partial template.
 
 ## Criando um novo site
 
@@ -139,13 +139,13 @@ drwxr-xr-x  2 quoha  staff   68 Sep 29 16:49 static
 $
 ```
 
-Take a look in the content/ directory to confirm that it is empty.
+Olhe o diretório content/ para confirmar que está vazio.
 
-The other directories (archetypes/, layouts/, and static/) are used when customizing a theme. That's a topic for a different tutorial, so please ignore them for now.
+Os outros diretórios (archetypes/, layouts/, and static/) são usados para customização do tema. Este é um tópico para um tutorial diferente, então por favor, ignore-os por enquanto.
 
-### Generate the HTML For the New Site
+### Gerando o HTML do novo site
 
-Running the `hugo` command with no options will read all the available content and generate the HTML files. It will also copy all static files (that's everything that's not content). Since we have an empty site, it won't do much, but it will do it very quickly.
+Executando o comando `hugo` sem opções, irá ler todo o conteúdo disponível e gerar os arquivos HTML. E também copiará todos os arquivos estáticos (tudo aquilo que não é conteúdo). Como temos um site vazio, ele não fará muito, mas será bem rápido.
 
 ```
 $ hugo --verbose
@@ -251,7 +251,7 @@ We're going to create a new theme called "zafta." Since the goal of this tutoria
 All themes have opinions on content and layout. For example, Zafta uses "post" over "blog". Strong opinions make for simpler templates but differing opinions make it tougher to use themes. When you build a theme, consider using the terms that other themes do.
 
 
-### Create a Skeleton
+### Criando um Esqueleto
 
 Use the hugo "new" command to create the skeleton of a theme. This creates the directory structure and places empty files for you to fill out.
 
@@ -1193,6 +1193,6 @@ $ vi themes/zafta/layouts/post/single.html
 
 Note that we removed the date logic from the default template and put it in the post template. Generate the web site and verify the results. Posts have dates and the about page doesn't.
 
-### Don't Repeat Yourself
+### Don't Repeat Yourself ( Não repita você mesmo)
 
-DRY is a good design goal and Hugo does a great job supporting it. Part of the art of a good template is knowing when to add a new template and when to update an existing one. While you're figuring that out, accept that you'll be doing some refactoring. Hugo makes that easy and fast, so it's okay to delay splitting up a template.
+DRY é um bom design e o Hugo faz um grande trabalho para apoiá-lo. Parte da arte de um bom template é saber quando adicionar um novo template e quanto atualizar um já existente. Enquanto você estiver descobrindo isto, aceite que algumas vezes precisará refatorá-lo. Hugo permite isto de maneira fácil e rápida, então não tem problema atrasos na divisão do seu template.
