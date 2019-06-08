@@ -57,23 +57,24 @@ Existem alguns conceitos que você deve entender antes de criar um tema.
 
 ### Skins
 
-Skins are the files responsible for the look and feel of your site. It’s the CSS that controls colors and fonts, it’s the Javascript that determines actions and reactions. It’s also the rules that Hugo uses to transform your content into the HTML that the site will serve to visitors.
+Skins são responsáveis pela aparência do seu site. É o CSS que controla cores e fontes, é o Javascript que determina as ações e reações. E também algumas regras que o Hugo utiliza para transformar o seu conteúdo no HTML que será exibido aos visitantes do site.
 
-You have two ways to create a skin. The simplest way is to create it in the ```layouts/``` directory. If you do, then you don’t have to worry about configuring Hugo to recognize it. The first place that Hugo will look for rules and files is in the ```layouts/``` directory so it will always find the skin.
+Você tem duas maneiras de criar uma skin. A mais simples é criar no diretório ```layouts/```. Se for assim, você não precisa se preocupar em configurar o Hugo para reconhecê-las. O primeiro lugar que o Hugo irá procurar pelas regras e arquivos é no diretório ```layouts/``` e então irá encontrar a skin.
 
-Your second choice is to create it in a sub-directory of the ```themes/``` directory. If you do, then you must always tell Hugo where to search for the skin. It’s extra work, though, so why bother with it?
+Sua segunda opção é criar um sub-diretório dentro do ```themes/``` diretório. Se for assim, então você deve informar ao Hugo onde encontrar a skin. É um trabalho extra, então, por que se preocupar com isso?
 
-The difference between creating a skin in ```layouts/``` and creating it in ```themes/``` is very subtle. A skin in ```layouts/``` can’t be customized without updating the templates and static files that it is built from. A skin created in ```themes/```, on the other hand, can be and that makes it easier for other people to use it.
+A diferença entre criar uma skin em ```layouts/``` e criá-la dentro de ```themes/``` é sutil. Uma skin em ```layouts/``` não pode ser customizada sem atualização do template e arquivos estáticos dos quais foram construídos. A skin criada em ```themes/```, por outro lado, pode ser e facilita para que outras pessoas a utilizem.  
 
-The rest of this tutorial will call a skin created in the ```themes/``` directory a theme.
+O restante deste tutorial irá chamar a skin criada no diretório ```themes/``` de tema.
 
-Note that you can use this tutorial to create a skin in the ```layouts/``` directory if you wish to. The main difference will be that you won’t need to update the site’s configuration file to use a theme.
+Note que você pode usar este tutorial para criar uma skin dentro do diretório ```layouts/``` se quiser. A principal diferença será que você não precisará atualizar a configura'˜cao do seu site para usar o tema.
 
-### The Home Page
 
-The home page, or landing page, is the first page that many visitors to a site see. It is the index.html file in the root directory of the web site. Since Hugo writes files to the public/ directory, our home page is public/index.html.
+### A Home Page
 
-### Site Configuration File
+A home page, or landing page, é a primeira página que os visitantes do seu site veem. É o arquivo index.html no diretório raiz do seu site. Já que o Hugo gera os arquivo no diretório public/, nossa home para é public/index.html.
+
+### Arquivos de configuração do site
 
 When Hugo runs, it looks for a configuration file that contains settings that override default values for the entire site. The file can use TOML, YAML, or JSON. I prefer to use TOML for my configuration files. If you prefer to use JSON or YAML, you’ll need to translate my examples. You’ll also need to change the name of the file since Hugo uses the extension to determine how to process it.
 
