@@ -83,6 +83,7 @@ exampleSite
 ├── staticman.yml
 ├── content
 |   ├── about
+|   │   ├── _index.br.md
 |   │   ├── _index.fr.md
 |   │   ├── _index.md
 |   │   └── _index.pl.md
@@ -100,6 +101,7 @@ exampleSite
 |   │   ├── migrate-from-jekyll.md
 |   │   └── migrate-from-jekyll.pl.md
 |   ├── contact
+|   |   |-- _index.br.md
 |   │   ├── _index.fr.md
 |   │   ├── _index.md
 |   │   └── _index.pl.md
@@ -166,6 +168,8 @@ a feature **off**. It is structured as follows:
 |   ├── .Fr
 |   │   └── .Menu.Main
 |   ├── .Pl
+|   │   └── .Menu.Main
+|   ├── .Br
 |   │   └── .Menu.Main
 └── .Social  // Controls Links to Social Media
 ```
