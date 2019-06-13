@@ -214,6 +214,43 @@ disableLanguages        = [""]
       url               = "/contact/"
       identifier        = "far fa-envelope"
       weight            = 6
+	  
+  [Languages.br]
+    languageCode        = "br"
+    LanguageName        = "Português"
+    title               = "Hugo Future Imperfect Slim em português"
+    description         = "Um tema do HTML5 UP, portado por Julio Pescadora e reduzido por Patrick Collins. Multilíngue por StatnMap. Feito com Hugo."
+    weight              = 4
+
+    [[Languages.br.menu.main]]
+      name              = "Início"
+      url               = "/"
+      identifier        = "fas fa-home"
+      weight            = 1
+
+    [[Languages.br.menu.main]]
+      name              = "Sobre"
+      url               = "/about/"
+      identifier        = "far fa-id-card"
+      weight            = 2
+
+    [[Languages.br.menu.main]]
+      name              = "Blog"
+      url               = "/blog/"
+      identifier        = "far fa-newspaper"
+      weight            = 3
+
+    [[Languages.br.menu.main]]
+      name              = "Categorias"
+      url               = "/categories/"
+      identifier        = "fas fa-sitemap"
+      weight            = 5
+
+    [[Languages.br.menu.main]]
+      name              = "Contato"
+      url               = "/contact/"
+      identifier        = "far fa-envelope"
+      weight            = 6
 
 # Sets Social Media icons to appear and link to your account. Value should be your
 # username unless otherwise noted. These are the icons affected by socialAppearAtTop
