@@ -1,9 +1,11 @@
 {{ $permalink := $.Scratch.Get "Permalink" }}
 {{ $title := $.Scratch.Get "Title" }}
 {{ $author := $.Scratch.Get "Author" }}
+{{ $tags := $.Scratch.Get "Tags" }}
 {{ range .Site.Params.socialShare }}
   {{ if eq . "twitter" }}
-    <a href="//twitter.com/share?url={{ $permalink }}&amp;text={{ $title }}&amp" target="_blank" rel="noopener" class="share-btn twitter">
+    <!-- TODO: Add Hashtags &amp;hashtags= -->
+    <a href="//twitter.com/share?text={{ $title }}&amp;url={{ $permalink }}" target="_blank" rel="noopener" class="share-btn twitter">
         <i class="fab fa-twitter"></i><p>&nbsp;Twitter</p>
       </a>
   {{ else if eq . "facebook" }}
@@ -11,17 +13,13 @@
         <i class="fab fa-facebook"></i><p>&nbsp;Facebook</p>
         </a>
   {{ else if eq . "reddit" }}
-    <a href="//reddit.com/submit?url={{ $permalink }}&amp;title={{ $title }}" target="_blank" rel="noopener" class="share-btn reddit">
+    <a href="//www.reddit.com/submit?url={{ $permalink }}&amp;title={{ $title }}" target="_blank" rel="noopener" class="share-btn reddit">
           <i class="fab fa-reddit-alien"></i><p>&nbsp;Reddit</p>
         </a>
   {{ else if eq . "linkedin" }}
         <a href="//www.linkedin.com/shareArticle?url={{ $permalink }}&amp;title={{ $title }}" target="_blank" rel="noopener" class="share-btn linkedin">
             <i class="fab fa-linkedin"></i><p>&nbsp;LinkedIn</p>
           </a>
-  {{ else if eq . "stumbleupon" }}
-        <a href="//www.stumbleupon.com/submit?url={{ $permalink }}&amp;title={{ $title }}" target="_blank" rel="noopener" class="share-btn stumbleupon">
-          <i class="fab fa-stumbleupon"></i><p>&nbsp;StumbleUpon</p>
-        </a>
   {{ else if eq . "pinterest" }}
         <a href="//www.pinterest.com/pin/create/button/?url={{ $permalink }}&amp;description={{ $title }}" target="_blank" rel="noopener" class="share-btn pinterest">
           <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>

@@ -23,4 +23,7 @@
     {{ end }}
   {{ end }}
   {{ if .Site.Params.staticman.recaptcha.recaptcha }}<script src="https://www.google.com/recaptcha/api.js?render={{ .Site.Params.staticman.recaptcha.sitekey }}"></script>{{ end }}
+  {{ .Scratch.Set "Permalink" .Permalink }}
+  {{ .Scratch.Set "Title" .Title }}
+  {{ .Scratch.Set "Author" .Author }}
 </head>
