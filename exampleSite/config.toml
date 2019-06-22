@@ -85,22 +85,6 @@ disableLanguages        = [""]
     # Sets Social Media icons to appear on the sidebar
     socialFooter        = true
 
-  # Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
-  # due to its ease of use. Feel free to check out both and decide which you would
-  # prefer to use. See Staticman.yml for additional settings.
-  [params.staticman]
-    # Sets Statiman to be active
-    staticman           = false
-    # Sets the location for Staticman to connect to
-    username            = ""
-    repo                = ""
-    branch              = ""
-
-    [params.staticman.recaptcha]
-      recaptcha         = false
-      siteKey           = "" # Site Key
-      encryptedKey      = ""
-
 [menu]
   # Sets the menu items in the navigation bar
   # Identifier prepends a Font Awesome icon to the menu item
@@ -214,7 +198,7 @@ disableLanguages        = [""]
       url               = "/contact/"
       identifier        = "far fa-envelope"
       weight            = 6
-	  
+
   [Languages.br]
     languageCode        = "br"
     LanguageName        = "Português"

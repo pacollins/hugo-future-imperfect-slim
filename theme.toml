@@ -7,10 +7,10 @@ tags = ["HTML5", "CSS Grid", "Blog", "Responsive", "Portfolio", "Disqus",
         "Syntax Highlighting", "Company", "Font Awesome", "Projects",
         "Contact Form", "Highlight.js", "Gallery", "Multilingual", "Product",
         "Fancybox", "Academicons", "Academic", "Google Analytics", "Twitter Cards",
-        "Open Graph", "Google News", "Jquery", "Skel", "Staticman", "Netlify"]
+        "Open Graph", "Google News", "Jquery", "Skel", "Netlify"]
 features = ["Highlight.js v9.2", "Font Awesome v5.0", "Fancybox v3.5",
             "Academicons v1.8", "Google Analytics", "Disqus", "Twitter Cards",
-            "Open Graph", "Google News", "Jquery v3.2", "Skel v3.0", "Staticman",
+            "Open Graph", "Google News", "Jquery v3.2", "Skel v3.0",
             "Netlify"]
 min_version = 0.40
 

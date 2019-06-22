@@ -80,7 +80,6 @@ _exampleSite_. The structure of the folder will look like this:
 ```
 exampleSite
 ├── config.toml
-├── staticman.yml
 ├── content
 |   ├── about
 |   │   ├── _index.br.md
@@ -140,9 +139,6 @@ exampleSite
 To get started, you will want to copy _config.toml_ from _exampleSite_ to the
 root directory of your project.
 
-If you would like static comments hosted by [Staticman](https://staticman.net/),
-you will also need to copy _staticman.yml_.
-
 ### config.toml
 
 This file is important to the initial set-up of your project and contains all of
@@ -159,9 +155,7 @@ a feature **off**. It is structured as follows:
 |   ├── .Intro
 |   │   └── .Pic
 |   ├── .Sidebar
-|   ├── .Footer
-|   └── .Staticman
-|       └── .Recaptcha
+|   └── .Footer
 ├── .Languages // Controls Multilingual Settings and Navigation
 |   ├── .En
 |   │   └── .Menu.Main

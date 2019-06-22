@@ -512,49 +512,6 @@ textarea {
    }
  }
 
- /* Staticman Comments */
-
- .post-comment {
-   position: relative;
-   margin-bottom: 3em;
-   padding-left: 4.5em;
-   font-size: .8em;
- }
-
- .post-comment-avatar {
-   float: left;
-   width: 3.25em;
-   height: 3.25em;
-   margin-right: .5em;
- }
-
- .post-comment-author {
-   display: inline-block;
-   margin: 0 0 .25em;
-   font-size: 1.25em;
-   line-height: 1;
-   a {
-     color: inherit;
-     text-decoration: none;
-   }
- }
-
- .post-comment-timestamp {
-   font-size: .8em;
-   a {
-     color: inherit;
-     text-decoration: none;
-   }
- }
-
- .post-comment-content {
-   margin: 1.5em 0 0 3.75em;
-   > figure, > ol, > p,
-   > table, > ul {
-     margin-bottom: 1.5em;
-   }
- }
-
  /* Image Masks thanks to https://bennettfeely.com/clippy/ */
 
  .triangle {
