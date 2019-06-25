@@ -35,4 +35,6 @@
 {{ with .Site.Social.googlescholar }}<li><a href="//scholar.google.com/citations?user={{.}}" target="_blank" rel="noopener" title="Google Scholar"><i class="ai ai-google-scholar"></i></a></li>{{ end }}
 {{ with .Site.Social.orcid }}<li><a href="//orcid.org/{{.}}" target="_blank" rel="noopener" title="ORCID"><i class="ai ai-orcid"></i></a></li>{{ end }}
 {{ with .Site.Social.researchgate }}<li><a href="//researchgate.net/profile/{{.}}" target="_blank" rel="noopener" title="Research Gate"><i class="ai ai-researchgate"></i></a></li>{{ end }}
+{{ with .Site.Social.keybase }}<li><a href="//keybase.io/{{.}}" target="_blank" rel="noopener" title="keybase" class="fab fa-keybase"></a></li>{{ end }}
+{{ with .Site.Social.mastodon }}<li><a href="//{{.}}" target="_blank" rel="noopener" title="mastodon" class="fab fa-mastodon"></a></li>{{ end }}
 {{ with .Site.Social.email }}<li><a href="mailto:{{.}}" target="_blank" title="Email" class="far fa-envelope"></a></li>{{ end }}
