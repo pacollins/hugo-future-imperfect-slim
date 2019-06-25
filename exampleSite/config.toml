@@ -299,5 +299,7 @@ disableLanguages        = [""]
   googlescholar         = ""
   orcid                 = ""
   researchgate          = "example"
+  keybase               = "example"
+  mastodon              = "example.com/@example"
   # Email
   email                 = "example"
