@@ -26,7 +26,7 @@
                 {{ else }}
                   <form id="contact" action="//{{ .Params.emailService }}" method="post" center width="300px">
                 {{ end }}
-                <h4>{{ i18n "repliestext" }} {{ .Params.answerTime }} {{ i18n "hours" }}.</h4>
+                <h4>{{ i18n "repliestext" }} {{ .Params.contactanswertime }} {{ i18n "hours" }}.</h4>
                 <fieldset>
                   <input placeholder="{{ with .Params.placeholderName }}{{ . }}{{ else }}Name{{ end }}" type="text" name="name" tabindex="1" required autofocus>
                 </fieldset>

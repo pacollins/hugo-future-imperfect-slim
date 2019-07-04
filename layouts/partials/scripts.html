@@ -1,7 +1,7 @@
 {{ if .Site.Params.highlightjs }}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-  {{ range .Params.highlightjsLang }}<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/{{ . }}.min.js"></script>{{ end }}
-  <script>hljs.configure({languages: []}); hljs.initHighlightingOnLoad();</script>
+  {{ range .Site.Params.highlightjsLang }}<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/{{ . }}.min.js"></script>{{ end }}
+  <script>hljs.initHighlightingOnLoad();</script>
 {{ end }}
 {{ range .Site.Params.jsFiles }}
   {{ if eq . "default" }}
@@ -15,5 +15,4 @@
     <script src="{{ . | relURL }}"></script>
   {{ end }}
 {{ end }}
-<script>hljs.initHighlightingOnLoad();</script>
 {{ template "_internal/google_analytics_async.html" . }}

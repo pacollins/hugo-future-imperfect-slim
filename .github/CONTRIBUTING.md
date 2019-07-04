@@ -35,11 +35,11 @@ well as being an opportunity for people to learn how to use Git and GitHub.
 1. A [GitHub Account].
 2. Either [Git] (preferable) or [GitHub Desktop]
 3. The latest version of [Hugo][Hugo Release].
-4. The latest version of [hugo-future-imperfect][Head].
+4. The latest version of [hugo-future-imperfect-slim][Head].
 
 ### Forking
 
-Navigate to the theme repository [jpescador/hugo-future-imperfect][head],
+Navigate to the theme repository [pacollins/hugo-future-imperfect-slim][head],
 and then click **Fork** in the top right. This will create your copy of the
 theme.
 
