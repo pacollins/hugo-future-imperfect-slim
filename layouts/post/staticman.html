@@ -3,7 +3,7 @@
   <form class="post-new-comment" method="POST" action="https://{{ .api }}/v3/entry/{{ .gitprovider }}/{{ .username }}/{{ .repo }}/{{ .branch }}/comments">
 {{ end }}
     <input type="hidden" name="options[redirect]" value="{{ .Site.BaseURL }}{{ .RelPermalink }}">
-    <input type="hidden" name="options[entryId]" value="{{ .UniqueID }}">
+    <input type="hidden" name="options[entryId]" value="{{ .File.UniqueID }}">
     <input required name="fields[name]" type="text" placeholder="Your name (Required)">
     <input name="fields[website]" type="text" placeholder="Your website">
     <input required name="fields[email]" type="email" placeholder="Your email address (Required for Gravatar)">
@@ -31,7 +31,7 @@
 
 {{ $comments := readDir "data/comments" }}
 {{ $.Scratch.Add "hasComments" 0 }}
-{{ $entryId := .UniqueID }}
+{{ $entryId := .File.UniqueID }}
 
 {{ range $comments }}
   {{ if eq .Name $entryId }}
