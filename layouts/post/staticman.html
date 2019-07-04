@@ -1,7 +1,6 @@
 <h2>Say something</h2>
 {{ with .Site.Params.staticman }}
-  <form class="post-new-comment" method="POST" action="https://dev.staticman.net/v3/entry/github/{{ .username }}/{{ .repo }}/{{ .branch }}/data/comments">
-{{ end }}
+  <form class="post-new-comment" method="POST" action="https://{{ .api }}/v3/entry/{{ .gitProvider }}/{{ .username }}/{{ .repo }}/{{ .branch }}/comments">
     <input type="hidden" name="options[redirect]" value="{{ .Site.BaseURL }}{{ .RelPermalink }}">
     <input type="hidden" name="options[entryId]" value="{{ .UniqueID }}">
     <input required name="fields[name]" type="text" placeholder="Your name (Required)">
@@ -26,6 +25,7 @@
       });
     </script>
   {{ end }}
+{{ end }}
 
 <h2>Comments</h2>
 
