@@ -541,7 +541,7 @@ textarea {
  .fancybox {
    background: white;
    @include box-shadow($box-shadow-t2);
-   margin: 10px auto;
+   margin: 10em auto;
    max-width: 85%;
    padding: .5em .5em 0 .5em;
    width: fit-content;
@@ -1056,13 +1056,11 @@ textarea {
          &.categories {
            &:before {
              content: "\f07b";
-             width: 20px;
            }
          }
          &.tags {
            &:before {
              content: "\f02c";
-             width: 20px;
            }
          }
          ul {
@@ -1279,7 +1277,7 @@ textarea {
          background: $border-color;
          content: '';
          display: block;
-         height: 56px;
+         height: 1.8em;
          margin-left: 1.5em;
          width: 1px;
        }
@@ -1296,7 +1294,7 @@ textarea {
      @include for-tablet-up {
        display: block;
        text-align: center;
-       width: 61px;
+       width: 5em;
        i {
          vertical-align: middle;
        }
@@ -1317,7 +1315,7 @@ textarea {
    }
    .nav-toggle {
      text-align: center;
-     width: 61px;
+     width: 5em;
      @include for-desktop-up {
        display: none;
      }
@@ -1386,7 +1384,7 @@ textarea {
        visibility: hidden;
      }
      .share-btn {
-       height: 50px;
+       height: 4.5em;
        i {
          font-size: 1.5em;
        }
@@ -1575,7 +1573,7 @@ textarea {
      padding-left: 0;
      li {
        margin: 0 .5em;
-       min-width: 20px;
+       min-width: 1.2em;
        list-style-type: none;
        a {
          opacity: 0.6;
