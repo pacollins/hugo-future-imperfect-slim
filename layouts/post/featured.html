@@ -1,5 +1,5 @@
 {{ if .Params.featured }}
 <a href="{{ .RelPermalink }}" class="image featured">
-  <img src="/img/{{ if eq .Params.featuredpath "date" }}{{ .Page.Date.Format "2006/01" }}/{{ else }}{{ .Params.featuredpath }}{{ end }}{{ .Params.featured }}" alt="{{ .Params.featuredalt }}">
+  <img src="{{ (path.Join "img" (cond (eq .Params.featuredpath "date") (.Page.Date.Format "2006/01") (.Params.featuredpath)) .Params.featured) | relURL }}" alt="{{ .Params.featuredalt }}">
 </a>
 {{ end }}
