@@ -90,9 +90,12 @@ disableLanguages        = [""]
   # prefer to use. See Staticman.yml for additional settings.
   [params.staticman]
     # Sets Statiman to be active
-    # https://github.com/apps/staticman-net
+    # If using GitHub, go to https://github.com/apps/staticman-net
+    # If using GitLab, just add the GitLab bot, NO need to hit `/connect/v3/...`
     staticman           = false
     # Sets the location for Staticman to connect to
+    api                 = "dev.staticman.net"  # without trailing slash
+    gitProvider         = "github"  # either "github" or "gitlab"
     username            = ""
     repo                = ""
     branch              = ""
@@ -215,7 +218,7 @@ disableLanguages        = [""]
       url               = "/contact/"
       identifier        = "far fa-envelope"
       weight            = 6
-	  
+
   [Languages.br]
     languageCode        = "br"
     LanguageName        = "Português"
