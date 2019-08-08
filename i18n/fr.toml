@@ -33,7 +33,7 @@
 [404_oops]
   other = "Oops, la page que vous<br/>demandez n'existe pas."
 [404_backorreport]
-  other = "Vous pouvez retourner à la page d'accueil.<br/>En cas de souci technique avec le site, contactez-moi par le formulaire dans l'onglet « Contact ».
+  other = "Vous pouvez retourner à la page d'accueil.<br/>En cas de souci technique avec le site, contactez-moi par le formulaire dans l'onglet « Contact »."
 [404_gotohome]
   other = "Accueil"
 [404_report]
