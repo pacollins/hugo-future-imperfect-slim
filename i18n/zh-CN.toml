@@ -1,0 +1,48 @@
+[date_format]
+  other = "January 2, 2006"
+[postreadingtime]
+  other = "分钟"
+[recent_posts]
+  other = "最新文章"
+[see_more]
+  other = "查看更多"
+[read_more]
+  other = "阅读全文"
+[categories]
+  other = "分类"
+[category]
+  other = "分类"
+[tags]
+  other = "标签"
+[tag]
+  other = "标签"
+[uncategorized]
+  other = "未分类"
+[share_post]
+  other = "分享这篇文章"
+[about]
+  other = "关于"
+[learn_more]
+  other = "了解更多"
+[repliestext]
+  other = "一般回应需时"
+[hours]
+  other = "小时"
+[submit]
+  other = "送出"
+[404_oops]
+  other = "噢，您索要的页面<br/>不存在。"
+[404_backorreport]
+  other = "请返回主页。 <br/>如您发现错误，请回报问题。"
+[404_gotohome]
+  other = "返回主页"
+[404_report]
+  other = "回报问题"
+[blog]
+  other = "博客"
+[contact]
+  other = "联络"
+[next_page]
+  other = "下页"
+[previous_page]
+  other = "上页"
