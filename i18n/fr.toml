@@ -17,11 +17,11 @@
 [tag]
   other = "Tag"
 [uncategorized]
-  other = "Sans catégorie"
+  other = "Non catégorisé"
 [share_post]
   other = "Partager ce post"
 [about]
-  other = "à propos"
+  other = "A propos"
 [learn_more]
   other = "En savoir plus"
 [repliestext]
@@ -33,11 +33,11 @@
 [404_oops]
   other = "Oops, la page que vous<br/>demandez n'existe pas."
 [404_backorreport]
-  other = "Vous pourriez vouloir revenir à la page d'accueil.<br/>Si vous pensez que quelque chose est cassé, merci d'envoyer un rapport."
+  other = "Vous pouvez retourner à la page d'accueil.<br/>En cas de souci technique avec le site, contactez-moi par le formulaire dans l'onglet « Contact »."
 [404_gotohome]
-  other = "Go To Homepage"
+  other = "Accueil"
 [404_report]
-  other = "Report A Problem"
+  other = "Signaler un problème"
 [blog]
   other = "Blog"
 [contact]
