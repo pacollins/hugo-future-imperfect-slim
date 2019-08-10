@@ -1,8 +1,8 @@
 <footer id="site-footer">
   {{ if or (.Site.Params.footer.rssFooter) (.Site.Params.footer.socialFooter) }}
-      <ul class="social-icons">
+      <ul class="socnet-icons">
         {{ if .Site.Params.footer.rssFooter }}{{ partial "rss-icon" . }}{{ end }}
-        {{ if .Site.Params.footer.socialFooter }}{{ partial "social-icon" . }}{{ end }}
+        {{ if .Site.Params.footer.socialFooter }}{{ partial "socnet-icon" . }}{{ end }}
       </ul>
   {{ end }}
   <p class="copyright">

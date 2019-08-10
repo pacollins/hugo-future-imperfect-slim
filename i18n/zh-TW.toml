@@ -1,0 +1,48 @@
+[date_format]
+  other = "January 2, 2006"
+[postreadingtime]
+  other = "分鐘"
+[recent_posts]
+  other = "最新文章"
+[see_more]
+  other = "查看更多"
+[read_more]
+  other = "閱讀全文"
+[categories]
+  other = "分類"
+[category]
+  other = "分類"
+[tags]
+  other = "標籤"
+[tag]
+  other = "標籤"
+[uncategorized]
+  other = "未分類"
+[share_post]
+  other = "分享這篇文章"
+[about]
+  other = "關於"
+[learn_more]
+  other = "了解更多"
+[repliestext]
+  other = "一般回應需時"
+[hours]
+  other = "小時"
+[submit]
+  other = "送出"
+[404_oops]
+  other = "噢，您索要的頁面<br/>不存在。"
+[404_backorreport]
+  other = "請返回主頁。<br/>如您發現錯誤，請回報問題。"
+[404_gotohome]
+  other = "返回主頁"
+[404_report]
+  other = "回報問題"
+[blog]
+  other = "博客"
+[contact]
+  other = "聯絡"
+[next_page]
+  other = "下頁"
+[previous_page]
+  other = "上頁"
