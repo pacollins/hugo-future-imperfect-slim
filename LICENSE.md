@@ -1,8 +1,7 @@
 The MIT License (MIT)
 
-Copyright (c) 2019 Patrick Collins
-Copyright (c) 2017 Julio Pescador
-Copyright (c) 2015 HTML5Up
+Derived work copyright (c) 2017 Julio Pescador
+Modified work copyright (c) 2019 Patrick Collins
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
@@ -20,3 +19,12 @@ FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+
+Original HTML5 UP's Future Imperfect theme
+================================================================================
+
+The Creative Commons Attribution 3.0 License (CC-BY 3.0)
+
+Copyright (c) 2015 HTML5 UP
