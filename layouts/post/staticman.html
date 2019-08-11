@@ -11,7 +11,7 @@
     {{ if .Site.Params.staticman.recaptcha.recaptcha }}
       <input hidden name="options[reCaptcha][siteKey]" value="{{ .Site.Params.staticman.recaptcha.sitekey }}">
       <input hidden name="options[reCaptcha][secret]" value="{{ .Site.Params.staticman.recaptcha.encryptedkey }}">
-      <div class="g-recaptcha" data-sitekey=".Site.Params.staticman.recaptcha.sitekey"></div>
+      <div class="g-recaptcha" data-sitekey="{{ .Site.Params.staticman.recaptcha.sitekey }}"></div>
     {{ end }}
     <input type="submit" value="Submit">
   </form>
