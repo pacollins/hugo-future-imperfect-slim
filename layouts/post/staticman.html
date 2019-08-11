@@ -8,10 +8,12 @@
     <input name="fields[website]" type="text" placeholder="Your website">
     <input required name="fields[email]" type="email" placeholder="Your email address (Required for Gravatar)">
     <textarea required name="fields[body]" placeholder="Your message. Feel free to use Markdown (Google 'Markdown Cheat Sheet')." rows="10"></textarea>
-    {{ if .Site.Params.staticman.recaptcha.recaptcha }}
-      <input hidden name="options[reCaptcha][siteKey]" value="{{ .Site.Params.staticman.recaptcha.sitekey }}">
-      <input hidden name="options[reCaptcha][secret]" value="{{ .Site.Params.staticman.recaptcha.encryptedkey }}">
-      <div class="g-recaptcha" data-sitekey=".Site.Params.staticman.recaptcha.sitekey"></div>
+    {{ if and .Site.Params.staticman.recaptcha.siteKey .Site.Params.staticman.recaptcha.encryptedKey }}
+    {{ with .Site.Params.staticman.recaptcha }}
+      <input hidden name="options[reCaptcha][siteKey]" value="{{ .sitekey }}">
+      <input hidden name="options[reCaptcha][secret]" value="{{ .encryptedkey }}">
+      <div class="g-recaptcha" data-sitekey="{{ .sitekey }}"></div>
+    {{ end }}
     {{ end }}
     <input type="submit" value="Submit">
   </form>

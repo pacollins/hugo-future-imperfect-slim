@@ -22,7 +22,7 @@
       <link rel="stylesheet" href="{{ . | relURL }}">
     {{ end }}
   {{ end }}
-  {{ if .Site.Params.staticman.recaptcha.recaptcha }}<script src='https://www.google.com/recaptcha/api.js'></script>{{ end }}
+  {{ if and .Site.Params.staticman.recaptcha.siteKey .Site.Params.staticman.recaptcha.encryptedKey }}<script src='https://www.google.com/recaptcha/api.js'></script>{{ end }}
   {{ .Scratch.Set "Permalink" .Permalink }}
   {{ .Scratch.Set "Title" .Title }}
   {{ .Scratch.Set "Author" .Author }}
