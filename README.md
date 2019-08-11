@@ -147,7 +147,7 @@ you will also need to copy _staticman.yml_.
 
 This file is important to the initial set-up of your project and contains all of
 the customizations that the developers feel as though you should have easy access
-to. Each prarameter listed should include a comment to help describe it's function.
+to. Each parameter listed should include a comment to help describe it's function.
 Unless otherwise state, _true_ will turn a feature **on**, while _false_ will turn
 a feature **off**. It is structured as follows:
 
