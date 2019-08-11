@@ -23,6 +23,6 @@ Quelques faits amusants sur [Hugo] (http://gohugo.io/):
 * Principalement développé par [spf13] (http://spf13.com/) dans le train lors d'un trajet aller-retour pour Manhattan.
 * Codé dans [Vim] (http://vim.org) en utilisant [spf13-vim] (http://vim.spf13.com/)
 
-Vous avez des questions ou des suggestions? N'hésitez pas à [ouvrir un numéro sur GitHub] (https://github.com/spf13/hugo/issues/new) ou [demandez-moi sur Twitter] (https://twitter.com/spf13).
+Vous avez des questions ou des suggestions? N'hésitez pas à [ouvrir un ticket sur GitHub] (https://github.com/spf13/hugo/issues/new) ou [demandez-moi sur Twitter] (https://twitter.com/spf13).
 
 Merci d'avoir lu!
