@@ -8,24 +8,15 @@
     <input name="fields[website]" type="text" placeholder="Your website">
     <input required name="fields[email]" type="email" placeholder="Your email address (Required for Gravatar)">
     <textarea required name="fields[body]" placeholder="Your message. Feel free to use Markdown (Google 'Markdown Cheat Sheet')." rows="10"></textarea>
-    {{ if .Site.Params.staticman.recaptcha.recaptcha }}
-      <input type="hidden" name="options[reCaptcha][siteKey]" value="{{ .Site.Params.staticman.recaptcha.sitekey }}">
-      <input type="hidden" name="options[reCaptcha][secret]" value="{{ .Site.Params.staticman.recaptcha.encryptedkey }}">
-      <input type="hidden" id="g-recaptcha-response" name="g-recaptcha-response">
+    {{ if and .Site.Params.staticman.recaptcha.siteKey .Site.Params.staticman.recaptcha.encryptedKey }}
+    {{ with .Site.Params.staticman.recaptcha }}
+      <input hidden name="options[reCaptcha][siteKey]" value="{{ .sitekey }}">
+      <input hidden name="options[reCaptcha][secret]" value="{{ .encryptedkey }}">
+      <div class="g-recaptcha" data-sitekey="{{ .sitekey }}"></div>
+    {{ end }}
     {{ end }}
     <input type="submit" value="Submit">
   </form>
-  {{ if .Site.Params.staticman.recaptcha.recaptcha }}
-    <script>
-      grecaptcha.ready(function() {
-        grecaptcha.execute('{{ .Site.Params.staticman.recaptcha.sitekey }}', {action: 'homepage'})
-        .then(function(token) {
-           //console.log(token);
-           document.getElementByID('g-recaptcha-response').value=token;
-        });
-      });
-    </script>
-  {{ end }}
 
 <h2>Comments</h2>
 
