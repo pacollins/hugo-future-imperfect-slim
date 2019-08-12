@@ -25,6 +25,6 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 Original HTML5 UP's Future Imperfect theme
 ================================================================================
 
-The Creative Commons Attribution 3.0 License (CC-BY 3.0)
-
-Copyright (c) 2015 HTML5 UP
+"[Future Imperfect](https://html5up.net/future-imperfect)" is licensed by
+[@ajlkn](https://github.com/ajlkn) under
+[CC BY 3.0](https://creativecommons.org/licenses/by/3.0/).
