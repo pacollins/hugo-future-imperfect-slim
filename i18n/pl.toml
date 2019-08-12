@@ -42,3 +42,5 @@
  other = "Następna strona"
 [previous_page]
  other = "Poprzednia strona"
+[attribution]
+  other = "Wspierane przez <a href='//gohugo.io' target='_blank' rel='noopener'>Hugo v{{ .Site.Hugo.Version }}</a>.  Motyw <a href='//themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a> został zaadaptowany z <a href='//html5up.net/future-imperfect' target='_blank' rel='noopener'>Future Imperfect</a>, którego jest autorem <a href='//github.com/akjln' target='_blank' rel='noopener'>@akjln</a> na licencji <a href='//creativecommons.org/licenses/by/3.0/' target='_blank' rel='noopener'>CC-BY 3.0</a>."
