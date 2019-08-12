@@ -480,10 +480,10 @@ textarea {
 
  /* ----------------------------------Add-Ons--------------------------------- */
 
- /* Remove Recaptcha Badge */
+ /* Format reCaptcha */
 
- div.grecaptcha-badge {
-   display: none !important;
+ .g-recaptcha {
+   margin: -0.25em 0 0.25em 0;
  }
 
  /* Fancybox */

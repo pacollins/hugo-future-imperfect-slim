@@ -154,6 +154,7 @@ access to. Each prarameter listed should include a comment to help describe it's
 function.  Unless otherwise state, _true_ will turn a feature **on**, while
 _false_ will turn a feature **off**. It is structured as follows:
 
+
 ```
 .Site
 ├── .Params // Controls Carious Settings

@@ -101,7 +101,7 @@ disableLanguages        = [""]
     branch              = ""
 
     [params.staticman.recaptcha]
-      recaptcha         = false
+      # Both keys must be present to enable recaptcha
       siteKey           = "" # Site Key
       encryptedKey      = ""
 
