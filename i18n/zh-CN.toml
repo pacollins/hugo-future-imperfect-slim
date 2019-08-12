@@ -47,4 +47,4 @@
 [previous_page]
   other = "上页"
 [attribution]
-  other = "由 <a href='//gohugo.io' target='_blank' rel='noopener'>Hugo v{{ .Site.Hugo.Version }}</a> 提供。主题 <a href='//themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a> 移植自 <a href='//html5up.net/future-imperfect' target='_blank' rel='noopener'>Future Imperfect</a>。\"Future Imperfect\" 乃 <a href='//github.com/akjln' target='_blank' rel='noopener'>@akjln</a> 所作，采用<a href='//creativecommons.org/licenses/by/3.0/' target='_blank' rel='noopener'>创用 CC 姓名标示 3.0</a>授权。"
+  other = "由 <a href='//gohugo.io' target='_blank' rel='noopener'>Hugo v{{ .Site.Hugo.Version }}</a> 提供。主题 <a href='//themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a> 移植自 <a href='//html5up.net/future-imperfect' target='_blank' rel='noopener'>Future Imperfect</a>。"

@@ -230,9 +230,9 @@ for everyone that has directly contributed to this version of the theme.
 
 ## License
 
-The adaptation of the original theme is released under the MIT license.
+This theme is released under the
+[Creative Commons Attribution 3.0 License](https://creativecommons.org/licenses/by/3.0/).
 "[Future Imperfect](https://html5up.net/future-imperfect)" is a theme by
-[@ajlkn](https://github.com/ajlkn) licensed under
-[CC BY SA 3.0](https://creativecommons.org/licenses/by/3.0/).  Please read the
+[HTML5 UP](http://html5up.net) licensed under the same terms.  Please read the
 [license](https://github.com/pacollins/hugo-future-imperfect-slim/blob/master/LICENSE.md)
 for more information.

@@ -47,4 +47,4 @@
 [previous_page]
   other = "Previous Page"
 [attribution]
-  other = "Powered by <a href='//gohugo.io' target='_blank' rel='noopener'>Hugo v{{ .Site.Hugo.Version }}</a>.  Theme <a href='//themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a> adapted from <a href='//html5up.net/future-imperfect' target='_blank' rel='noopener'>Future Imperfect</a>, which is licensed by <a href='//github.com/akjln' target='_blank' rel='noopener'>@akjln</a> under <a href='//creativecommons.org/licenses/by/3.0/' target='_blank' rel='noopener'>CC BY 3.0</a>."
+  other = "Powered by <a href='//gohugo.io' target='_blank' rel='noopener'>Hugo v{{ .Site.Hugo.Version }}</a>.  Theme <a href='//themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a> adapted from <a href='//html5up.net/future-imperfect' target='_blank' rel='noopener'>Future Imperfect</a>."
