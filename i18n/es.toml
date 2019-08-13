@@ -1,0 +1,48 @@
+[date_format]
+  other = "2 de Enero, 2006"
+[postreadingtime]
+  other = "minutos"
+[recent_posts]
+  other = "Posts recientes"
+[see_more]
+  other = "Ver más"
+[read_more]
+  other = "Leer más"
+[categories]
+  other = "Categorías"
+[category]
+  other = "Categoría"
+[tags]
+  other = "Tags"
+[tag]
+  other = "Tag"
+[uncategorized]
+  other = "Sin categoría"
+[share_post]
+  other = "Compartir post"
+[about]
+  other = "Sobre"
+[learn_more]
+  other = "Saber más"
+[repliestext]
+  other = "Responde normalmente en"
+[hours]
+  other = "horas"
+[submit]
+  other = "Enviar"
+[404_oops]
+  other = "Ups, lapágina que estas <br/>buscando no exite."
+[404_backorreport]
+  other = "Seguramente quieras vover a la página principal.<br/>Si crees que algo no va bien, avísalo."
+[404_gotohome]
+  other = "Ir a la página principal"
+[404_report]
+  other = "Avisar de un problema"
+[blog]
+  other = "Blog"
+[contact]
+  other = "Contacto"
+[next_page]
+  other = "Página siguiente"
+[previous_page]
+  other = "Página anterior"
