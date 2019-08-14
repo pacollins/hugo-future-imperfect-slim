@@ -46,3 +46,5 @@
   other = "Página siguiente"
 [previous_page]
   other = "Página anterior"
+[attribution]
+  other = "Impulsado por <a href='//gohugo.io' target='_blank' rel='noopener'>Hugo v{{ .Site.Hugo.Version }}</a>.  Tema <a href='//themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a> adaptado de <a href='//html5up.net/future-imperfect' target='_blank' rel='noopener'>Future Imperfect</a>."
