@@ -16,11 +16,11 @@ well as being an opportunity for people to learn how to use Git and GitHub.
 
 - [Table of Contents](#table-of-contents)
 - [Getting Set Up](#getting-set-up)
-	- [Requirements](#requirements)
-	- [Forking](#forking)
-	- [Syncing](#syncing)
-		- [Git Bash, Command Prompt, PowerShell](#git-bash-command-prompt-powershell)
-		- [GitHub Desktop](#github-desktop)
+  - [Requirements](#requirements)
+  - [Forking](#forking)
+  - [Syncing](#syncing)
+    - [Git Bash, Command Prompt, PowerShell](#git-bash-command-prompt-powershell)
+    - [GitHub Desktop](#github-desktop)
 - [Creating an Issue Ticket](#creating-an-issue-ticket)
 - [Creating a Pull Request](#creating-a-pull-request)
 - [Style Guide](#style-guide)
@@ -73,7 +73,7 @@ worked on and we can manage it that way.
 
    ```
    git remote add upstream https://github.com/pacollins/hugo-future-imperfect-slim.git
-   ````
+   ```
 
    You have now connected your fork with `pacollins/hugo-future-imperfect-slim`,
    the `upstream`.
@@ -82,7 +82,7 @@ worked on and we can manage it that way.
 
    ```
    git remote -v
-   ````
+   ```
 
    Which should return:
 
@@ -123,50 +123,51 @@ worked on and we can manage it that way.
 
 1. **Create A Local Copy**
 
-   1. **File** -> **Clone Repository...**
-   2. Select your fork, `YOUR_USERNAME\hugo-future-imperfect-slim`
-   3. Choose your local path
-   4. Press **Clone**
+    1. **File** -> **Clone Repository...**
+    2. Select your fork, `YOUR_USERNAME\hugo-future-imperfect-slim`
+    3. Choose your local path
+    4. Press **Clone**
 
-   You have now cloned your fork to the location specified.
+    You have now cloned your fork to the location specified.
 
 2. **Syncing Fork with Original** and **Keeping it Synced**
 
-   This is currently not possible via GitHub Desktop, but is on the feature list
-   for [v1.1][GitHub Desktop 1.1]. Keep an eye out for that release.
+    This is currently not possible via GitHub Desktop, but is on the feature
+    list for [v1.1][GitHub Desktop 1.1]. Keep an eye out for that release.
 
-   In the meantime, the *best* way to stay in sync is to create a pull request
-   where the `base fork` is `YOUR_USERNAME/hugo-future-imperfect-slim` and the `head
-   fork` is `pacollins/hugo-future-imperfect-slim`.
+    In the meantime, the *best* way to stay in sync is to create a pull request
+    where the `base fork` is `YOUR_USERNAME/hugo-future-imperfect-slim` and the
+    `head fork` is `pacollins/hugo-future-imperfect-slim`.
 
 ## Creating an Issue Ticket
 
-When you go to create an issue ticket, you will notice [a template][issue template]
-appears. Please adhere to this for the sake of consistency and organization. A
-couple of things to note from that template are:
+When you go to create an issue ticket, you will notice
+[a template][issue template] appears. Please adhere to this for the sake of
+consistency and organization. A couple of things to note from that template are:
 
 1. **Check all the prerequisites**
 
-   Make sure you have done all the steps at the top before submitting the issue
-   ticket. Redundancy can easily clutter the repository meaning less time
-   working on the theme and more time having to do clean-up. They are as follows:
+    Make sure you have done all the steps at the top before submitting the issue
+    ticket. Redundancy can easily clutter the repository meaning less time
+    working on the theme and more time having to do clean-up. They are as
+    follows:
 
-   - [ ] I am running the [latest version of Hugo][Hugo Release]
-   - [ ] I am using the [latest version of Hugo-Future-Imperfect][Theme Sync]
-   - [ ] I checked the [documentation] and found no answer
-   - [ ] I checked the [issues][All Issues] to make sure that this issue has not
-   already been filed
+    - [ ] I am running the [latest version of Hugo][Hugo Release]
+    - [ ] I am using the [latest version of Hugo-Future-Imperfect][Theme Sync]
+    - [ ] I checked the [documentation] and found no answer
+    - [ ] I checked the [issues][All Issues] to make sure that this issue has
+    not already been filed
 
 2. **Be very clear with your descriptions.**
 
-   Err on the side of too much information. It helps track the problem down
-   quicker or figure out how to implement it easier.
+    Err on the side of too much information. It helps track the problem down
+    quicker or figure out how to implement it easier.
 
 ## Creating a Pull Request
 
-In an effort to increase simplicy of the theme, we are going to try to implement
-this [branching model]. For most people, this will be common sense. If you are
-new to Git, it's a good read that explains it well concisely.
+In an effort to increase simplicity of the theme, we are going to try to
+implement this [branching model]. For most people, this will be common sense. If
+you are new to Git, it's a good read that explains it well concisely.
 
 When contributing to the project, please keep your `master` branch in sync with
 the upstream `master` branch. Each new feature should have a new branch labeled
@@ -176,32 +177,35 @@ preferably `YOUR_USERNAME`. This helps keep track of all changes and keeps the
 [network] clean and easy to navigate. This is especially useful if some decides
 to fork on their own, but may implement features we may want for the original.
 
-When you go to create a pull request, you will also notice [a template][Pull Request Template]
-appears. Again, please adhere to this for the sake of consistency and
-organization. A couple of things to note from that template are:
+When you go to create a pull request, you will also notice
+[a template][Pull Request Template] appears. Again, please adhere to this for
+the sake of consistency and organization. A couple of things to note from that
+template are:
 
 1. **Check all the prerequisites**
 
-   Make sure you have done all the steps at the top before submitting the pull
-   request. Redundancy can easily clutter the repository meaning less time
-   working on the theme and more time having to do clean-up. They are as follows:
+    Make sure you have done all the steps at the top before submitting the pull
+    request. Redundancy can easily clutter the repository meaning less time
+    working on the theme and more time having to do clean-up. They are as
+    follows:
 
-   - [ ] I am running the [latest version of Hugo][Hugo Release]
-   - [ ] I am using the [latest version of Hugo-Future-Imperfect][Theme Sync]
-   - [ ] I checked the [issues][All Issues]
-  to make sure that this feature has not been rejected before
-   - [ ] I checked the [pull requests][All Pull Requests]
-  to make sure that this feature is not already being developed
+    - [ ] I am running the [latest version of Hugo][Hugo Release]
+    - [ ] I am using the [latest version of Hugo-Future-Imperfect][Theme Sync]
+    - [ ] I checked the [issues][All Issues]
+    to make sure that this feature has not been rejected before
+    - [ ] I checked the [pull requests][All Pull Requests]
+    to make sure that this feature is not already being developed
 
 2. **Always include any related issues**
 
-   Make sure in the comments that you include any issues this closes by writing
-   `Closes #XXX` under *Motivation and Context*. This will automatically close
-   the issue when the pull request is accepted.
+    Make sure in the comments that you include any issues this closes by writing
+    `Closes #XXX` under *Motivation and Context*. This will automatically close
+    the issue when the pull request is accepted.
 
 ## Style Guide
 
-For the sake of consistency, please use the [Google HTML 5 and CSS 3 Style Guide].
+For the sake of consistency, please use the
+[Google HTML 5 and CSS 3 Style Guide].
 
 ## Thank You
 
