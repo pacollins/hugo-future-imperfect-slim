@@ -61,7 +61,7 @@ Você tem duas maneiras de criar uma skin. A mais simples é criar no diretório
 
 Sua segunda opção é criar um sub-diretório dentro do ```themes/``` diretório. Se for assim, então você deve informar ao Hugo onde encontrar a skin. É um trabalho extra, então, por que se preocupar com isso?
 
-A diferença entre criar uma skin em ```layouts/``` e criá-la dentro de ```themes/``` é sutil. Uma skin em ```layouts/``` não pode ser customizada sem atualização do template e arquivos estáticos dos quais foram construídos. A skin criada em ```themes/```, por outro lado, pode ser e facilita para que outras pessoas a utilizem.  
+A diferença entre criar uma skin em ```layouts/``` e criá-la dentro de ```themes/``` é sutil. Uma skin em ```layouts/``` não pode ser customizada sem atualização do template e arquivos estáticos dos quais foram construídos. A skin criada em ```themes/```, por outro lado, pode ser e facilita para que outras pessoas a utilizem.
 
 O restante deste tutorial irá chamar a skin criada no diretório ```themes/``` de tema.
 
@@ -76,7 +76,7 @@ A home page, or landing page, é a primeira página que os visitantes do seu sit
 
 Quando o Hugo executa, ele procura pelo arquivo de configuração que contém as opções que fazem override dos valores default para todo o site. O arquivo utilizado pode ser TOML, YAML ou JSON. Eu prefiro TOML para os meus arquivos de configuração. Se você prefere JSON ou YAML, irá precisar traduzir os meus exemplos. Também irá precisar trocar o nome do arquivo, já que o Hugo utiliza a extensão para determinar como processá-lo.
 
-Hugo traduz os arquivos Markdown para HTML. Por padrão, Hugo espera encontrar arquivos Markdown no diretório ```content/``` e arquivos de template no seu diretório 
+Hugo traduz os arquivos Markdown para HTML. Por padrão, Hugo espera encontrar arquivos Markdown no diretório ```content/``` e arquivos de template no seu diretório
 ```themes/```. Ele irá criar os arquivos HTML no diretório ```public/```. Você pode alterá-lo especificando o novo diretório no arquivo de configuração.
 
 ### Conteúdo
@@ -991,7 +991,7 @@ $ cat public/index.html
     <h1><a href="http://localhost:1313/post/first-post/">first</a></h1>
 <script>document.write('<script src="http://'
         + (location.host || 'localhost').split(':')[0]
-		+ ':1313/livereload.js?mindelay=10"></'
+        + ':1313/livereload.js?mindelay=10"></'
         + 'script>')</script></body>
 </html>
 ```
@@ -1041,8 +1041,8 @@ Knowing that hugo is using the slug to generate the file name, the simplest solu
 ```
 $ vi config.toml
 [permalinks]
-	page = "/:title/"
-	about = "/:filename/"
+  page = "/:title/"
+  about = "/:filename/"
 ```
 
 Generate the web site and verify that this didn't work. Hugo lets "slug" or "URL" override the permalinks setting in the configuration file. Go ahead and comment out the slug in content/about.md, then generate the web site to get it to be created in the right place.
@@ -1062,7 +1062,7 @@ $ vi themes/zafta/layouts/partials/header.html
 <!DOCTYPE html>
 <html>
 <head>
-	<title>{{ .Title }}</title>
+  <title>{{ .Title }}</title>
 </head>
 <body>
 :wq
