@@ -893,7 +893,7 @@ textarea {
        'footer main'
        'blank main';
      grid-template-columns: 22em 1fr;
-     grid-template-rows: 22em auto auto 1fr;
+     grid-template-rows: auto auto auto 1fr;
      padding: 0 2.5em;
    }
    &.overlay {

@@ -16,7 +16,9 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
       <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.9.0/css/all.css" integrity="sha384-i1LQnF23gykqWXg6jxC2ZbCbUMxyw5gLZY6UiUS98LYV5unm8GWmfkIS6jqJfb4E" crossorigin="anonymous">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.css" />
-      <link rel="stylesheet" href="{{ "css/main.min.css" | relURL }}">
+      {{ $mainCSSOptions := (dict "targetPath" "css/main.min.css" "outputStyle" "compressed") }}
+      {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $mainCSSOptions | resources.Fingerprint }}
+      <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
       <link rel="stylesheet" href="{{ "css/add-on.css" | relURL }}">
     {{ else }}
       <link rel="stylesheet" href="{{ . | relURL }}">
