@@ -47,4 +47,4 @@
 [previous_page]
   other = "Página anterior"
 [attribution]
-  other = "Projetado por <a href='//themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>@pacollins</a>. Adaptado de <a href='//html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5UP</a>.&nbsp;<i class='fab fa-creative-commons-by'></i>&nbsp;3.0"
+  other = "Tema: <a href='https://themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect</a><br>Adaptado de <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | Impulsionado por <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
