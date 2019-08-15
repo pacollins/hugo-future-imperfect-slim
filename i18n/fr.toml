@@ -46,3 +46,5 @@
   other = "Page suivante"
 [previous_page]
   other = "Page précédente"
+[attribution]
+  other = "Thème : <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>Un <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>portage de HTML5 UP</a> | Propulsé par <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"

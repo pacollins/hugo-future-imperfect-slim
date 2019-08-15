@@ -1,5 +1,5 @@
 [date_format]
-  other = "2-1-2006"  
+  other = "2-1-2006"
 [postreadingtime]
   other = "Czas odczytu"
 [recent_posts]
@@ -12,6 +12,10 @@
   other = "Kategorie"
 [category]
   other = "Kategoria"
+[tags]
+  other = "Tagi"
+[tag]
+  other = "Tag"
 [uncategorized]
   other = "Bez kategorii"
 [share_post]
@@ -42,3 +46,5 @@
  other = "Następna strona"
 [previous_page]
  other = "Poprzednia strona"
+[attribution]
+  other = "Motyw: <a href='https://themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>Przyjęty z <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | Wspierane przez <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"

@@ -11,12 +11,12 @@
     {{ else }}
       &copy; {{ .Site.LastChange.Year }}
       {{if isset .Site.Params "author" }}
-        {{ .Site.Params.author}}
+        {{ .Site.Params.author }}
       {{ else }}
         {{ .Site.Title }}
       {{ end }}
-    {{end}}.
-    Powered by <a href="//gohugo.io" target="_blank" rel="noopener">Hugo</a>
+    {{ end }}. <br>
+    {{ i18n "attribution" . | safeHTML }}
   </p>
 </footer>
 <a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
