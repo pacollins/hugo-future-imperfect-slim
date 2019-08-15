@@ -2,7 +2,7 @@
     <article class="post">
         {{ template "_internal/disqus.html" . }}
     </article>
-{{ else if .Site.Params.staticman }}
+{{ else if .Site.Params.staticman.staticman }}
     <article class="post">
       {{ .Render "staticman" }}
     </article>
