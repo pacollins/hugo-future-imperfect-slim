@@ -80,61 +80,47 @@ _exampleSite_. The structure of the folder will look like this:
 ```
 exampleSite
 ├── config.toml
-├── staticman.yml
 ├── content
-|   ├── about
-|   │   ├── _index.br.md
-|   │   ├── _index.fr.md
-|   │   ├── _index.md
-|   │   └── _index.pl.md
-|   ├── blog
-|   │   ├── creating-a-new-theme.fr.md
-|   │   ├── creating-a-new-theme.md
-|   │   ├── creating-a-new-theme.pl.md
-|   │   ├── goisforlovers.fr.md
-|   │   ├── goisforlovers.md
-|   │   ├── goisforlovers.pl.md
-|   │   ├── hugoisforlovers.fr.md
-|   │   ├── hugoisforlovers.md
-|   │   ├── hugoisforlovers.pl.md
-|   │   ├── migrate-from-jekyll.fr.md
-|   │   ├── migrate-from-jekyll.md
-|   │   └── migrate-from-jekyll.pl.md
-|   ├── contact
-|   |   |-- _index.br.md
-|   │   ├── _index.fr.md
-|   │   ├── _index.md
-|   │   └── _index.pl.md
-|   └── itemized
-|       ├── item1.fr.md
-|       ├── item1.md
-|       ├── item1.pl.md
-|       ├── item2.fr.md
-|       ├── item2.md
-|       ├── item2.pl.md
-|       ├── item3.fr.md
-|       ├── item3.md
-|       ├── item3.pl.md
-|       ├── item4.fr.md
-|       ├── item4.md
-|       └── item4.pl.md
-├── data
-│   └── comments
-│       └── .gitkeep
-└── static
-    ├── css
-    │   └── add-on.css
-    ├── img
-    |   ├── 2014
-    |   |   ├── 04
-    |   |   |   ├── pic01.jpg
-    |   |   |   └── pic02.jpg
-    |   |   └── 09
-    |   |       └── pic03.jpg
-    |   └── main
-    |       └── logo.jpg
-    └── js
-        └── add-on.js
+│   ├── about
+│   │   ├── _index.br.md
+│   │   ├── _index.fr.md
+│   │   ├── _index.md
+│   │   └── _index.pl.md
+│   ├── blog
+│   │   ├── creating-a-new-theme.br.md
+│   │   ├── creating-a-new-theme.fr.md
+│   │   ├── creating-a-new-theme.md
+│   │   ├── creating-a-new-theme.pl.md
+│   │   ├── examples.md
+│   │   ├── goisforlovers.fr.md
+│   │   ├── goisforlovers.md
+│   │   ├── goisforlovers.pl.md
+│   │   ├── hugoisforlovers.fr.md
+│   │   ├── hugoisforlovers.md
+│   │   ├── hugoisforlovers.pl.md
+│   │   ├── migrate-from-jekyll.fr.md
+│   │   ├── migrate-from-jekyll.md
+│   │   └── migrate-from-jekyll.pl.md
+│   └── contact
+│       ├── _index.br.md
+│       ├── _index.fr.md
+│       ├── _index.md
+│       └── _index.pl.md
+├── static
+│   ├── css
+│   │   └── add-on.css
+│   ├── img
+│   │   ├── 2014
+│   │   │   ├── 04
+│   │   │   │   ├── pic01.jpg
+│   │   │   │   └── pic02.jpg
+│   │   │   └── 09
+│   │   │       └── pic03.jpg
+│   │   └── main
+│   │       └── logo.jpg
+│   └── js
+│       └── add-on.js
+└── staticman.yml
 ```
 
 To get started, you will want to copy _config.toml_ from _exampleSite_ to the
