@@ -11,6 +11,7 @@ disableLanguages        = [""]
 
 [params]
   mainSections          = ["blog", "post"]
+  enableCDN             = false
   # Loads CSS and JavaScript files. The variable is an array so that you can load
   # multiple/additional files if necessary. The standard theme files can be loaded
   # by adding the value, "default". Default includes the add-on.css and and-on.js.

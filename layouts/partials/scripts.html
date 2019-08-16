@@ -1,18 +1,36 @@
-{{ if .Site.Params.highlightjs }}
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-  {{ range .Site.Params.highlightjsLang }}<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/{{ . }}.min.js"></script>{{ end }}
-  <script>hljs.initHighlightingOnLoad();</script>
-{{ end }}
-{{ range .Site.Params.jsFiles }}
-  {{ if eq . "default" }}
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/skel/3.0.1/skel.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.3.5/jquery.fancybox.min.js"></script>
-  <script src={{ "js/util.js" | relURL }}></script>
-  <script src={{ "js/main.js" | relURL }}></script>
-  <script src={{ "js/add-on.js" | relURL }}></script>
-  {{ else }}
-    <script src="{{ . | relURL }}"></script>
+{{ if .Site.Params.enableCDN }}
+  {{ if .Site.Params.highlightjs }}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/highlight.min.js"></script>
+    {{ range .Site.Params.highlightjsLang }}<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.9/languages/{{ . }}.min.js"></script>{{ end }}
+    <script>hljs.initHighlightingOnLoad();</script>
+  {{ end }}
+  {{ range .Site.Params.jsFiles }}
+    {{ if eq . "default" }}
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"></script>
+    <script src={{ "js/util.js" | relURL }}></script>
+    <script src={{ "js/main.js" | relURL }}></script>
+    <script src={{ "js/add-on.js" | relURL }}></script>
+    {{ else }}
+      <script src="{{ . | relURL }}"></script>
+    {{ end }}
+  {{ end }}
+{{ else }}
+  {{ if .Site.Params.highlightjs }}
+    <script src="{{ "js/hightjs.min.js" | relURL }}"></script>
+    {{ range .Site.Params.highlightjsLang }}<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/languages/{{ . }}.min.js"></script>{{ end }}
+    <script>hljs.initHighlightingOnLoad();</script>
+  {{ end }}
+  {{ range .Site.Params.jsFiles }}
+    {{ if eq . "default" }}
+    <script src="{{ "js/jquery.min.js" | relURL }}"></script>
+    <script src="{{ "js/fancybox.min.js" | relURL }}"></script>
+    <script src="{{ "js/util.js" | relURL }}"></script>
+    <script src="{{ "js/main.js" | relURL }}"></script>
+    <script src="{{ "js/add-on.js" | relURL }}"></script>
+    {{ else }}
+      <script src="{{ . | relURL }}"></script>
+    {{ end }}
   {{ end }}
 {{ end }}
 {{/* Backwards compatibility for deprecated parameter ".Site.Params.staticman.staticman" */}}
