@@ -48,3 +48,29 @@
   other = "Previous Page"
 [attribution]
   other = "Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
+[comments]
+  other = "Comments"
+[say_sth]
+  other = "Say something"
+[name]
+  other = "Your name (Required)"
+[email]
+  other = "Your email address (Required for Gravatar)"
+[website]
+  other = "Your website"
+[body]
+  other = "Your message. Feel free to use Markdown (Google 'Markdown Cheat Sheet')."
+[no_comment]
+  other = "Nothing yet."
+[reply]
+  other = "Reply"
+[btn_reset]
+  other = "Reset"
+[btn_submitted]
+  other = "Submitted"
+[btn_sumbit]
+  other = "Submit"
+[error_msg]
+  other = "Sorry, there was an error with your submission.  Please make sure all required fields have been completed and try again."
+[success_msg]
+  other = "Thanks for your comment! It will show on the site once it has been approved."

@@ -7,7 +7,7 @@ comments:
   #
   # Names of the fields the form is allowed to submit. If a field that is
   # not here is part of the request, an error will be thrown.
-  allowedFields: ["name", "email", "website", "body"]
+  allowedFields: ["name", "email", "website", "body", "replyID", "replyName", "replyThread"]
 
   # When allowedOrigins is defined, only requests sent from one of the domains
   # listed will be accepted.
@@ -15,8 +15,8 @@ comments:
 
   # (*) REQUIRED
   #
-  # Name of the branch being used. Must match the one sent in the URL of the
-  # request.
+  # Name of the branch being used. Must match the branch configured in
+  # "config.toml".
   branch: "master"
 
   # List of fields to be populated automatically by Staticman and included in
@@ -58,8 +58,14 @@ comments:
   transforms:
     email: md5
 
-  # View the README at https://github.com/eduardoboucas/staticman-recaptcha
+  # reCAPTCHA (OPTIONAL)
+  # Register your domain at https://www.google.com/recaptcha/ and choose
+  # reCAPTCHA V2. Use your OWN siteKey and secret.
   reCaptcha:
     enabled: false
+    # siteKey and secret should match your config.toml
     siteKey: ""
+    # (!) ENCRYPT reCaptcha secret key using Staticman /encrypt endpoint
+    # i.e. https://{your-staticman-api}/v3/encrypt/{your-site-secret}
+    # For more information, visit https://staticman.net/docs/encryption
     secret: ""

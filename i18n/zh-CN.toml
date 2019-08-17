@@ -48,3 +48,29 @@
   other = "上页"
 [attribution]
   other = "主题: <a href='https://themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>移植自 <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | 由 <a href='https://gohugo.io/' target='_blank' rel='noopener' title='{{ .Site.Hugo.Version }}'>Hugo</a> 驱动"
+[comments]
+  other = "评论"
+[say_sth]
+  other = "说些什么"
+[name]
+  other = "您的名字（必填）"
+[email]
+  other = "您的电邮地址（必填，用于 Gravatar 头象）"
+[website]
+  other = "您的网站"
+[body]
+  other = "您的留言。可使用 Markdown。（搜索 'Markdown 語法速查'）"
+[no_comment]
+  other = "还沒有留言。"
+[reply]
+  other = "回覆"
+[btn_reset]
+  other = "重设"
+[btn_submitted]
+  other = "已送出"
+[btn_sumbit]
+  other = "送出"
+[error_msg]
+  other = "很抱歉，您的提交存在错误。请确保所有必填字段都已填写正确，然后再试一次。"
+[success_msg]
+  other = "感谢您的评论！被批准后它会立即在此站点展示。"

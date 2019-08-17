@@ -15,4 +15,11 @@
     <script src="{{ . | relURL }}"></script>
   {{ end }}
 {{ end }}
+{{ if .Site.Params.staticman }}
+  {{- $smjs := resources.Get "js/staticman.js" | resources.ExecuteAsTemplate "js/staticman.js" .Site.Params.staticman -}}
+  <script src='{{ $smjs.RelPermalink }}'></script>
+  {{ if and .Site.Params.staticman.recaptcha.siteKey .Site.Params.staticman.recaptcha.encryptedKey }}
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+  {{ end }}
+{{ end }}
 {{ template "_internal/google_analytics_async.html" . }}
