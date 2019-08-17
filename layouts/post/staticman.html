@@ -59,7 +59,7 @@
           {{ $.Scratch.Set "threadID" ._id }}
           {{/* Comment template for a "main comment" */}}
           <article id="{{ ._id }}" class="post-comment">
-            <img class="post-comment-avatar" src="https://www.gravatar.com/avatar/{{ .email }}?s=100">
+            <img class="post-comment-avatar" src="https://www.gravatar.com/avatar/{{ .email }}?s=100" alt="{{ .name }}'s Gravatar">
             <h3 class="post-comment-author-container">
               <span class='post-comment-author'>
                 {{- if .website -}}
@@ -87,7 +87,7 @@
             {{ if eq .replyThread ($.Scratch.Get "threadID") }}
             {{/* Comment template for a "comment reply" */}}
             <article id="{{ ._id }}" class="post-comment post-comment-reply">
-              <img class="post-comment-avatar" src="https://www.gravatar.com/avatar/{{ .email }}?s=100">
+              <img class="post-comment-avatar" src="https://www.gravatar.com/avatar/{{ .email }}?s=100" alt="{{ .name }}'s Gravatar">
               <h3 class="post-comment-author-container">
                 <span class='post-comment-author'>
                   {{- if .website -}}
