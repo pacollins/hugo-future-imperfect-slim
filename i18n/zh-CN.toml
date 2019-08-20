@@ -33,7 +33,7 @@
 [404_pagenotfound]
   other = "找不到页面"
 [404_sorry]
-  other = "抱歉，您尝试查看的页面不存在。"
+  other = "抱歉，您正在寻找的页面并不存在。"
 [404_goback]
   other = "回去"
 [blog]
