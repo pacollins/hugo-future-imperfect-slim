@@ -1,7 +1,7 @@
 [date_format]
   other = "January 2, 2006"
 [postreadingtime]
-  other = "分钟"
+  other = "{{ .Count }} 分钟"
 [recent_posts]
   other = "最新文章"
 [see_more]
@@ -25,9 +25,7 @@
 [learn_more]
   other = "了解更多"
 [repliestext]
-  other = "一般回应需时"
-[hours]
-  other = "小时"
+  other = "一般回应需时 {{ .Count }} 小时"
 [submit]
   other = "送出"
 [404_oops]

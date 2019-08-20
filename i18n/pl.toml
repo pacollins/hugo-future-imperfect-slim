@@ -1,7 +1,8 @@
 [date_format]
   other = "2-1-2006"
 [postreadingtime]
-  other = "Czas odczytu"
+  one = "1 minuta czytania"
+  other = "{{ .Count }} minuty czytania"
 [recent_posts]
   other = "Ostatnie posty"
 [see_more]
@@ -25,9 +26,8 @@
 [learn_more]
   other = "dowiedz się więcej"
 [repliestext]
-  other = "Odpowiada zazwyczaj w ciagu"
-[hours]
-  other = "Godziny"
+  one = "Odpowiada zazwyczaj w ciagu 1 godzina."
+  other = "Odpowiada zazwyczaj w ciagu {{ .Count }} godziny."
 [submit]
   other = "Prześlij"
 [404_oops]

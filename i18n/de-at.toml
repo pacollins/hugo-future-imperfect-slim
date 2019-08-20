@@ -1,0 +1,48 @@
+[date_format]
+  other = "02-01-2006"
+[postreadingtime]
+  one = "1 Minute"
+  other = "{{ .Count }} Minuten"
+[recent_posts]
+  other = "Letzte Artikel"
+[see_more]
+  other = "Mehr erfahren"
+[read_more]
+  other = "Weiterlesen"
+[categories]
+  other = "Kategorien"
+[category]
+  other = "Kategorie"
+[tags]
+  other = "Tags"
+[tag]
+  other = "Tag"
+[uncategorized]
+  other = "Unkategorisiert"
+[share_post]
+  other = "Teilen"
+[about]
+  other = "Über mich"
+[learn_more]
+  other = "Mehr erfahren"
+[repliestext]
+  one = "Antworten innerhalb von 1 Stunde."
+  other = "Antworten innerhalb von {{ .Count }} Stunden."
+[submit]
+  other = "Senden"
+[404_pagenotfound]
+  other = "Seite nicht gefunden"
+[404_sorry]
+  other = "Entschuldigung, die Seite, die Sie suchen, ist leider nicht gibt."
+[404_goback]
+  other = "Gehe zurück"
+[blog]
+  other = "Blog"
+[contact]
+  other = "Kontakt"
+[next_page]
+  other = "Nächste Seite"
+[previous_page]
+  other = "Vorherige Seite"
+[attribution]
+  other = "Thema : <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>Ein <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 Port</a> | Unterstützt von: <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"

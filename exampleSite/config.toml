@@ -144,6 +144,43 @@ disableLanguages        = [""]
     LanguageName        = "English"
     weight              = 1
 
+  [Languages.de]
+    languageCode        = "de-at"
+    LanguageName        = "Deutsch (Österreich)"
+    title               = "Hugo Future Imperfect Slim auf österreichisch deutsch"
+    description         = "Ein Thema von HTML5 UP, portiert von Julio Pescador.  Vereinfacht und verbessert von Patrick Collins. Mehrsprachig von StatnMap. Unterstützt von: Hugo. "
+    weight              = 2
+
+    [[Languages.de.menu.main]]
+      name              = "Startseite"
+      url               = "/"
+      identifier        = "fas fa-home"
+      weight            = 1
+
+    [[Languages.de.menu.main]]
+      name              = "Über mich"
+      url               = "/about/"
+      identifier        = "far fa-id-card"
+      weight            = 2
+
+    [[Languages.de.menu.main]]
+      name              = "Blog"
+      url               = "/blog/"
+      identifier        = "far fa-newspaper"
+      weight            = 3
+
+    [[Languages.de.menu.main]]
+      name              = "Kategorien"
+      url               = "/categories/"
+      identifier        = "fas fa-sitemap"
+      weight            = 5
+
+    [[Languages.de.menu.main]]
+      name              = "Kontakt"
+      url               = "/contact/"
+      identifier        = "far fa-envelope"
+      weight            = 6
+
   [Languages.fr]
     languageCode        = "fr"
     LanguageName        = "Français"
@@ -182,7 +219,7 @@ disableLanguages        = [""]
       weight            = 6
 
   [Languages.pl]
-    languageCode        = "pl"
+    languageCode        = "pol"
     LanguageName        = "Polskie"
     title               = "Hugo przyszłość niedoskonała"
     description         = "Motyw HTML5 UP, przeniesiony przez Julio Pescadora i wzbogacony przez Patricka Collinsa. Wielojęzyczny przez StatnMap. Zasilany przez Hugo."

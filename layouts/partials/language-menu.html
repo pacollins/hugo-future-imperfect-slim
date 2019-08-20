@@ -7,7 +7,7 @@
   {{ else }}
     {{ range .Site.Languages }}
       {{ if not (eq .Lang $.Site.Language.Lang) }}
-        <a href="/{{ .Lang }}" lang="{{ .Lang }}" class="no-lang"><span class="flag-icon flag-icon-{{ .Lang }}" alt="{{ .Lang }}"></span></a>
+        <a href="{{ "" | relLangURL }}" lang="{{ .Lang }}" class="no-lang"><span class="flag-icon flag-icon-{{ .Lang }}" alt="{{ .Lang }}"></span></a>
       {{ end }}
     {{ end }}
   {{ end }}
