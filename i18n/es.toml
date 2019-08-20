@@ -33,7 +33,7 @@
 [404_pagenotfound]
   other = "Página No Encontrada"
 [404_sorry]
-  other = "Lo sentimos, pero la página que intentaba ver no existe."
+  other = "Lo sentimos, la página que estás buscando no existe."
 [404_goback]
   other = "Volver"
 [blog]
