@@ -1214,6 +1214,18 @@ textarea {
      display: flex;
      flex-grow: 1;
      margin: 0;
+     a {
+       border: 0;
+       font-size: 0.35em;
+       font-weight: 800;
+       margin-left: 1.5em;
+       opacity: 1;
+       padding: 0;
+       img {
+        height: 4.8em;
+        width: 12.6em;
+       }
+     }
      @include for-desktop-up {
        flex-grow: 0;
        &:after {
@@ -1226,19 +1238,9 @@ textarea {
        }
        a {
          min-width: 12.5em;
-       }
-     }
-     a {
-       border: 0;
-       font-size: 0.35em;
-       font-weight: 800;
-       margin-left: 1.5em;
-       opacity: 1;
-       padding: 0;
-       img {
-        margin-top: -0.2em;
-        height: 4.8em;
-        width: 12.6em;
+         img {
+          margin-top: -0.2em;
+        }
        }
      }
    }
