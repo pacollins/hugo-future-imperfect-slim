@@ -184,8 +184,8 @@ disableLanguages        = [""]
   [Languages.fr]
     languageCode        = "fr"
     LanguageName        = "Français"
-    title               = "Hugo Future Imperfect Slim in fr"
-    description         = "Un thème de HTML5 UP, porté par Julio Pescador. Slimmed et amélioré par Patrick Collins. Multilingue par StatnMap. Propulsé par Hugo. "
+    title               = "Hugo Future Imperfect Slim en français"
+    description         = "Un thème par HTML5 UP, porté par Julio Pescador. Simplifié et amélioré par Patrick Collins. Multilingue par StatnMap. Propulsé par Hugo."
     weight              = 2
 
     [[Languages.fr.menu.main]]
