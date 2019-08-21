@@ -30,14 +30,12 @@
   other = "horas"
 [submit]
   other = "Enviar"
-[404_oops]
-  other = "Oops, a páginas que você está<br/>procurando não existe."
-[404_backorreport]
-  other = "Você pode querer voltar à homepage.<br/>Se você acha que este é um erro, informe o problema."
-[404_gotohome]
-  other = "Ir para Homepage"
-[404_report]
-  other = "Informar um problema"
+[404_pagenotfound]
+  other = "Página Não Encontrada"
+[404_sorry]
+  other = "Desculpe, mas a página que você está procurando não existe."
+[404_goback]
+  other = "Voltar"
 [blog]
   other = "Blog"
 [contact]
@@ -47,7 +45,7 @@
 [previous_page]
   other = "Página anterior"
 [attribution]
-  other = "Tema: <a href='https://themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect</a><br>Adaptado de <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | Impulsado por <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
+  other = "Tema: <a href='https://themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect</a><br>Adaptado de <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | Disponibilizado pelo <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
 [comments]
   other = "Comentários"
 [say_sth]
