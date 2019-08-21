@@ -2,6 +2,8 @@
   other = "2 de January, 2006"
 [postreadingtime]
   one = "1 minuto de leitura"
+  few = "{{ .Count }} minutos de leitura"
+  many = "{{ .Count }} minutos de leitura"
   other = "{{ .Count }} minutos de leitura"
 [recent_posts]
   other = "Posts recentes"
@@ -27,6 +29,8 @@
   other = "Aprenda mais"
 [repliestext]
   one = "Resposta tipicamente em 1 hora."
+  few = "Resposta tipicamente em {{ .Count }} horas."
+  many = "Resposta tipicamente em {{ .Count }} horas."
   other = "Resposta tipicamente em {{ .Count }} horas."
 [submit]
   other = "Enviar"
