@@ -1,62 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ .Page.Language | default "en" }}">
 <head>
-    <meta charset="utf-8">
-    <title>Page Not Found</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-
-        * {
-            line-height: 1.2;
-            margin: 0;
-        }
-
-        html {
-            color: #888;
-            display: table;
-            font-family: sans-serif;
-            height: 100%;
-            text-align: center;
-            width: 100%;
-        }
-
-        body {
-            display: table-cell;
-            vertical-align: middle;
-            margin: 2em auto;
-        }
-
-        h1 {
-            color: #555;
-            font-size: 2em;
-            font-weight: 400;
-        }
-
-        p {
-            margin: 0 auto;
-            width: 280px;
-        }
-
-        @media only screen and (max-width: 280px) {
-
-            body, p {
-                width: 95%;
-            }
-
-            h1 {
-                font-size: 1.5em;
-                margin: 0 0 0.3em;
-            }
-
-        }
-
-    </style>
+  <meta charset="utf-8">
+  <title>{{ i18n "404_pagenotfound" }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ "css/404.css" | relURL }}">
 </head>
 <body>
-    <h1>404</h1>
-    <h2>{{ i18n "404_pagenotfound" . | safeHTML }}</h2>
-    <p>{{ i18n "404_sorry" . | safeHTML }}</p>
-    <a href="javascript:history.back()">{{ i18n "404_goback" . | safeHTML }}</a>
+  <h1>404</h1>
+  <h2>{{ i18n "404_pagenotfound" | safeHTML }}</h2>
+  <p>{{ i18n "404_sorry" | safeHTML }}</p>
+  <a href="javascript:history.back()">{{ i18n "404_goback" | safeHTML }}</a>
 </body>
 </html>
 <!-- IE needs 512+ bytes: https://blogs.msdn.microsoft.com/ieinternals/2010/08/18/friendly-http-error-pages/ -->

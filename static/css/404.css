@@ -1,0 +1,54 @@
+html {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #f4f4f4;
+  color: #888;
+  font-family: "Raleway", Helvetica, sans-serif;
+  line-height: 1.4;
+}
+
+h1, h2 {
+  color: #3c3b3b;
+  letter-spacing: 0.25em;
+}
+
+a {
+  border-bottom: dotted 1px rgba(160, 160, 160, 0.65);
+  color: inherit;
+  text-decoration: none;
+  -webkit-transition: color .2s ease, border-bottom-color 0.2s ease;
+  -moz-transition: color .2s ease, border-bottom-color 0.2s ease;
+  -ms-transition: color .2s ease, border-bottom-color 0.2s ease;
+  -o-transition: color .2s ease, border-bottom-color 0.2s ease;
+  transition: color .2s ease, border-bottom-color 0.2s ease;
+}
+
+a:before {
+  content: "🡠 ";
+  -webkit-transition: color ease;
+  -moz-transition: color ease;
+  -ms-transition: color ease;
+  -o-transition: color ease;
+  transition: color ease;
+}
+
+a:hover {
+  border-bottom-color: transparent;
+  color: $accent-color;
+}
+
+@media only screen and (max-width: 280px) {
+
+  body, p {
+    width: 95%;
+  }
+
+  h1 {
+    font-size: 1.5em;
+    margin: 0 0 0.3em;
+  }
+
+}
