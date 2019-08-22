@@ -4,7 +4,7 @@ $(document).ready(function() {
   $('.post-new-comment').submit(function () {
     var form = this;
 
-    $(form).disabled = true;
+    $(form).addClass('loading');
     $('input[type="submit"]:enabled').addClass('hidden'); // hide "submit"
     $('input[type="submit"]:disabled').removeClass('hidden'); // show "submitted"
 
@@ -23,12 +23,12 @@ $(document).ready(function() {
       success: function (data) {
         showAlert('success');
         setTimeout(function(){ clearForm() }, 3000); // display success message for 3s
-        $(form).disabled = false;
+        $(form).removeClass('loading');
       },
       error: function (err) {
         console.log(err);
         showAlert('failed');
-        $(form).disabled = false;
+        $(form).removeClass('loading');
       }
     });
 
@@ -49,7 +49,7 @@ $(document).ready(function() {
 
   function clearForm() {
     resetReplyTarget();
-    $('.post-new-comment input[type="hidden"]')
+    $('.post-new-comment input')
       .filter(function() {
         return this.name.match(/^fields\[.*\]$/);
       })
