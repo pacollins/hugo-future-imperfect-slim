@@ -53,7 +53,8 @@ $(document).ready(function() {
       .filter(function() {
         return this.name.match(/^fields\[.*\]$/);
       })
-      .val(''); // empty all hidden fields but not options
+      .val(''); // empty all text & hidden fields but not options
+    $('.post-new-comment textarea').val(''); // empty text area
     $('.post-new-comment .submit-success').addClass('hidden'); // hide submission status
     $('.post-new-comment .submit-failed').addClass('hidden'); // hide submission status
   }
