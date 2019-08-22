@@ -1381,8 +1381,8 @@ textarea {
  }
 
  #lang-menu {
-   right: -300px;
    &.flyout-menu {
+     right: -200px;
      a {
        border-left: 0;
      }
