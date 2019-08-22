@@ -1,7 +1,8 @@
 [date_format]
   other = "January 2, 2006"
 [postreadingtime]
-  other = "minute read"
+  one = "1 minute read"
+  other = "{{ .Count }} minutes read"
 [recent_posts]
   other = "Recent posts"
 [see_more]
@@ -25,9 +26,8 @@
 [learn_more]
   other = "Learn More"
 [repliestext]
-  other = "Replies typically within"
-[hours]
-  other = "hours"
+  one = "Replies typically within 1 hour."
+  other = "Replies typically within {{ .Count }} hours."
 [submit]
   other = "Submit"
 [404_pagenotfound]

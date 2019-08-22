@@ -1,7 +1,10 @@
 [date_format]
   other = "2 de January, 2006"
 [postreadingtime]
-  other = "minutos de leitura"
+  one = "1 minuto de leitura"
+  few = "{{ .Count }} minutos de leitura"
+  many = "{{ .Count }} minutos de leitura"
+  other = "{{ .Count }} minutos de leitura"
 [recent_posts]
   other = "Posts recentes"
 [see_more]
@@ -25,9 +28,10 @@
 [learn_more]
   other = "Aprenda mais"
 [repliestext]
-  other = "Resposta tipicamente em"
-[hours]
-  other = "horas"
+  one = "Resposta tipicamente em 1 hora."
+  few = "Resposta tipicamente em {{ .Count }} horas."
+  many = "Resposta tipicamente em {{ .Count }} horas."
+  other = "Resposta tipicamente em {{ .Count }} horas."
 [submit]
   other = "Enviar"
 [404_pagenotfound]
