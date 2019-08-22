@@ -514,45 +514,161 @@ textarea {
  }
 
  /* Staticman Comments */
+ $avatar-size: 3.25em;
+ $avatar-rsep: 1em;
+ $comment-vsep: 2.5em;
+ $comment-content-vsep: 1.5em;
 
  .post-comment {
    position: relative;
-   margin-bottom: 3em;
-   padding-left: 4.5em;
+   margin: $comment-vsep 0;
    font-size: .8em;
+
+   /* Comment replies' additional left margin */
+   &.post-comment-reply {
+     margin-left: 2em;
+     /* Display Font Awesome '↷' to signify reply target */
+     .post-comment-author::after {
+       font-family: 'Font Awesome 5 Free';
+       content: '\f064';
+       margin: 0 0.3em;
+       display: inline-block;
+       vertical-align: middle;
+       font-weight: 900;
+     }
+   }
+
+   .post-comment-avatar {
+     float: left;
+     width: $avatar-size;
+     height: $avatar-size;
+     margin: 0 $avatar-rsep 0 0;
+   }
+
+   .post-comment-author-container {
+     /* -ve margin botton so that timestamp and author aren't too far */
+     margin-bottom: -0.5em;
+     .post-comment-author {
+       display: inline-block;
+       margin: 0 0 0;
+       font-size: 1.25em;
+       line-height: 0;
+       a {
+         color: inherit;
+         text-decoration: none;
+       }
+     }
+   }
+
+   .post-comment-timestamp {
+     font-size: .8em;
+     a {
+       color: inherit;
+       text-decoration: none;
+     }
+   }
+
+   .post-comment-content {
+     margin: $comment-content-vsep 0 0 $avatar-size + $avatar-rsep;
+     > figure, > ol, > p,
+     > table, > ul {
+       margin-bottom: 1.5em;
+     }
+   }
+
+   .post-comment-reply-btn-container {
+     margin: $comment-content-vsep 0 $comment-content-vsep $avatar-size + $avatar-rsep;
+     /* Display Font Awesome '↶' to signify reply target */
+     .post-comment-reply-btn {
+       font-size: .6rem;
+       &::before {
+         font-family: 'Font Awesome 5 Free';
+         content: '\f3e5';
+         margin: 0 0.6em 0 0;
+         display: inline-block;
+         vertical-align: middle;
+         font-weight: 900;
+       }
+     }
+   }
  }
 
- .post-comment-avatar {
-   float: left;
-   width: 3.25em;
-   height: 3.25em;
-   margin-right: .5em;
+ /* Comment form */
+ .post-new-comment {
+   /* Disable the form when it has just been submitted */
+   &.loading {
+     opacity: 0.5;
+   }
+
+   /* Post reply notice with vertical align middle for consistent output */
+   .post-reply-notice {
+     .post-comment-avatar {
+       width: 2em;
+       height: 2em;
+       margin: 0 .6em;
+     }
+
+     /* Display close button 'x' to clear reset reply target */
+     .post-reply-close-btn {
+       margin: 0 .5em;
+       padding: unset;
+       border: none;
+       vertical-align: middle;
+       &:hover {
+        border: none;
+      }
+       &:after {
+         content: '\2716';
+       }
+     }
+
+     .post-reply-arrow::after {
+       font-family: 'Font Awesome 5 Free';
+       content: '\f064';
+       display: inline-block;
+       vertical-align: middle;
+       font-weight: 900;
+     }
+
+     .post-reply-name {
+       vertical-align: middle;
+     }
+   }
+
+   /* Format reCaptcha */
+   .g-recaptcha {
+     margin: 0 0 0.25em;
+   }
+
+   /* Buttons */
+   .button {
+     margin: 0.25em 0;
+   }
  }
 
- .post-comment-author {
+ /* Copied from other blocks for reply and 'x' buttons */
+ .button {
+   margin: .25em 0;
+   background-color: transparent;
+   border: solid 1px rgba(160, 160, 160, 0.3);
+   color: #3c3b3b;
+   cursor: pointer;
    display: inline-block;
-   margin: 0 0 .25em;
-   font-size: 1.25em;
-   line-height: 1;
-   a {
-     color: inherit;
-     text-decoration: none;
+   font-family: "Raleway", Helvetica, sans-serif;
+   font-weight: 800;
+   -moz-transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
+   -webkit-transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
+   -ms-transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
+   transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
+   text-align: center;
+   text-transform: uppercase;
+   width: fit-content;
+   &:hover {
+     border: solid 1px $accent-color;
+     color: $accent-color !important;
    }
- }
-
- .post-comment-timestamp {
-   font-size: .8em;
-   a {
-     color: inherit;
-     text-decoration: none;
-   }
- }
-
- .post-comment-content {
-   margin: 1.5em 0 0 3.75em;
-   > figure, > ol, > p,
-   > table, > ul {
-     margin-bottom: 1.5em;
+   &:active {
+     background-color: rgba(46, 186, 174, 0.05);
    }
  }
 

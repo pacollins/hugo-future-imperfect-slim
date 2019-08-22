@@ -93,7 +93,7 @@ disableLanguages        = [""]
     # If using GitHub, go to https://github.com/apps/staticman-net
     # If using GitLab, just add the GitLab bot, NO need to hit `/connect/v3/...`
     enabled             = false
-    api                 = ""  # without trailing slash, defaults to "api.staticman.net"
+    api                 = ""  # without trailing slash, defaults to "staticman3.herokuapp.com"
     gitProvider         = "github"  # either "github" or "gitlab"
     username            = ""
     repo                = ""

@@ -46,3 +46,29 @@
   other = "上頁"
 [attribution]
   other = "主題: <a href='https://themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>移植自 <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | 由 <a href='https://gohugo.io/' target='_blank' rel='noopener' title='{{ .Site.Hugo.Version }}'>Hugo</a> 提供"
+[comments]
+  other = "留言"
+[say_sth]
+  other = "說些甚麼"
+[name]
+  other = "您的名字（必填）"
+[email]
+  other = "您的電郵地址（必填，用於 Gravatar 頭像）"
+[website]
+  other = "您的網站"
+[body]
+  other = "您的留言。可使用 Markdown。（搜尋 'Markdown 語法速查'）"
+[no_comment]
+  other = "還未有留言。"
+[reply]
+  other = "回覆"
+[btn_reset]
+  other = "重設"
+[btn_submitted]
+  other = "已送出"
+[btn_sumbit]
+  other = "送出"
+[error_msg]
+  other = "抱歉，部份資料輸入有問題。請確認資料填寫正確後再試一次。"
+[success_msg]
+  other = "感謝您的留言！ 審核後將會顯示在站上。"

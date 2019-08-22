@@ -46,3 +46,29 @@
  other = "Poprzednia strona"
 [attribution]
   other = "Motyw: <a href='https://themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>Przyjęty z <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | Wspierane przez <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
+[comments]
+  other = "Komentarzy"
+[say_sth]
+  other = "Powiedz coś"
+[name]
+  other = "Twoje imię"
+[email]
+  other = "Twój adres email"
+[website]
+  other = "Twoja strona internetowa"
+[body]
+  other = "Twoja wiadomość.  Nie krępuj się użyć Markdown (Szukaj 'ściągawka Markdown.')."
+[no_comment]
+  other = "Jeszcze nic"
+[reply]
+  other = "Odpowiedz"
+[btn_reset]
+  other = "Wyzeruj"
+[btn_submitted]
+  other = "Komentarz dodany"
+[btn_sumbit]
+  other = "Skomentuj"
+[error_msg]
+  other = "Niestety wystąpił błąd. Proszę upewnij się, że wszystkie wymagane pola zostały wypełnione i spróbuj ponownie."
+[success_msg]
+  other = "Dziękuję za Twój komentarz! Zostanie dodany po akceptacji."

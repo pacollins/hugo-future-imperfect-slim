@@ -46,3 +46,29 @@
   other = "Página anterior"
 [attribution]
   other = "Tema: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>Adaptado de <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | Impulsado por <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
+[comments]
+  other = "Comentarios"
+[say_sth]
+  other = "Di algo"
+[name]
+  other = "Tu nombre (requeridos)"
+[email]
+  other = "Tu correo electrónico (requeridos para Gravatar)"
+[website]
+  other = "Tu sitio web"
+[body]
+  other = "Tu mensaje.  Siéntase libre de usar Markdown. (Buscar 'hoja de trucos Markdown')"
+[no_comment]
+  other = "Nada aún`"
+[reply]
+  other = "Responder"
+[btn_reset]
+  other = "Reiniciar"
+[btn_submitted]
+  other = "Enviado"
+[btn_sumbit]
+  other = "Enviar"
+[error_msg]
+  other = "Lo sentimos, ha ocurrido un error al enviar su comentario. Por favor asegurese que todos los campos han sido diligenciados e intente de nuevo."
+[success_msg]
+  other = "Gracias por su comentario!, Este se visualizará en el sitio una vez haya sido aprobado."
