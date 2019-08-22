@@ -71,4 +71,4 @@
 [error_msg]
   other = "Sorry, there was an error with your submission.  Please make sure all required fields have been completed and try again."
 [success_msg]
-  other = "Thanks for your comment! It will show on the site once it has been approved."
+  other = "Thanks for your comment! It will be shown on the site once it has been approved."
