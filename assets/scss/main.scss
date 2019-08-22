@@ -595,6 +595,11 @@ textarea {
 
  /* Comment form */
  .post-new-comment {
+   /* Disable the form when it has just been submitted */
+   &.loading {
+     opacity: 0.5;
+   }
+
    /* Post reply notice with vertical align middle for consistent output */
    .post-reply-notice {
      .post-comment-avatar {
