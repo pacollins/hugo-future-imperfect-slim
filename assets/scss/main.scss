@@ -874,19 +874,6 @@ textarea {
    clip-path: ellipse(40% 25% at 50% 50%);
  }
 
- /* Flags */
-
- .flag-icon {
-   border: 0.02px solid black;
- }
-
- .flag-icon-en {
-   background-image: url(../flags/4x3/en.svg);
-   &.flag-icon-squared {
-     background-image: url(../flags/1x1/en.svg);
-   }
- }
-
  /* Share Button */
 
  .share-btn {
@@ -1365,7 +1352,6 @@ textarea {
      }
    }
    .lang-toggle {
-     width: 61px;
      &:hover {
        span {
          box-shadow: inset 0 0 0 100px rgba(46, 187, 170, .5);
@@ -1395,11 +1381,15 @@ textarea {
  }
 
  #lang-menu {
+   right: -300px;
    &.flyout-menu {
-     right: -61px;
-     width: 61px;
      a {
        border-left: 0;
+     }
+     ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
      }
      span {
        display: inline-block;

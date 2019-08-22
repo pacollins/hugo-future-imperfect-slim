@@ -1,14 +1,16 @@
 <menu id="lang-menu" class="flyout-menu">
-  <a href="#" lang="{{ .Site.Language.Lang }}" class="active"><span class="flag-icon flag-icon-{{ .Site.Language.Lang }}" alt="{{ .Site.Language.Lang }}"></span></a>
-  {{ if .IsTranslated -}}
-    {{ range .Translations }}
-        <a href="{{ .Permalink }}" lang="{{ .Lang }}"><span class="flag-icon flag-icon-{{ .Lang }}" alt="{{ .Lang }}"></span></a>
-    {{ end }}
-  {{ else }}
-    {{ range .Site.Languages }}
-      {{ if not (eq .Lang $.Site.Language.Lang) }}
-        <a href="{{ "" | relLangURL }}" lang="{{ .Lang }}" class="no-lang"><span class="flag-icon flag-icon-{{ .Lang }}" alt="{{ .Lang }}"></span></a>
+  <ul>
+    <li><a href="#" lang="{{ .Site.Language.Lang }}" class="active">{{ .Site.Language.LanguageName }} ({{ .Site.Language.Lang }})</a></li>
+    {{ if .IsTranslated -}}
+      {{ range .Translations }}
+        <li><a href="{{ .Permalink }}" lang="{{ .Lang }}">{{ .Language.LanguageName }} ({{ .Site.Language.Lang }})</a></li>
+      {{ end }}
+    {{ else }}
+      {{ range .Site.Languages }}
+        {{ if not (eq .Lang $.Site.Language.Lang) }}
+          <li><a href="{{ relURL .Lang }}" lang="{{ .Lang }}" class="no-lang">{{ .LanguageName }} ({{ .Lang }})</a></li>
+        {{ end }}
       {{ end }}
     {{ end }}
-  {{ end }}
+  </ul>
 </menu>
