@@ -6,7 +6,7 @@
     <h1 class="nav-title">
       <a href="{{ "/" | relLangURL }}">
         {{ if or .IsHome (not .Site.Params.header.dynamicTitles) }}
-          {{ .Site.Params.header.navbarTitle }}
+          {{ .Site.Params.header.navbarTitle  | safeHTML }}
         {{ else if ne .Section "" }}
           {{ if i18n .Section }}
             {{ i18n .Section }}
