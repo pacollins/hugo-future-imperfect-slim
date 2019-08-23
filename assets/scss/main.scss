@@ -1210,7 +1210,7 @@ textarea {
    .flyout-menu {
      background-color: #fff;
      border-left: 1px solid rgba(160, 160, 160, 0.3);
-     height: calc(100vh - 3.5em);
+     height: 100%;
      margin-top: 3.5em;
      padding: 0;
      position: fixed;
@@ -1243,12 +1243,8 @@ textarea {
    display: flex;
    justify-content: space-between;
    .flyout-menu {
-     right: -183px;
-     width: 183px;
-     @include for-laptop-up {
-       right: -183px;
-       width: 183px;
-     }
+     right: -177px;
+     width: 177px;
      @include for-desktop-up {
        background-color: unset;
        border: none;
@@ -1317,6 +1313,18 @@ textarea {
      display: flex;
      flex-grow: 1;
      margin: 0;
+     a {
+       border: 0;
+       font-size: 0.35em;
+       font-weight: 800;
+       margin-left: 1.5em;
+       opacity: 1;
+       padding: 0;
+       img {
+        height: 4.8em;
+        width: 12.6em;
+       }
+     }
      @include for-desktop-up {
        flex-grow: 0;
        &:after {
@@ -1329,15 +1337,10 @@ textarea {
        }
        a {
          min-width: 12.5em;
+         img {
+          margin-top: -0.2em;
+        }
        }
-     }
-     a {
-       border: 0;
-       font-size: 0.35em;
-       font-weight: 800;
-       margin-left: 1.5em;
-       opacity: 1;
-       padding: 0;
      }
    }
    > .share-toggle, > .search-toggle {
@@ -1382,7 +1385,8 @@ textarea {
 
  #lang-menu {
    &.flyout-menu {
-     right: -200px;
+     right: -177px;
+     width: 177px;
      a {
        border-left: 0;
      }
@@ -1404,6 +1408,10 @@ textarea {
          box-shadow: inset 0 0 0 100px rgba(46, 187, 170, .5);
        }
      }
+     .link {
+       border-bottom: dotted 1px rgba(160, 160, 160, 0.3);
+       display: block;
+      }
      .no-lang {
        cursor: not-allowed;
        opacity: .25;
@@ -1425,8 +1433,8 @@ textarea {
      justify-content: flex-start;
    }
    &.flyout-menu {
-     width: 183px;
-     right: -183px;
+     width: 177px;
+     right: -177px;
      padding: 1em;
      h1, a {
        margin: 0 .25em;
