@@ -25,6 +25,7 @@ on the Hugo Theme Showcase.
 	- [Non-Development](#non-development)
 	- [Development](#development)
 	- [exampleSite](#examplesite)
+	- [Staticman](#staticman)
 	- [config.toml](#configtoml)
 	- [Hugo's Built-In Server](#hugos-built-in-server)
 - [Shortcodes](#shortcodes)
@@ -129,8 +130,12 @@ exampleSite
 To get started, you will want to copy _config.toml_ from _exampleSite_ to the
 root directory of your project.
 
-If you would like static comments hosted by [Staticman](https://staticman.net/),
-you will also need to copy _staticman.yml_.
+### Staticman
+
+If you would like static comments powered by [Staticman](https://staticman.net/),
+you will also need to copy _staticman.yml_.  You may refer to
+[this project page's Wiki page](https://github.com/pacollins/hugo-future-imperfect-slim/wiki/Staticman-config)
+for details.
 
 ### config.toml
 
