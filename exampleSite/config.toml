@@ -221,7 +221,7 @@ disableLanguages        = [""]
   [Languages.pl]
     LanguageCode        = "pl"
     LanguageName        = "Polski"
-    title               = "Hugo przyszłość niedoskonała"
+    title               = "Hugo Future Imperfect Slim po polsku"
     description         = "Motyw HTML5 UP, przeniesiony przez Julio Pescadora i wzbogacony przez Patricka Collinsa. Wielojęzyczny przez StatnMap. Zasilany przez Hugo."
     weight              = 2
 
