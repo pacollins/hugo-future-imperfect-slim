@@ -1,16 +1,14 @@
 <menu id="lang-menu" class="flyout-menu">
-  <ul>
-    <li><a href="#" lang="{{ .Site.Language.Lang }}" class="active">{{ .Site.Language.LanguageName }} ({{ .Site.Language.Lang }})</a></li>
-    {{ if .IsTranslated -}}
-      {{ range .Translations }}
-        <li><a href="{{ .Permalink }}" lang="{{ .Lang }}">{{ .Language.LanguageName }} ({{ .Site.Language.Lang }})</a></li>
-      {{ end }}
-    {{ else }}
-      {{ range .Site.Languages }}
-        {{ if not (eq .Lang $.Site.Language.Lang) }}
-          <li><a href="{{ relURL .Lang }}" lang="{{ .Lang }}" class="no-lang">{{ .LanguageName }} ({{ .Lang }})</a></li>
-        {{ end }}
+  <a href="#" lang="{{ .Site.Language.Lang }}" class="link active">{{ .Site.Language.LanguageName }} ({{ .Site.Language.Lang }})</a>
+  {{ if .IsTranslated -}}
+    {{ range .Translations }}
+      <a href="{{ .Permalink }}" lang="{{ .Lang }}" class="link">{{ .Language.LanguageName }} ({{ .Site.Language.Lang }})</a>
+    {{ end }}
+  {{ else }}
+    {{ range .Site.Languages }}
+      {{ if not (eq .Lang $.Site.Language.Lang) }}
+        <a href="{{ relURL .Lang }}" lang="{{ .Lang }}" class="no-lang link">{{ .LanguageName }} ({{ .Lang }})</a>
       {{ end }}
     {{ end }}
-  </ul>
+  {{ end }}
 </menu>
