@@ -1,5 +1,11 @@
-{{ if .Params.featured }}
-<a href="{{ .RelPermalink }}" class="image featured">
-  <img src="{{ (path.Join "img" (cond (eq .Params.featuredpath "date") (.Page.Date.Format "2006/01") (.Params.featuredpath)) .Params.featured) | relURL }}" alt="{{ .Params.featuredalt }}">
-</a>
+{{ if .Params.images }}
+  <a href="{{ .RelPermalink }}" class="image featured">
+    {{ range first 1 .Params.images }}
+      <img src="{{ . | relURL }}" alt="">
+    {{ end }}
+  </a>
+{{ else if .Params.featured }}
+  <a href="{{ .RelPermalink }}" class="image featured">
+    <img src="{{ (path.Join "img" (cond (eq .Params.featuredpath "date") (.Page.Date.Format "2006/01") (.Params.featuredpath)) .Params.featured) | relURL }}" alt="{{ .Params.featuredalt }}">
+  </a>
 {{ end }}
