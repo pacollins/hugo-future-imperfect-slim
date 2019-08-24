@@ -23,7 +23,8 @@
   {{ end }}
 {{ else }}
   {{ if .Site.Params.highlightjs }}
-    <script src="{{ "js/highlight.pack.js" | relURL }}"></script>
+    {{ $hljs := resources.Get "js/highlight.pack.js" }}
+    <script src="{{ $hljs.RelPermalink }}"></script>
     <script>hljs.initHighlightingOnLoad();</script>
   {{ end }}
   {{ range .Site.Params.jsFiles }}

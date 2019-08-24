@@ -678,15 +678,6 @@ table {
   -o-clip-path: ellipse(40% 25% at 50% 50%);
   clip-path: ellipse(40% 25% at 50% 50%); }
 
-/* Flags */
-.flag-icon {
-  border: 0.02px solid black; }
-
-.flag-icon-en {
-  background-image: url(../flags/4x3/en.svg); }
-  .flag-icon-en.flag-icon-squared {
-    background-image: url(../flags/1x1/en.svg); }
-
 /* Share Button */
 .share-btn {
   border: none;

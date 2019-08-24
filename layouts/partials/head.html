@@ -10,7 +10,7 @@
     {{ if .Site.Params.highlightjs }}<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/{{ .Site.Params.highlightjsTheme | default "default" }}.min.css">{{ end }}
     {{ range .Site.Params.cssFiles }}
       {{ if eq . "default" }}
-        <link rel="stylesheet" href="{{ "css/normalize.css" | relURL}}">
+        <link rel="stylesheet" href="{{ "css/normalize.css" | relURL }}">
         <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
         <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
         <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.10.1/css/all.min.css">
@@ -24,16 +24,16 @@
       {{ end }}
     {{ end }}
   {{ else }}
-    {{ if .Site.Params.highlightjs }}<link rel="stylesheet" href="{{ `css/styles/{{ .Site.Params.highlightjsTheme | default "default" }}.css` | relURL}}">{{ end }}
     {{ range .Site.Params.cssFiles }}
       {{ if eq . "default" }}
-        {{ $normalize := resources.Get "css/normalize.css" }}
-        {{ $fonts := resources.Get "css/fonts.css" }}
-        {{ $academicons := resources.Get "css/academicons.css" }}
-        {{ $fontawesome := resources.Get "css/fontawesome.css" }}
-        {{ $fancybox := resources.Get "css/fancybox.css" }}
-        {{ $main := resources.Get "scss/main.scss" | resources.ToCSS }}
-        {{ $css := slice $normalize $fonts $academicons $fontawesome $fancybox $main | resources.Concat "css/bundle.css" | resources.Minify | resources.Fingerprint }}
+        {{ $cssSlice := resources.Match "css/*.css" }}
+        {{ $cssSlice = $cssSlice | append (resources.Get "scss/main.scss" | resources.ToCSS) }}
+        {{ if $.Site.Params.highlightjs }}
+          {{ $hlTh := $.Site.Params.highlightjsTheme | default "default" }}
+          {{ $hlThCSS := printf "css/styles/%s.css" $hlTh }}
+          {{ $cssSlice = $cssSlice | append (resources.Match $hlThCSS) }}
+        {{ end }}
+        {{ $css := $cssSlice | resources.Concat "css/bundle.css" | resources.Minify | resources.Fingerprint }}
         <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
         <link rel="stylesheet" href="{{ "css/add-on.css" | relURL }}">
       {{ else }}
