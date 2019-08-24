@@ -31,7 +31,7 @@
         {{ if $.Site.Params.highlightjs }}
           {{ $hlTh := $.Site.Params.highlightjsTheme | default "default" }}
           {{ $hlThCSS := printf "css/styles/%s.css" $hlTh }}
-          {{ $cssSlice = $cssSlice | append (resources.Match $hlThCSS) }}
+          {{ $cssSlice = $cssSlice | append (resources.Get $hlThCSS) }}
         {{ end }}
         {{ $css := $cssSlice | resources.Concat "css/bundle.css" | resources.Minify | resources.Fingerprint }}
         <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
