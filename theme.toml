@@ -1,18 +1,17 @@
 name = "Hugo Future Imperfect Slim"
-license = "MIT"
+license = "Creative Commons Attribution 3.0"
 licenselink = "https://github.com/pacollins/hugo-future-imperfect-slim/blob/master/LICENSE.md"
-description = "Future Imperfect Theme - Slimmed Down"
+description = "A multilingual blogging template."
 homepage = "https://github.com/pacollins/hugo-future-imperfect-slim"
-tags = ["HTML5", "CSS Grid", "Blog", "Responsive", "Portfolio", "Disqus",
-        "Syntax Highlighting", "Company", "Font Awesome", "Projects",
-        "Contact Form", "Highlight.js", "Gallery", "Multilingual", "Product",
-        "Fancybox", "Academicons", "Academic", "Google Analytics", "Twitter Cards",
-        "Open Graph", "Google News", "Jquery", "Skel", "Staticman", "Netlify"]
-features = ["Highlight.js v9.2", "Font Awesome v5.0", "Fancybox v3.5",
-            "Academicons v1.8", "Google Analytics", "Disqus", "Twitter Cards",
-            "Open Graph", "Google News", "Jquery v3.2", "Skel v3.0", "Staticman",
-            "Netlify"]
-min_version = 0.40
+tags = ["HTML5", "CSS3", "Mobile", "Responsive", "Blog", "Portfolio",
+        "Disqus", "Staticman", "Highlight.js", "Fancybox", "Font Awesome",
+        "Academicons", "jQuery", "Netlify", "Open Graph". "Multilingual",
+        "Google Analytics", "Light", "Company", "Contact Form", "Gallery",
+        "Business"]
+features = ["Highlight.js", "Normalize.css", "Font Awesome", "Fancybox",
+            "Academicons", "Google Analytics", "Disqus", "Staticman",
+            "Twitter Cards", "Open Graph", "Google News", "jQuery", "Netlify"]
+min_version = 0.57
 
 [author]
   name = "Patrick Collins"
@@ -21,5 +20,5 @@ min_version = 0.40
 # If porting an existing theme
 [original]
   name = "Future Imperfect"
-  homepage = "https://github.com/jpescador/hugo-future-imperfect"
-  repo = "https://github.com/jpescador/hugo-future-imperfect"
+  homepage = "https://html5up.net/future-imperfect"
+  repo = "https://html5up.net/future-imperfect"
