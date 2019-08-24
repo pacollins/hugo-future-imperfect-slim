@@ -10,7 +10,11 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"></script>
       {{ $util := resources.Get "js/util.js" }}
       {{ $main := resources.Get "js/main.js" }}
-      {{ $js := slice $util $main | resources.Concat "js/localbundle.js" | resources.Minify | resources.Fingerprint }}
+      {{ $jsSlice := slice $util $main }}
+      {{ if $.Site.Params.staticman.enabled }}
+        {{ $jsSlice = $jsSlice | append (resources.Get "js/staticman.js" | resources.ExecuteAsTemplate "js/staticman.js" $.Site.Params.staticman) }}
+      {{ end }}
+      {{ $js := $jsSlice | resources.Concat "js/localbundle.js" | resources.Minify | resources.Fingerprint }}
     <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}">
     <script src="{{ "js/add-on.js" | relURL }}"></script>
     {{ else }}
@@ -28,8 +32,13 @@
       {{ $fancybox := resources.Get "js/fancybox.js" }}
       {{ $util := resources.Get "js/util.js" }}
       {{ $main := resources.Get "js/main.js" }}
-      {{ $js := slice $jquery $fancybox $util $main | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint }}
-    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}">
+      {{ $jsSlice := slice $jquery $fancybox $util $main }}
+      {{ if $.Site.Params.staticman.enabled }}
+        {{ $jsSlice = $jsSlice | append (resources.Get "js/staticman.js" | resources.ExecuteAsTemplate "js/staticman.js" $.Site.Params.staticman) }}
+        }
+      {{ end }}
+      {{ $js := $jsSlice | resources.Concat "js/bundle.js" | resources.Minify | resources.Fingerprint }}
+    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
     <script src="{{ "js/add-on.js" | relURL }}"></script>
     {{ else }}
       <script src="{{ . | relURL }}"></script>
