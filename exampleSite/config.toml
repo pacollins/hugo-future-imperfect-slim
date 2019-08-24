@@ -140,12 +140,12 @@ disableLanguages        = [""]
 [Languages]
   # Each language has its own menu.
   [Languages.en]
-    languageCode        = "en"
+    LanguageCode        = "en"
     LanguageName        = "English"
     weight              = 1
 
   [Languages.de]
-    languageCode        = "de"
+    LanguageCode        = "de"
     LanguageName        = "Deutsch"
     title               = "Hugo Future Imperfect Slim auf deutsch"
     description         = "Ein Thema von HTML5 UP, portiert von Julio Pescador.  Vereinfacht und verbessert von Patrick Collins. Mehrsprachig von StatnMap. Unterstützt von: Hugo. "
@@ -182,7 +182,7 @@ disableLanguages        = [""]
       weight            = 6
 
   [Languages.fr]
-    languageCode        = "fr"
+    LanguageCode        = "fr"
     LanguageName        = "Français"
     title               = "Hugo Future Imperfect Slim en français"
     description         = "Un thème par HTML5 UP, porté par Julio Pescador. Simplifié et amélioré par Patrick Collins. Multilingue par StatnMap. Propulsé par Hugo."
@@ -219,9 +219,9 @@ disableLanguages        = [""]
       weight            = 6
 
   [Languages.pl]
-    languageCode        = "pl"
-    LanguageName        = "Polskie"
-    title               = "Hugo przyszłość niedoskonała"
+    LanguageCode        = "pl"
+    LanguageName        = "Polski"
+    title               = "Hugo Future Imperfect Slim po polsku"
     description         = "Motyw HTML5 UP, przeniesiony przez Julio Pescadora i wzbogacony przez Patricka Collinsa. Wielojęzyczny przez StatnMap. Zasilany przez Hugo."
     weight              = 2
 
@@ -256,7 +256,7 @@ disableLanguages        = [""]
       weight            = 6
 
   [Languages.pt]
-    languageCode        = "pt"
+    LanguageCode        = "pt"
     LanguageName        = "Português"
     title               = "Hugo Future Imperfect Slim em português"
     description         = "Um tema do HTML5 UP, portado por Julio Pescadora e reduzido por Patrick Collins. Multilíngue por StatnMap. Feito com Hugo."

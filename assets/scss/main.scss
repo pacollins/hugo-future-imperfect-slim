@@ -874,19 +874,6 @@ textarea {
    clip-path: ellipse(40% 25% at 50% 50%);
  }
 
- /* Flags */
-
- .flag-icon {
-   border: 0.02px solid black;
- }
-
- .flag-icon-en {
-   background-image: url(../flags/4x3/en.svg);
-   &.flag-icon-squared {
-     background-image: url(../flags/1x1/en.svg);
-   }
- }
-
  /* Share Button */
 
  .share-btn {
@@ -1223,7 +1210,7 @@ textarea {
    .flyout-menu {
      background-color: #fff;
      border-left: 1px solid rgba(160, 160, 160, 0.3);
-     height: calc(100vh - 3.5em);
+     height: 100%;
      margin-top: 3.5em;
      padding: 0;
      position: fixed;
@@ -1256,12 +1243,8 @@ textarea {
    display: flex;
    justify-content: space-between;
    .flyout-menu {
-     right: -183px;
-     width: 183px;
-     @include for-laptop-up {
-       right: -183px;
-       width: 183px;
-     }
+     right: -177px;
+     width: 177px;
      @include for-desktop-up {
        background-color: unset;
        border: none;
@@ -1372,7 +1355,6 @@ textarea {
      }
    }
    .lang-toggle {
-     width: 61px;
      &:hover {
        span {
          box-shadow: inset 0 0 0 100px rgba(46, 187, 170, .5);
@@ -1403,10 +1385,15 @@ textarea {
 
  #lang-menu {
    &.flyout-menu {
-     right: -61px;
-     width: 61px;
+     right: -177px;
+     width: 177px;
      a {
        border-left: 0;
+     }
+     ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
      }
      span {
        display: inline-block;
@@ -1421,6 +1408,10 @@ textarea {
          box-shadow: inset 0 0 0 100px rgba(46, 187, 170, .5);
        }
      }
+     .link {
+       border-bottom: dotted 1px rgba(160, 160, 160, 0.3);
+       display: block;
+      }
      .no-lang {
        cursor: not-allowed;
        opacity: .25;
@@ -1442,8 +1433,8 @@ textarea {
      justify-content: flex-start;
    }
    &.flyout-menu {
-     width: 183px;
-     right: -183px;
+     width: 177px;
+     right: -177px;
      padding: 1em;
      h1, a {
        margin: 0 .25em;

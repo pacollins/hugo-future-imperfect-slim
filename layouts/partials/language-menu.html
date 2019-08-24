@@ -1,13 +1,13 @@
 <menu id="lang-menu" class="flyout-menu">
-  <a href="#" lang="{{ .Site.Language.Lang }}" class="active"><span class="flag-icon flag-icon-{{ .Site.Language.Lang }}" alt="{{ .Site.Language.Lang }}"></span></a>
+  <a href="#" lang="{{ .Site.Language.Lang }}" class="link active">{{ .Site.Language.LanguageName }} ({{ .Site.Language.Lang }})</a>
   {{ if .IsTranslated -}}
     {{ range .Translations }}
-        <a href="{{ .Permalink }}" lang="{{ .Lang }}"><span class="flag-icon flag-icon-{{ .Lang }}" alt="{{ .Lang }}"></span></a>
+      <a href="{{ .Permalink }}" lang="{{ .Lang }}" class="link">{{ .Language.LanguageName }} ({{ .Site.Language.Lang }})</a>
     {{ end }}
   {{ else }}
     {{ range .Site.Languages }}
       {{ if not (eq .Lang $.Site.Language.Lang) }}
-        <a href="{{ "" | relLangURL }}" lang="{{ .Lang }}" class="no-lang"><span class="flag-icon flag-icon-{{ .Lang }}" alt="{{ .Lang }}"></span></a>
+        <a href="{{ relURL .Lang }}" lang="{{ .Lang }}" class="no-lang link">{{ .LanguageName }} ({{ .Lang }})</a>
       {{ end }}
     {{ end }}
   {{ end }}
