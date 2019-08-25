@@ -1,7 +1,8 @@
 # Hugo Future Imperfect Slim
 
-**Hugo Future Imperfect** *Slim* is a fork of [jpescador's](https://github.com/jpescador/) port of [HTML5 UP's theme](http://html5up.net/future-imperfect) by
-the same name.  The goal of the fork was to continue the development of the
+**Hugo Future Imperfect** *Slim* is a fork of [jpescador's](https://github.com/jpescador/)
+port of [HTML5 UP's theme](http://html5up.net/future-imperfect) by the same
+name. The goal of the fork was to continue the development of the
 [original Hugo theme](https://github.com/jpescador/hugo-future-imperfect).
 
 This version introduces **modern Hugo functions** as well as being built
@@ -124,4 +125,5 @@ This theme is released under the [Creative Commons Attribution 3.0 License](http
 
 "[Future Imperfect](https://html5up.net/future-imperfect)" is a theme by
 [HTML5 UP](http://html5up.net) licensed under the same terms.  Please read the
-[license](https://github.com/pacollins/hugo-future-imperfect-slim/blob/master/LICENSE.md) for more information.
+[license](https://github.com/pacollins/hugo-future-imperfect-slim/blob/master/LICENSE.md)
+for more information.
