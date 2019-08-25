@@ -1,20 +1,15 @@
 # Hugo Future Imperfect Slim
 
-**Hugo Future Imperfect** *Slim* is a theme based on
-[jpescador's](https://github.com/jpescador/) port of
-[HTML5 UP's theme](http://html5up.net/future-imperfect) by the same name.  The
-goal of this theme is to continue the development of the
-[original theme](https://github.com/jpescador/hugo-future-imperfect).
+**Hugo Future Imperfect** *Slim* is a fork of [jpescador's](https://github.com/jpescador/) port of [HTML5 UP's theme](http://html5up.net/future-imperfect) by
+the same name.  The goal of the fork was to continue the development of the
+[original Hugo theme](https://github.com/jpescador/hugo-future-imperfect).
 
-This version takes that port and modernizes it with **CSS Grid** and **Modern
-Hugo functions**. In addition to the features that were present in the original
-theme, there are some additional features for you to utlize however you see fit.
+This version introduces **modern Hugo functions** as well as being built
+mobile-first utilizing **CSS Grid**. To see the theme in action, check out the
+[live demo site](https://themes.gohugo.io/theme/hugo-future-imperfect-slim/) on
+the Hugo Themes Showcase.
 
 ![Hugo Future Imperfect Screenshot](https://raw.githubusercontent.com/pacollins/hugo-future-imperfect-slim/master/images/screenshot.png)
-
-Check out this
-[live example site](https://themes.gohugo.io/theme/hugo-future-imperfect-slim/)
-on the Hugo Theme Showcase.
 
 ## Table of Contents
 
@@ -36,194 +31,98 @@ on the Hugo Theme Showcase.
 
 ## Getting Started
 
-There are two different ways I recommend getting started and it depends on one
-of two things: are you going to help develop the theme, or do you just want to
-use it for personal use.
-
 ### Non-Development
 
-If you would like to stay up-to-date with the current iteration of the theme and
-don't plan to aid in the development of the theme (or don't want to aid via your
-site), I would highly recommend you add it as a submodule to your project. From
-your site directory, do the following:
+If you do not plan to aid in the development of the theme and just want to keep
+your site up-to-date with the latest version of the theme, it would be
+recommended to add it as a submodule to your site. To do that, do the following:
 
 ```
-mkdir themes // Creates a Themes Folder
-cd themes		 // Points to the Themes Folder
+cd PATH/TO/YOUR/SITE  // Navigates to your site directory
+mkdir themes          // Creates a Themes Folder
+cd themes             // Points to the Themes Folder
 git submodule add https://github.com/pacollins/hugo-future-imperfect-slim.git
 ```
 
-You will then have access to the theme at _themes/hugo-future-imperfect-slim_
-from within your project folder.
+The theme will then be placed at `/themes/hugo-future-imperfect-slim_` within
+your project directory.
+
+When you are ready to update the theme, run `git submodule update --remote` from
+your site directory.
 
 From here, you can customize any of the files for your personal use by creating
-a dupicating the file at the project level instead of the theme level. For
-example, if you wanted to change the About Me Page Template (which is located at
-_MYPROJECT/themes/layouts/about/list.html_), I would create a new file at
-_MYPROJECT/layouts/about/list.html_ and change it to what I wanted it to be.
+a duplicate file at the *project* level, rather than the theme level. For
+example, if you wanted to change the "About Me" page template (which is located
+at `MYPROJECT/themes/hugo-future-imperfect-slim/layouts/about/list.html`), you
+would create a file at `MYPROJECT/layouts/about/list.html` and design it to how
+you want it to be.
 
-This is the proper way to adjust files for personal use when they do not
-contribute to the development of the them, and it can help prevent your site
-from being incompatible with the original theme.
+This is the proper way to customize files for personal use if the changes won't
+be used to create a pull request and contribute to the development of the theme.
+It will also help prevent your theme from being incompatible with the official
+version.
 
 ### Development
 
-If you plan on assisting with developing the theme, you will want to have your
-own copy that is not a submodule. To do this, navigate to where you want to
-place it and do the following:
-
-```
-git clone https://github.com/pacollins/hugo-future-imperfect-slim.git
-```
+If you do plan to aid in the development of the theme, you will want to create
+your own fork of the theme. To do that, click the "Fork" button at the top right
+and then follow [GitHub's instructions](https://help.github.com/en/articles/fork-a-repo).
 
 ### exampleSite
 
-Within the hugo-future-imperfect-slim folder, there will be another folder
-called _exampleSite_. The structure of the folder will look like this:
-
-```
-exampleSite
-├── config.toml
-├── content
-│   ├── about
-│   │   ├── _index.br.md
-│   │   ├── _index.fr.md
-│   │   ├── _index.md
-│   │   └── _index.pl.md
-│   ├── blog
-│   │   ├── creating-a-new-theme.br.md
-│   │   ├── creating-a-new-theme.fr.md
-│   │   ├── creating-a-new-theme.md
-│   │   ├── creating-a-new-theme.pl.md
-│   │   ├── examples.md
-│   │   ├── goisforlovers.fr.md
-│   │   ├── goisforlovers.md
-│   │   ├── goisforlovers.pl.md
-│   │   ├── hugoisforlovers.fr.md
-│   │   ├── hugoisforlovers.md
-│   │   ├── hugoisforlovers.pl.md
-│   │   ├── migrate-from-jekyll.fr.md
-│   │   ├── migrate-from-jekyll.md
-│   │   └── migrate-from-jekyll.pl.md
-│   └── contact
-│       ├── _index.br.md
-│       ├── _index.fr.md
-│       ├── _index.md
-│       └── _index.pl.md
-├── static
-│   ├── css
-│   │   └── add-on.css
-│   ├── img
-│   │   ├── 2014
-│   │   │   ├── 04
-│   │   │   │   ├── pic01.jpg
-│   │   │   │   └── pic02.jpg
-│   │   │   └── 09
-│   │   │       └── pic03.jpg
-│   │   └── main
-│   │       └── logo.jpg
-│   └── js
-│       └── add-on.js
-└── staticman.yml
-```
-
-To get started, you will want to copy _config.toml_ from _exampleSite_ to the
-root directory of your project.
+Each theme comes with an "exampleSite" folder containing all the files to
+initialize the theme. You will want to move these files to your project
+directory root. The most important file is the `config.toml`, which contains all
+of the configuration settings for the theme. Check out the [`config.toml` wiki](#)
+for more information about the individual settings.
 
 ### Staticman
 
 If you would like static comments powered by [Staticman](https://staticman.net/),
-you will also need to copy _staticman.yml_.  You may refer to
-[this project page's Wiki page](https://github.com/pacollins/hugo-future-imperfect-slim/wiki/Staticman-config)
-for details.
-
-### config.toml
-
-This file is important to the initial set-up of your project and contains all of
-the customizations that the developers feel as though you should have easy
-access to. Each prarameter listed should include a comment to help describe it's
-function.  Unless otherwise state, _true_ will turn a feature **on**, while
-_false_ will turn a feature **off**. It is structured as follows:
-
-
-```
-.Site
-├── .Params // Controls Carious Settings
-|   ├── .Meta
-|   ├── .Header
-|   ├── .Intro
-|   │   └── .Pic
-|   ├── .Sidebar
-|   ├── .Footer
-|   └── .Staticman
-|       └── .Recaptcha
-├── .Languages // Controls Multilingual Settings and Navigation
-|   ├── .En
-|   │   └── .Menu.Main
-|   ├── .Fr
-|   │   └── .Menu.Main
-|   ├── .Pl
-|   │   └── .Menu.Main
-|   ├── .Br
-|   │   └── .Menu.Main
-└── .Social  // Controls Links to Social Media
-```
+you will also need to copy `staticman.yml`. Check out the [Staticman wiki](https://github.com/pacollins/hugo-future-imperfect-slim/wiki/Staticman-config)
+for more details.
 
 ### Hugo's Built-In Server
 
-To see a live version of your site locally, use the following command:
+Hugo comes with a built-in web server that allows you to see a live version of
+your site that updates as you change files. To do this, do the following:
 
 ```
+cd PATH/TO/YOUR/SITE  // Navigates to your site directory
 hugo server
 ```
 
-Hugo will build your site and host a server locally. You can view this live at
-[localhost:1313](http://localhost:1313).
-
-## Shortcodes
-
-In addition to the native [Hugo shortcodes](https://gohugo.io/extras/shortcodes/),
-the theme also includes additional shortcodes that you may find useful.
-
-## Source Code Highlighting
-
-You can enable source code hightlighting via
-[highlight.js](https://highlightjs.org).  If you want to use a language which is
-not in the [common package](https://highlightjs.org/download/) of highlight.js
-you can enable that language via `highlightjsLang` and the additional packages
-with be added to your site.
-
-```
-highlightjsLang=["yaml", "groovy"]
-```
+Hugo will then build your site and host a server locally. This site will be
+visible to you at [localhost:1313](http://localhost:1313).
 
 ## About the Author
 
-[Hugo Future Imperfect](http://html5up.net/future-imperfect) is a theme by
-[HTML5 UP](http://html5up.net). [Julio Pescador](https://jpescador.com) took the
-code provided from them and ported it over so that it could be used with Hugo.
-[Patrick Collins](https://pacollins.com) then took this port, broke it down and
-restructured it under newer Hugo functions in addition to building it
-mobile-first utlizing CSS Grid. This also allowed for the slimming of the CSS
-and JS files originally included to strip those features not used in the site
-(hence the name, _slim_). During the this time,
-[StatnMap](https://github.com/statnmap) worked on overhauling the majority of
-the theme to include Multilingual functionality - which is included here.
+[Hugo Future Imperfect](http://html5up.net/future-imperfect) is a theme designed
+by [HTML5 UP](http://html5up.net). [Julio Pescador](https://jpescador.com) took
+the original code provided and then ported it to be utilized as a Hugo theme.
+[Patrick Collins](https://pacollins.com) then took this port, and redesigned it
+using newer Hugo functions, while also focusing on building it to be
+mobile-first using CSS grid. This process also allowed for the slimming down of
+the original CSS and JS files to remove features not utilized in the theme. This
+is where the *slim* comes from in the name. While this was under development,
+[Sebastien Rochette](https://statnmap.com/) developed the theme to include it's
+multilingual functionality. Since this the introduction of the *slim* version,
+[Vincent Tam](https://vincenttam.gitlab.io/) has integrated Staticman to the
+theme.
 
-Since the original development had become stale and the redesign is _not_
+Since the original development had become stale and this redesign is *not*
 directly compatible with previous versions of the original
 [Hugo Future Imperfect](https://github.com/jpescador/hugo-future-imperfect),
-it is now in its own repo to help aid in development and prevent confusion.
+this version of the theme is in its own repository to help its development and'
+to prevent confusion.
 
-Please also refer to the
-[project contributors list](https://github.com/pacollins/hugo-future-imperfect-slim/graphs/contributors)
-for everyone that has directly contributed to this version of the theme.
+For additional contributors that have helped developed this fantastic theme,
+please visit the [project contributors list](https://github.com/pacollins/hugo-future-imperfect-slim/graphs/contributors).
 
 ## License
 
-This theme is released under the
-[Creative Commons Attribution 3.0 License](https://creativecommons.org/licenses/by/3.0/).
+This theme is released under the [Creative Commons Attribution 3.0 License](https://creativecommons.org/licenses/by/3.0/).
+
 "[Future Imperfect](https://html5up.net/future-imperfect)" is a theme by
 [HTML5 UP](http://html5up.net) licensed under the same terms.  Please read the
-[license](https://github.com/pacollins/hugo-future-imperfect-slim/blob/master/LICENSE.md)
-for more information.
+[license](https://github.com/pacollins/hugo-future-imperfect-slim/blob/master/LICENSE.md) for more information.
