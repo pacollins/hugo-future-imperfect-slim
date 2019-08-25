@@ -169,6 +169,11 @@ _false_ will turn a feature **off**. It is structured as follows:
 └── .Social  // Controls Links to Social Media
 ```
 
+### Custom JavaScript and CSS
+
+You can adapt this theme according to your preferences using your own JS or CSS code.
+To do this your can write your code in `static/css/add-on.css` and `static/js/add-on.js`.
+
 ### Hugo's Built-In Server
 
 To see a live version of your site locally, use the following command:
