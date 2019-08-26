@@ -18,7 +18,6 @@
       {{ $mainCSSOptions := (dict "targetPath" "css/main.min.css" "outputStyle" "compressed") }}
       {{ $style := resources.Get "scss/main.scss" | resources.ToCSS $mainCSSOptions | resources.Fingerprint }}
       <link rel="stylesheet" href="{{ $style.RelPermalink }}" integrity="{{ $style.Data.Integrity }}">
-      <link rel="stylesheet" href="{{ "css/add-on.css" | relURL }}">
     {{ else }}
       <link rel="stylesheet" href="{{ . | relURL }}">
     {{ end }}

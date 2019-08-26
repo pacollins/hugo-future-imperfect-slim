@@ -172,7 +172,8 @@ _false_ will turn a feature **off**. It is structured as follows:
 ### Custom JavaScript and CSS
 
 You can adapt this theme according to your preferences using your own JS or CSS code.
-To do this your can write your code in `static/css/add-on.css` and `static/js/add-on.js`.
+To do this your can add your custom scripts to the `cssFiles` and `jsFiles`
+parameters in *config.toml*.
 
 ### Hugo's Built-In Server
 
