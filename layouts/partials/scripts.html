@@ -18,7 +18,7 @@
 {{/* Backwards compatibility for deprecated parameter ".Site.Params.staticman.staticman" */}}
 {{ if or .Site.Params.staticman.enabled .Site.Params.staticman.staticman }}
   {{- $smjs := resources.Get "js/staticman.js" | resources.ExecuteAsTemplate "js/staticman.js" .Site.Params.staticman -}}
-    <script src='{{ $smjs.RelPermalink }}'></script>
+  <script src='{{ $smjs.RelPermalink }}'></script>
   {{ if and .Site.Params.staticman.recaptcha.siteKey .Site.Params.staticman.recaptcha.encryptedKey }}
     <script src='https://www.google.com/recaptcha/api.js'></script>
   {{ end }}
