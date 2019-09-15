@@ -1159,6 +1159,11 @@ textarea {
                line-height: 1;
                margin: 1em;
              }
+             a {
+               overflow: hidden;
+               text-overflow: ellipsis;
+               white-space: nowrap;
+             }
            }
          }
        }
