@@ -1172,8 +1172,40 @@ textarea {
    display: flex;
    justify-content: space-around;
    align-items: center;
-   .previous, .next {
+   margin: 1.5em auto;
+   padding: 1em;
+   max-width: 55em;
+   .button {
      margin: 1em;
+     width: 50%;
+     @include for-tablet-up {
+     }
+     .previous, .next {
+       div {
+         display: none;
+         @include for-tablet-up {
+           display: block;
+           overflow: hidden;
+           text-overflow: ellipsis;
+           white-space: nowrap;
+         }
+       }
+       &::before {
+         font-family: "Font Awesome 5 Free";
+         font-weight: 900;
+         text-decoration: inherit;
+       }
+     }
+     .previous::before {
+       content: "\f053";
+       float: left;
+       padding-right: .5em;
+     }
+     .next::before {
+       content: "\f054";
+       float: right;
+       padding-right: .5em;
+     }
    }
  }
 
