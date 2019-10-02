@@ -1015,6 +1015,7 @@ textarea {
      border-bottom: solid 1px rgba(160, 160, 160, 0.3);
      margin: 1em 1em 0 1em;
      text-align: center;
+     word-break: break-all;
      @include for-laptop-up {
        display: flex;
        justify-content: space-between;
@@ -1031,14 +1032,19 @@ textarea {
      }
      .title {
        font-size: 1.1em;
+       width: 100%;
+       @include for-laptop-up {
+         width: 75%;
+       }
      }
      .meta {
        display: flex;
        flex-direction: column;
+       width: 100%;
        @include for-laptop-up {
          border-left: solid 1px rgba(160, 160, 160, 0.3);
          text-align: right;
-         width: 17em;
+         width: 25%;
        }
        .published {
          font-family: "Raleway", Helvetica, sans-serif;
@@ -1159,6 +1165,11 @@ textarea {
                line-height: 1;
                margin: 1em;
              }
+             a {
+               overflow: hidden;
+               text-overflow: ellipsis;
+               white-space: nowrap;
+             }
            }
          }
        }
@@ -1172,8 +1183,40 @@ textarea {
    display: flex;
    justify-content: space-around;
    align-items: center;
-   .previous, .next {
+   margin: 1.5em auto;
+   padding: 1em;
+   max-width: 55em;
+   .button {
      margin: 1em;
+     width: 50%;
+     @include for-tablet-up {
+     }
+     .previous, .next {
+       div {
+         display: none;
+         @include for-tablet-up {
+           display: block;
+           overflow: hidden;
+           text-overflow: ellipsis;
+           white-space: nowrap;
+         }
+       }
+       &::before {
+         font-family: "Font Awesome 5 Free";
+         font-weight: 900;
+         text-decoration: inherit;
+       }
+     }
+     .previous::before {
+       content: "\f053";
+       float: left;
+       padding-right: .5em;
+     }
+     .next::before {
+       content: "\f054";
+       float: right;
+       padding-right: .5em;
+     }
    }
  }
 
