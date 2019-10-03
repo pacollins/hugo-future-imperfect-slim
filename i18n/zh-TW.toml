@@ -25,7 +25,7 @@
 [learn_more]
   other = "了解更多"
 [repliestext]
-  other = "一般回应需时 {{ .Count }} 小时"
+  other = "一般回應需等待 {{ .Count }} 小時"
 [submit]
   other = "送出"
 [404_pagenotfound]
@@ -35,7 +35,7 @@
 [404_goback]
   other = "回去"
 [blog]
-  other = "博客"
+  other = "部落格"
 [contact]
   other = "聯絡"
 [next_page]
