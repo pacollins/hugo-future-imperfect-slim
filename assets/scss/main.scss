@@ -1176,6 +1176,25 @@ textarea {
      }
    }
  }
+ 
+ /*Blog post image attributes*/
+ 
+ .postimg {
+    display:block;
+    width:50%;
+    margin-left:auto;
+    margin-right:auto;
+   
+ }
+ 
+.imgcaption {
+   font-size:.5em;
+   font-style:italic;
+   font-family: "Raleway", Helvetica, sans-serif;
+   color:#535353;
+   text-align:center;
+}
+
 
  /* Pagination */
 
@@ -1561,7 +1580,7 @@ textarea {
      flex: 1 1 100%;
    }
    .mini-post {
-     background: #ffffff;
+     background: #000000;
      border: solid 1px rgba(160, 160, 160, 0.3);
  display: flex;
  flex-direction: column;
@@ -1870,3 +1889,4 @@ textarea {
         page-break-after: avoid;
     }
 }
+
