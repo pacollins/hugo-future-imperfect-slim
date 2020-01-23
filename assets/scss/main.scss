@@ -1529,6 +1529,14 @@ textarea {
    }
  }
 
+ #site-intro.hidden-on-mobile {
+   display: none;
+
+   @include for-desktop-up {
+     display: flex;
+   }
+ }
+
  /* Site Main */
 
  #site-main {
