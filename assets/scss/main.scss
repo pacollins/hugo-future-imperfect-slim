@@ -391,6 +391,13 @@ textarea {
            display: table-cell;
            text-align: center;
          }
+
+         &[align="center"] {
+           text-align: center;
+         }
+         &[align="right"] {
+           text-align: right;
+         }
          &[data-header]:before {
            color: #757575;
            content: attr(data-header);
