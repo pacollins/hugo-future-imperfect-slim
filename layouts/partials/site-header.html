@@ -1,6 +1,17 @@
 <!--[if IE]>
   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
+<div id="theme-message">
+  <b>This is a message related to the development of the theme.</b>
+  <p>It only displays on <code>localhost</code> to notify you of theme-breaking
+    changes.</p>
+  <script>
+      if (window.location.href.indexOf('localhost:') < 1) {
+        var div = document.getElementById("theme-message");
+        div.parentNode.removeChild(div);
+      }
+  </script>
+</div>
 <header id="site-header">
   <nav id="site-nav">
     <h1 class="nav-title">
