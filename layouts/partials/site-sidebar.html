@@ -47,13 +47,15 @@
     {{ end }}
   {{ end }}
 
-  <section id="mini-bio">
-    <header>
-      <h1>{{ i18n "about" }}</h1>
-    </header>
-    <p>{{ .Site.Params.sidebar.about | safeHTML }}</p>
-    <footer>
-      <a href="{{ "about" | relLangURL }}" class="button">{{ i18n "learn_more" }}</a>
-    </footer>
-  </section>
+  {{ if .Site.Params.sidebar.about }}
+    <section id="mini-bio">
+      <header>
+        <h1>{{ i18n "about" }}</h1>
+      </header>
+      <p>{{ .Site.Params.sidebar.about | safeHTML }}</p>
+      <footer>
+        <a href="{{ "about" | relLangURL }}" class="button">{{ i18n "learn_more" }}</a>
+      </footer>
+    </section>
+  {{ end }}
 </section>
