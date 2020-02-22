@@ -1013,7 +1013,7 @@ textarea {
    max-width: 55em;
    > header {
      border-bottom: solid 1px rgba(160, 160, 160, 0.3);
-     margin: 1em 1em 0 1em;
+     margin-top: 1em;
      text-align: center;
      word-break: break-all;
      @include for-laptop-up {
@@ -1100,6 +1100,10 @@ textarea {
    > footer {
      display: flex;
      flex-direction: column;
+     .button {
+       margin: 1em auto;
+       width: 100%
+     }
      .stats {
        display: flex;
        cursor: default;
