@@ -344,7 +344,7 @@ textarea {
  ::-webkit-input-placeholder, :-moz-placeholder,
  ::-moz-placeholder, :-ms-input-placeholder, .formerize-placeholder {
  	color: #aaaaaa;
- 	opacity: 1.0;
+ 	opacity: 1;
  }
 
  /* Table */
@@ -376,6 +376,7 @@ textarea {
    > tbody {
      > tr {
        border-bottom: 1px solid #e0e0e0;
+       text-align: center;
        @include for-laptop-up {
          &:nth-child(even) {
            background-color: #f4f4f4;
@@ -386,17 +387,8 @@ textarea {
        }
        > td {
          display: block;
-         text-align: right;
          @include for-laptop-up {
            display: table-cell;
-           text-align: center;
-         }
-
-         &[align="center"] {
-           text-align: center;
-         }
-         &[align="right"] {
-           text-align: right;
          }
          &[data-header]:before {
            color: #757575;
@@ -404,6 +396,7 @@ textarea {
            float: left;
            font-size: inherit;
            font-weight: bold;
+           margin-right: 1em;
            @include for-laptop-up {
              display: none;
            }
@@ -414,7 +407,6 @@ textarea {
            text-align: left;
            @include for-laptop-up {
              background-color: unset;
-             text-align: center;
            }
            &:after {
              content: "\f078";
@@ -436,13 +428,25 @@ textarea {
            -ms-transition: none;
            -o-transition: none;
            -webkit-transition: none;
+           text-align: right;
            transition: none;
            z-index: -1;
            @include for-laptop-up {
              border: 0;
-             opacity: 100;
+             opacity: 1;
              position: relative;
              z-index: 0;
+           }
+         }
+         @include for-laptop-up {
+           &[align="left"] {
+             text-align: left;
+           }
+           &[align="center"] {
+             text-align: center;
+           }
+           &[align="right"] {
+             text-align: right;
            }
          }
        }
@@ -1007,7 +1011,7 @@ textarea {
      padding: 0 2.5em;
    }
    &.overlay {
-     opacity: .25;
+     opacity: 0.25;
    }
  }
 
@@ -1468,7 +1472,7 @@ textarea {
       }
      .no-lang {
        cursor: not-allowed;
-       opacity: .25;
+       opacity: 0.25;
        span {
          &:hover {
            box-shadow: none;
