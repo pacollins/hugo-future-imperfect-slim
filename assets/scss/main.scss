@@ -407,6 +407,7 @@ textarea {
            text-align: left;
            @include for-laptop-up {
              background-color: unset;
+             text-align: center;
            }
            &:after {
              content: "\f078";
@@ -435,6 +436,7 @@ textarea {
              border: 0;
              opacity: 1;
              position: relative;
+             text-align: center;
              z-index: 0;
            }
          }
