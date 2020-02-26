@@ -13,12 +13,6 @@ aliases = ["migrate-from-jekyl"]
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
 <!--more-->
 
-| 1  | 2  | 3  |
-|:----|----|----:|
-| 1A | 2A | 3A |
-| 1B | 2B | 3B |
-| 1C | 2C | 3C |
-
 ## Headings
 
 The following HTML `<h1>`—`<h6>` elements represent six levels of section headings. `<h1>` is the highest section level while `<h6>` is the lowest.
