@@ -10,7 +10,7 @@ pluralizeListTitles     = false
 disableLanguages        = [""]
 
 [params]
-  mainSections = ["blog", "post"]
+  mainSections          = ["blog", "post"]
   # Loads CSS and JavaScript files. The variable is an array so that you can load
   # multiple/additional files if necessary. The standard theme files can be loaded
   # by adding the value, "default". Default includes the add-on.css and and-on.js.
@@ -149,48 +149,6 @@ disableLanguages        = [""]
     LanguageName        = "English"
     weight              = 1
 
-  [Languages.de]
-    LanguageCode        = "de"
-    LanguageName        = "Deutsch"
-    title               = "Hugo Future Imperfect Slim auf deutsch"
-    description         = "Ein Thema von HTML5 UP, portiert von Julio Pescador.  Vereinfacht und verbessert von Patrick Collins. Mehrsprachig von StatnMap. Unterstützt von: Hugo. "
-    weight              = 2
-
-    [[Languages.de.menu.main]]
-      name              = "Startseite"
-      identifier        = "home"
-      url               = "/"
-      pre               = "<i class='fas fa-home'></i>"
-      weight            = 1
-
-    [[Languages.de.menu.main]]
-      name              = "Über mich"
-      identifier        = "about"
-      url               = "/about/"
-      pre               = "<i class='far fa-id-card'></i>"
-      weight            = 2
-
-    [[Languages.de.menu.main]]
-      name              = "Blog"
-      identifier        = "blog"
-      url               = "/blog/"
-      pre               = "<i class='far fa-newspaper'></i>"
-      weight            = 3
-
-    [[Languages.de.menu.main]]
-      name              = "Kategorien"
-      identifier        = "categories"
-      url               = "/categories/"
-      pre               = "<i class='fas fa-sitemap'></i>"
-      weight            = 5
-
-    [[Languages.de.menu.main]]
-      name              = "Kontakt"
-      identifier        = "contact"
-      url               = "/contact/"
-      pre               = "<i class='far fa-envelope'></i>"
-      weight            = 6
-
   [Languages.fr]
     LanguageCode        = "fr"
     LanguageName        = "Français"
@@ -316,6 +274,31 @@ disableLanguages        = [""]
       url               = "/contact/"
       pre               = "<i class='far fa-envelope'></i>"
       weight            = 6
+
+  [Languages.de]
+    LanguageCode        = "de"
+    LanguageName        = "Deutsche"
+    weight              = 5
+
+  [Languages.es]
+    LanguageCode        = "es"
+    LanguageName        = "Española"
+    weight              = 6
+
+  [Languages.zh-CN]
+    LanguageCode        = "zh-CN"
+    LanguageName        = "中文"
+    weight              = 7
+
+  [Languages.zh-TW]
+    LanguageCode        = "zh-TW"
+    LanguageName        = "中文"
+    weight              = 8
+
+  [Languages.ja]
+    LanguageCode        = "ja"
+    LanguageName        = "日本語"
+    weight              = 9
 
 # Sets Social Media icons to appear and link to your account. Value should be your
 # username unless otherwise noted. These are the icons affected by socialAppearAtTop
