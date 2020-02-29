@@ -75,12 +75,15 @@ for more information about the individual settings.
 If you would like static comments powered by [Staticman](https://staticman.net/),
 you will also need to copy `staticman.yml`. Check out the [Staticman wiki](https://github.com/pacollins/hugo-future-imperfect-slim/wiki/Staticman-config)
 for more details.
+<<<<<<< HEAD
 
 ### Custom JavaScript and CSS
 
 You can adapt this theme according to your preferences using your own JS or CSS code.
 To do this your can add your custom scripts to the `cssFiles` and `jsFiles`
 parameters in *config.toml*.
+=======
+>>>>>>> 85ba20bbe70de32873ffd94a4498162ed46d110c
 
 ### Hugo's Built-In Server
 
