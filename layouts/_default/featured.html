@@ -1,7 +1,7 @@
 {{ if .Params.images }}
   <a href="{{ .RelPermalink }}" class="image featured">
     {{ range first 1 .Params.images }}
-      <img src="{{ . | relURL }}" alt="">
+      <img src="{{ index . 0 | relURL }}"{{ with (index . 1) }} alt="{{ . }}"{{ end }}{{ with (index . 2) }} style="{{ . }}"{{ end }}>
     {{ end }}
   </a>
 {{ else if .Params.featured }}
