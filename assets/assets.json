@@ -1,0 +1,15 @@
+{
+   "styles" : [
+      "css/normalize.css",
+      "css/fonts.css",
+      "css/academicons.css",
+      "css/fontawesome.css",
+      "css/fancybox.css"
+   ],
+   "scripts" : [
+      "js/jquery-3.4.1.js",
+      "js/fancybox.js",
+      "js/util.js",
+      "js/main.js"
+   ]
+}
