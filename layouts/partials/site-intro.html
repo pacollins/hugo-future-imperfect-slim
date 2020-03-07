@@ -1,4 +1,4 @@
-<section id="site-intro" {{ if (and (.Site.Params.intro.hideOnMobile) (not (and .Page.IsHome .Site.Params.intro.alwaysOnHomepage))) }}class="hidden-on-mobile"{{ end }}>
+<section id="site-intro" {{ if (and (.Site.Params.intro.hideWhenSingleColumn) (not (and .Page.IsHome .Site.Params.intro.alwaysOnHomepage))) }}class="hidden-single-column"{{ end }}>
   {{ with .Site.Params.intro.pic }}<a href="{{ "/" | relLangURL}}"><img src="{{ .src | relURL }}" class="{{ .shape }}" width="{{ .width }}" alt="{{ .alt }}" /></a>{{ end }}
   <header>
     {{ with .Site.Params.intro.header }}<h1>{{ . | safeHTML }}</h1>{{ end }}

@@ -1529,7 +1529,7 @@ textarea {
    }
  }
 
- #site-intro.hidden-on-mobile {
+ #site-intro.hidden-single-column {
    display: none;
 
    @include for-desktop-up {
