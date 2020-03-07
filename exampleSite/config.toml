@@ -62,9 +62,9 @@ disableLanguages        = [""]
     rssIntro              = true
     socialIntro           = true
     # You may not want to display a long intro above content on small screens.
-    hideOnMobile          = true
+    hideOnMobile          = false
     # But you may want to always display the intro on the homepage.
-    alwaysOnHomepage      = true
+    alwaysOnHomepage      = false
 
     # This appears at the top of the sidebar above params.intro.header.
     # A width of less than 100px is recommended from a design perspective.
