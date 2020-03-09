@@ -6,7 +6,7 @@
     <div id="wrapper">
       {{ partial "site-intro" . }}
       <main id="site-main">
-        {{ $paginator := .Paginate (.Pages) }}
+        {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
         {{ range $paginator.Pages }}
           {{ .Render "content-list" }}
         {{ end }}
