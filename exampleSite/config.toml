@@ -63,6 +63,11 @@ disableLanguages        = [""]
     paragraph             = "Another fine, responsive site template by <a href='http://html5up.net'>HTML5 UP</a>."
     rssIntro              = true
     socialIntro           = true
+    # You may not want to display a long intro above content in the
+    # single column layout used on smaller screens.
+    hideWhenSingleColumn  = false
+    # But you may want to always display the intro on the homepage.
+    alwaysOnHomepage      = false
 
     # This appears at the top of the sidebar above params.intro.header.
     # A width of less than 100px is recommended from a design perspective.

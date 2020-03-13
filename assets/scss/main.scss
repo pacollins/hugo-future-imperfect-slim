@@ -1546,6 +1546,14 @@ textarea {
    }
  }
 
+ #site-intro.hidden-single-column {
+   display: none;
+
+   @include for-desktop-up {
+     display: flex;
+   }
+ }
+
  /* Site Main */
 
  #site-main {
