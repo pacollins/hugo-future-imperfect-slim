@@ -1,0 +1,11 @@
+/*
+  This CSS file adds support for Right-to-Left languages.
+  In the appropriate i18n file, set the follwoing:
+  [letter_direction]
+    other = "RTL"
+*/
+
+h1, h2, h3, h4, h5, h6, p, a, del, mark, ul, li, table, tr, td {
+  direction: rtl;
+  letter-spacing: unset;
+}
