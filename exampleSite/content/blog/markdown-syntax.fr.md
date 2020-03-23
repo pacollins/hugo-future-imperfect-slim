@@ -6,7 +6,6 @@ description = "Exemple d'article présentant la syntaxe et le formatage de base 
 tags = ["markdown", "css", "html", "themes"]
 categories = ["themes", "syntax"]
 images  = ["img/2014/04/pic02.jpg"]
-type = "post"
 aliases = ["migrate-from-jekyl"]
 +++
 

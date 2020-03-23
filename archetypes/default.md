@@ -6,5 +6,4 @@ description = ""
 tags = [""]
 categories = [""]
 images = [""]
-type = "post"
 +++

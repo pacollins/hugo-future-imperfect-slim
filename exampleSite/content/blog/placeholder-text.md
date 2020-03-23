@@ -6,7 +6,6 @@ description = "Lorem Ipsum Dolor Si Amet"
 tags = ["markdown","text"]
 categories = [""]
 images  = ["img/2014/09/pic03.jpg"]
-type = "post"
 +++
 
 Lorem est tota propiore conpellat pectoribus de
