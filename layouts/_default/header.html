@@ -10,4 +10,13 @@
       <p>{{ . }}</p>
     {{ end }}
   </div>
+  <div class="meta">
+    <time class="published" datetime="{{ .Date }}">
+      {{ default (i18n "date_format") | .Date.Format }}
+    </time>
+    <span class="author">{{ .Params.author }}</span>
+    {{ if .Site.Params.ReadingTime }}
+      <p>{{ i18n "postreadingtime" .ReadingTime }}</p>
+    {{ end }}
+  </div>
 </header>

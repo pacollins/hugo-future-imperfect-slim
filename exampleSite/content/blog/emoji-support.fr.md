@@ -6,7 +6,6 @@ description = "Guide d'utilisation des emoji dans Hugo"
 tags = ["emoji"]
 categories = [""]
 images  = ["img/2014/04/pic01.jpg"]
-type = "post"
 +++
 
 Emoji peut être activé dans un projet Hugo de plusieurs manières.

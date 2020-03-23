@@ -6,13 +6,7 @@
     <div id="wrapper">
       {{ partial "site-intro" . }}
       <main id="site-main">
-        <article class="post">
-            {{ $.Scratch.Set "h1" true }}
-            {{ .Render "header" }}
-            <div id="content">
-                {{ .Content }}
-            </div>
-        </article>
+        {{ .Render "content-single"}}
       </main>
       {{ partial "site-sidebar" . }}
       {{ partial "site-footer" . }}
