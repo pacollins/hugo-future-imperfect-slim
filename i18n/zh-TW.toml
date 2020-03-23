@@ -20,6 +20,8 @@
   other = "未分類"
 [share_post]
   other = "分享這篇文章"
+[check_out]
+  other = "查看此帖子的作者"
 [about]
   other = "關於"
 [learn_more]

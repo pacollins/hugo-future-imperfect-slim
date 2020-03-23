@@ -21,6 +21,8 @@
   other = "Uncategorized"
 [share_post]
   other = "Share this post"
+[check_out]
+  other = "Check out this post by"
 [about]
   other = "About"
 [learn_more]

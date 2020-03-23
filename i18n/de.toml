@@ -21,6 +21,8 @@
   other = "Unkategorisiert"
 [share_post]
   other = "Teilen"
+[check_out]
+  other = "Schauen Sie sich diesen Beitrag von an"
 [about]
   other = "Über mich"
 [learn_more]

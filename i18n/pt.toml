@@ -23,6 +23,8 @@
   other = "Sem categoria"
 [share_post]
   other = "Compartilhe este post"
+[check_out]
+  other = "Confira esta postagem por"
 [about]
   other = "Sobre"
 [learn_more]
