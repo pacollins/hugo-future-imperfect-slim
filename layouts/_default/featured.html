@@ -11,7 +11,7 @@
       {{ $slideCount := 0 }}
       {{ range .Params.images }}
         {{ $slideCount = add $slideCount 1 }}
-        <span class="slideshow-indicator" onclick="currentSlide({{- $slideCount -}})"></span>
+        <span class="slideshow-indicator" onclick="showSlides({{- $slideCount -}})"></span>
       {{ end }}
     </div>
   </div>

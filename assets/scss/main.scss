@@ -975,6 +975,9 @@ textarea {
  }
  .slideshow-slide {
    display: none;
+   &.on {
+     display: block;
+   }
  }
  .fade {
      -webkit-animation-name: fade;
@@ -1006,9 +1009,9 @@ textarea {
    border-radius: 50%;
    display: inline-block;
    transition: background-color 0.6s ease;
- }
- .active {
-   background-color: #2ebaae;
+   &.on {
+     background-color: #2ebaae;
+   }
  }
 
  /* ---------------------------------CSS Grid-------------------------------- */
