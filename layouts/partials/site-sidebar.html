@@ -7,7 +7,7 @@
       {{ range first (.Site.Params.sidebar.postAmount | default 5) (where .Site.Pages  "Type" "post") }}
       <article class="mini-post">
         <section>
-          {{ .Render "featured" }}
+          {{ .Render "featured-sidebar" }}
         </section>
         <header>
           <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>

@@ -1,9 +1,20 @@
 {{ if .Params.images }}
-  <a href="{{ .RelPermalink }}" class="image featured">
-    {{ range first 1 .Params.images }}
-      <img src="{{ index . 0 | relURL }}"{{ with (index . 1) }} alt="{{ . }}"{{ end }}{{ with (index . 2) }} style="{{ . }}"{{ end }}>
-    {{ end }}
-  </a>
+  <div class="slideshow-container">
+    <a href="{{ .RelPermalink }}" class="image featured">
+      {{ range .Params.images }}
+      <div class="slideshow-slide fade">
+        <img src="{{ index . 0 | relURL }}"{{ with (index . 1) }} alt="{{ . }}"{{ end }}{{ with (index . 2) }} style="{{ . }}"{{ end }}>
+      </div>
+      {{ end }}
+    </a>
+    <div class="slideshow-nav">
+      {{ $slideCount := 0 }}
+      {{ range .Params.images }}
+        {{ $slideCount = add $slideCount 1 }}
+        <span class="slideshow-indicator" onclick="currentSlide({{- $slideCount -}})"></span>
+      {{ end }}
+    </div>
+  </div>
 {{ else if .Params.featured }}
   <a href="{{ .RelPermalink }}" class="image featured">
     <img src="{{ (path.Join "img" (cond (eq .Params.featuredpath "date") (.Page.Date.Format "2006/01") (.Params.featuredpath)) .Params.featured) | relURL }}" alt="{{ .Params.featuredalt }}">
