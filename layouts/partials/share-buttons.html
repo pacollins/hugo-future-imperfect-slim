@@ -25,7 +25,7 @@
           <i class="fab fa-pinterest-p"></i><p>&nbsp;Pinterest</p>
         </a>
   {{ else if eq . "email" }}
-        <a href="mailto:?subject={[ i18n "Check_Out"]} {{ $author }}&amp;body={{ $permalink }}" target="_blank" class="share-btn email" data-proofer-ignore>
+        <a href="mailto:?subject={{ i18n "check_out" }} {{ $author }}&amp;body={{ $permalink }}" target="_blank" class="share-btn email" data-proofer-ignore>
           <i class="fas fa-envelope"></i><p>&nbsp;Email</p>
         </a>
   {{ end }}
