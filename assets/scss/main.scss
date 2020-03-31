@@ -1576,6 +1576,10 @@ textarea {
        margin-top: 0;
      }
    }
+   footer {
+     margin: auto;
+     width: max-content;
+   }
  }
 
  #recent-posts {
@@ -1664,9 +1668,6 @@ textarea {
      opacity: 0.65;
      font-size: 0.9em;
      padding: 0;
-   }
-   footer {
-     text-align: center;
    }
  }
 

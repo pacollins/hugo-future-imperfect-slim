@@ -4,7 +4,7 @@
       <header>
         <h1>{{ i18n "recent_posts" }}</h1>
       </header>
-      {{ range first (.Site.Params.sidebar.postAmount | default 5) (where .Site.Pages  "Type" "post") }}
+      {{ range first (.Site.Params.sidebar.postAmount | default 5) (where site.RegularPages "Type" "in" site.Params.mainSections) }}
       <article class="mini-post">
         <section>
           {{ .Render "featured" }}
@@ -15,8 +15,10 @@
         </header>
       </article>
       {{ end }}
-      {{ if ge (len (where .Site.Pages "Type" "post")) (.Site.Params.sidebar.postAmount | default 5) }}
-        <a href="{{ with .Site.Params.viewMorePostsLink }}{{ . | relLangURL }}{{ else }}{{ "post" | relLangURL }}{{ end }}" class="button">{{ i18n "see_more" }}</a>
+      {{ if ge (len (where site.RegularPages "Type" "in" site.Params.mainSections)) (.Site.Params.sidebar.postAmount | default 5) }}
+        <footer>
+          <a href="{{ with .Site.Params.viewMorePostsLink }}{{ . | relLangURL }}{{ else }}{{ "post" | relLangURL }}{{ end }}" class="button">{{ i18n "see_more" }}</a>
+        </footer>
       {{ end }}
     </section>
   {{ end }}
