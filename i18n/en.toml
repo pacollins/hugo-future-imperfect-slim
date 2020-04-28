@@ -2,7 +2,7 @@
   other = "January 2, 2006"
 [postreadingtime]
   one = "1 minute read"
-  other = "{{ .Count }} minutes read"
+  other = "{{ .Count }} minute read"
 [recent_posts]
   other = "Recent posts"
 [see_more]
