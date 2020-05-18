@@ -1,13 +1,9 @@
 <!-- Pagination -->
 <div class="pagination">
   {{ if .Paginator.HasPrev }}
-    <a href="{{ .Paginator.Prev.URL }}" class="button big previous"><i class="fas fa-angle-left"></i></a>
-  {{ else }}
-    <a href="#" class="disabled button big previous"><i class="fas fa-angle-left"></i></a>
+    <a href="{{ .Paginator.Prev.URL }}" class="button"><div class="previous"><div>Previous</div></div></a>
   {{ end }}
   {{ if .Paginator.HasNext }}
-    <a href="{{ .Paginator.Next.URL }}" class="button big next"><i class="fas fa-angle-right"></i></a>
-  {{ else }}
-    <a href="#" class="disabled button big next"><i class="fas fa-angle-right"></i></a>
+    <a href="{{ .Paginator.Next.URL }}" class="button"><div class="next"><div>Next</div></div></a>
   {{ end }}
 </div>
