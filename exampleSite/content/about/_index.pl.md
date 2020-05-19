@@ -1,29 +1,25 @@
 +++
-title = "O Hugo"
-date = "2014-04-09"
+title = "O nas"
+description = "Hugo, najszybszy na świecie program do tworzenia stron internetowych"
+date = "2019-02-28"
+aliases = ["about-us","about-hugo","contact"]
+author = "Autorzy Hugo"
 +++
 
-Hugo to statyczny silnik strony napisany w Go.
+Napisany w Go, Hugo jest generatorem statycznych witryn o otwartym kodzie źródłowym, dostępnym na licencji [Apache License 2.0.] (Https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo obsługuje typy plików danych TOML, YAML i JSON , Markdown i pliki zawartości HTML oraz używa skrótów w celu dodania bogatej zawartości. Inne godne uwagi funkcje to taksonomie, tryb wielojęzyczny, przetwarzanie obrazu, niestandardowe formaty wyjściowe, minimalizacja HTML / CSS / JS oraz obsługa przepływów pracy Sass SCSS.
 
+Hugo korzysta z różnych projektów open source, w tym:
 
-Korzysta z różnych projektów open source, w tym:
+* https://github.com/yuin/goldmark
+* https://github.com/alecthomas/chroma
+* https://github.com/muesli/smartcrop
+* https://github.com/spf13/cobra
+* https://github.com/spf13/viper
 
-* [Cobra] (https://github.com/spf13/cobra)
-* [Viper] (https://github.com/spf13/viper)
-* [J Walter Weatherman] (https://github.com/spf13/jWalterWeatherman)
-* [Cast] (https://github.com/spf13/cast)
+Hugo jest idealny do blogów, witryn korporacyjnych, kreatywnych portfeli, czasopism internetowych, aplikacji na jednej stronie, a nawet strony internetowej z tysiącami stron.
 
-Dowiedz się więcej i wesprzyj na [GitHub] (https://github.com/spf13).
+Hugo jest przeznaczony dla osób, które chcą ręcznie kodować własną stronę internetową, nie martwiąc się o konfigurowanie skomplikowanych środowisk uruchomieniowych, zależności i baz danych.
 
-## Ustawiać
+Strony internetowe zbudowane przy użyciu Hugo są wyjątkowo szybkie, bezpieczne i można je wdrażać w dowolnym miejscu, w tym AWS, GitHub Pages, Heroku, Netlify i dowolnym innym dostawcy hostingu.
 
-Kilka ciekawych faktów na temat [Hugo] (http://gohugo.io/):
-
-* Wbudowany [Go] (http://golang.org/)
-* Luźno zainspirowany przez [Jekyll] (http://jekyllrb.com/)
-* Głównie opracowany przez [spf13] (http://spf13.com/) w pociągu podczas podróży do iz Manhattanu.
-* Zakodowane w [Vim] (http://vim.org) przy użyciu [spf13-vim] (http://vim.spf13.com/)
-
-Masz pytania lub sugestie? Zapraszam do [otwarcia problemu na GitHub] (https://github.com/spf13/hugo/issues/new) lub [zapytaj mnie na Twitterze] (https://twitter.com/spf13).
-
-Dziękuje za przeczytanie!
+Dowiedz się więcej i wnieś swój wkład w [GitHub] (https://github.com/gohugoio).

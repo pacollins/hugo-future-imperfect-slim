@@ -3,10 +3,18 @@ author = "Hugo Auteurs"
 title = "Guide de syntaxe de Markdown"
 date = "2019-03-11"
 description = "Exemple d'article présentant la syntaxe et le formatage de base de Markdown pour les éléments HTML."
-tags = ["markdown", "css", "html", "themes"]
-categories = ["themes", "syntax"]
-images  = ["img/2014/04/pic02.jpg"]
+tags = [
+    "markdown",
+    "css",
+    "html",
+    "themes",
+]
+categories = [
+    "themes",
+    "syntax",
+]
 aliases = ["migrate-from-jekyl"]
+images  = ["img/2014/04/pic02.jpg"]
 +++
 
 Cet article propose un exemple de syntaxe de base de Markdown pouvant être utilisée dans les fichiers de contenu Hugo. Il indique également si les éléments HTML de base sont décorés avec CSS dans un thème Hugo.

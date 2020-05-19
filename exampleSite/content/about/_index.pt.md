@@ -1,29 +1,25 @@
 +++
-title = "Sobre Hugo"
-date = "2014-04-09"
+title = "Sobre"
+description = "Hugo, a estrutura mais rápida do mundo para a criação de sites"
+date = "2019-02-28"
+aliases = ["about-us","about-hugo","contact"]
+author = "Hugo Autores"
 +++
 
-Hugo é um gerador de site escrito em Go.
+Escrito em Go, Hugo é um gerador de site estático de código aberto disponível sob a [Apache License 2.0.] (Https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo suporta tipos de arquivos de dados TOML, YAML e JSON , Markdown e arquivos de conteúdo HTML e usa códigos de acesso para adicionar conteúdo rico. Outros recursos notáveis ​​são taxonomias, modo multilíngue, processamento de imagem, formatos de saída personalizados, minificação HTML / CSS / JS e suporte para fluxos de trabalho Sass SCSS.
 
+Hugo faz uso de uma variedade de projetos de código aberto, incluindo:
 
-Ele utiliza vários projetos open source, incluindo:
+* https://github.com/yuin/goldmark
+* https://github.com/alecthomas/chroma
+* https://github.com/muesli/smartcrop
+* https://github.com/spf13/cobra
+* https://github.com/spf13/viper
 
-* [Cobra](https://github.com/spf13/cobra)
-* [Viper](https://github.com/spf13/viper)
-* [J Walter Weatherman](https://github.com/spf13/jWalterWeatherman)
-* [Cast](https://github.com/spf13/cast)
+Hugo é ideal para blogs, sites corporativos, portfólios criativos, revistas on-line, aplicativos de página única ou até mesmo um site com milhares de páginas.
 
-Aprenda mais e contribua no [GitHub](https://github.com/spf13).
+Hugo é para pessoas que desejam codificar manualmente seu próprio site sem se preocupar em configurar tempos de execução complicados, dependências e bancos de dados.
 
-## Setup
+Os sites criados com Hugo são extremamente rápidos, seguros e podem ser implantados em qualquer lugar, incluindo AWS, GitHub Pages, Heroku, Netlify e qualquer outro provedor de hospedagem.
 
-Algumas curiosidades sobre [Hugo](http://gohugo.io/):
-
-* Feito com [Go](http://golang.org/)
-* Loosely inspired by [Jekyll](http://jekyllrb.com/)
-* Inicialmente desenvolvido by [spf13](http://spf13.com/) em um trem enquanto viajava de e para Manhattan.
-* Codificado no [Vim](http://vim.org) usando [spf13-vim](http://vim.spf13.com/)
-
-Alguma pergunta ou sugestão? Está livre para [abrir uma issue no GitHub](https://github.com/spf13/hugo/issues/new) ou [perguntar no Twitter](https://twitter.com/spf13).
-
-Obrigado pela leitura!
+Saiba mais e contribua no [GitHub] (https://github.com/gohugoio).

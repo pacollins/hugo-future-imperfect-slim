@@ -1,8 +1,9 @@
+# For a description of these parameters, please visit the theme wiki.
+# https://github.com/pacollins/hugo-future-imperfect-slim/wiki/config.toml
 baseurl                 = "https://example.com/"
 DefaultContentLanguage  = "en"
 title                   = "Hugo Future Imperfect Slim"
 theme                   = "hugo-future-imperfect-slim"
-preserveTaxonomyNames   = true
 paginate                = 3
 disqusShortname         = ""
 googleAnalytics         = ""
@@ -10,111 +11,71 @@ pluralizeListTitles     = false
 disableLanguages        = [""]
 
 [params]
-  # Add additional section names to mainSections to include posts from
-  # those sections on the homepage.
   enableCDN             = false
-
-  # Loads CSS and JavaScript files. The variable is an array so that you can load
-  # multiple/additional files if necessary. The standard theme files can be loaded
-  # by adding the value, "default". Default includes the add-on.css and and-on.js.
-  # Example: ["default", "/path/to/file"]
   cssFiles              = ["default"]
   jsFiles               = ["default"]
-  # Sets options for highlight.js
   highlightjs           = true
   highlightjsTheme      = "github"
   highlightjsLang       = ["html", "css", "js", "toml"]
-  # Sets where "View More Posts" links to
   viewMorePostsLink     = "/blog/"
-  # Activate Estimated Reading Times, which appear in the post headers
   readingTime           = true
-  # Sets which Social Share links appear in posts.
-  # Options are twitter, facebook, reddit, linkedin, pinterest, email
   socialShare           = ["twitter", "facebook", "reddit", "linkedin",
                           "pinterest", "email"]
 
   [params.meta]
-    # Sets the meta tag description
     description         = "A theme by HTML5 UP, ported by Julio Pescador. Slimmed and enhanced by Patrick Collins. Multilingual by StatnMap. Powered by Hugo."
-    # Sets the meta tag author
     author              = "HTML5UP and Hugo"
-    # If you would like to add more comprehensive favicon support passed root
-    # directory favicon.ico, utlize this funtion. It is recommened to use
-    # https://realfavicongenerator.net to generate your icons as that is the basis
-    # for the theme's naming.
     favicon             = false
     svg                 = true
     faviconVersion      = "1"
-    msColor             = "#ffffff" # Copy from the https://realfavicongenerator.net
-    iOSColor            = "#ffffff" # Copy from the https://realfavicongenerator.net
+    msColor             = "#ffffff"
+    iOSColor            = "#ffffff"
 
   [params.header]
-    # Sets the navbarTitle that appears in the top left of the navigation bar
     navbarTitle         = "Future Imperfect"
-    # Sets navbarTitle to match the section of the website
     dynamicTitles       = true
     searchMenu          = true
     shareMenu           = true
     languageMenu        = true
 
-  # These are optional params related to the sidebar. They are recommended, but not
-  # required for proper functionality. HTML is supported within the params.
   [params.intro]
     header                = "Hugo Future Imperfect Slim"
     paragraph             = "Another fine, responsive site template by <a href='http://html5up.net'>HTML5 UP</a>."
     rssIntro              = true
     socialIntro           = true
-    # You may not want to display a long intro above content in the
-    # single column layout used on smaller screens.
     hideWhenSingleColumn  = false
-    # But you may want to always display the intro on the homepage.
     alwaysOnHomepage      = false
 
-    # This appears at the top of the sidebar above params.intro.header.
-    # A width of less than 100px is recommended from a design perspective.
     [params.intro.pic]
       src                 = "/img/main/logo.jpg"
-      # Masks image in a certain shape. Supported are circle, triangle, diamond, and hexagon.
       shape               = "circle"
       width               = ""
       alt                 = "Hugo Future Imperfect Slim"
 
   [params.sidebar]
-    about               = "test"
-    # Sets the number of recent posts to show in the sidebar. The default value is 5.
+    about               = "This theme was developed for Hugo static site generator."
     postAmount          = 5
-    # set to show or to hide categories in the sidebar
     categories          = true
-    # Sets Categories to sort by number of posts instead of alphabetical
     categoriesByCount   = true
 
   [params.footer]
-    # Sets RSS icons to appear on the sidebar with the social media buttons
     rssFooter           = true
-    # Sets Social Media icons to appear on the sidebar
     socialFooter        = true
 
-  # Disqus will take priority over Staticman (github.com/eduardoboucas/staticman)
-  # due to its ease of use. Feel free to check out both and decide which you would
-  # prefer to use. See staticman.yml for additional settings.
   [params.staticman]
-    # If using GitHub, go to https://github.com/apps/staticman-net
-    # If using GitLab, just add the GitLab bot, NO need to hit `/connect/v3/...`
-    enabled             = false
-    api                 = ""  # without trailing slash, defaults to "staticman3.herokuapp.com"
-    gitProvider         = "github"  # either "github" or "gitlab"
+    enabled             = true
+    api                 = ""  # No Trailing Slash
+    gitProvider         = ""
     username            = ""
     repo                = ""
     branch              = ""
 
     [params.staticman.recaptcha]
-      # Both keys must be present to enable recaptcha
-      siteKey           = "" # Site Key
+      siteKey           = ""
       encryptedKey      = ""
 
 [menu]
-  # Sets the menu items in the navigation bar
-  # Identifier prepends a Font Awesome icon to the menu item
+
   [[menu.main]]
     name              = "Home"
     identifier        = "home"
@@ -151,7 +112,7 @@ disableLanguages        = [""]
     weight            = 6
 
 [Languages]
-  # Each language has its own menu.
+
   [Languages.en]
     LanguageCode        = "en"
     LanguageName        = "English"
@@ -308,9 +269,6 @@ disableLanguages        = [""]
     LanguageName        = "日本語"
     weight              = 9
 
-# Sets Social Media icons to appear and link to your account. Value should be your
-# username unless otherwise noted. These are the icons affected by socialAppearAtTop
-# and socialAppearAtBottom.
 [social]
   # Coding Communities
   github                = "pacollins/hugo-future-imperfect-slim"
@@ -349,6 +307,7 @@ disableLanguages        = [""]
   twitter               = "example"
   strava                = ""
   skype                 = ""
+  strava                = ""
   snapchat              = ""
   pinterest             = "example"
   telegram              = "example"

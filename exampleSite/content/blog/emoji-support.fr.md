@@ -3,8 +3,9 @@ author = "Hugo Auteurs"
 title = "Emoji Support"
 date = "2019-03-05"
 description = "Guide d'utilisation des emoji dans Hugo"
-tags = ["emoji"]
-categories = [""]
+tags = [
+    "emoji",
+]
 images  = ["img/2014/04/pic01.jpg"]
 +++
 

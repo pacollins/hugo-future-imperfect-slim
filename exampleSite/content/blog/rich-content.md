@@ -3,8 +3,10 @@ author = "Hugo Authors"
 title = "Rich Content"
 date = "2019-03-10"
 description = "A brief description of Hugo Shortcodes"
-tags = ["shortcodes","privacy"]
-categories = [""]
+tags = [
+    "shortcodes",
+    "privacy",
+]
 images = ["img/2017/08/pic04.jpg", "img/2014/04/pic01.jpg"]
 +++
 
