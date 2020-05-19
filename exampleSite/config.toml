@@ -347,6 +347,7 @@ disableLanguages        = [""]
   instagram             = "example"
   tumblr                = ""
   twitter               = "example"
+  strava                = ""
   skype                 = ""
   snapchat              = ""
   pinterest             = "example"
