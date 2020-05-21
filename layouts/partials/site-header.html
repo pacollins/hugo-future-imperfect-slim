@@ -2,16 +2,22 @@
   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
 {{- if .IsHome -}}
+  {{ $version := "1.0.1"}}
   <div id="theme-message" style="background-color:#3c3b3b;color:#f4f4f4;margin:auto auto;padding:.25em 2em;text-align:center;width:75%;">
     <p>This message, related to the development of the theme, only displays on the
       <code>localhost</code> homepage to notify you of any important theme changes.</p>
       <hr>
-      <h5 style="color:#f4f4f4"><i class="fas fa-exclamation-triangle"></i>Version 1.0.1 - May 18, 2020<i class="fas fa-exclamation-triangle"></i></h5>
-      <p>This message is newly implemented for use in future updates.
-      <br><button onclick="removeBox()" class="button" style="color:#f4f4f4">Close Notification</button></p>
+      <h5 style="color:#f4f4f4"><i class="fas fa-exclamation-triangle"></i>Version {{ $version }} - May 18, 2020<i class="fas fa-exclamation-triangle"></i></h5>
+      <p style="margin-top:0;">This message is newly implemented for use in future updates.
+      <br><button onclick="removeBox()" class="button" style="color:#f4f4f4;margin-top:1em;">Close Notification Until Next Update</button></p>
     <script>
-        if (window.location.href.indexOf('localhost:') < 1) {document.getElementsByTagName("body")[0].removeChild(document.getElementById("theme-message"));}
-        function removeBox() {document.getElementsByTagName("body")[0].removeChild(document.getElementById("theme-message"));}
+      if (window.location.href.indexOf('localhost:') < 1 || window.localStorage.getItem('HFIS-version') == '{{ $version }}') {
+        document.getElementsByTagName("body")[0].removeChild(document.getElementById("theme-message"));
+      }
+      function removeBox() {
+        window.localStorage.setItem('HFIS-version', '{{ $version }}');
+        document.getElementsByTagName("body")[0].removeChild(document.getElementById("theme-message"));
+      }
     </script>
   </div>
 {{- end -}}
