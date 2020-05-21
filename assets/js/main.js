@@ -67,7 +67,7 @@ window.onload = function () {
   $searchInput   = document.getElementById('search-input');
 
   request.overrideMimeType("application/json");
-  request.open("GET", "/index.json", true); // Request the JSON file created during build
+  request.open("GET", "{{ "index.json" | relURL | absURL }}", true); // Request the JSON file created during build
   request.onload = function() {
     if (request.status >= 200 && request.status < 400) {
       // Success response received in requesting the index.json file
