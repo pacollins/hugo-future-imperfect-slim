@@ -38,7 +38,7 @@
         {{ end }}
       </a>
     </h1>
-    <menu id="site-nav-menu" class="flyout-menu">
+    <menu id="site-nav-menu" class="flyout-menu menu">
       {{ range .Site.Menus.main }}
         {{ if and (gt (len (findRE "fa[rsb]( fa-([a-z-]+))+" .Identifier)) 0) (not .Pre) }}
           {{/* Old syntax: use '.Identifier' for icon rendering */}}
@@ -54,15 +54,15 @@
       {{ end }}
       {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>{{ end }}
     </menu>
-    {{ if .Site.Params.header.searchMenu }}<a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a><input id="search-input"></input>{{ end }}
+    {{ if .Site.Params.header.searchMenu }}<a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>{{ end }}
     {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>{{ end }}
     {{ if .Site.Params.header.languageMenu }}<a href="#lang-menu" class="nav lang-toggle" lang="{{ .Site.Language.Lang }}">{{ .Site.Language.Lang }}</a>{{ end }}
     <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
   </nav>
-  {{ if .Site.Params.header.searchMenu }}{{ partial "search-menu" . }}{{ end }}
+  {{ if .Site.Params.header.searchMenu }}<menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>{{ end }}
   {{ if .Site.Params.header.languageMenu }}{{ partial "language-menu" . }}{{ end }}
   {{ if .Site.Params.header.shareMenu }}
-    <menu id="share-menu" class="flyout-menu">
+    <menu id="share-menu" class="flyout-menu menu">
       <h1>Share Post</h1>
       {{ partial "share-buttons" . }}
     </menu>
