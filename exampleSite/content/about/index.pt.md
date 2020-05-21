@@ -1,5 +1,6 @@
 +++
 title = "Sobre"
+layout = "about"
 description = "Hugo, a estrutura mais rápida do mundo para a criação de sites"
 date = "2019-02-28"
 aliases = ["about-us","about-hugo","contact"]

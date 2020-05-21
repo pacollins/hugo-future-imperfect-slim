@@ -10,6 +10,9 @@ googleAnalytics         = ""
 pluralizeListTitles     = false
 disableLanguages        = [""]
 
+[outputs]
+  home                  = ["html", "json"]
+
 [params]
   enableCDN             = false
   cssFiles              = ["default"]
