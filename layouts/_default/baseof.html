@@ -2,15 +2,12 @@
 <html lang="{{ .Page.Language | default "en" }}">
   {{ partial "head" . }}
   <body>
+    {{ .Site.RegularPages }}
     {{ partial "site-header" . }}
     <div id="wrapper">
       {{ partial "site-intro" . }}
       <main id="site-main">
-        {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-        {{ range $paginator.Pages }}
-          {{ .Render "content-list" }}
-        {{ end }}
-        {{ partial "pagination" . }}
+        {{ block "main" . }}{{ end }}
       </main>
       {{ partial "site-sidebar" . }}
       {{ partial "site-footer" . }}

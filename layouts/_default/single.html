@@ -1,16 +1,17 @@
-<!doctype html>
-<html lang="{{ .Page.Language | default "en" }}">
-  {{ partial "head" . }}
-  <body>
-    {{ partial "site-header" . }}
-    <div id="wrapper">
-      {{ partial "site-intro" . }}
-      <main id="site-main">
-        {{ .Render "content-single"}}
-      </main>
-      {{ partial "site-sidebar" . }}
-      {{ partial "site-footer" . }}
-      {{ partial "scripts" . }}
+{{ define "main" }}
+  <article class="post">
+    {{ .Render "header" }}
+    <section id="socnet-share">
+      {{ partial "share-buttons" . }}
+    </section>
+    {{ .Render "featured" }}
+    <div class="content">
+      {{ .Content }}
     </div>
-  </body>
-</html>
+    <footer>
+      {{ .Render "stats" }}
+    </footer>
+  </article>
+{{ end }}
+{{ .Render "comments" }}
+{{ .Render "pagination" }}

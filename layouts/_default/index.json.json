@@ -1,4 +1,4 @@
-[{{- range $index, $e := .Site.Pages -}}
+[{{- range $index, $e := .Site.RegularPages -}}
   {{- if $index -}}, {{- end -}}
     {
     "title": "{{ .Title | plainify }}",
