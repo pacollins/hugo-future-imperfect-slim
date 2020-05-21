@@ -24,7 +24,7 @@
 <header id="site-header">
   <nav id="site-nav">
     <h1 class="nav-title">
-      <a href="{{ "/" | relLangURL }}">
+      <a href="{{ "/" | relLangURL }}" class="nav">
         {{ if or .IsHome (not .Site.Params.header.dynamicTitles) }}
           {{ .Site.Params.header.navbarTitle  | safeHTML }}
         {{ else if ne .Section "" }}
@@ -42,24 +42,24 @@
       {{ range .Site.Menus.main }}
         {{ if and (gt (len (findRE "fa[rsb]( fa-([a-z-]+))+" .Identifier)) 0) (not .Pre) }}
           {{/* Old syntax: use '.Identifier' for icon rendering */}}
-          <a href="{{ .URL | relLangURL }}" class="link"><i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}</a>
+          <a href="{{ .URL | relLangURL }}" class="nav link"><i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}</a>
         {{ else }}
           {{/* New syntax: use '.Pre' for icon rendering */}}
           {{ if .Pre }}
-            <a href="{{ .URL | relLangURL }}" class="link">{{ .Pre }} {{ .Name }}</a>
+            <a href="{{ .URL | relLangURL }}" class="nav link">{{ .Pre }} {{ .Name }}</a>
           {{ else }}
-            <a href="{{ .URL | relLangURL }}" class="link">{{ .Name }}</a>
+            <a href="{{ .URL | relLangURL }}" class="nav link">{{ .Name }}</a>
           {{ end }}
         {{ end }}
       {{ end }}
-      {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>{{ end }}
-      {{ if .Site.Params.header.searchMenu }}{{ partial "search-menu" . }}{{ end }}
+      {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>{{ end }}
     </menu>
-    {{ if .Site.Params.header.searchMenu }}{{ partial "search-menu" . }}{{ end }}
-    {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>{{ end }}
-    {{ if .Site.Params.header.languageMenu }}<a href="#lang-menu" class="lang-toggle" lang="{{ .Site.Language.Lang }}">{{ .Site.Language.Lang }}</a>{{ end }}
-    <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+    {{ if .Site.Params.header.searchMenu }}<a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a><input id="search-input"></input>{{ end }}
+    {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>{{ end }}
+    {{ if .Site.Params.header.languageMenu }}<a href="#lang-menu" class="nav lang-toggle" lang="{{ .Site.Language.Lang }}">{{ .Site.Language.Lang }}</a>{{ end }}
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
   </nav>
+  {{ if .Site.Params.header.searchMenu }}{{ partial "search-menu" . }}{{ end }}
   {{ if .Site.Params.header.languageMenu }}{{ partial "language-menu" . }}{{ end }}
   {{ if .Site.Params.header.shareMenu }}
     <menu id="share-menu" class="flyout-menu">
