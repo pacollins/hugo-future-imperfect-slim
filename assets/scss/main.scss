@@ -1329,11 +1329,11 @@ Theme Grid
         }
       }
     }
-    .share-toggle {
+    .share-toggle, .search-toggle {
       display: block;
       flex-basis: 100%;
       order: 3;
-      @include for-laptop-up {
+      @include for-tablet-up {
         display: none;
       }
     }
@@ -1424,6 +1424,7 @@ Theme Grid
   .search-results {
     display: flex;
     opacity: 0;
+    line-height: 1.75em;
     -webkit-transition: 0.5s ease-in-out;
     -moz-transition: 0.5s ease-in-out;
     -ms-transition: 0.5s ease-in-out;
@@ -1465,11 +1466,13 @@ Theme Grid
         transition: box-shadow 0.2s ease-out;
       }
       header {
-        display: flex;
-        align-items: baseline;
         border-bottom: solid 1px rgba(160,160,160,.3);
-        h2 {
-          flex-grow: 1;
+        @include for-laptop-up {
+          display: flex;
+          align-items: baseline;
+          h2 {
+            flex-grow: 1;
+          }
         }
       }
       main {
