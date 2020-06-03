@@ -1,30 +1,11 @@
 <!--[if IE]>
   <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
 <![endif]-->
-{{- if .IsHome -}}
-  {{ $version := "1.0.1"}}
-  <div id="theme-message" style="background-color:#3c3b3b;color:#f4f4f4;margin:auto auto;padding:.25em 2em;text-align:center;width:75%;">
-    <p>This message, related to the development of the theme, only displays on the
-      <code>localhost</code> homepage to notify you of any important theme changes.</p>
-      <hr>
-      <h5 style="color:#f4f4f4"><i class="fas fa-exclamation-triangle"></i>Version {{ $version }} - May 18, 2020<i class="fas fa-exclamation-triangle"></i></h5>
-      <p style="margin-top:0;">This message is newly implemented for use in future updates.
-      <br><button onclick="removeBox()" class="button" style="color:#f4f4f4;margin-top:1em;">Close Notification Until Next Update</button></p>
-    <script>
-      if (window.location.href.indexOf('localhost:') < 1 || window.localStorage.getItem('HFIS-version') == '{{ $version }}') {
-        document.getElementsByTagName("body")[0].removeChild(document.getElementById("theme-message"));
-      }
-      function removeBox() {
-        window.localStorage.setItem('HFIS-version', '{{ $version }}');
-        document.getElementsByTagName("body")[0].removeChild(document.getElementById("theme-message"));
-      }
-    </script>
-  </div>
-{{- end -}}
+{{ partial "theme-notification" . }}
 <header id="site-header">
   <nav id="site-nav">
     <h1 class="nav-title">
-      <a href="{{ "/" | relLangURL }}">
+      <a href="{{ "/" | relLangURL }}" class="nav">
         {{ if or .IsHome (not .Site.Params.header.dynamicTitles) }}
           {{ .Site.Params.header.navbarTitle  | safeHTML }}
         {{ else if ne .Section "" }}
@@ -38,31 +19,32 @@
         {{ end }}
       </a>
     </h1>
-    <menu id="site-nav-menu" class="flyout-menu">
+    <menu id="site-nav-menu" class="flyout-menu menu">
       {{ range .Site.Menus.main }}
         {{ if and (gt (len (findRE "fa[rsb]( fa-([a-z-]+))+" .Identifier)) 0) (not .Pre) }}
           {{/* Old syntax: use '.Identifier' for icon rendering */}}
-          <a href="{{ .URL | relLangURL }}" class="link"><i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}</a>
+          <a href="{{ .URL | relLangURL }}" class="nav link"><i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}</a>
         {{ else }}
           {{/* New syntax: use '.Pre' for icon rendering */}}
           {{ if .Pre }}
-            <a href="{{ .URL | relLangURL }}" class="link">{{ .Pre }} {{ .Name }}</a>
+            <a href="{{ .URL | relLangURL }}" class="nav link">{{ .Pre }} {{ .Name }}</a>
           {{ else }}
-            <a href="{{ .URL | relLangURL }}" class="link">{{ .Name }}</a>
+            <a href="{{ .URL | relLangURL }}" class="nav link">{{ .Name }}</a>
           {{ end }}
         {{ end }}
       {{ end }}
-      {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>{{ end }}
-      {{ if .Site.Params.header.searchMenu }}{{ partial "search-menu" . }}{{ end }}
+      {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>{{ end }}
+      {{ if .Site.Params.header.searchMenu }}<a href="#search-input" class="nav search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>{{ end }}
     </menu>
-    {{ if .Site.Params.header.searchMenu }}{{ partial "search-menu" . }}{{ end }}
-    {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>{{ end }}
-    {{ if .Site.Params.header.languageMenu }}<a href="#lang-menu" class="lang-toggle" lang="{{ .Site.Language.Lang }}">{{ .Site.Language.Lang }}</a>{{ end }}
-    <a href="#site-nav" class="nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
+    {{ if .Site.Params.header.searchMenu }}<a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>{{ end }}
+    {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>{{ end }}
+    {{ if .Site.Params.header.languageMenu }}<a href="#lang-menu" class="nav lang-toggle" lang="{{ .Site.Language.Lang }}">{{ .Site.Language.Lang }}</a>{{ end }}
+    <a href="#site-nav" class="nav nav-toggle"><i class="fas fa-bars fa-2x"></i></a>
   </nav>
+  {{ if .Site.Params.header.searchMenu }}<menu id="search" class="menu"><input id="search-input" class="search-input menu"></input><div id="search-results" class="search-results menu"></div></menu>{{ end }}
   {{ if .Site.Params.header.languageMenu }}{{ partial "language-menu" . }}{{ end }}
   {{ if .Site.Params.header.shareMenu }}
-    <menu id="share-menu" class="flyout-menu">
+    <menu id="share-menu" class="flyout-menu menu">
       <h1>Share Post</h1>
       {{ partial "share-buttons" . }}
     </menu>

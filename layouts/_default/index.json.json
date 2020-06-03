@@ -1,0 +1,10 @@
+[{{- range $index, $e := .Site.RegularPages -}}
+  {{- if $index -}}, {{- end -}}
+    {
+    "title": "{{ .Title | plainify }}",
+    "date": "{{ default (i18n "date_format") | .Date.Format }}",
+    "description": "{{ .Params.description | plainify }}",
+    "body": {{ .Content | plainify | jsonify }},
+    "ref": "{{ .RelPermalink | plainify }}"
+  }
+{{- end -}}]

@@ -8,7 +8,8 @@
     {{- if eq . "default" -}}
     <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"></script>
-      {{- $jsSlice := slice (resources.Get "js/util.js") (resources.Get "js/main.js") -}}
+    <script src="//unpkg.com/lunr/lunr.js"></script>
+      {{- $jsSlice := slice (resources.Get "js/util.js") (resources.Get "js/main.js" | resources.ExecuteAsTemplate "js/main.js" $.Site) -}}
       {{- /* Backwards compatibility for deprecated parameter ".Site.Params.staticman.staticman" */ -}}
       {{- if or $.Site.Params.staticman.enabled $.Site.Params.staticman.staticman -}}
         {{- $jsSlice = $jsSlice | append (resources.Get "js/staticman.js" | resources.ExecuteAsTemplate "js/staticman.js" $.Site.Params.staticman) -}}
@@ -33,6 +34,7 @@
       {{- range $assets.scripts -}}
         {{- $jsSlice = $jsSlice | append (resources.Get . ) -}}
       {{- end -}}
+      {{- $jsSlice = $jsSlice | append (resources.Get "js/main.js" | resources.ExecuteAsTemplate "js/main.js" $.Site) -}}
       {{- /* Backwards compatibility for deprecated parameter ".Site.Params.staticman.staticman" */ -}}
       {{- if or $.Site.Params.staticman.enabled $.Site.Params.staticman.staticman -}}
         {{- $jsSlice = $jsSlice | append (resources.Get "js/staticman.js" | resources.ExecuteAsTemplate "js/staticman.js" $.Site.Params.staticman) -}}

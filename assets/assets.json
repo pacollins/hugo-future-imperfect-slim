@@ -9,7 +9,7 @@
    "scripts" : [
       "js/jquery-3.5.1.js",
       "js/fancybox.js",
-      "js/util.js",
-      "js/main.js"
+      "js/lunr.js",
+      "js/util.js"
    ]
 }
