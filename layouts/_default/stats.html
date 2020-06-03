@@ -1,40 +1,28 @@
 <ul class="stats">
-  {{ if isset .Params "categories" }}
-    {{ $categoriesLen := len .Params.categories }}
-    {{ if gt $categoriesLen 0 }}
-      <li class="categories">
-        <ul>
-          {{ range $k, $v := .Params.categories }}
-            {{ $url := printf "categories/%s" (. | urlize | lower) }}
-            <li><a class="article-category-link" href="{{ $url | absLangURL }}">{{ . }}</a></li>
-          {{ end }}
-        </ul>
-      </li>
+  <li class="categories">
+    <ul>
+    {{ if isset .Params "categories" }}
+      {{ if gt (len .Params.categories) 0 }}
+        {{ range .Params.categories }}
+          <li><a class="article-terms-link" href="{{ path.Join "categories" (. | urlize | lower) | relLangURL }}/">{{ . }}</a></li>
+        {{ end }}
+      {{ end }}
+    {{ else }}
+      <li>None</li>
     {{ end }}
-  {{ else }}
-    <li class="categories">
-      <ul>
-        <li>None</li>
-      </ul>
-    </li>
-  {{ end }}
-  {{ if isset .Params "tags" }}
-    {{ $tagsLen := len .Params.tags }}
-    {{ if gt $tagsLen 0 }}
-      <li class="tags">
-        <ul>
-          {{ range $k, $v := .Params.tags }}
-            {{ $url := printf "tags/%s" (. | urlize | lower) }}
-            <li><a class="article-category-link" href="{{ $url | absLangURL }}">{{ . }}</a></li>
-          {{ end }}
-        </ul>
-      </li>
+    </ul>
+  </li>
+  <li class="tags">
+    <ul>
+    {{ if isset .Params "tags" }}
+      {{ if gt (len .Params.tags) 0 }}
+        {{ range .Params.tags }}
+          <li><a class="article-terms-link" href="{{ path.Join "tags" (. | urlize | lower) | relLangURL }}/">{{ . }}</a></li>
+        {{ end }}
+      {{ end }}
+    {{ else }}
+      <li>None</li>
     {{ end }}
-  {{ else }}
-    <li class="tags">
-      <ul>
-        <li>None</li>
-      </ul>
-    </li>
-  {{ end }}
+    </ul>
+  </li>
 </ul>

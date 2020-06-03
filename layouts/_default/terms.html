@@ -1,0 +1,17 @@
+{{ define "main" }}
+  <ul class="posts">
+    <header>
+      <h1>{{ i18n .Data.Plural }}</h1>
+    </header>
+    {{ range .Data.Terms.ByCount }}
+      <li>
+        <article>
+          <header>
+            <a href="{{ .Page.Permalink | relLangURL }}">{{ .Page.Title }}<span style="float:right;">{{ .Count }}</span></a>
+          </header>
+        </article>
+      </li>
+    {{ end }}
+  </ul>
+  {{ $.Scratch.Set "showCategories" false }}
+{{ end }}
