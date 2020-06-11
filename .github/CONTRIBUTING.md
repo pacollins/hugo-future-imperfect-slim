@@ -107,7 +107,7 @@ worked on and we can manage it that way.
    use the following:
 
       ```
-      git merge upstream/master
+      git rebase upstream/master
       git push origin master
       ```
 

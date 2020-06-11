@@ -8,13 +8,12 @@ assignees: ''
 ---
 
 # Bug Report
+
 ## Describe the bug
-<!-- A clear and concise description of what the bug is. -->
 
-
+[A clear and concise description of what the bug is.]
 
 ## To Reproduce
-<!-- Steps to reproduce the behavior: -->
 
 1. Go to '...'
 2. Click on '....'
@@ -22,20 +21,14 @@ assignees: ''
 4. See error
 
 ## Expected behavior
-<!-- A clear and concise description of what you expected to happen. -->
 
-
+[A clear and concise description of what you expected to happen.]
 
 ## Screenshots
-<!-- If applicable, add screenshots to help explain your problem. -->
 
-<!-- ![Screenshot](IMGURL) -->
+[You can use `Windows+Shift+S` or `Control+Command+Shift+4` to add a screenshot to your clipboard and then paste it here.]
 
 ## Environment
-<!--
-  Please describe what you are experiencing this problem with.
-  More information helps diagnose the issue faster.
--->
 
  - **Hugo Version:** [e.g. 0.46]
  - **Browser and Version:** [e.g. Chrome 74.0.3729.108]
@@ -43,4 +36,5 @@ assignees: ''
  - **Link to Project:**
 
 ## Additional context
-<!-- Add any other context about the problem here. -->
+
+[Add any other context about the problem here.]
