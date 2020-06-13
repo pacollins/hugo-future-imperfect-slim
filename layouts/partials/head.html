@@ -31,7 +31,11 @@
       {{- if eq . "default" -}}
         {{- $cssSlice := slice -}}
         {{- if $.Site.Params.highlightjs -}}
-          {{- $cssSlice = $cssSlice | append (resources.Get (print "css/styles/" ($.Site.Params.highlightjsTheme | default "default") ".css") ) -}}
+          {{ with $.Site.Params.highlightjsTheme }}
+            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/{{ . }}.min.css">
+          {{ else }}
+            {{- $cssSlice = $cssSlice | append (resources.Get "css/default.css") -}}
+          {{ end }}
         {{- end -}}
         {{- $assets := resources.Get "assets.json" | unmarshal -}}
         {{- range $assets.styles -}}

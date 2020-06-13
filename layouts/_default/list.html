@@ -1,7 +1,18 @@
+<!-- ToDo: Adjust for multuple content types -->
 {{ define "main" }}
-  {{ $paginator := .Paginate (.Pages) }}
+  {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+  {{ if not .IsHome }}
+    {{ $paginator = .Paginate (.Pages) }}
+  {{ end }}
   {{ range $paginator.Pages }}
     {{ .Render "content-list" }}
   {{ end }}
-  {{ partial "pagination" . }}
+  <div class="pagination">
+    {{ if .Paginator.HasPrev }}
+      <a href="{{ .Paginator.Prev.URL }}" class="button"><div class="previous"><div>Previous</div></div></a>
+    {{ end }}
+    {{ if .Paginator.HasNext }}
+      <a href="{{ .Paginator.Next.URL }}" class="button"><div class="next"><div>Next</div></div></a>
+    {{ end }}
+  </div>
 {{ end }}

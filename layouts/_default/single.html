@@ -13,5 +13,12 @@
     </footer>
   </article>
   {{ .Render "comments" }}
-  {{ .Render "pagination" }}
+  <div class="pagination">
+    {{ if .PrevInSection }}
+      <a href="{{ .PrevInSection.RelPermalink }}" class="button"><div class="previous"><div>{{ .PrevInSection.Title }}</div></div></a>
+    {{ end }}
+    {{ if .NextInSection }}
+      <a href="{{ .NextInSection.RelPermalink }}" class="button"><div class="next"><div>{{ .NextInSection.Title }}</div></div></a>
+    {{ end }}
+  </div>
 {{ end }}
