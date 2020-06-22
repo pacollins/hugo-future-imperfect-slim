@@ -11,11 +11,11 @@
     {{/* Additional div wrapper for proper consistent margin */}}
     <div>
       <h2>{{ i18n "say_something" }}</h2>
-        <form id="post-js-form" class="post-new-comment" method="POST">
+        <form id="comment-form" class="new-comment" method="POST">
           {{/* Display reply target */}}
-          <h5 class='post-reply-notice hidden'>
-            <span class='post-reply-arrow'></span><span class='post-reply-name'></span>
-          </h5>
+          <h3 class='reply-notice hidden'>
+            <span class='reply-name'></span>
+          </h3>
 
           {{/* Hidden fields */}}
           <input type="hidden" name="options[entryId]" value="{{ $entryId }}">
@@ -39,13 +39,13 @@
           {{ end }}
 
           {{/* Start comment form alert messaging */}}
-          <p class='post-submit-notice'>
-            <strong class='post-submit-notice-text submit-success hidden'>{{ i18n "success_msg" }}</strong>
-            <strong class='post-submit-notice-text submit-failed hidden'>{{ i18n "error_msg" }}</strong>
-          </p>
+          <div class='submit-notice'>
+            <strong class='submit-notice-text submit-success hidden'>{{ i18n "success_msg" }}</strong>
+            <strong class='submit-notice-text submit-failed hidden'>{{ i18n "error_msg" }}</strong>
+          </div>
 
           {{/* Form buttons */}}
-          <input type='submit' value='{{ i18n "submit" }}' class='button'>
+          <input type='submit' value='{{ i18n "sumbit" }}' class='button'>
           <input type='submit' value='{{ i18n "submitted" }}' class='hidden button' disabled>
           <input type='reset' value='{{ i18n "reset" }}' class='button'>
         </form>
@@ -66,57 +66,62 @@
             {{ if not .replyThread }}
               {{ $.Scratch.Set "threadID" ._id }}
               {{/* Comment template for a "main comment" */}}
-              <article id="{{ ._id }}" class="post-comment">
-                <img class="post-comment-avatar" src="https://www.gravatar.com/avatar/{{ .email }}?s=100" alt="{{ .name }}'s Gravatar">
-                <h3 class="post-comment-author-container">
-                  <span class='post-comment-author'>
-                    {{- if .website -}}
-                      <a rel="external nofollow" href="{{ .website }}">{{ .name }}</a>
-                    {{- else -}}
-                      {{- .name -}}
-                    {{- end -}}
-                  </span>
-                </h3>
-                <div class="post-comment-timestamp">
-                  <a href="#{{ ._id }}" title="Permalink to this comment">
-                    <time datetime="{{ .date }}">{{ dateFormat "02/01/2006" .date }}</time>
-                  </a>
-                </div>
-                <div class="post-comment-content">
+              <article id="{{ ._id }}" class="comment">
+                <header>
+                  <img class="comment-avatar" src="https://www.gravatar.com/avatar/{{ .email }}?s=100" alt="{{ .name }}'s Gravatar">
+                  <div class="comment-author-container">
+                    <h3 class="comment-author">
+                      {{- if .website -}}
+                        <a rel="external nofollow" href="{{ .website }}">{{ .name }}</a>
+                      {{- else -}}
+                        {{- .name -}}
+                      {{- end -}}
+                    </h3>
+                  </div>
+                  <div class="comment-timestamp">
+                    <a href="#{{ ._id }}" title="Permalink to this comment">
+                      <time datetime="{{ .date }}">{{ dateFormat "02/01/2006" .date }}</time>
+                    </a>
+                  </div>
+                </header>
+                <div class="comment-content">
                   {{ .body | markdownify }}
                 </div>
-                <div class='post-comment-reply-btn-container'>
-                  <span class='post-comment-threadID hidden'>{{ ._id }}</span>
-                  <a class='post-comment-reply-btn button' href='#post-js-form'>{{ i18n "reply" }}</a>
-                </div>
+                <footer class='comment-reply-container'>
+                  <span class='comment-threadID hidden'>{{ ._id }}</span>
+                  <a class='comment-reply-btn button' href='#comment-form'>{{ i18n "reply" }}</a>
+                </footer>
               </article>
               {{/* Loop through "comment replies" */}}
               {{ range $comments }}
                 {{ if eq .replyThread ($.Scratch.Get "threadID") }}
                 {{/* Comment template for a "comment reply" */}}
-                <article id="{{ ._id }}" class="post-comment post-comment-reply">
-                  <img class="post-comment-avatar" src="https://www.gravatar.com/avatar/{{ .email }}?s=100" alt="{{ .name }}'s Gravatar">
-                  <h3 class="post-comment-author-container">
-                    <span class='post-comment-author'>
-                      {{- if .website -}}
-                      <a rel="external nofollow" href="{{ .website }}">{{ .name }}</a>
-                      {{- else -}}
-                        {{- .name -}}
-                      {{- end -}}
-                    </span><a href='#{{ .replyID }}' class='post-reply-target'>{{ .replyName }}</a>
-                  </h3>
-                  <div class="post-comment-timestamp">
-                    <a href="#{{ ._id }}" title="Permalink to this comment">
-                      <time datetime="{{ .date }}">{{ dateFormat "02/01/2006" .date }}</time>
-                    </a>
-                  </div>
-                  <div class="post-comment-content">
+                <article id="{{ ._id }}" class="comment comment-reply">
+                  <header>
+                    <img class="comment-avatar" src="https://www.gravatar.com/avatar/{{ .email }}?s=100" alt="{{ .name }}'s Gravatar">
+                    <div class="comment-author-container">
+                      <h3 class="comment-author">
+                        {{- if .website -}}
+                        <a rel="external nofollow" href="{{ .website }}">{{ .name }}</a>
+                        {{- else -}}
+                          {{- .name -}}
+                        {{- end -}}
+                      </h3>
+                      <a href='#{{ .replyID }}' class='reply-target'>{{ .replyName }}</a>
+                    </div>
+                    <div class="comment-timestamp">
+                      <a href="#{{ ._id }}" title="Permalink to this comment">
+                        <time datetime="{{ .date }}">{{ dateFormat "02/01/2006" .date }}</time>
+                      </a>
+                    </div>
+                  </header>
+                  <div class="comment-content">
                     {{ .body | markdownify }}
                   </div>
-                  <div class='post-comment-reply-btn-container'>
-                    <span class = 'post-comment-threadID hidden'>{{ .replyThread }}</span>
-                    <a class='post-comment-reply-btn button' href='#post-js-form'>{{ i18n "reply" }}</a>
-                  </div>
+                  <footer class='comment-reply-container'>
+                    <span class = 'comment-threadID hidden'>{{ .replyThread }}</span>
+                    <a class='comment-reply-btn button' href='#comment-form'>{{ i18n "reply" }}</a>
+                  </footer>
                 </article>
                 {{ end }}
               {{ end }}

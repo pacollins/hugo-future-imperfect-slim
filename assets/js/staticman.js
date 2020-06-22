@@ -1,7 +1,7 @@
 // Static comments
 // from: https://github.com/eduardoboucas/popcorn/blob/gh-pages/js/main.js
 $(document).ready(function() {
-  $('.post-new-comment').submit(function () {
+  $('.new-comment').submit(function () {
     var form = this;
 
     $(form).addClass('loading');
@@ -37,11 +37,13 @@ $(document).ready(function() {
 
   function showAlert(msg) {
     if (msg == 'success') {
-      $('.post-new-comment .submit-success').removeClass('hidden');  // show submit success message
-      $('.post-new-comment .submit-failed').addClass('hidden'); // hide submit failed message
+      $('.submit-notice').addClass('submit-success')
+      $('.new-comment .submit-success').removeClass('hidden');  // show submit success message
+      $('.new-comment .submit-failed').addClass('hidden'); // hide submit failed message
     } else {
-      $('.post-new-comment .submit-success').addClass('hidden'); // hide submit success message
-      $('.post-new-comment .submit-failed').removeClass('hidden');  // show submit failed message
+      $('.submit-notice').addClass('submit-failed')
+      $('.new-comment .submit-success').addClass('hidden'); // hide submit success message
+      $('.new-comment .submit-failed').removeClass('hidden');  // show submit failed message
     }
     $('input[type="submit"]:enabled').removeClass('hidden'); // show "submit"
     $('input[type="submit"]:disabled').addClass('hidden');  // hide "submitted"
@@ -49,22 +51,23 @@ $(document).ready(function() {
 
   function clearForm() {
     resetReplyTarget();
-    $('.post-new-comment input')
+    $('.new-comment input')
       .filter(function() {
         return this.name.match(/^fields\[.*\]$/);
       })
       .val(''); // empty all text & hidden fields but not options
-    $('.post-new-comment textarea').val(''); // empty text area
-    $('.post-new-comment .submit-success').addClass('hidden'); // hide submission status
-    $('.post-new-comment .submit-failed').addClass('hidden'); // hide submission status
+    $('.new-comment textarea').val(''); // empty text area
+    $('.submit-notice').removeClass('.submit-success').removeClass('.submit-failed');
+    $('.new-comment .submit-success').addClass('hidden'); // hide submission status
+    $('.new-comment .submit-failed').addClass('hidden'); // hide submission status
   }
 
   function resetReplyTarget() {
-    $('.post-new-comment .post-reply-notice .post-reply-name').text('');
-    $('.post-new-comment .post-reply-notice .post-comment-avatar').remove();
-    $('.post-new-comment .post-reply-notice .post-reply-close-btn').remove();
-    $('.post-new-comment .post-reply-notice').addClass('hidden'); // hide reply target display
-    $('.post-new-comment input[type="hidden"]')
+    $('.new-comment .reply-notice .reply-name').text('');
+    $('.new-comment .reply-notice .comment-avatar').remove();
+    $('.new-comment .reply-notice .reply-close-btn').remove();
+    $('.new-comment .reply-notice').addClass('hidden'); // hide reply target display
+    $('.new-comment input[type="hidden"]')
       .filter(function() {
         return this.name.match(/^fields\[reply[a-zA-Z]*\]$/);
       })
@@ -72,34 +75,34 @@ $(document).ready(function() {
   }
 
   // record reply target when "reply to this comment" is pressed
-  $('.post-comment').on('click', '.post-comment-reply-btn', function (evt){
+  $('.comment').on('click', '.comment-reply-btn', function (evt){
     resetReplyTarget();
     var cmt = $(evt.delegateTarget);
-    var replyThread = cmt.find('.post-comment-threadID').text();
-    $('.post-new-comment input[name="fields[replyThread]"]').val(replyThread);
-    $('.post-new-comment input[name="fields[replyID]"]').val(cmt.attr("id"));
-    authorTag = cmt.find('.post-comment-author');
+    var replyThread = cmt.find('.comment-threadID').text();
+    $('.new-comment input[name="fields[replyThread]"]').val(replyThread);
+    $('.new-comment input[name="fields[replyID]"]').val(cmt.attr("id"));
+    authorTag = cmt.find('.comment-author');
     replyName = authorTag.text();
-    $('.post-new-comment input[name="fields[replyName]"]').val(replyName);
+    $('.new-comment input[name="fields[replyName]"]').val(replyName);
 
     // display reply target avatar and name
-    $('.post-new-comment .post-reply-notice').removeClass('hidden');
-    $('.post-new-comment .post-reply-name').text(replyName);
-    avatarTag = cmt.find('.post-comment-avatar');
+    $('.new-comment .reply-notice').removeClass('hidden');
+    $('.new-comment .reply-name').text(replyName);
+    avatarTag = cmt.find('.comment-avatar');
     // use clone to avoid removal of avatar in comments by resetReplyTarget()
-    $('.post-new-comment .post-reply-arrow').after(avatarTag.clone());
+    $('.new-comment .reply-arrow').after(avatarTag.clone());
     // add button for removing reply target (static method would give error msg)
-    closeBtn = $("<a class='post-reply-close-btn button'></a>");
-    $('.post-new-comment .post-reply-notice').append(closeBtn);
+    closeBtn = $("<a class='reply-close-btn button'><i class='fas fa-times'></i></a>");
+    $('.new-comment .reply-notice').append(closeBtn);
   });
 
   // handle removal of reply target when '×' is pressed
-  $('.post-new-comment .post-reply-notice').on('click', '.post-reply-close-btn', function(){
+  $('.new-comment .reply-notice').on('click', '.post-reply-close-btn', function(){
     resetReplyTarget();
   });
 
   // clear form when reset button is clicked
-  $('.post-new-comment input[type="reset"]').click(function (){
+  $('.new-comment input[type="reset"]').click(function (){
     clearForm();
   });
 });
