@@ -1,78 +1,83 @@
+# Format
 [date_format]
   other = "2 de January, 2006"
-[postreadingtime]
-  one = "1 minuto de leitura"
-  few = "{{ .Count }} minutos de leitura"
-  many = "{{ .Count }} minutos de leitura"
-  other = "{{ .Count }} minutos de leitura"
+
+# Sidebar
 [recent_posts]
-  other = "Posts recentes"
+  other = "Posts Recentes"
 [see_more]
-  other = "Veja mais"
-[read_more]
-  other = "Leia mais"
-[categories]
-  other = "Categorias"
-[category]
-  other = "Categoria"
-[tags]
-  other = "Tags"
-[tag]
-  other = "Tag"
-[share_post]
-  other = "Compartilhe este post"
-[check_out]
-  other = "Confira esta postagem por"
-[about]
-  other = "Sobre"
+  other = "Veja Mais"
 [learn_more]
-  other = "Aprenda mais"
-[repliestext]
-  one = "Resposta tipicamente em 1 hora."
-  few = "Resposta tipicamente em {{ .Count }} horas."
-  many = "Resposta tipicamente em {{ .Count }} horas."
-  other = "Resposta tipicamente em {{ .Count }} horas."
-[submit]
-  other = "Enviar"
-[404_pagenotfound]
-  other = "Página Não Encontrada"
-[404_sorry]
-  other = "Desculpe, mas a página que você está procurando não existe."
-[404_goback]
-  other = "Voltar"
-[blog]
-  other = "Blog"
-[contact]
-  other = "Contato"
-[next_page]
-  other = "Próxima página"
-[previous_page]
-  other = "Página anterior"
+  other = "Saber Mais"
 [attribution]
   other = "Tema: <a href='https://themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect</a><br>Adaptado de <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | Disponibilizado pelo <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
+
+# Sections
+[about]
+  other = "Sobre"
+[contact]
+  other = "Contato"
+[contact_replies]
+  one = "Resposta tipicamente em 1 hora."
+  other = "Resposta tipicamente em {{ .Count }} horas."
+[blog]
+  other = "Blog"
+[categories]
+  one = "Categoria"
+  other = "Categorias"
+[tags]
+  one = "Tag"
+  other = "Tags"
+[next_page]
+  other = "Próxima Página"
+[previous_page]
+  other = "Página Anterior"
+
+# Post
+[reading_time]
+  one = "1 Minuto De Leitura"
+  other = "{{ .Count }} Minutos De Leitura"
+[read_more]
+  other = "Leia Mais"
+[share_post]
+  other = "Compartilhe Este Post"
+[check_out]
+  other = "Confira esta postagem por"
+[say_something]
+  other = "Diga Algo"
 [comments]
   other = "Comentários"
-[say_sth]
-  other = "Diga algo"
-[name]
-  other = "Seu nome (requeridos)"
-[email]
-  other = "Seu email (requeridos para Gravatar)"
-[website]
-  other = "Seu website"
-[body]
-  other = "Sua mensagem.  Sinta-se livre para usar Markdown. (Buscar 'folha de dicas do Markdown')"
-[no_comment]
-  other = "Nada ainda"
+[nothing_yet]
+  other = "Nada Ainda."
 [reply]
   other = "Responder"
-[btn_reset]
-  other = "Reiniciar"
-[btn_submitted]
-  other = "Enviado"
-[btn_sumbit]
-  other = "Enviar"
 [error_msg]
   other = "Desculpe, ocorreu um erro no envio. Por favor verifique se todos os campos obrigatórios foram preenchidos e tente novamente."
 [success_msg]
   other = "Obrigado pelo seu comentário! Ele aparecerá no site assim que for aprovado."
+
+# Form
+[form_name]
+  other = "Seu nome"
+[form_email]
+  other = "Seu email"
+[form_website]
+  other = "Seu site"
+[form_subject]
+  other = "Seu Assunto"
+[form_body]
+  other = "Sua mensagem"
+[reset]
+  other = "Reiniciar"
+[submitted]
+  other = "Enviado"
+[submit]
+  other = "Enviar"
+
+# 404
+[404_pagenotfound]
+  other = "Página Não Encontrada"
+[404_sorry]
+  other = "Desculpe, mas a página que você está procurando não existe."
+[404_back]
+  other = "Voltar"

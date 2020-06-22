@@ -17,7 +17,7 @@
       {{ end }}
       {{ if ge (len (where site.RegularPages "Type" "in" site.Params.mainSections)) (.Site.Params.sidebar.postAmount | default 5) }}
         <footer>
-          <a href="{{ with .Site.Params.viewMorePostsLink }}{{ . | relLangURL }}{{ else }}{{ "post" | relLangURL }}{{ end }}" class="button">{{ i18n "see_more" }}</a>
+          <a href="{{ ( .Site.Params.viewMorePostsLink | default "blog") | relLangURL }}" class="button">{{ i18n "see_more" }}</a>
         </footer>
       {{ end }}
     </section>
@@ -30,18 +30,10 @@
           <h1><a href="{{ "categories" | relLangURL }}">{{ i18n "categories" }}</a></h1>
         </header>
         <ul>
-          {{ if .Site.Params.sidebar.categoriesByCount }}
-            {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.ByCount }}
-          {{ else }}
-            {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.Alphabetical }}
-          {{ end }}
+          {{ $.Scratch.Set "categories" (cond .Site.Params.sidebar.categoriesByCount .Site.Taxonomies.categories.ByCount .Site.Taxonomies.categories.Alphabetical) }}
           {{ range $key, $value := $.Scratch.Get "categories" }}
           <li>
-            {{ if ne $value.Name "" }}
               <a href="{{ printf "%s/%s" "categories" $value.Name | urlize | relLangURL }}/">{{ $value.Name }}<span class="count">{{ $value.Count }}</span></a>
-            {{ else }}
-              {{ i18n "uncategorized" }}<span class="count">{{ $value.Count }}</span>
-            {{ end }}
           {{ end }}
           </li>
         </ul>

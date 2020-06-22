@@ -1,4 +1,4 @@
-{{ if ne .Site.DisqusShortname "" }}
+{{ if .Site.DisqusShortname }}
   <article class="post">
     {{ template "_internal/disqus.html" . }}
   </article>
@@ -10,7 +10,7 @@
     {{- $entryId := .File.UniqueID -}}
     {{/* Additional div wrapper for proper consistent margin */}}
     <div>
-      <h2>{{ i18n "say_sth" }}</h2>
+      <h2>{{ i18n "say_something" }}</h2>
         <form id="post-js-form" class="post-new-comment" method="POST">
           {{/* Display reply target */}}
           <h5 class='post-reply-notice hidden'>
@@ -24,10 +24,10 @@
           <input type='hidden' name='fields[replyName]' value=''>
 
           {{/* User input fields */}}
-          <input required name='fields[name]' type='text' placeholder='{{ i18n "name" }}'>
-          <input name='fields[website]' type='text' placeholder='{{ i18n "website" }}'>
-          <input required name='fields[email]' type='email' placeholder='{{ i18n "email" }}'>
-          <textarea required name='fields[body]' placeholder='{{ i18n "body" }}' rows='10'></textarea>
+          <input required name='fields[name]' type='text' placeholder='{{ i18n "form_name" }}'>
+          <input name='fields[website]' type='text' placeholder='{{ i18n "form_website" }}'>
+          <input required name='fields[email]' type='email' placeholder='{{ i18n "form_email" }}'>
+          <textarea required name='fields[body]' placeholder='{{ i18n "form_body" }}' rows='10'></textarea>
 
           {{/* reCAPTHCA v2 */}}
           {{ if and .Site.Params.staticman.recaptcha.siteKey .Site.Params.staticman.recaptcha.encryptedKey }}
@@ -45,9 +45,9 @@
           </p>
 
           {{/* Form buttons */}}
-          <input type='submit' value='{{ i18n "btn_sumbit" }}' class='button'>
-          <input type='submit' value='{{ i18n "btn_submitted" }}' class='hidden button' disabled>
-          <input type='reset' value='{{ i18n "btn_reset" }}' class='button'>
+          <input type='submit' value='{{ i18n "submit" }}' class='button'>
+          <input type='submit' value='{{ i18n "submitted" }}' class='hidden button' disabled>
+          <input type='reset' value='{{ i18n "reset" }}' class='button'>
         </form>
     </div>
 
@@ -59,7 +59,7 @@
         {{/* $comments collects comment files for the current blog entry */}}
         {{- $comments := index $.Site.Data.comments $entryId -}}
         {{ if not $comments }}
-          <p>{{ i18n "no_comment" }}</p>
+          <p>{{ i18n "nothing_yet" }}</p>
         {{ else }}
           {{/* Loop through "main comments" only if "data/comments exists" */}}
           {{ range $comments }}

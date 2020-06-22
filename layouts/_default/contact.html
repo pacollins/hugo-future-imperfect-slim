@@ -2,12 +2,7 @@
   <article class="post">
     <header>
       <div class="title">
-        {{ if $.Scratch.Get "h1" }}
-          <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-          {{ $.Scratch.Set "h1" false }}
-        {{ else }}
-          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-        {{ end }}
+        <h1><a href="{{ .RelPermalink }}">{{ i18n "contact" }}</a></h1>
         {{ with .Description }}<p>{{ . }}</p>{{ end }}
       </div>
     </header>
@@ -19,21 +14,21 @@
           {{ else }}
             <form id="contact" action="//{{ .Params.emailService }}" method="post" center width="300px">
           {{ end }}
-          <h4>{{ i18n "repliestext" .Params.contactanswertime }}</h4>
+          <h4>{{ i18n "contact_replies" .Params.contactanswertime }}</h4>
           <fieldset>
-            <input placeholder="{{ with .Params.contactname }}{{ . }}{{ else }}Name{{ end }}" type="text" name="name" tabindex="1" required autofocus>
+            <input placeholder="{{ i18n "form_name" }}" type="text" name="name" tabindex="1" required autofocus>
           </fieldset>
           <fieldset>
-            <input placeholder="{{ with .Params.contactemail }}{{ . }}{{ else }}Email{{ end }}" type="email" name="_replyto" tabindex="2" required>
+            <input placeholder="{{ i18n "form_email" }}" type="email" name="_replyto" tabindex="2" required>
           </fieldset>
           <fieldset>
-            <input placeholder="{{ with .Params.contactsubject }}{{ . }}{{ else }}Subject{{ end }}" type="text" name="_subject" tabindex="3" required>
+            <input placeholder="{{ i18n "form_subject" }}" type="text" name="_subject" tabindex="3" required>
           </fieldset>
           <fieldset>
-            <textarea placeholder="{{ with .Params.contactmessage }}{{ . }}{{ else }}Message{{ end }}" name="message" tabindex="4" required></textarea>
+            <textarea placeholder="{{ i18n "form_body" }}" type="text" name="message" tabindex="4" required></textarea>
           </fieldset>
           <fieldset>
-            <input type="hidden" name="_language" value="{{ .Params.contactlang }}">
+            <input type="hidden" name="_language" value="{{ .Lang }}">
           </fieldset>
           <fieldset>
             <button name="submit" class="button" type="submit" id="contact-submit" tabindex="5">{{ i18n "submit" }}</button>

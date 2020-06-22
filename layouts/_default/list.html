@@ -1,9 +1,5 @@
-<!-- ToDo: Adjust for multuple content types -->
 {{ define "main" }}
-  {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-  {{ if not .IsHome }}
-    {{ $paginator = .Paginate (.Pages) }}
-  {{ end }}
+  {{ $paginator := .Paginate (cond .IsHome (where site.RegularPages "Type" "in" site.Params.mainSections) (.Data.Pages) ) }}
   {{ range $paginator.Pages }}
     {{ .Render "content-list" }}
   {{ end }}
