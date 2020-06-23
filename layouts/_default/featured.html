@@ -1,11 +1,12 @@
-{{ if .Params.images }}
-  <a href="{{ .RelPermalink }}" class="image featured">
-    {{ range first 1 .Params.images }}
-      <img src="{{ . | absURL }}" alt="">
-    {{ end }}
-  </a>
+{{ if .Params.images}}
+  {{ range first 1 .Params.images }}
+    <a href="{{ $.Page.RelPermalink }}" class="image" style="--bg-image: url('{{ .src | absURL }}');">
+      <img {{ with .stretch }}class="{{ if or (eq (lower .) "vertical") (eq (lower .) "v") }}stretchV{{ else if or (eq (lower .) "horizontal") (eq (lower .) "h") }}stretchH{{ end }}" {{ end }}src="{{ .src | absURL }}" alt="{{ .alt }}">
+    </a>
+  {{ end }}
+{{/* Backwards Compatibility: Featured */}}
 {{ else if .Params.featured }}
-  <a href="{{ .RelPermalink }}" class="image featured">
+  <a href="{{ .RelPermalink }}" class="image">
     <img src="{{ (path.Join "img" (cond (eq .Params.featuredpath "date") (.Page.Date.Format "2006/01") (.Params.featuredpath)) .Params.featured) | absURL }}" alt="{{ .Params.featuredalt }}">
   </a>
-{{ end }}
+{{ end}}
