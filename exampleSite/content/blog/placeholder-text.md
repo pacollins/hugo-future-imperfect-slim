@@ -1,13 +1,13 @@
 +++
-author = "Hugo Authors"
 title = "Placeholder Text"
-date = "2019-03-09"
 description = "Lorem Ipsum Dolor Si Amet"
-tags = [
-    "markdown",
-    "text",
-]
-images  = ["img/2014/09/pic03.jpg"]
+author = "Hugo Authors"
+date = "2019-03-09"
+tags = ["markdown", "text"]
+[[images]]
+  src = "img/2019/03/pic03.jpg"
+  alt = "Valley"
+  stretch = "horizontal"
 +++
 
 Lorem est tota propiore conpellat pectoribus de

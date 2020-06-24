@@ -1,10 +1,9 @@
 +++
 title = "O nas"
-layout = "about"
 description = "Hugo, najszybszy na świecie program do tworzenia stron internetowych"
-date = "2019-02-28"
-aliases = ["about-us","about-hugo","contact"]
 author = "Autorzy Hugo"
+date = "2019-02-28"
+layout = "about"
 +++
 
 Napisany w Go, Hugo jest generatorem statycznych witryn o otwartym kodzie źródłowym, dostępnym na licencji [Apache License 2.0.] (Https://github.com/gohugoio/hugo/blob/master/LICENSE) Hugo obsługuje typy plików danych TOML, YAML i JSON , Markdown i pliki zawartości HTML oraz używa skrótów w celu dodania bogatej zawartości. Inne godne uwagi funkcje to taksonomie, tryb wielojęzyczny, przetwarzanie obrazu, niestandardowe formaty wyjściowe, minimalizacja HTML / CSS / JS oraz obsługa przepływów pracy Sass SCSS.

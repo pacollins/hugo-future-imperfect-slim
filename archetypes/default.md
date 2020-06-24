@@ -1,9 +1,13 @@
 +++
-author = ""
 title = ""
-date = ""
 description = ""
+author = ""
+date = ""
 tags = [""]
 categories = [""]
-images = [""]
+comments = true
+[[images]]
+  src = ""
+  alt = ""
+  stretch = ""
 +++
