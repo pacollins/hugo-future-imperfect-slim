@@ -1,63 +1,63 @@
 <section id="site-sidebar">
   {{ if gt .Site.Params.sidebar.postAmount 0 }}
-    <section id="recent-posts">
+  <section id="recent-posts">
+    <header>
+      <h1>{{ i18n "recent_posts" }}</h1>
+    </header>
+    {{ range first (.Site.Params.sidebar.postAmount | default 5) (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+    <article class="mini-post">
       <header>
-        <h1>{{ i18n "recent_posts" }}</h1>
-      </header>
-      {{ range first (.Site.Params.sidebar.postAmount | default 5) (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-      <article class="mini-post">
         <section>
           {{ .Render "featured" }}
         </section>
-        <header>
-          <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-          <time class="published" datetime="">{{ default (i18n "date_format") | .Date.Format }}</time>
-        </header>
-      </article>
-      {{ end }}
-      {{ if ge (len (where site.RegularPages "Type" "in" site.Params.mainSections)) (.Site.Params.sidebar.postAmount | default 5) }}
-        <footer>
-          <a href="{{ with .Site.Params.viewMorePostsLink }}{{ . | relLangURL }}{{ else }}{{ "post" | relLangURL }}{{ end }}" class="button">{{ i18n "see_more" }}</a>
-        </footer>
-      {{ end }}
-    </section>
+        <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+        <time class="published" datetime="">{{ default (i18n "date_format") | .Date.Format }}</time>
+      </header>
+    </article>
+    {{ end }}
+    {{ if ge (len (where site.RegularPages "Type" "in" site.Params.mainSections)) (.Site.Params.sidebar.postAmount | default 5) }}
+    <footer>
+      <a href="{{ with .Site.Params.viewMorePostsLink }}{{ . | relLangURL }}{{ else }}{{ "post" | relLangURL }}{{ end }}" class="button">{{ i18n "see_more" }}</a>
+    </footer>
+    {{ end }}
+  </section>
   {{ end }}
 
   {{ if .Site.Params.sidebar.categories }}
-    {{ if ne ($.Scratch.Get "showCategories") false }}
-      <section id="categories">
-        <header>
-          <h1><a href="{{ "categories" | relLangURL }}">{{ i18n "categories" }}</a></h1>
-        </header>
-        <ul>
-          {{ if .Site.Params.sidebar.categoriesByCount }}
-            {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.ByCount }}
-          {{ else }}
-            {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.Alphabetical }}
-          {{ end }}
-          {{ range $key, $value := $.Scratch.Get "categories" }}
-          <li>
-            {{ if ne $value.Name "" }}
-              <a href="{{ printf "%s/%s" "categories" $value.Name | urlize | relLangURL }}/">{{ $value.Name }}<span class="count">{{ $value.Count }}</span></a>
-            {{ else }}
-              {{ i18n "uncategorized" }}<span class="count">{{ $value.Count }}</span>
-            {{ end }}
-          {{ end }}
-          </li>
-        </ul>
-      </section>
-    {{ end }}
+  {{ if ne ($.Scratch.Get "showCategories") false }}
+  <section id="categories">
+    <header>
+      <h1><a href="{{ "categories" | relLangURL }}">{{ i18n "categories" }}</a></h1>
+    </header>
+    <ul>
+      {{ if .Site.Params.sidebar.categoriesByCount }}
+      {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.ByCount }}
+      {{ else }}
+      {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.Alphabetical }}
+      {{ end }}
+      {{ range $key, $value := $.Scratch.Get "categories" }}
+      <li>
+        {{ if ne $value.Name "" }}
+        <a href="{{ printf "%s/%s" "categories" $value.Name | urlize | relLangURL }}/">{{ $value.Name }}<span class="count">{{ $value.Count }}</span></a>
+        {{ else }}
+        {{ i18n "uncategorized" }}<span class="count">{{ $value.Count }}</span>
+        {{ end }}
+        {{ end }}
+      </li>
+    </ul>
+  </section>
+  {{ end }}
   {{ end }}
 
   {{ if .Site.Params.sidebar.about }}
-    <section id="mini-bio">
-      <header>
-        <h1>{{ i18n "about" }}</h1>
-      </header>
-      <p>{{ .Site.Params.sidebar.about | safeHTML }}</p>
-      <footer>
-        <a href="{{ "about" | relLangURL }}" class="button">{{ i18n "learn_more" }}</a>
-      </footer>
-    </section>
+  <section id="mini-bio">
+    <header>
+      <h1>{{ i18n "about" }}</h1>
+    </header>
+    <p>{{ .Site.Params.sidebar.about | safeHTML }}</p>
+    <footer>
+      <a href="{{ "about" | relLangURL }}" class="button">{{ i18n "learn_more" }}</a>
+    </footer>
+  </section>
   {{ end }}
 </section>
