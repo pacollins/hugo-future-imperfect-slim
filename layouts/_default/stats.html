@@ -4,7 +4,7 @@
     {{ if isset .Params "categories" }}
       {{ if gt (len .Params.categories) 0 }}
         {{ range .Params.categories }}
-          <li><a class="article-terms-link" href="{{ path.Join "categories" (. | urlize | lower) | relLangURL }}/"><div>{{ . }}</div></a></li>
+          <li><a class="article-terms-link" href="{{ path.Join "categories" (. | urlize | lower) | relLangURL }}/">{{ . }}</a></li>
         {{ end }}
       {{ end }}
     {{ else }}
@@ -17,7 +17,7 @@
     {{ if isset .Params "tags" }}
       {{ if gt (len .Params.tags) 0 }}
         {{ range .Params.tags }}
-          <li><a class="article-terms-link" href="{{ path.Join "tags" (. | urlize | lower) | relLangURL }}/"><div>{{ . }}</div></a></li>
+          <li><a class="article-terms-link" href="{{ path.Join "tags" (. | urlize | lower) | relLangURL }}/">{{ . }}</a></li>
         {{ end }}
       {{ end }}
     {{ else }}
