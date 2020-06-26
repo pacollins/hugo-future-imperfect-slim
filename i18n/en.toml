@@ -43,7 +43,7 @@
 [next_page]
   other = "Next Page"
 [previous_page]
-  other = "Previous Page"
+  other = "Prev Page"
 [attribution]
   other = "Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
 [comments]
@@ -72,3 +72,11 @@
   other = "Sorry, there was an error with your submission.  Please make sure all required fields have been completed and try again."
 [success_msg]
   other = "Thanks for your comment! It will be shown on the site once it has been approved."
+[share]
+  other = "Share"
+[search]
+  other = "Search"
+[next_post]
+  other = "Next post"
+[previous_post]
+  other = "Prev post"

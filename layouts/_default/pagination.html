@@ -1,8 +1,8 @@
 <div class="pagination">
   {{ if .PrevInSection }}
-    <a href="{{ .PrevInSection.RelPermalink }}" class="button"><div class="previous">Prev post</div></a>
+    <a href="{{ .PrevInSection.RelPermalink }}" class="button"><div class="previous">{{ i18n "previous_post" }}</div></a>
   {{ end }}
   {{ if .NextInSection }}
-    <a href="{{ .NextInSection.RelPermalink }}" class="button"><div class="next">Next post</div></a>
+    <a href="{{ .NextInSection.RelPermalink }}" class="button"><div class="next">{{ i18n "next_post" }}</div></a>
   {{ end }}
 </div>
