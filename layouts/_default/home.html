@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
   {{ range $paginator.Pages }}
-    {{ .Render "content-list" }}
+    {{ .Render "content-list-home" }}
   {{ end }}
   {{ partial "pagination" . }}
 {{ end }}
