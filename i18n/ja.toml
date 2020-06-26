@@ -80,3 +80,5 @@
   other = "次の記事"
 [previous_post]
   other = "前の記事"
+[table_of_contents]
+  other = "目次"

@@ -78,3 +78,5 @@
   other = "下一篇"
 [previous_post]
   other = "前一篇"
+[table_of_contents]
+  other = "目录"
