@@ -1,0 +1,74 @@
+[date_format]
+  other = "2 January 2006"
+[postreadingtime]
+  one = "1 min di lettura"
+  other = "{{ .Count }} min di lettura"
+[recent_posts]
+  other = "Post recenti"
+[see_more]
+  other = "Vedi altro"
+[read_more]
+  other = "Continua a leggere"
+[categories]
+  other = "Categorie"
+[category]
+  other = "Categoria"
+[tags]
+  other = "Tag"
+[tag]
+  other = "Tag"
+[share_post]
+  other = "Condividi questo post"
+[check_out]
+  other = "Dai un'occhiata a questo post di"
+[about]
+  other = "Info su"
+[learn_more]
+  other = "Per saperne di più"
+[repliestext]
+  one = "Risponde normalmente entro 1 ora."
+  other = "Risponde normalmente entro {{ .Count }} ore."
+[submit]
+  other = "Invia"
+[404_pagenotfound]
+  other = "Pagina non trovata"
+[404_sorry]
+  other = "Spiacente, ma la pagina che stavi cercandi di vedere non esiste."
+[404_goback]
+  other = "Indietro"
+[blog]
+  other = "Blog"
+[contact]
+  other = "Contatti"
+[next_page]
+  other = "Pagina successiva"
+[previous_page]
+  other = "Pagina precedente"
+[attribution]
+  other = "Tema: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>Un <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>port di HTML5 UP</a> | Offerto da <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
+[comments]
+  other = "Commenti"
+[say_sth]
+  other = "Di qualcosa"
+[name]
+  other = "Nome (Obbligatorio)"
+[email]
+  other = "Indirizzo email (Obbligatorio per Gravatar)"
+[website]
+  other = "Sito web"
+[body]
+  other = "Messaggio. Sentiti libero di usare il Markdown (Google 'Markdown Cheat Sheet')."
+[no_comment]
+  other = "Ancora niente."
+[reply]
+  other = "Rispondi"
+[btn_reset]
+  other = "Ripristina"
+[btn_submitted]
+  other = "Inviato"
+[btn_sumbit]
+  other = "Invia"
+[error_msg]
+  other = "Spiacente, ma si è verificato un errore durante l'invio.  Controlla che tutti i campi obbligatori siano stati compilati e porva di nuovo."
+[success_msg]
+  other = "Grazie per il tuo commento! Verrà mostrato sul sito una voltà che sarà approvato."
