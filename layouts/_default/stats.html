@@ -1,6 +1,5 @@
-<ul class="stats">
-  <li class="categories">
-    <ul>
+<div class="stats">
+  <ul class="categories">
     {{ if isset .Params "categories" }}
       {{ if gt (len .Params.categories) 0 }}
         {{ range .Params.categories }}
@@ -10,10 +9,8 @@
     {{ else }}
       <li>None</li>
     {{ end }}
-    </ul>
-  </li>
-  <li class="tags">
-    <ul>
+  </ul>
+  <ul class="tags">
     {{ if isset .Params "tags" }}
       {{ if gt (len .Params.tags) 0 }}
         {{ range .Params.tags }}
@@ -23,6 +20,5 @@
     {{ else }}
       <li>None</li>
     {{ end }}
-    </ul>
-  </li>
-</ul>
+  </ul>
+</div>

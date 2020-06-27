@@ -10,7 +10,7 @@
     {{- $entryId := .File.UniqueID -}}
     {{/* Additional div wrapper for proper consistent margin */}}
     <div>
-      <h2>{{ i18n "say_something" }}</h2>
+      <h2 id="say-something">{{ i18n "say_something" }}</h2>
         <form id="comment-form" class="new-comment" method="POST">
           {{/* Display reply target */}}
           <h3 class='reply-notice hidden'>
@@ -45,7 +45,7 @@
           </div>
 
           {{/* Form buttons */}}
-          <input type='submit' value='{{ i18n "sumbit" }}' class='button'>
+          <input type='submit' value='{{ i18n "submit" }}' class='button'>
           <input type='submit' value='{{ i18n "submitted" }}' class='hidden button' disabled>
           <input type='reset' value='{{ i18n "reset" }}' class='button'>
         </form>
@@ -55,74 +55,42 @@
     <div>
       <h2>{{ i18n "comments" }}</h2>
 
-      {{ if .Site.Data.comments }}
+      {{- if .Site.Data.comments -}}
         {{/* $comments collects comment files for the current blog entry */}}
         {{- $comments := index $.Site.Data.comments $entryId -}}
-        {{ if not $comments }}
+        {{- if not $comments -}}
           <p>{{ i18n "nothing_yet" }}</p>
-        {{ else }}
-          {{/* Loop through "main comments" only if "data/comments exists" */}}
-          {{ range $comments }}
-            {{ if not .replyThread }}
-              {{ $.Scratch.Set "threadID" ._id }}
-              {{/* Comment template for a "main comment" */}}
-              <article id="{{ ._id }}" class="comment">
-                <header>
-                  <img class="comment-avatar" src="https://www.gravatar.com/avatar/{{ .email }}?s=100" alt="{{ .name }}'s Gravatar">
-                  <div class="comment-author-container">
-                    <h3 class="comment-author">
-                      {{- if .website -}}
-                        <a rel="external nofollow" href="{{ .website }}">{{ .name }}</a>
-                      {{- else -}}
-                        {{- .name -}}
-                      {{- end -}}
-                    </h3>
-                  </div>
-                  <div class="comment-timestamp">
-                    <a href="#{{ ._id }}" title="Permalink to this comment">
-                      <time datetime="{{ .date }}">{{ dateFormat "02/01/2006" .date }}</time>
-                    </a>
-                  </div>
-                </header>
-                <div class="comment-content">
-                  {{ .body | markdownify }}
-                </div>
-                <footer class='comment-reply-container'>
-                  <span class='comment-threadID hidden'>{{ ._id }}</span>
-                  <a class='comment-reply-btn button' href='#comment-form'>{{ i18n "reply" }}</a>
-                </footer>
-              </article>
-              {{/* Loop through "comment replies" */}}
-              {{ range $comments }}
-                {{ if eq .replyThread ($.Scratch.Get "threadID") }}
-                {{/* Comment template for a "comment reply" */}}
-                <article id="{{ ._id }}" class="comment comment-reply">
-                  <header>
-                    <img class="comment-avatar" src="https://www.gravatar.com/avatar/{{ .email }}?s=100" alt="{{ .name }}'s Gravatar">
-                    <div class="comment-author-container">
-                      <h3 class="comment-author">
-                        {{- if .website -}}
-                        <a rel="external nofollow" href="{{ .website }}">{{ .name }}</a>
-                        {{- else -}}
-                          {{- .name -}}
-                        {{- end -}}
-                      </h3>
-                      <a href='#{{ .replyID }}' class='reply-target'>{{ .replyName }}</a>
+        {{- else -}}
+          {{- range $comments -}}
+            {{- if not .replyThread -}}
+              {{- $threadID := ._id }}
+              {{- range $comments -}}
+                {{ if or (in ._id $threadID) (in .replyThread $threadID) }}
+                  <div id="{{ ._id }}" class="comment{{ with .replyThread }} comment-reply{{ end }}">
+                    <header>
+                      <img class="comment-avatar circle" src="https://www.gravatar.com/avatar/{{ .email }}?s=100" alt="{{ .name }}'s Gravatar">
+                      <div>
+                        <div class="comment-author-container">
+                          <h3 class="comment-author">
+                            {{- if .website -}}
+                              <a rel="external nofollow" href="{{ .website }}">{{ .name }}</a>
+                            {{- else -}}
+                              {{- .name -}}
+                            {{- end -}}
+                          </h3>
+                          <a class="comment-date" href="#{{ ._id }}" title="Permalink to this comment">
+                            <time datetime="{{ .date }}">{{ dateFormat "02 Jan 06 15:04" .date }}</time>
+                          </a>
+                        </div>
+                        <!-- TODO: Assess Value (ref ln#73): <a href='#{{ .replyID }}' class='reply-target'>{{ .replyName }}</a> -->
+                        <!-- TODO: Assess Value: <span class ="comment-threadID hidden">{{ .replyThread }}</span> -->
+                        <a class="comment-reply-btn" href="#say-something">{{ i18n "reply" }}</a>
+                      </div>
+                    </header>
+                    <div class="comment-content">
+                      {{ .body | markdownify }}
                     </div>
-                    <div class="comment-timestamp">
-                      <a href="#{{ ._id }}" title="Permalink to this comment">
-                        <time datetime="{{ .date }}">{{ dateFormat "02/01/2006" .date }}</time>
-                      </a>
-                    </div>
-                  </header>
-                  <div class="comment-content">
-                    {{ .body | markdownify }}
                   </div>
-                  <footer class='comment-reply-container'>
-                    <span class = 'comment-threadID hidden'>{{ .replyThread }}</span>
-                    <a class='comment-reply-btn button' href='#comment-form'>{{ i18n "reply" }}</a>
-                  </footer>
-                </article>
                 {{ end }}
               {{ end }}
             {{ end }}

@@ -1,17 +1,18 @@
 <header>
   <div class="title">
-    <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    {{ if $.Scratch.Get "h1" }}
+      <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+      {{ $.Scratch.Set "h1" false }}
+    {{ else }}
+      <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+    {{ end }}
     {{ with .Description }}
       <p>{{ . }}</p>
     {{ end }}
   </div>
   <div class="meta">
-    <time class="published" datetime="{{ .Date }}">
-      {{ default (i18n "date_format") | .Date.Format }}
-    </time>
-    <span class="author">{{ .Params.author }}</span>
-    {{ if .Site.Params.ReadingTime }}
-      <p>{{ i18n "reading_time" .ReadingTime }}</p>
-    {{ end }}
+    <time datetime="{{ .Date }}">{{ default (i18n "date_format") | .Date.Format }}</time>
+    {{ with .Params.author }}<p>{{ . }}</p>{{ end }}
+    {{ if .Site.Params.ReadingTime }}<p>{{ i18n "reading_time" .ReadingTime }}</p>{{ end }}
   </div>
 </header>
