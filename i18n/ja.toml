@@ -22,7 +22,7 @@
 [check_out]
   other = "この投稿をチェックする"
 [about]
-  other = "About"
+  other = "私について"
 [learn_more]
   other = "もっと知る"
 [repliestext]
@@ -82,3 +82,5 @@
   other = "前の記事"
 [table_of_contents]
   other = "目次"
+[home]
+  other = "ホーム"

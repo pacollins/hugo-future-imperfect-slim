@@ -82,3 +82,5 @@
   other = "Prev post"
 [table_of_contents]
   other = "Table of contents"
+[home]
+  other = "Home"

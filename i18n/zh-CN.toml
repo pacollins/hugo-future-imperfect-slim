@@ -80,3 +80,5 @@
   other = "前一篇"
 [table_of_contents]
   other = "目录"
+[home]
+  other = "主页"

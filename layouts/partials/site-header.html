@@ -20,6 +20,7 @@
       </a>
     </h1>
     <menu id="site-nav-menu" class="flyout-menu menu">
+      <!--
       {{ range .Site.Menus.main }}
         {{ if and (gt (len (findRE "fa[rsb]( fa-([a-z-]+))+" .Identifier)) 0) (not .Pre) }}
           {{/* Old syntax: use '.Identifier' for icon rendering */}}
@@ -33,6 +34,17 @@
           {{ end }}
         {{ end }}
       {{ end }}
+
+      This modification is just to simplify the config.toml configuration file.
+      -->
+
+      <a href='{{ "/" | relLangURL }}' class="nav link"><i class='fa fa-home'></i> {{ i18n "home" }} </a>
+      <a href='{{ "/about/" | relLangURL }}' class="nav link"><i class='far fa-id-card'></i> {{ i18n "about" }} </a>
+      <a href='{{ "/blog/" | relLangURL }}' class="nav link"><i class='far fa-newspaper'></i> {{ i18n "blog" }} </a>
+      <a href='{{ "/categories/" | relLangURL }}' class="nav link"><i class='fas fa-sitemap'></i> {{ i18n "categories" }} </a>
+      <a href='{{ "/tags/" | relLangURL }}' class="nav link"><i class='fas fa-tags'></i> {{ i18n "tags" }} </a>
+      <a href='{{ "/contact/" | relLangURL }}' class="nav link"><i class='far fa-envelope'></i> {{ i18n "contact" }} </a>
+
       {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt">&nbsp;</i>{{ i18n "share" }}</a>{{ end }}
       {{ if .Site.Params.header.searchMenu }}<a href="#search-input" class="nav search-toggle"><i class="fas fa-search">&nbsp;</i>{{ i18n "search" }}</a>{{ end }}
     </menu>
