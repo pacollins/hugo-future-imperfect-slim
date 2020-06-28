@@ -225,16 +225,12 @@ h5,
 h6 {
   color: #3c3b3b;
   font-family: "Raleway", Helvetica, sans-serif;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.25em;
   line-height: 1.65;
-  text-transform: "";
+  text-transform: uppercase;
   a {
     border-bottom: 0;
   }
-}
-
-h1 {
-    letter-spacing: 0.2em;
 }
 
 blockquote {
@@ -300,7 +296,7 @@ input[type="button"],
   font-size: 0.6em;
   font-weight: 800;
   height: 4.8125em;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.25em;
   line-height: 4.8125em;
   margin: auto;
   padding: 0 2em;
@@ -309,7 +305,7 @@ input[type="button"],
   -ms-transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
   transition: background-color 0.2s ease, border 0.2s ease, color 0.2s ease;
   text-align: center;
-  text-transform: "";
+  text-transform: uppercase;
   width: fit-content;
   &:hover {
     border: solid 1px $accent-color;
@@ -1029,16 +1025,16 @@ Theme Grid
         font-family: "Raleway", Helvetica, sans-serif;
         font-size: 0.7em;
         font-weight: 800;
-        letter-spacing: 0.1em;
-        text-transform: "";
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
       }
       p,
       .author,
       .format {
         font-family: "Raleway", Helvetica, sans-serif;
         font-size: 0.6em;
-        letter-spacing: 0.1em;
-        text-transform: "";
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
       }
     }
   }
@@ -1099,7 +1095,7 @@ Theme Grid
         align-items: center;
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
-        max-width: 100%;
+        max-width: 50%;
         &:hover,
         &:active {
           ul {
@@ -1133,9 +1129,9 @@ Theme Grid
           li {
             visibility: visible;
             font-family: "Raleway", Helvetica, sans-serif;
-            font-size: 0.8em;
+            font-size: 0.6em;
             font-weight: 400;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.25em;
             line-height: 0;
             margin: 0;
             width: 0;
@@ -1145,7 +1141,7 @@ Theme Grid
             -ms-transition: visibility 0s, opacity 0.5s linear, line-height 0.5s linear, margin 0.5s linear, width 0.5s linear;
             -o-transition: visibility 0s, opacity 0.5s linear, line-height 0.5s linear, margin 0.5s linear, width 0.5s linear;
             transition: visibility 0s, opacity 0.5s linear, line-height 0.5s linear, margin 0.5s linear, width 0.5s linear;
-            text-transform: "";
+            text-transform: uppercase;
             &:nth-child(-n + 3) {
               visibility: visible;
               opacity: 1;
@@ -1237,7 +1233,7 @@ Theme Grid
     letter-spacing: 0.25em;
     margin: 0;
     padding: 0 1.5em;
-    text-transform: "";
+    text-transform: uppercase;
   }
 }
 
@@ -1564,10 +1560,10 @@ Theme Grid
   main {
     p {
       font-size: 0.7em;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.25em;
       line-height: 2.5;
       margin-bottom: 0;
-      text-transform: "";
+      text-transform: uppercase;
     }
   }
   &.hidden-single-column {
@@ -1640,9 +1636,9 @@ Theme Grid
       font-family: "Raleway", Helvetica, sans-serif;
       font-size: 0.6em;
       font-weight: 400;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.25em;
       margin: -0.625em 0 1.7em 0;
-      text-transform: "";
+      text-transform: uppercase;
     }
     .author,
     .format {
@@ -1700,9 +1696,9 @@ Theme Grid
     font-family: "Raleway", Helvetica, sans-serif;
     font-size: 0.5em;
     font-weight: 400;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.25em;
     text-align: center;
-    text-transform: "";
+    text-transform: uppercase;
   }
 }
 
