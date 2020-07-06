@@ -25,6 +25,7 @@ disableLanguages        = [""]
   highlightjsLang       = [""]
   viewMorePostsLink     = "/blog/"
   readingTime           = true
+  imageStretch          = ""
   socialShare           = ["twitter", "facebook", "reddit", "linkedin", "pinterest", "email"]
 
   [params.meta]
