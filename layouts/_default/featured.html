@@ -6,7 +6,10 @@
   {{ end }}
 {{/* Backwards Compatibility: Featured */}}
 {{ else if .Params.featured }}
-  <a href="{{ .RelPermalink }}" class="image">
-    <img src="{{ (path.Join "img" (cond (eq .Params.featuredpath "date") (.Page.Date.Format "2006/01") (.Params.featuredpath)) .Params.featured) | absURL }}" alt="{{ .Params.featuredalt }}">
+  {{ $featsrc := (path.Join "img" (cond (eq .Params.featuredpath "date") (.Page.Date.Format "2006/01") (.Params.featuredpath)) .Params.featured) | absURL }}
+  <a href="{{ .RelPermalink }}" class="image" style="--bg-image: url('{{ $featsrc }}');">
+    <img {{ with .Params.featuredstretch }}class="{{ if or (eq (lower .) "vertical") (eq (lower .) "v") }}stretchV{{ else if or (eq (lower .) "horizontal") (eq (lower .) "h") }}stretchH{{ end }}" {{ end }}src="{{ $featsrc }}" alt="{{ .Params.featuredalt }}">
   </a>
 {{ end}}
+
+<!-- TODO: Clean up Loop -->
