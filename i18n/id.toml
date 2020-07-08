@@ -1,0 +1,74 @@
+[date_format]
+  other = "2 January 2006"
+[postreadingtime]
+  one = "1 menit"
+  other = "{{ .Count }} menit"
+[recent_posts]
+  other = "Posting terkini"
+[see_more]
+  other = "Lihat lebih lanjut"
+[read_more]
+  other = "Baca lebih lanjut"
+[categories]
+  other = "Kategori"
+[category]
+  other = "Kategori"
+[tags]
+  other = "Tag"
+[tag]
+  other = "Tag"
+[share_post]
+  other = "Share posting ini"
+[check_out]
+  other = "Diposting oleh"
+[about]
+  other = "Tentang"
+[learn_more]
+  other = "Pelajari lebih lanjut"
+[repliestext]
+  one = "Biasanya dibalas dalam 1 jam."
+  other = "Biasanya dibalas dalam {{ .Count }} jam."
+[submit]
+  other = "Kirimkan"
+[404_pagenotfound]
+  other = "Halaman tidak ditemukan"
+[404_sorry]
+  other = "Maat, halaman yang Anda coba akses tidak ditemukan."
+[404_goback]
+  other = "Kembali"
+[blog]
+  other = "Blog"
+[contact]
+  other = "Kontak"
+[next_page]
+  other = "Halaman Selanjutnya"
+[previous_page]
+  other = "Halaman Sebelumnya"
+[attribution]
+  other = "Tema : <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Ditenagai oleh <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
+[comments]
+  other = "Komentar"
+[say_sth]
+  other = "Ucapkan sesuatu"
+[name]
+  other = "Nama Kamu (Diperlukan)"
+[email]
+  other = "Alamat Email Kamu (Diperlukan untuk Gravatar)"
+[website]
+  other = "Website Kamu"
+[body]
+  other = "Pesan kamu. Bebaskan dirimu untuk menggunakan Markdown (Google 'Markdown Cheat Sheet')."
+[no_comment]
+  other = "Tidak juga."
+[reply]
+  other = "Balas"
+[btn_reset]
+  other = "Reset"
+[btn_submitted]
+  other = "Dikirimkan"
+[btn_sumbit]
+  other = "Kirimkan"
+[error_msg]
+  other = "Maaf, terjadi kesalahan pada data yang dikirimkan.  Tolong pastikan agar semua field yang diperlukan terisi lengkap dan silahkan coba lagi."
+[success_msg]
+  other = "Terima kasih atas komentarnya! Komentar kamu akan ditampilkan pada situs ini ketika sudah disetujui."
