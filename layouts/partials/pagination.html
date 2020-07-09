@@ -1,9 +1,9 @@
 <!-- Pagination -->
 <div class="pagination">
   {{ if .Paginator.HasPrev }}
-    <a href="{{ .Paginator.Prev.URL }}" class="button"><div class="previous">{{ i18n "previous_page" }}</div></a>
+    <a href="{{ .Paginator.Prev.URL }}" class="button"><div class="previous"><div>Previous</div></div></a>
   {{ end }}
   {{ if .Paginator.HasNext }}
-    <a href="{{ .Paginator.Next.URL }}" class="button"><div class="next">{{ i18n "next_page" }}</div></a>
+    <a href="{{ .Paginator.Next.URL }}" class="button"><div class="next"><div>Next</div></div></a>
   {{ end }}
 </div>
