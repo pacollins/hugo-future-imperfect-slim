@@ -432,23 +432,16 @@ figcaption {
 
 .image {
   border: 0;
-  display: block;
+  display: grid;
+  place-items: center;
   margin: 0 -1em 1em -1em;
   overflow: hidden;
-  max-height: 100px;
   padding-bottom: 33%;
-  position: relative;
-  -webkit-backface-visibility: hidden;
-  -ms-backface-visibility: hidden;
-  backface-visibility: hidden;
   -webkit-transform: perspective(1000px);
   -ms-transform: perspective(1000px);
   transform: perspective(1000px); }
   .image img {
     position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto auto;
     max-height: 100%;
     transition: transform 0.35s ease-in-out; }
     .image img.stretchV {

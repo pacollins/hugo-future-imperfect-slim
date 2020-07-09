@@ -647,19 +647,14 @@ figcaption {
 
 .image {
   border: 0;
-  display: block;
+  display: grid;
+  place-items: center;
   margin: 0 -1em 1em -1em;
   overflow: hidden;
-  max-height: 100px;
   padding-bottom: 33%;
-  position: relative;
-  @include prefix(backface-visibility, hidden, (webkit, ms));
   @include prefix(transform, perspective(1000px), (webkit, ms));
   img {
     position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto auto;
     max-height: 100%;
     transition: transform $hover-slow;
     &.stretchV {
