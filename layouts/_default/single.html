@@ -1,21 +1,17 @@
 {{ define "main" }}
-<article class="post">
-  {{ .Render "header" }}
-  <section id="socnet-share">
-    {{ partial "share-buttons" . }}
-  </section>
-  {{ .Render "featured" }}
-  <div class="content">
-    <h2>{{ i18n "table_of_contents" }}</h2>
-    {{ .TableOfContents }}
-    <hr>
-    {{ .Content }}
-  </div>
-  <hr>
-  <footer>
-    {{ .Render "stats" }}
-  </footer>
-</article>
-{{ .Render "comments" }}
-{{ .Render "pagination" }}
+  <article class="post">
+    {{ .Render "header" }}
+    <section id="socnet-share">
+      {{ partial "share-buttons" . }}
+    </section>
+    {{ .Render "featured" }}
+    <div class="content">
+      {{ .Content }}
+    </div>
+    <footer>
+      {{ .Render "stats" }}
+    </footer>
+  </article>
+  {{ .Render "comments" }}
+  {{ .Render "pagination" }}
 {{ end }}

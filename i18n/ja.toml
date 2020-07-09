@@ -22,7 +22,7 @@
 [check_out]
   other = "この投稿をチェックする"
 [about]
-  other = "私について"
+  other = "About"
 [learn_more]
   other = "もっと知る"
 [repliestext]
@@ -72,15 +72,3 @@
   other = "申し訳ありません。送信中にエラーが発生しました。必須入力フィールドがすべて入力されていることを確認して、もう一度やりなおしてください。"
 [success_msg]
   other = "コメントありがとうございます！承認されるとサイトに表示されます。"
-[share]
-  other = "シェア"
-[search]
-  other = "検索"
-[next_post]
-  other = "次の記事"
-[previous_post]
-  other = "前の記事"
-[table_of_contents]
-  other = "目次"
-[home]
-  other = "ホーム"

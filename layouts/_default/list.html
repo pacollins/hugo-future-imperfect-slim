@@ -1,7 +1,7 @@
 {{ define "main" }}
   {{ $paginator := .Paginate (.Pages) }}
   {{ range $paginator.Pages }}
-    {{ .Render "content-list-light" }}
+    {{ .Render "content-list" }}
   {{ end }}
   {{ partial "pagination" . }}
 {{ end }}

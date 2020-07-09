@@ -70,15 +70,3 @@
   other = "很抱歉，您的提交存在错误。请确保所有必填字段都已填写正确，然后再试一次。"
 [success_msg]
   other = "感谢您的评论！被批准后它会立即在此站点展示。"
-[share]
-  other = "分享"
-[search]
-  other = "搜索"
-[next_post]
-  other = "下一篇"
-[previous_post]
-  other = "前一篇"
-[table_of_contents]
-  other = "目录"
-[home]
-  other = "主页"

@@ -7,7 +7,7 @@
       <li>
         <article>
           <header>
-            <a href="{{ .Page.Permalink }}">{{ .Page.Title }}<span style="float:right;">{{ .Count }}</span></a>
+            <a href="{{ .Page.Permalink | relLangURL }}">{{ .Page.Title }}<span style="float:right;">{{ .Count }}</span></a>
           </header>
         </article>
       </li>
