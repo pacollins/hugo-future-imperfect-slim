@@ -1,27 +1,20 @@
-With this version, the theme has fully implemented **static search** using
-`lunr.js`. That being said, a few modifications were necessary to implement this
-feature.
+Below are the following changes that *could* be breaking changes for your site. For more details on any change, please refer to [PR #154](https://github.com/pacollins/hugo-future-imperfect-slim/pull/154).
 
-To utilize this, or future version of *Hugo Future Imperfect Slim*, please make
-the following changes:
+The major breaking change is:
 
-1. Add the following to your `config.toml` before `[params]`:
-  ```
-  ...
-  disableLanguages = [""]
+1. Users that have front matter that utilize `images` (backwards compatibility for `featured` and associated parameters still remains) *will* need to adjust from `[images]="SRC"` to the new format.
+```
+[[images]]
+    src = "" // Link to image
+    alt = "" // Alt text for image
+    stretch = // Optional: See screenshots for referenced values and outcomes
+```
 
-  [outputs]
-      home = ["html", "json"]
+If you utilize any of the following, there *might* be a breaking:
 
-  [params]
-  ...
-  ```
+1. User custom templates *may* require adjustment.
+2. User custom i18n languages, or custom templates referencing i18n translations *may* require adjustment.
+3. User custom template for comments *will* require adjustment *if* it uses the theme's CSS and/or JS.
+4. User custom CSS *may* need to adjust due to a variety of class name changes and specificity changes.
 
-2. Remove the underscore from all `about` and `contact` page file names:
-`_index.md --> index.md`
-
-3. Add `layout = "about"` or `layout = "contact"` to all of the files you just
-just adjusted the file names for.
-
-While I realize this is inconvenient, I hope that it is worth it to you in the
-long run. Thanks for using the theme, and feel free to submit issues as needed.
+While I realize this is inconvenient, I hope that it is worth it to you in the long run. Thanks for using the theme, and feel free to submit issues as needed.
