@@ -18,6 +18,6 @@
     {{- end -}}
   {{- end -}}
   <a href="{{ $.Page.RelPermalink }}" class="image" style="--bg-image: url('{{ $src }}');">
-    <img {{ with $stretch }}class="{{ if or (eq (lower .) "vertical") (eq (lower .) "v") }}stretchV{{ else if or (eq (lower .) "horizontal") (eq (lower .) "h") }}stretchH{{ end }}" {{ end }}src="{{ $src }}" alt="{{ $alt }}">
+    <img {{ with $stretch }}class="{{ if or (eq (lower .) "vertical") (eq (lower .) "v") }}stretchV{{ else if or (eq (lower .) "horizontal") (eq (lower .) "h") }}stretchH{{ else if or (eq (lower .) "cover") (eq (lower .) "c") }}cover{{ end }}" {{ end }}src="{{ $src }}" alt="{{ $alt }}">
   </a>
 {{- end -}}

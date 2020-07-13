@@ -448,6 +448,9 @@ figcaption {
       height: 100%; }
     .image img.stretchH {
       width: 100%; }
+    .image img.cover {
+      object-fit: cover;
+      width: 100%; }
   .image[style]::before {
     content: "";
     position: absolute;

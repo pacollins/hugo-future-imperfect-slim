@@ -663,6 +663,10 @@ figcaption {
     &.stretchH {
       width: 100%;
     }
+    &.cover {
+      object-fit: cover;
+      width: 100%;
+    }
   }
   &[style]::before {
     content: "";
