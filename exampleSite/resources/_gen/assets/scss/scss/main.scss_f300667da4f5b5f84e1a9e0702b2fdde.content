@@ -604,28 +604,28 @@ figcaption {
     margin: 1em;
     width: 50%; }
 
-.previous span,
-.next span {
+.left span,
+.right span {
   display: none; }
   @media (min-width: 425px) {
-    .previous span,
-    .next span {
+    .left span,
+    .right span {
       display: block;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap; } }
-.previous::before,
-.next::before {
+.left::before,
+.right::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   text-decoration: inherit; }
 
-.previous::before {
+.left::before {
   content: "\f053";
   float: left;
   padding-right: 0.5em; }
 
-.next::before {
+.right::before {
   content: "\f054";
   float: right;
   padding-left: 0.5em; }

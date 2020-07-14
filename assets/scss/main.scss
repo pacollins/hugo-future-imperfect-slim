@@ -825,8 +825,8 @@ figcaption {
   }
 }
 
-.previous,
-.next {
+.left,
+.right {
   span {
     display: none;
     @include for-tablet-up {
@@ -843,13 +843,13 @@ figcaption {
   }
 }
 
-.previous::before {
+.left::before {
   content: "\f053";
   float: left;
   padding-right: 0.5em;
 }
 
-.next::before {
+.right::before {
   content: "\f054";
   float: right;
   padding-left: 0.5em;

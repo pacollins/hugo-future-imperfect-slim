@@ -16,11 +16,11 @@
     {{ .Render "comments" }}
   {{ end }}
   <div class="pagination">
-    {{ if .PrevInSection }}
-      <a href="{{ .PrevInSection.RelPermalink }}" class="button previous"><span>{{ .PrevInSection.Title }}</span></a>
-    {{ end }}
     {{ if .NextInSection }}
-      <a href="{{ .NextInSection.RelPermalink }}" class="button next"><span>{{ .NextInSection.Title }}</span></a>
+      <a href="{{ .NextInSection.RelPermalink }}" class="button left"><span>{{ .NextInSection.Title }}</span></a>
+    {{ end }}
+    {{ if .PrevInSection }}
+      <a href="{{ .PrevInSection.RelPermalink }}" class="button right"><span>{{ .PrevInSection.Title }}</span></a>
     {{ end }}
   </div>
 {{ end }}
