@@ -672,6 +672,8 @@ figcaption {
       border-bottom: none;
       display: inline;
       order: 0; }
+      .link:hover {
+        border-bottom: 0; }
       .link:first-of-type {
         border: 0; } }
 .nav-title {
