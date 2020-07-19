@@ -1,7 +1,0 @@
-{{ define "main" }}
-  {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
-  {{ range $paginator.Pages }}
-    {{ .Render "content-list" }}
-  {{ end }}
-  {{ partial "pagination" . }}
-{{ end }}

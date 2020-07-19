@@ -1,17 +1,26 @@
 {{ define "main" }}
   <article class="post">
     {{ .Render "header" }}
-    <section id="socnet-share">
+    <div id="socnet-share">
       {{ partial "share-buttons" . }}
-    </section>
-    {{ .Render "featured" }}
+    </div>
     <div class="content">
+      {{ .Render "featured" }}
       {{ .Content }}
     </div>
     <footer>
       {{ .Render "stats" }}
     </footer>
   </article>
-  {{ .Render "comments" }}
-  {{ .Render "pagination" }}
+  {{ if not ( eq .Params.comments false) }}
+    {{ .Render "comments" }}
+  {{ end }}
+  <div class="pagination">
+    {{ if .NextInSection }}
+      <a href="{{ .NextInSection.RelPermalink }}" class="button left"><span>{{ .NextInSection.Title }}</span></a>
+    {{ end }}
+    {{ if .PrevInSection }}
+      <a href="{{ .PrevInSection.RelPermalink }}" class="button right"><span>{{ .PrevInSection.Title }}</span></a>
+    {{ end }}
+  </div>
 {{ end }}

@@ -1,20 +1,21 @@
 +++
-author = "Hugo Authors"
 title = "Markdown Syntax Guide"
-date = "2019-03-11"
 description = "Sample article showcasing basic Markdown syntax and formatting for HTML elements."
-tags = [
-    "markdown",
-    "css",
-    "html",
-    "themes",
-]
-categories = [
-    "themes",
-    "syntax",
-]
-aliases = ["migrate-from-jekyl"]
-images  = ["img/2014/04/pic02.jpg"]
+author = "Hugo Authors"
+date = "2019-03-11"
+tags = ["markdown", "css", "html", "themes"]
+categories = ["themes", "syntax"]
+[[images]]
+  src = "img/2019/03/pic01.jpg"
+  alt = "Mountain Range Through Clouds"
+  stretch = "horizontal"
+[[images]]
+  src = "img/2019/03/pic02.jpg"
+  alt = "Desert Scene"
+[[images]]
+  src = "img/2019/03/pic03.jpg"
+  alt = "Valley"
+  stretch = "horizontal"
 +++
 
 This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
@@ -51,7 +52,6 @@ The blockquote element represents content that is quoted from another source, op
 > Don't communicate by sharing memory, share memory by communicating.</p>
 > — <cite>Rob Pike[^1]</cite>
 
-
 [^1]: The above quote is excerpted from Rob Pike's [talk](https://www.youtube.com/watch?v=PAAkCSZUG1c) during Gopherfest, November 18, 2015.
 
 ## Tables
@@ -74,7 +74,6 @@ Tables aren't part of the core Markdown spec, but Hugo supports supports them ou
 #### Code block with backticks
 
 ```
-html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -130,8 +129,8 @@ html
 #### Nested list
 
 * Item
-1. First Sub-item
-2. Second Sub-item
+    1. First Sub-item
+    2. Second Sub-item
 
 ## Other Elements — abbr, sub, sup, kbd, mark
 

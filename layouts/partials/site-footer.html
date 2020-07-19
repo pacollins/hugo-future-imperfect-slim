@@ -6,16 +6,8 @@
       </ul>
   {{ end }}
   <p class="copyright">
-    {{ with .Site.Copyright | safeHTML }}
-      {{ . }}
-    {{ else }}
-      &copy; {{ .Site.LastChange.Year }}
-      {{if isset .Site.Params "author" }}
-        {{ .Site.Params.author }}
-      {{ else }}
-        {{ .Site.Title }}
-      {{ end }}
-    {{ end }}. <br>
+    {{ (.Site.Copyright | safeHTML) | default (print "\u00A9 " .Site.LastChange.Year " " (.Site.Params.author | default .Site.Title)) }}
+      <br>
     {{ i18n "attribution" . | safeHTML }}
   </p>
 </footer>

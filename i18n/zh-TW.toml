@@ -1,72 +1,79 @@
+# Format
 [date_format]
   other = "January 2, 2006"
-[postreadingtime]
-  other = "{{ .Count }} 分鐘"
+
+# Sidebar
 [recent_posts]
   other = "最新文章"
 [see_more]
   other = "查看更多"
-[read_more]
-  other = "閱讀全文"
+[learn_more]
+  other = "學到更多"
+[attribution]
+  other = "主題: <a href='https://themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>移植自 <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | 由 <a href='https://gohugo.io/' target='_blank' rel='noopener' title='{{ .Site.Hugo.Version }}'>Hugo</a> 提供"
+
+# Sections
+[about]
+  other = "關於"
+[contact]
+  other = "聯絡"
+[contact_replies]
+  other = "一般回應需等待 {{ .Count }} 小時"
+[blog]
+  other = "部落格"
 [categories]
-  other = "分類"
-[category]
   other = "分類"
 [tags]
   other = "標籤"
-[tag]
-  other = "標籤"
-[share_post]
-  other = "分享這篇文章"
-[check_out]
-  other = "查看此帖子的作者"
-[about]
-  other = "關於"
-[learn_more]
-  other = "了解更多"
-[repliestext]
-  other = "一般回應需等待 {{ .Count }} 小時"
-[submit]
-  other = "送出"
-[404_pagenotfound]
-  other = "找不到頁面"
-[404_sorry]
-  other = "抱歉，您正在尋找的頁面並不存在。"
-[404_goback]
-  other = "回去"
-[blog]
-  other = "部落格"
-[contact]
-  other = "聯絡"
 [next_page]
   other = "下頁"
 [previous_page]
   other = "上頁"
-[attribution]
-  other = "主題: <a href='https://themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>移植自 <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | 由 <a href='https://gohugo.io/' target='_blank' rel='noopener' title='{{ .Site.Hugo.Version }}'>Hugo</a> 提供"
+
+# Post
+[reading_time]
+  other = "{{ .Count }} 分鐘"
+[read_more]
+  other = "閱讀全文"
+[share_post]
+  other = "分享這篇文章"
+[check_out]
+  other = "查看此帖子的作者"
+[say_something]
+  other = "說些甚麼"
 [comments]
   other = "留言"
-[say_sth]
-  other = "說些甚麼"
-[name]
-  other = "您的名字（必填）"
-[email]
-  other = "您的電郵地址（必填，用於 Gravatar 頭像）"
-[website]
-  other = "您的網站"
-[body]
-  other = "您的留言。可使用 Markdown。（搜尋 'Markdown 語法速查'）"
-[no_comment]
+[nothing_yet]
   other = "還未有留言。"
 [reply]
   other = "回覆"
-[btn_reset]
-  other = "重設"
-[btn_submitted]
-  other = "已送出"
-[btn_sumbit]
-  other = "送出"
 [error_msg]
   other = "抱歉，部份資料輸入有問題。請確認資料填寫正確後再試一次。"
 [success_msg]
   other = "感謝您的留言！ 審核後將會顯示在站上。"
+
+# Form
+[form_name]
+  other = "你的名字"
+[form_email]
+  other = "你的郵件"
+[form_website]
+  other = "您的網頁"
+[form_subject]
+  other = "你的主題"
+[form_body]
+  other = "你的信息"
+[reset]
+  other = "重設"
+[submitted]
+  other = "已送出"
+[submit]
+  other = "送出"
+
+# 404
+[404_pagenotfound]
+  other = "找不到頁面"
+[404_sorry]
+  other = "抱歉，您正在尋找的頁面並不存在。"
+[404_back]
+  other = "回去"

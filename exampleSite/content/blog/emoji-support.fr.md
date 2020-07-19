@@ -1,12 +1,13 @@
 +++
-author = "Hugo Auteurs"
 title = "Emoji Support"
-date = "2019-03-05"
 description = "Guide d'utilisation des emoji dans Hugo"
-tags = [
-    "emoji",
-]
-images  = ["img/2014/04/pic01.jpg"]
+author = "Hugo Auteurs"
+date = "2019-03-05"
+tags = ["emoji"]
+[[images]]
+  src = "img/2019/03/pic02.jpg"
+  alt = "Desert Scene"
+  stretch = "stretchH"
 +++
 
 Emoji peut être activé dans un projet Hugo de plusieurs manières.

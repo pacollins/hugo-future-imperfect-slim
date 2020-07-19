@@ -8,7 +8,10 @@ paginate                = 3
 disqusShortname         = ""
 googleAnalytics         = ""
 pluralizeListTitles     = false
-disableLanguages        = [""]
+disableLanguages        = []
+
+[markup.goldmark.renderer]
+  unsafe= true
 
 [outputs]
   home                  = ["html", "json"]
@@ -18,10 +21,11 @@ disableLanguages        = [""]
   cssFiles              = ["default"]
   jsFiles               = ["default"]
   highlightjs           = true
-  highlightjsTheme      = "github"
-  highlightjsLang       = ["html", "css", "js", "toml"]
+  highlightjsTheme      = ""
+  highlightjsLang       = []
   viewMorePostsLink     = "/blog/"
   readingTime           = true
+  imageStretch          = ""
   socialShare           = ["twitter", "facebook", "reddit", "linkedin", "pinterest", "email"]
 
   [params.meta]

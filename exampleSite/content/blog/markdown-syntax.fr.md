@@ -1,20 +1,21 @@
 +++
-author = "Hugo Auteurs"
 title = "Guide de syntaxe de Markdown"
-date = "2019-03-11"
 description = "Exemple d'article présentant la syntaxe et le formatage de base de Markdown pour les éléments HTML."
-tags = [
-    "markdown",
-    "css",
-    "html",
-    "themes",
-]
-categories = [
-    "themes",
-    "syntax",
-]
-aliases = ["migrate-from-jekyl"]
-images  = ["img/2014/04/pic02.jpg"]
+author = "Hugo Auteurs"
+date = "2019-03-11"
+tags = ["markdown", "css", "html", "themes"]
+categories = ["themes", "syntax"]
+[[images]]
+  src = "img/2019/03/pic01.jpg"
+  alt = "Mountain Range Through Clouds"
+  stretch = "horizontal"
+[[images]]
+  src = "img/2019/03/pic02.jpg"
+  alt = "Desert Scene"
+[[images]]
+  src = "img/2019/03/pic03.jpg"
+  alt = "Valley"
+  stretch = "horizontal"
 +++
 
 Cet article propose un exemple de syntaxe de base de Markdown pouvant être utilisée dans les fichiers de contenu Hugo. Il indique également si les éléments HTML de base sont décorés avec CSS dans un thème Hugo.
@@ -74,21 +75,20 @@ Les tables ne font pas partie de la spécification Markdown principale, mais Hug
 #### Bloc de code avec backticks
 
 ```
-html
-<! DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Exemple de document HTML5 </title>
 </head>
 <body>
-  <p> Test </p>
+  <p>Test</p>
 </body>
 </html>
 ```
 #### Bloc de code indenté de quatre espaces
 
-    <! DOCTYPE html>
+    <!DOCTYPE html>
     <html lang="en">
     <head>
       <meta charset="UTF-8">

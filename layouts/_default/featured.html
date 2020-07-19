@@ -1,11 +1,23 @@
-{{ if .Params.images }}
-  <a href="{{ .RelPermalink }}" class="image featured">
-    {{ range first 1 .Params.images }}
-      <img src="{{ . | absURL }}" alt="">
-    {{ end }}
+{{- if or .Params.images .Params.featured -}}
+  {{- $src := "" -}}
+  {{- $alt := "" -}}
+  {{- $stretch := .Site.Params.imageStretch -}}
+  {{- if .Params.featured -}}
+    {{- $src = (path.Join "img" (cond (eq .Params.featuredpath "date") (.Page.Date.Format "2006/01") (.Params.featuredpath)) .Params.featured) | absURL -}}
+    {{- $alt = .Params.featuredalt -}}
+    {{- with .Params.featuredstretch -}}
+      {{- $stretch = . -}}
+    {{- end -}}
+  {{- else if .Params.images -}}
+    {{- range first 1 .Params.images -}}
+      {{- $src = .src | absURL -}}
+      {{- $alt = .alt -}}
+      {{- with .stretch -}}
+        {{- $stretch = . -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+  <a href="{{ $.Page.RelPermalink }}" class="image" style="--bg-image: url('{{ $src }}');">
+    <img {{ with $stretch }}class="{{ if or (eq (lower .) "vertical") (eq (lower .) "v") }}stretchV{{ else if or (eq (lower .) "horizontal") (eq (lower .) "h") }}stretchH{{ else if or (eq (lower .) "cover") (eq (lower .) "c") }}cover{{ end }}" {{ end }}src="{{ $src }}" alt="{{ $alt }}">
   </a>
-{{ else if .Params.featured }}
-  <a href="{{ .RelPermalink }}" class="image featured">
-    <img src="{{ (path.Join "img" (cond (eq .Params.featuredpath "date") (.Page.Date.Format "2006/01") (.Params.featuredpath)) .Params.featured) | absURL }}" alt="{{ .Params.featuredalt }}">
-  </a>
-{{ end }}
+{{- end -}}

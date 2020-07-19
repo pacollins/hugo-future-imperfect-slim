@@ -1,78 +1,83 @@
+# Format
 [date_format]
   other = "2-1-2006"
-[postreadingtime]
-  one = "1 minuta czytania"
-  few = "{{ .Count }} minuty czytania"
-  many = "{{ .Count }} minuty czytania"
-  other = "{{ .Count }} minuty czytania"
+
+# Sidebar
 [recent_posts]
-  other = "Ostatnie posty"
+  other = "Ostatnie Posty"
 [see_more]
-  other = "Zobacz więcej"
-[read_more]
-  other = "Czytaj więcej"
-[categories]
-  other = "Kategorie"
-[category]
-  other = "Kategoria"
-[tags]
-  other = "Tagi"
-[tag]
-  other = "Tag"
-[share_post]
-  other = "Udostępnij ten post"
-[check_out]
-  other = "Sprawdź ten post przez"
-[about]
-  other = "O mnie"
+  other = "Zobacz Więcej"
 [learn_more]
-  other = "dowiedz się więcej"
-[repliestext]
-  one = "Odpowiada zazwyczaj w ciagu 1 godzina."
-  few = "Odpowiada zazwyczaj w ciagu {{ .Count }} godziny."
-  many = "Odpowiada zazwyczaj w ciagu {{ .Count }} godziny."
-  other = "Odpowiada zazwyczaj w ciagu {{ .Count }} godziny."
-[submit]
-  other = "Prześlij"
-[404_pagenotfound]
-  other = "Nie Znaleziono Strony"
-[404_sorry]
-  other = "Przepraszamy, ale strona, którą próbujesz wyświetlić, nie istnieje."
-[404_goback]
-  other = "Wróć"
-[blog]
- other = "Blog"
-[contact]
- other = "Kontakt"
-[next_page]
- other = "Następna strona"
-[previous_page]
- other = "Poprzednia strona"
+  other = "Ucz Się Więcej"
 [attribution]
   other = "Motyw: <a href='https://themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>Przyjęty z <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | Wspierane przez <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
+
+# Sections
+[about]
+  other = "O Mnie"
+[contact]
+ other = "Kontakt"
+[contact_replies]
+  one = "Odpowiada zazwyczaj w ciagu 1 godzina."
+  other = "Odpowiada zazwyczaj w ciagu {{ .Count }} godziny."
+[blog]
+  other = "Blog"
+[categories]
+  one = "Kategoria"
+  other = "Kategorie"
+[tags]
+  one = "Tag"
+  other = "Tagi"
+[next_page]
+ other = "Następna Strona"
+[previous_page]
+   other = "Poprzednia Strona"
+
+# Post
+[reading_time]
+  one = "1 Minuta Czytania"
+  other = "{{ .Count }} Minuty Czytania"
+[read_more]
+  other = "Czytaj Więcej"
+[share_post]
+  other = "Udostępnij Ten Post"
+[check_out]
+  other = "Sprawdź ten post przez"
+[say_something]
+  other = "Powiedz Coś"
 [comments]
   other = "Komentarzy"
-[say_sth]
-  other = "Powiedz coś"
-[name]
-  other = "Twoje imię"
-[email]
-  other = "Twój adres email"
-[website]
-  other = "Twoja strona internetowa"
-[body]
-  other = "Twoja wiadomość.  Nie krępuj się użyć Markdown (Szukaj 'ściągawka Markdown.')."
-[no_comment]
-  other = "Jeszcze nic"
+[nothing_yet]
+  other = "Jeszcze nic."
 [reply]
   other = "Odpowiedz"
-[btn_reset]
-  other = "Wyzeruj"
-[btn_submitted]
-  other = "Komentarz dodany"
-[btn_sumbit]
-  other = "Skomentuj"
 [error_msg]
   other = "Niestety wystąpił błąd. Proszę upewnij się, że wszystkie wymagane pola zostały wypełnione i spróbuj ponownie."
 [success_msg]
   other = "Dziękuję za Twój komentarz! Zostanie dodany po akceptacji."
+
+# Form
+[form_name]
+  other = "Twoje Imię"
+[form_email]
+  other = "Twój Email"
+[form_website]
+  other = "Twoja Strona Internetowa"
+[form_subject]
+  other = "Twój Temat"
+[form_body]
+  other = "Twoja Wiadomość"
+[reset]
+  other = "Wyzeruj"
+[submitted]
+  other = "Komentarz dodany"
+[submit]
+  other = "Skomentuj"
+
+# 404
+[404_pagenotfound]
+  other = "Nie Znaleziono Strony"
+[404_sorry]
+  other = "Przepraszamy, ale strona, którą próbujesz wyświetlić, nie istnieje."
+[404_back]
+  other = "Wróć"

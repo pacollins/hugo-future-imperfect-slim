@@ -8,14 +8,8 @@
       <a href="{{ "/" | relLangURL }}" class="nav">
         {{ if or .IsHome (not .Site.Params.header.dynamicTitles) }}
           {{ .Site.Params.header.navbarTitle  | safeHTML }}
-        {{ else if ne .Section "" }}
-          {{ if i18n .Section }}
-            {{ i18n .Section }}
-          {{ else }}
-            {{ .Section }}
-          {{ end }}
         {{ else }}
-          {{ .Title }}
+          {{ i18n .Section | default .Title }}
         {{ end }}
       </a>
     </h1>
@@ -26,15 +20,11 @@
           <a href="{{ .URL | relLangURL }}" class="nav link"><i class="{{ .Identifier }}">&nbsp;</i>{{ .Name }}</a>
         {{ else }}
           {{/* New syntax: use '.Pre' for icon rendering */}}
-          {{ if .Pre }}
-            <a href="{{ .URL | relLangURL }}" class="nav link">{{ .Pre }} {{ .Name }}</a>
-          {{ else }}
-            <a href="{{ .URL | relLangURL }}" class="nav link">{{ .Name }}</a>
-          {{ end }}
+          <a href="{{ .URL | relLangURL }}" class="nav link">{{ .Pre | safeHTML}} {{ .Name }}</a>
         {{ end }}
       {{ end }}
-      {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>{{ end }}
-      {{ if .Site.Params.header.searchMenu }}<a href="#search-input" class="nav search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>{{ end }}
+      {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="nav link share-toggle"><i class="fas fa-share-alt">&nbsp;</i>Share</a>{{ end }}
+      {{ if .Site.Params.header.searchMenu }}<a href="#search-input" class="nav link search-toggle"><i class="fas fa-search">&nbsp;</i>Search</a>{{ end }}
     </menu>
     {{ if .Site.Params.header.searchMenu }}<a href="#search-input" class="nav search-toggle"><i class="fas fa-search fa-2x">&nbsp;</i></a>{{ end }}
     {{ if .Site.Params.header.shareMenu }}<a href="#share-menu" class="nav share-toggle"><i class="fas fa-share-alt fa-2x">&nbsp;</i></a>{{ end }}

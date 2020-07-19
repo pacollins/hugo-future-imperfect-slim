@@ -1,0 +1,82 @@
+# Format
+[date_format]
+  other = "2 January 2006"
+
+# Sidebar
+[recent_posts]
+  other = "Posting Terbaru"
+[see_more]
+  other = "Lihat Lebih Lanjut"
+[learn_more]
+  other = "Pelajari Lebih Lanjut"
+[attribution]
+  other = "Tema: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Diberdayakan oleh <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
+
+# Sections
+[about]
+  other = "Tentang"
+[contact]
+  other = "Kontak"
+[contact_replies]
+  one = "Biasanya dibalas dalam 1 jam."
+  other = "Biasanya dibalas dalam {{ .Count }} jam."
+[blog]
+  other = "Blog"
+[categories]
+  one = "Kategori"
+  other = "Kategori"
+[tags]
+  one = "Tag"
+  other = "Tag"
+[next_page]
+  other = "Halaman Selanjutnya"
+[previous_page]
+  other = "Halaman Sebelumnya"
+
+# Post
+[reading_time]
+  other = "Dibaca {{ .Count }}-menit"
+[read_more]
+  other = "Baca Lebih Lanjut"
+[share_post]
+  other = "Bagikan posting ini"
+[check_out]
+  other = "Posting ini dibuat oleh"
+[say_something]
+  other = "Ucapkan sesuatu"
+[comments]
+  other = "Komentar"
+[nothing_yet]
+  other = "Tidak juga."
+[reply]
+  other = "Balas"
+[error_msg]
+  other = "Maaf, ada masalah pada data yang dimasukkan. Tolong lengkapi semua data pada field yang diperlukan dan silahkan coba lagi."
+[success_msg]
+  other = "Terima kasih atas komentar kamu! Komentar kamu akan ditampilkan di situs ini ketika sudah disetujui."
+
+# Form
+[form_name]
+  other = "Nama Kamu"
+[form_email]
+  other = "Email Kamu"
+[form_website]
+  other = "Website Kamu"
+[form_subject]
+  other = "Subyeknya"
+[form_body]
+  other = "Pesan Kamu"
+[reset]
+  other = "Reset"
+[submitted]
+  other = "Kirimkan"
+[submit]
+  other = "Kirim"
+
+# 404
+[404_pagenotfound]
+  other = "Halaman tidak ditemukan."
+[404_sorry]
+  other = "Maaf, tapi halaman yang kamu coba akses tidak dapat ditampilkan."
+[404_back]
+  other = "Kembali"

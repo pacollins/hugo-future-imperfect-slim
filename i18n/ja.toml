@@ -1,74 +1,81 @@
+# Format
 [date_format]
   other = "2006-01-02"
-[postreadingtime]
-  one = "1 分で読めます"
-  other = "{{ .Count }} 分で読めます"
+
+# Sidebar
 [recent_posts]
   other = "最近の投稿"
 [see_more]
   other = "続きを見る"
-[read_more]
-  other = "続きを読む"
+[learn_more]
+  other = "もっと詳しく知る"
+[attribution]
+  other = "Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
+
+# Sections
+[about]
+  other = "約"
+[contact]
+  other = "お問い合わせ"
+[contact_replies]
+  one = "通常、1 時間以内に返信します。"
+  other = "通常、{{ .Count }} 時間以内に返信します。"
+[blog]
+  other = "ブログ"
 [categories]
-  other = "カテゴリー"
-[category]
   other = "カテゴリー"
 [tags]
   other = "タグ"
-[tag]
-  other = "タグ"
-[share_post]
-  other = "この投稿をシェアする"
-[check_out]
-  other = "この投稿をチェックする"
-[about]
-  other = "About"
-[learn_more]
-  other = "もっと知る"
-[repliestext]
-  one = "通常、1 時間以内に返信します。"
-  other = "通常、{{ .Count }} 時間以内に返信します。"
-[submit]
-  other = "送信する"
-[404_pagenotfound]
-  other = "ページが見つかりません"
-[404_sorry]
-  other = "申し訳ありません。表示しようとしていたページは存在しません。"
-[404_goback]
-  other = "戻る"
-[blog]
-  other = "ブログ"
-[contact]
-  other = "お問い合わせ"
 [next_page]
   other = "次のページ"
 [previous_page]
   other = "前のページ"
-[attribution]
-  other = "Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
+
+# Post
+[reading_time]
+  one = "1 分で読めます"
+  other = "{{ .Count }} 分で読めます"
+[read_more]
+  other = "続きを読む"
+[share_post]
+  other = "この投稿をシェアする"
+[check_out]
+  other = "この投稿をチェックする"
+[say_something]
+  other = "何か言ってください"
 [comments]
   other = "コメント"
-[say_sth]
-  other = "何か言ってください"
-[name]
-  other = "あなたの名前 (必須)"
-[email]
-  other = "あなたのメールアドレス (Gravatar のために必須)"
-[website]
-  other = "あなたのウェブサイト"
-[body]
-  other = "あなたのメッセージ。Markdown を自由に使用してください('Markdown Cheat Sheet' でググってください)。"
-[no_comment]
+[nothing_yet]
   other = "何もありません。"
 [reply]
   other = "返信する"
-[btn_reset]
-  other = "リセット"
-[btn_submitted]
-  other = "送信しました"
-[btn_sumbit]
-  other = "送信する"
 [error_msg]
   other = "申し訳ありません。送信中にエラーが発生しました。必須入力フィールドがすべて入力されていることを確認して、もう一度やりなおしてください。"
 [success_msg]
   other = "コメントありがとうございます！承認されるとサイトに表示されます。"
+
+# Form
+[form_name]
+  other = "あなたの名前"
+[form_email]
+  other = "あなたのメール"
+[form_website]
+  other = "あなたのウェブサイト"
+[form_subject]
+  other = "あなたの主題"
+[form_body]
+  other = "あなたのメッセージ"
+[reset]
+  other = "リセット"
+[submitted]
+  other = "送信しました"
+[submit]
+  other = "送信する"
+
+# 404
+[404_pagenotfound]
+  other = "ページが見つかりません"
+[404_sorry]
+  other = "申し訳ありません。表示しようとしていたページは存在しません。"
+[404_back]
+  other = "戻る"
