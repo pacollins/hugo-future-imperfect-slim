@@ -16,7 +16,7 @@
  */
 /* ==========================================================================
    Variables
-   ====================================================================$color_keppel_approx====== */
+   ========================================================================== */
 /* Font */
 /* Background & Border */
 /* Other */
@@ -665,6 +665,8 @@ figcaption {
   display: block;
   flex-basis: 100%;
   order: 2; }
+  .link:hover {
+    border-bottom: 1px dotted rgba(161, 161, 161, 0.7); }
   @media (min-width: 1024px) {
     .link {
       border-bottom: none;
