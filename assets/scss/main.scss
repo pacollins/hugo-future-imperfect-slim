@@ -18,7 +18,7 @@
 
 /* ==========================================================================
    Variables
-   ====================================================================$color_keppel_approx====== */
+   ========================================================================== */
 
 /* Font */
 
@@ -895,6 +895,9 @@ figcaption {
   display: block;
   flex-basis: 100%;
   order: 2;
+  &:hover {
+    border-bottom: $secondary-border;
+  }
   @include for-desktop-up {
     border-bottom: none;
     display: inline;
