@@ -1472,6 +1472,7 @@ figcaption {
     @include display-flex;
     flex-direction: column;
     flex-grow: 1;
+    flex-wrap: wrap;
     align-items: center;
     @include for-mobile-l-up {
       flex-direction: row;
