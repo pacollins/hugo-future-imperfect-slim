@@ -1,0 +1,83 @@
+# Format
+[date_format]
+  other = "2 January 2006"
+
+# Sidebar
+[recent_posts]
+  other = "Recente berichten"
+[see_more]
+  other = "Toon meer"
+[learn_more]
+  other = "Meer Informatie"
+[attribution]
+  other = "Thema: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
+
+# Sections
+[about]
+  other = "Over Mij"
+[contact]
+  other = "Contact"
+[contact_replies]
+  one = "Antwoord gewoonlijk binnen 1 uur."
+  other = "Antwoord gewoonlijk binnen {{ .Count }} uur."
+[blog]
+  other = "Blog"
+[categories]
+  one = "Categorie"
+  other = "Categorieën"
+[tags]
+  one = "Tag"
+  other = "Tags"
+[next_page]
+  other = "Volgende Pagina"
+[previous_page]
+  other = "Vorige Pagina"
+
+# Post
+[reading_time]
+  one = "1 minuut leestijd"
+  other = "{{ .Count }} minuten leestijd"
+[read_more]
+  other = "Lees verder"
+[share_post]
+  other = "Deel dit bericht"
+[check_out]
+  other = "Bekijk ook eens dit bericht van"
+[say_something]
+  other = "Vertel iets"
+[comments]
+  other = "Reacties"
+[nothing_yet]
+  other = "Geen reacties."
+[reply]
+  other = "Antwoord"
+[error_msg]
+  other = "Er is helaas iets mis gegaan met het verwerken van je bijdrage. Zorg ervoor dat alle verplichte velden zijn ingevuld en probeer het dan opnieuw."
+[success_msg]
+  other = "Bedankt voor je reactie! Het wordt op de website getoond nadat het is goedgekeurd."
+
+# Form
+[form_name]
+  other = "Je naam"
+[form_email]
+  other = "Je email adres"
+[form_website]
+  other = "Je website"
+[form_subject]
+  other = "Onderwerp"
+[form_body]
+  other = "Je bericht"
+[reset]
+  other = "Herstellen"
+[submitted]
+  other = "Verzonden"
+[sumbit]
+  other = "Verzenden"
+
+# 404
+[404_pagenotfound]
+  other = "Pagina Niet Gevonden"
+[404_sorry]
+  other = "Helaas lijkt het erop dat de pagina die je wilt bekijken niet bestaat.."
+[404_goback]
+  other = "Ga Terug"
