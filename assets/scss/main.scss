@@ -1469,20 +1469,6 @@ figcaption {
       @include for-mobile-l-up {
         flex-direction: row;
       }
-      .comment-author-container {
-        @include display-flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        @include for-mobile-l-up {
-          align-items: flex-start;
-          flex-grow: 1;
-        }
-        @include for-laptop-up {
-          flex-direction: row;
-          align-items: center;
-        }
-      }
     }
   }
   &.comment-reply {
@@ -1490,6 +1476,21 @@ figcaption {
     @include for-mobile-l-up {
       margin-left: $avatar-size;
     }
+  }
+}
+
+.comment-author-container {
+  @include display-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  @include for-mobile-l-up {
+    align-items: flex-start;
+    flex-grow: 1;
+  }
+  @include for-laptop-up {
+    flex-direction: row;
+    align-items: center;
   }
 }
 
