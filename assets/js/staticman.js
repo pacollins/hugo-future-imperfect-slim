@@ -97,7 +97,7 @@ $(document).ready(function() {
   });
 
   // handle removal of reply target when '×' is pressed
-  $('.new-comment .reply-notice').on('click', '.post-reply-close-btn', function(){
+  $('.new-comment .reply-notice').on('click', '.reply-close-btn', function(){
     resetReplyTarget();
   });
 
