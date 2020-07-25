@@ -1,7 +1,1 @@
-{{- if eq .Site.Language.Lang "nl" -}}
-    {{- $month_names := slice "Januari" "Februari" "Maart" "April" "Mei" "Juni" "Juli" "Augustus" "September" "Oktober" "November" "December" -}}
-    {{- $month := sub .Date.Month 1 -}}
-    {{ .Date.Day }} {{ index $month_names $month }} {{ .Date.Year }}
-{{- else -}}
-    {{ default (i18n "date_format") | .Date.Format }}
-{{- end -}}
+{{ default (i18n "date_format") | .Date.Format }}
