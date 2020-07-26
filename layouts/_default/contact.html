@@ -10,7 +10,7 @@
         {{ .Content }}
         <div class="contact-container">
           {{ if .Params.netlify }}
-            <form name="contact" action="thank-you" netlify center width="300px">
+            <form name="contact" method="POST" action="thank-you" data-netlify-recaptcha="true" data-netlify="true" center width="300px">
           {{ else }}
             <form id="contact" action="//{{ .Params.emailService }}" method="post" center width="300px">
           {{ end }}
@@ -31,6 +31,7 @@
             <input type="hidden" name="_language" value="{{ .Lang }}">
           </fieldset>
           <fieldset>
+            <div data-netlify-recaptcha="true"></div>
             <button name="submit" class="button" type="submit" id="contact-submit" tabindex="5">{{ i18n "submit" }}</button>
           </fieldset>
         </form>
