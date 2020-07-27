@@ -275,6 +275,46 @@ disableLanguages        = []
     LanguageName        = "日本語"
     weight              = 9
 
+  [Languages.nl]
+    LanguageCode        = "nl"
+    LanguageName        = "Nederlands"
+    weight              = 10
+
+    [[Languages.nl.menu.main]]
+      name              = "Home"
+      identifier        = "home"
+      url               = "/"
+      pre               = "<i class='fas fa-home'></i>"
+      weight            = 1
+
+    [[Languages.nl.menu.main]]
+      name              = "Over"
+      identifier        = "about"
+      url               = "/about/"
+      pre               = "<i class='far fa-id-card'></i>"
+      weight            = 2
+
+    [[Languages.nl.menu.main]]
+      name              = "Blog"
+      identifier        = "blog"
+      url               = "/blog/"
+      pre               = "<i class='far fa-newspaper'></i>"
+      weight            = 3
+
+    [[Languages.nl.menu.main]]
+      name              = "Categorieën"
+      identifier        = "categories"
+      url               = "/categories/"
+      pre               = "<i class='fas fa-sitemap'></i>"
+      weight            = 5
+
+    [[Languages.nl.menu.main]]
+      name              = "Contact"
+      identifier        = "contact"
+      url               = "/contact/"
+      pre               = "<i class='far fa-envelope'></i>"
+      weight            = 6
+
 [social]
   # Coding Communities
   github                = "pacollins/hugo-future-imperfect-slim"
