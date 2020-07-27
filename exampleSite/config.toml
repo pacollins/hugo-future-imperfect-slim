@@ -27,6 +27,7 @@ disableLanguages        = []
   readingTime           = true
   imageStretch          = ""
   socialShare           = ["twitter", "facebook", "reddit", "linkedin", "pinterest", "email"]
+  readMoreHide          = true # hide "read more" if post is under 500 characters, and show whole post
 
   [params.meta]
     description         = "A theme by HTML5 UP, ported by Julio Pescador. Slimmed and enhanced by Patrick Collins. Multilingual by StatnMap. Powered by Hugo."

@@ -3,10 +3,18 @@
   <div class="content">
     {{ .Render "featured" }}
     {{ $.Scratch.Set "summary" ((delimit (findRE "<p.*?>(.|\n)*?</p>" .Content 1) "") | truncate (default 500 .Site.Params.summary_length) (default "&hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
-    {{ $.Scratch.Get "summary" }}
+    {{ if and (eq .Site.Params.readMoreHide true) (ge (len .Content) 500) }}
+      {{ $.Scratch.Get "summary" }}
+    {{ else if and (eq .Site.Params.readMoreHide true) (lt (len .Content) 500) }}
+      {{ .Content }}
+    {{ else }}
+      {{ $.Scratch.Get "summary" }}
+    {{ end }}
   </div>
   <footer>
-    <a href="{{ .RelPermalink }}" class="button big">{{ i18n "read_more" }}</a>
+    {{ if and (eq .Site.Params.readMoreHide true) (ge (len .Content) 500) }}
+      <a href="{{ .RelPermalink }}" class="button big">{{ i18n "read_more" }}</a>
+    {{ end }}
     {{ .Render "stats" }}
   </footer>
 </article>
