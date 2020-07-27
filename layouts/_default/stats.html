@@ -1,24 +1,30 @@
 <div class="stats">
-  <ul class="categories">
-    {{ if isset .Params "categories" }}
+  {{ if or (and (eq .Site.Params.hideEmptyStats true) (isset .Params "categories")) (and (eq .Site.Params.hideEmptyStats false) (isset .Params "categories")) }}
+    <ul class="categories">
       {{ if gt (len .Params.categories) 0 }}
         {{ range .Params.categories }}
           <li><a class="article-terms-link" href="{{ path.Join "categories" (. | urlize | lower) | relLangURL }}/">{{ . }}</a></li>
         {{ end }}
       {{ end }}
-    {{ else }}
+    </ul>
+  {{ else if and (eq .Site.Params.hideEmptyStats true) (not (isset .Params "categories")) }}
+  {{ else if and (eq .Site.Params.hideEmptyStats false) (not (isset .Params "categories")) }}
+    <ul class="categories">
       <li>None</li>
-    {{ end }}
-  </ul>
-  <ul class="tags">
-    {{ if isset .Params "tags" }}
+    </ul>
+  {{ end }}
+  {{ if or (and (eq .Site.Params.hideEmptyStats true) (isset .Params "tags")) ( and (eq .Site.Params.hideEmptyStats false) (isset .Params "tags")) }}
+    <ul class="tags">
       {{ if gt (len .Params.tags) 0 }}
         {{ range .Params.tags }}
           <li><a class="article-terms-link" href="{{ path.Join "tags" (. | urlize | lower) | relLangURL }}/">{{ . }}</a></li>
         {{ end }}
       {{ end }}
-    {{ else }}
+    </ul>
+  {{ else if and (eq .Site.Params.hideEmptyStats true) (not (isset .Params "tags")) }}
+  {{ else if and (eq .Site.Params.hideEmptyStats false) (not (isset .Params "tags")) }}
+    <ul class="tags">
       <li>None</li>
-    {{ end }}
-  </ul>
+    </ul>
+  {{ end }}
 </div>
