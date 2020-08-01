@@ -21,7 +21,9 @@
           {{- $rtl := resources.Get "css/rtl.css" | minify -}}
           <link rel="stylesheet" href="{{ $rtl.RelPermalink }}">
         {{- end -}}
-        <link rel="stylesheet" href="{{ "css/add-on.css" | relURL }}">
+        {{- $addonCSSOptions := (dict "targetPath" "css/add-on.min.css" "outputStyle" "compressed") -}}
+        {{- $addon := resources.Get "scss/add-on.scss" | resources.ToCSS $addonCSSOptions | resources.Fingerprint -}}
+        <link rel="stylesheet" href="{{ $addon.RelPermalink }}" integrity="{{ $addon.Data.Integrity }}">
       {{- else }}
         <link rel="stylesheet" href="{{ . | relURL }}">
       {{- end -}}
@@ -48,7 +50,9 @@
           {{- $rtl := resources.Get "css/rtl.css" | minify -}}
           <link rel="stylesheet" href="{{ $rtl.RelPermalink }}">
         {{- end -}}
-        <link rel="stylesheet" href="{{ "css/add-on.css" | relURL }}">
+        {{- $addonCSSOptions := (dict "targetPath" "css/add-on.min.css" "outputStyle" "compressed") -}}
+        {{- $addon := resources.Get "scss/add-on.scss" | resources.ToCSS $addonCSSOptions | resources.Fingerprint -}}
+        <link rel="stylesheet" href="{{ $addon.RelPermalink }}" integrity="{{ $addon.Data.Integrity }}">
       {{- else }}
         <link rel="stylesheet" href="{{ . | relURL }}">
       {{- end -}}
