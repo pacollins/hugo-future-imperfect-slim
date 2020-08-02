@@ -2,17 +2,17 @@
   {{ .Render "header" }}
   <div class="content">
     {{ .Render "featured" }}
-    {{ $.Scratch.Set "summary" ((delimit (findRE "<p.*?>(.|\n)*?</p>" .Content 2) "") | truncate (default 500 .Site.Params.summary_length) (default "&hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
-    {{ if and (eq .Site.Params.readMoreHide true) (ge (len .Content) 500) }}
+    {{ $.Scratch.Set "summary" ((delimit (findRE "<p.*?>(.|\n)*?</p>" .Content 2) "") | truncate (.Site.Params.summaryLength) (default "&hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
+    {{ if and (.Site.Params.hideReadMore) (ge (len .Content) 500) }}
       {{ $.Scratch.Get "summary" }}
-    {{ else if and (eq .Site.Params.readMoreHide true) (lt (len .Content) 500) }}
+    {{ else if and (.Site.Params.hideReadMore) (lt (len .Content) 500) }}
       {{ .Content }}
     {{ else }}
       {{ $.Scratch.Get "summary" }}
     {{ end }}
   </div>
   <footer>
-    {{ if and (eq .Site.Params.readMoreHide true) (ge (len .Content) 500) }}
+    {{ if and (.Site.Params.hideReadMore) (ge (len .Content) 500) }}
       <a href="{{ .RelPermalink }}" class="button big">{{ i18n "read_more" }}</a>
     {{ end }}
     {{ .Render "stats" }}
