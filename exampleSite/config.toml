@@ -27,7 +27,7 @@ disableLanguages        = []
   readingTime           = true
   imageStretch          = ""
   socialShare           = ["twitter", "facebook", "reddit", "linkedin", "pinterest", "email"]
-  hideEmptyStats        = true # if no Category or no Tag, hide it
+  hideEmptyStats        = false
 
   [params.meta]
     description         = "A theme by HTML5 UP, ported by Julio Pescador. Slimmed and enhanced by Patrick Collins. Multilingual by StatnMap. Powered by Hugo."

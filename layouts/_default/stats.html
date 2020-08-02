@@ -1,5 +1,5 @@
 <div class="stats">
-  {{ if or (and (eq .Site.Params.hideEmptyStats true) (isset .Params "categories")) (and (eq .Site.Params.hideEmptyStats false) (isset .Params "categories")) }}
+  {{ if (isset .Params "categories") }}
     <ul class="categories">
       {{ if gt (len .Params.categories) 0 }}
         {{ range .Params.categories }}
@@ -7,13 +7,13 @@
         {{ end }}
       {{ end }}
     </ul>
-  {{ else if and (eq .Site.Params.hideEmptyStats true) (not (isset .Params "categories")) }}
-  {{ else if and (eq .Site.Params.hideEmptyStats false) (not (isset .Params "categories")) }}
+  {{ else if .Site.Params.hideEmptyStats }}
+  {{ else }}
     <ul class="categories">
       <li>None</li>
     </ul>
   {{ end }}
-  {{ if or (and (eq .Site.Params.hideEmptyStats true) (isset .Params "tags")) ( and (eq .Site.Params.hideEmptyStats false) (isset .Params "tags")) }}
+  {{ if (isset .Params "tags") }}
     <ul class="tags">
       {{ if gt (len .Params.tags) 0 }}
         {{ range .Params.tags }}
@@ -21,8 +21,8 @@
         {{ end }}
       {{ end }}
     </ul>
-  {{ else if and (eq .Site.Params.hideEmptyStats true) (not (isset .Params "tags")) }}
-  {{ else if and (eq .Site.Params.hideEmptyStats false) (not (isset .Params "tags")) }}
+  {{ else if .Site.Params.hideEmptyStats }}
+  {{ else }}
     <ul class="tags">
       <li>None</li>
     </ul>
