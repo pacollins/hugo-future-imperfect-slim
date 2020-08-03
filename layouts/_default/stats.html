@@ -1,5 +1,5 @@
 <div class="stats">
-  {{ if (isset .Params "categories") }}
+  {{ if .Params.categories }}
     <ul class="categories">
       {{ if gt (len .Params.categories) 0 }}
         {{ range .Params.categories }}
@@ -13,7 +13,7 @@
       <li>None</li>
     </ul>
   {{ end }}
-  {{ if (isset .Params "tags") }}
+  {{ if .Params.tags }}
     <ul class="tags">
       {{ if gt (len .Params.tags) 0 }}
         {{ range .Params.tags }}
