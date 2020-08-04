@@ -2,17 +2,10 @@
   {{ .Render "header" }}
   <div class="content">
     {{ .Render "featured" }}
-    {{ $.Scratch.Set "summary" ((delimit (findRE "<p.*?>(.|\n)*?</p>" .Content 2) "") | truncate (.Site.Params.summaryLength) (default "&hellip;" .Site.Params.text.truncated ) | replaceRE "&amp;" "&" | safeHTML) }}
-    {{ if and (.Site.Params.hideReadMore) (ge (len .Content) 500) }}
-      {{ $.Scratch.Get "summary" }}
-    {{ else if and (.Site.Params.hideReadMore) (lt (len .Content) 500) }}
-      {{ .Content }}
-    {{ else }}
-      {{ $.Scratch.Get "summary" }}
-    {{ end }}
+    {{ .Content | safeHTML | truncate 500 }}
   </div>
   <footer>
-    {{ if and (.Site.Params.hideReadMore) (ge (len .Content) 500) }}
+    {{ if .Truncated }}
       <a href="{{ .RelPermalink }}" class="button big">{{ i18n "read_more" }}</a>
     {{ end }}
     {{ .Render "stats" }}
