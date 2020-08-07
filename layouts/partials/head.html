@@ -4,7 +4,13 @@
 
   {{ with .Site.Title }}<meta property="og:site_name" content="{{ . }}">{{ end }}
   {{ with .Title }}<meta property=“og:title” content="{{ . }}">{{ end }}
-  {{ with .Description }}<meta property="og:description" content="{{ . }}">{{ end }}
+  {{ with .Description }}
+    <meta property="og:description" content="{{ . }}">
+    <meta property="description" content="{{ . }}">
+  {{ else }}
+    <meta property="og:description" content="{{ .Site.Params.meta.description }}">
+    <meta property="description" content="{{ .Site.Params.meta.description }}">
+  {{ end }}
   <meta property="og:url" content="{{ .RelPermalink | absURL }}">
   <meta property="og:type" content="{{ cond .IsHome "website" "article" }}">
   {{ with .Params.openGraph }}
@@ -18,6 +24,8 @@
       <meta property="og:image" content="{{ .src | absURL }}">
       <meta property="og:image:alt" content="{{ .alt }}">
     {{ end }}
+  {{ else }}
+    <meta property="og:image" content="{{ .Site.Params.intro.pic.src | absURL }}">
   {{ end }}
   {{ with .Site.Params.Social.twitter}}<meta property="twitter:site" content="{{ . }}">{{ end }}
 
