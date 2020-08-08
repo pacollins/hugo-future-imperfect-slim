@@ -17,7 +17,7 @@
       {{- end -}}
     {{- end -}}
   {{- end -}}
-  <a href="{{ $.Page.RelPermalink }}" class="image" style="--bg-image: url('{{ $src }}');">
+  <a href="{{ $.Page.RelPermalink }}" class="image"{{ if not .Params.removeBlur }} style="--bg-image: url('{{ $src }}');"{{ end }}>
     <img {{ with $stretch }}class="{{ if or (eq (lower .) "vertical") (eq (lower .) "v") }}stretchV{{ else if or (eq (lower .) "horizontal") (eq (lower .) "h") }}stretchH{{ else if or (eq (lower .) "cover") (eq (lower .) "c") }}cover{{ end }}" {{ end }}src="{{ $src }}" alt="{{ $alt }}">
   </a>
 {{- end -}}
