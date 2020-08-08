@@ -7,13 +7,7 @@
   {{ with .Description }}<meta property="og:description" content="{{ . }}">{{ end }}
   <meta property="og:url" content="{{ .RelPermalink | absURL }}">
   <meta property="og:type" content="{{ cond .IsHome "website" "article" }}">
-  {{ with .Params.openGraph }}
-    {{ range . }}
-      <meta property="og:image" content="{{ .src | absURL }}">
-      <meta property="og:image:alt" content="{{ .alt }}">
-    {{ end }}
-  {{ end }}
-  {{ with .Params.images }}
+  {{ with or (.Params.openGraph) (.Params.images) }}
     {{ range . }}
       <meta property="og:image" content="{{ .src | absURL }}">
       <meta property="og:image:alt" content="{{ .alt }}">
