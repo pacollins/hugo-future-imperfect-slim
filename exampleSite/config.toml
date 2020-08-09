@@ -11,7 +11,7 @@ pluralizeListTitles     = false
 disableLanguages        = []
 
 [markup.goldmark.renderer]
-  unsafe= true
+  unsafe                = true
 
 [outputs]
   home                  = ["html", "json"]
@@ -26,6 +26,7 @@ disableLanguages        = []
   viewMorePostsLink     = "/blog/"
   readingTime           = true
   imageStretch          = ""
+  removeBlur            = false
   socialShare           = ["twitter", "facebook", "reddit", "linkedin", "pinterest", "email"]
   hideEmptyStats        = false
 
