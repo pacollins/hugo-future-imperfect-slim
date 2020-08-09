@@ -75,7 +75,8 @@ iframe,
 img,
 svg,
 video {
-  vertical-align: middle; }
+  vertical-align: middle;
+  max-width: 100%; }
 
 /*
 * Remove default fieldset styles.
@@ -1154,38 +1155,38 @@ figcaption {
   @media (min-width: 375px) {
     .comment header {
       border-radius: 0; } }
-.comment.comment-reply {
-  margin-left: 1.875em; }
-  @media (min-width: 375px) {
-    .comment.comment-reply {
-      margin-left: 3.75em; } }
-.comment div {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-  align-items: center; }
-  @media (min-width: 375px) {
-    .comment div {
-      flex-direction: row; } }
-  .comment div .comment-author-container {
+  .comment header div {
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: center; }
+    flex-grow: 1;
+    align-items: center; }
     @media (min-width: 375px) {
-      .comment div .comment-author-container {
-        align-items: flex-start;
-        flex-grow: 1; } }
-    @media (min-width: 768px) {
-      .comment div .comment-author-container {
-        flex-direction: row;
-        align-items: center; } }
+      .comment header div {
+        flex-direction: row; } }
+.comment.comment-reply {
+  margin-left: 1.875em; }
+  @media (min-width: 375px) {
+    .comment.comment-reply {
+      margin-left: 3.75em; } }
+.comment-author-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center; }
+  @media (min-width: 375px) {
+    .comment-author-container {
+      align-items: flex-start;
+      flex-grow: 1; } }
+  @media (min-width: 768px) {
+    .comment-author-container {
+      flex-direction: row;
+      align-items: center; } }
 .comment-avatar {
   margin: 0 0 0 1em;
   width: 3.75em;
