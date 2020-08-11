@@ -8,7 +8,7 @@
 [see_more]
   other = "Zobacz Więcej"
 [learn_more]
-  other = "Ucz Się Więcej"
+  other = "Dowiedz Się Więcej"
 [attribution]
   other = "Motyw: <a href='https://themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>Przyjęty z <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | Wspierane przez <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
 
