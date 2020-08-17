@@ -59,8 +59,12 @@ window.onload = function () {
   $searchResults = document.getElementById('search-results');
   $searchInput   = document.getElementById('search-input');
 
-  request.overrideMimeType("application/json");
-  request.open("GET", "{{ "index.json" | absURL }}", true); // Request the JSON file created during build
+  var lang = document.documentElement.lang;
+  var path = "/index.json";;
+  if (lang != "{{ .Site.Language }}") {  
+    path = "/"+lang+"/"+"index.json";
+  }
+  request.open("GET", path, true); // Request the JSON file created during build
   request.onload = function() {
     if (request.status >= 200 && request.status < 400) {
       // Success response received in requesting the index.json file
