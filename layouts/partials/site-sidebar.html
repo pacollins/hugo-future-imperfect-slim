@@ -23,10 +23,10 @@
 
   {{ if .Site.Params.sidebar.categories }}
     {{ if ne ($.Scratch.Get "showCategories") false }}
-      {{ $categoriesCount := len .Site.Taxonomies.categories }}
+
       <section id="categories">
         <header>
-          <h1><a href="{{ "categories" | relLangURL }}">{{ i18n "categories" $categoriesCount }}</a></h1>
+          <h1><a href="{{ "categories" | relLangURL }}">{{ i18n "categories" (len .Site.Taxonomies.categories) }}</a></h1>
         </header>
         <ul>
           {{ $.Scratch.Set "categories" (cond .Site.Params.sidebar.categoriesByCount .Site.Taxonomies.categories.ByCount .Site.Taxonomies.categories.Alphabetical) }}
