@@ -24,12 +24,13 @@
   other = "Blog"
 [categories]
   one = "Kategoria"
+  many = "Kategorie"
   other = "Kategorie"
 [tags]
   one = "Tag"
   other = "Tagi"
 [next_page]
- other = "Następna Strona"
+  other = "Następna Strona"
 [previous_page]
    other = "Poprzednia Strona"
 
