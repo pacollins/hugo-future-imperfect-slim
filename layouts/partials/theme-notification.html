@@ -1,4 +1,4 @@
-{{- if .IsHome -}}
+{{- if and .IsHome .Site.IsServer -}}
   {{ $version := "2.0.0"}}
   <div id="theme-message" style="background-color:#3c3b3b;color:#f4f4f4;margin:auto auto;padding:.25em 2em;width:75%;">
     <p style="text-align:center;">This message, related to the development of the theme, only displays on the
@@ -10,7 +10,7 @@
       <button onclick="removeBox()" class="button" style="color:#f4f4f4;margin-bottom:1em;">Close Notification Until Next Update</button>
     </div>
     <script>
-      if (window.location.href.indexOf('localhost:') < 1 || window.localStorage.getItem('HFIS-version') == '{{ $version }}') {
+      if (window.localStorage.getItem('HFIS-version') == '{{ $version }}') {
         document.getElementsByTagName("body")[0].removeChild(document.getElementById("theme-message"));
       }
       function removeBox() {
