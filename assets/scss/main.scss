@@ -1393,6 +1393,15 @@ figcaption {
   }
 }
 
+#TableOfContents {
+  border: 1px dotted #afafaf;
+
+  ul {
+    list-style-type: none;
+    padding-inline-start: 1.5em;
+  }
+}
+
 /* ==========================================================================
    Add-Ons
    ========================================================================== */
