@@ -70,6 +70,14 @@ disableLanguages        = []
     rssFooter           = true
     socialFooter        = true
 
+  [params.utterances]
+    enabled             = false
+    repo                = ""
+    issueTerm           = "pathname"
+    issueNumber         = ""
+    label               = "" 
+    theme               = "github-light"
+
   [params.staticman]
     enabled             = true
     api                 = ""  # No Trailing Slash
