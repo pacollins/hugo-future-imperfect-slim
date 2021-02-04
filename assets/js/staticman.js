@@ -9,7 +9,7 @@ $(document).ready(function() {
     $('input[type="submit"]:disabled').removeClass('hidden'); // show "submitted"
 
     // Construct form action URL form JS to avoid spam
-    var api = '{{ .api | default "staticman3.herokuapp.com" }}';
+    var api = '{{ .api }}';
     var gitProvider = '{{ .gitprovider }}';
     var username = '{{ .username }}';
     var repo = '{{ .repo }}';
