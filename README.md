@@ -56,7 +56,7 @@ If you wish to customize **any** of the files in the theme for your personal use
 simply create a duplicate file at the project-level instead of the theme level.
 This is function that is innate to Hugo based on [Hugo's lookup order](https://gohugo.io/templates/lookup-order/)
 
-For example, if you wanted to change the About Me Page Template (`<my-project>/themes/layouts/_default/about.html`). You would create a new files at `<my-project>/layouts/_default/about.html` based on the theme file, but including your modifications
+For example, if you wanted to change the About Me Page Template (`<my-project>/themes/layouts/_default/about.html`). You would create a new file at `<my-project>/layouts/_default/about.html` based on the theme file, but including your modifications
 
 This is the proper way to adjust files for personal use in a way that does not
 make your site incompatible with the theme.
