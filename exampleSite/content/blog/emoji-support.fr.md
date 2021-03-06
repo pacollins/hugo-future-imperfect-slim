@@ -17,7 +17,7 @@ La fonction [`emojify`] (https://gohugo.io/functions/emojify/) peut être appel�
 Pour activer globalement emoji, définissez `enableEmoji` sur` true` dans la [configuration] de votre site (https://gohugo.io/getting-started/configuration/), puis vous pourrez taper des codes abrégés emoji directement dans les fichiers de contenu; par exemple.
 
 
-<p> <span class = "nowrap"> <span class = "emojify"> 🙈 </ span> <code>: see_no_evil: </ code> </ span> <span class = "nowrap"> <span class = "emojify"> 🙉 </ span> <code>: hear_no_evil: </ code> </ span> <span class = "nowrap"> <span class = "emojify"> </ span> <code>: speak_no_evil: </ code> </ span> </ p>
+<p> <span class = "nowrap"> <span class = "emojify"> 🙈 </span> <code>: see_no_evil: </code> </span> <span class = "nowrap"> <span class = "emojify"> 🙉 </span> <code>: hear_no_evil: </code> </span> <span class = "nowrap"> <span class = "emojify"> </span> <code>: speak_no_evil: </code> </span> </p>
 <br>
 
 Le [aide-mémoire Emoji] (http://www.emoji-cheat-sheet.com/) est une référence utile pour les codes abrégés emoji.
