@@ -59,11 +59,7 @@ window.onload = function () {
   $searchResults = document.getElementById('search-results');
   $searchInput   = document.getElementById('search-input');
 
-  var lang = document.documentElement.lang;
-  var path = "/index.json";;
-  if (lang != "{{ .Site.Language }}") {  
-    path = "/"+lang+"/"+"index.json";
-  }
+  var path = "{{ relLangURL "index.json" }}"
   request.open("GET", path, true); // Request the JSON file created during build
   request.onload = function() {
     if (request.status >= 200 && request.status < 400) {
