@@ -60,7 +60,7 @@ window.onload = function () {
   $searchInput   = document.getElementById('search-input');
 
   var lang = document.documentElement.lang;
-  var pathArgs = ["{{ .Site.BaseURL }}", "index.json"];
+  var pathArgs = ["{{ replaceRE "/$" "" .Site.BaseURL }}", "index.json"];
   if (lang != "{{ .Site.Language }}") {
     pathArgs.splice(1, 0, lang);
   }
