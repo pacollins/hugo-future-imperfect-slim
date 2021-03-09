@@ -149,7 +149,7 @@ disableLanguages        = []
       weight            = 1
 
     [[Languages.fr.menu.main]]
-      name              = "About"
+      name              = "A Propos"
       identifier        = "about"
       url               = "/about/"
       pre               = "<i class='far fa-id-card'></i>"
@@ -272,12 +272,12 @@ disableLanguages        = []
 
   [Languages.zh-CN]
     LanguageCode        = "zh-CN"
-    LanguageName        = "中文"
+    LanguageName        = "中文 (简体)"
     weight              = 7
 
   [Languages.zh-TW]
     LanguageCode        = "zh-TW"
-    LanguageName        = "中文"
+    LanguageName        = "中文 (正體)"
     weight              = 8
 
   [Languages.ja]
