@@ -1,5 +1,5 @@
 (function() {
-  var form = document.querySelector('.new-comment');
+  let form = document.querySelector('.new-comment');
   if (form) {
     form.addEventListener('submit', function () {
       form.classList.add('loading');
@@ -13,15 +13,31 @@
       let repo = '{{ .repo }}';
       let branch = '{{ .branch }}';
       let url = ['https:/', api, 'v3/entry', gitProvider, username, repo, branch, 'comments'].join('/');
-      let formData = JSON.stringify(Object.fromEntries(new FormData(form)));  // some API don't accept FormData objects
 
-      var xhr = new XMLHttpRequest();
+      // Convert form fields to a JSON-friendly string
+      let formObj = Object.fromEntries(new FormData(form));
+      let xhrObj = {fields: {}, options:{}};
+      Object.entries(formObj).forEach(([key, value]) => {
+        let a = key.indexOf('['), b = key.indexOf('reCaptcha');
+        if (a == -1) { // key = "g-recaptcha-response"
+          xhrObj[key] = value;
+        } else if (a == 6 || (a == 7 && b == -1)) { // key = "fields[*]", "options[*]"
+          xhrObj[key.slice(0, a)][key.slice(a + 1, -1)] = value;
+        } else { // key = "options[reCaptcha][*]"
+          xhrObj.options.reCaptcha = {};
+          xhrObj.options.reCaptcha[key.slice(b + 11, -1)] = value;
+        }
+      });
+      let formData = JSON.stringify(xhrObj);  // some API don't accept FormData objects
+
+
+      let xhr = new XMLHttpRequest();
       xhr.open('POST', url);
       xhr.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
       xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
       xhr.onreadystatechange = function () {
-        if(xhr.readyState === XMLHttpRequest.DONE) {
-          var status = xhr.status;
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+          let status = xhr.status;
           if (status >= 200 && status < 400) {
             formSubmitted();
           } else {
