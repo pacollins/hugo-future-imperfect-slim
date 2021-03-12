@@ -78,7 +78,7 @@
               {{- $threadID := ._id }}
               {{- range $comments -}}
                 {{ if or (in ._id $threadID) (in .replyThread $threadID) }}
-                  <article id='{{ ._id }}' class='comment{{ with .replyThread }} comment-reply{{ end }}' data-reply-thread='{{ .replyThread }}'>
+                  <article id='{{ ._id }}' class='comment{{ with .replyThread }} comment-reply{{ end }}' data-reply-thread='{{ $threadID }}'>
                     <header>
                       <img class='comment-avatar circle' src='https://www.gravatar.com/avatar/{{ .email }}?s=100' alt="{{ .name }}'s Gravatar">
                       <div>
