@@ -1394,7 +1394,7 @@ figcaption {
 }
 
 #TableOfContents {
-  border: 1px dotted #afafaf;
+  border: $secondary-border;
 
   ul {
     list-style-type: none;
