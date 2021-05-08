@@ -1,15 +1,47 @@
 {
-   "styles" : [
-      "css/normalize.css",
-      "css/fonts.css",
-      "css/academicons.css",
-      "css/fontawesome.css",
-      "css/fancybox.css"
-   ],
-   "scripts" : [
-      "js/jquery-3.5.1.js",
-      "js/fancybox.js",
-      "js/lunr.js",
-      "js/util.js"
-   ]
+	"styles": [
+		{
+			"vendor": "normalize",
+			"cdn": "https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+		},
+		{
+			"vendor": "googlefonts",
+			"cdn": "https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700"
+		},
+		{
+			"vendor": "academicons",
+			"cdn": "https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.1/css/academicons.min.css"
+		},
+		{
+			"vendor": "fontawesome",
+			"cdn": "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		},
+		{
+			"vendor": "fancybox",
+			"cdn": "https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css"
+		}
+	],
+	"scripts": [
+		{
+			"vendor": "js/jquery-3.5.1.js",
+			"cdn": "https://code.jquery.com/jquery-3.5.1.min.js"
+		},
+		{
+			"vendor": "js/fancybox.js",
+			"cdn": "https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"
+		},
+		{
+			"vendor": "js/lunr.js",
+			"cdn": "https://unpkg.com/lunr/lunr.js"
+		},
+		{
+			"vendor": "js/user-header.js",
+			"cdn": "js/user-header.js",
+			"header": true
+		},
+		{
+			"vendor": "js/user-footer.js",
+			"cdn": "js/user-footer.js"
+		}
+	]
 }
