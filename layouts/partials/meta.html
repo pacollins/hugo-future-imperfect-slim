@@ -7,11 +7,13 @@
   <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon/favicon-32x32.png" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon/favicon-16x16.png" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
   <link rel="manifest" href="{{ "favicon/site.webmanifest" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
+  <link rel="shortcut icon" href="{{ "favicon/favicon.ico" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
+  <meta name="msapplication-config" content="{{ "favicon/browserconfig.xml" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
   {{ if .Site.Params.meta.svg }}
     <link rel="mask-icon" href="{{ "favicon/safari-pinned-tab.svg" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}" color="{{ .Site.Params.meta.msColor }}">
-    <link rel="shortcut icon" href="{{ "favicon/favicon.ico" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
-    <meta name="msapplication-config" content="{{ "favicon/browserconfig.xml" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
   {{ end }}
   <meta name="msapplication-TileColor" content="{{ .Site.Params.meta.msColor }}">
   <meta name="theme-color" content="{{ .Site.Params.meta.iOSColor }}">
+{{ else }}
+  <link rel="shortcut icon" href="{{ "favicon.ico" | relURL}}">
 {{ end }}

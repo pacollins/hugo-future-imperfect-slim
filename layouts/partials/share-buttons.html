@@ -4,8 +4,8 @@
 {{ $tags := $.Scratch.Get "Tags" }}
 {{ range .Site.Params.socialShare }}
   {{ if eq . "twitter" }}
-    <!-- TODO: Add Hashtags &amp;hashtags= -->
-    <a href="//twitter.com/share?text={{ $title }}&amp;url={{ $permalink }}" target="_blank" rel="noopener" class="nav share-btn twitter">
+    <!-- TODO: Add Hashtags &amp;hashtags=one,two,three -->
+    <a href="//twitter.com/share?text={{ $title }}&amp;url={{ $permalink }}&amp;hashtags=words,twice" target="_blank" rel="noopener" class="nav share-btn twitter">
         <p>Twitter</p>
       </a>
   {{ else if eq . "facebook" }}

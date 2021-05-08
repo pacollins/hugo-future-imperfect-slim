@@ -1,54 +1,39 @@
+{{ $scripts := slice }}
+{{- $assets := resources.Get "assets.json" | unmarshal -}}
+
 {{- if .Site.Params.enableCDN -}}
   {{- if .Site.Params.highlightjs -}}
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
-    {{ with .Site.Params.highlightjsLang }}{{ range . }}<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/languages/{{ . }}.min.js"></script>{{ end }}{{ end }}
-    <script>hljs.highlightAll();</script>
-  {{- end -}}
-  {{- range .Site.Params.jsFiles -}}
-    {{- if eq . "default" -}}
-    <script src="//code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"></script>
-    <script src="//unpkg.com/lunr/lunr.js"></script>
-      {{- $jsSlice := slice (resources.Get "js/util.js") (resources.Get "js/main.js" | resources.ExecuteAsTemplate "js/main.js" $.Site) -}}
-      {{- /* Backwards compatibility for deprecated parameter ".Site.Params.staticman.staticman" */ -}}
-      {{- if or $.Site.Params.staticman.enabled $.Site.Params.staticman.staticman -}}
-        {{- $jsSlice = $jsSlice | append (resources.Get "js/staticman.js" | resources.ExecuteAsTemplate "js/staticman.js" $.Site.Params.staticman) -}}
-      {{- end }}
-      {{- $js := $jsSlice | resources.Concat "js/bundlecdn.js" | minify | fingerprint -}}
-    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
-    <script src="{{ "js/add-on.js" | relURL }}"></script>
-    {{- else }}
-      <script src="{{ . | relURL }}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    {{ with .Site.Params.highlightjsLang }}{{ range . }}<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/languages/{{ . }}.min.js"></script>{{ end }}{{ end }}
+    {{- range $assets.scripts -}}
+      <script src="{{ .cdn }}"></script>
+    {{- end -}}
+  {{- else -}}
+    {{- if .Site.Params.highlightjs -}}
+      {{- $scripts = $scripts | append (resources.Get "js/highlight.js") -}}
+      {{ with .Site.Params.highlightjsLang }}{{ range . }}<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/languages/{{ . }}.min.js"></script>{{ end }}{{ end }}
     {{- end -}}
   {{- end -}}
 {{- else -}}
-  {{- if .Site.Params.highlightjs -}}
-    {{- $hljs := resources.Get "js/highlight.js" -}}
-    <script src="{{ $hljs.RelPermalink }}"></script>
-    {{ with .Site.Params.highlightjsLang }}{{ range . }}<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/languages/{{ . }}.min.js"></script>{{ end }}{{ end }}
-    <script>hljs.highlightAll();</script>
-  {{- end -}}
-  {{- range .Site.Params.jsFiles -}}
-    {{- $jsSlice := slice -}}
-    {{- if eq . "default" -}}
-      {{- $assets := resources.Get "assets.json" | unmarshal -}}
-      {{- range $assets.scripts -}}
-        {{- $jsSlice = $jsSlice | append (resources.Get . ) -}}
-      {{- end -}}
-      {{- $jsSlice = $jsSlice | append (resources.Get "js/main.js" | resources.ExecuteAsTemplate "js/main.js" $.Site) -}}
-      {{- /* Backwards compatibility for deprecated parameter ".Site.Params.staticman.staticman" */ -}}
-      {{- if or $.Site.Params.staticman.enabled $.Site.Params.staticman.staticman -}}
-        {{- $jsSlice = $jsSlice | append (resources.Get "js/staticman.js" | resources.ExecuteAsTemplate "js/staticman.js" $.Site.Params.staticman) -}}
-      {{- end -}}
-      {{- $js := $jsSlice | resources.Concat "js/bundle.js" | minify | fingerprint -}}
-    <script src="{{ $js.RelPermalink }}" integrity="{{ $js.Data.Integrity }}"></script>
-    <script src="{{ "js/add-on.js" | relURL }}"></script>
-    {{- else }}
-      <script src="{{ . | relURL }}"></script>
-    {{- end -}}
+  {{- range $assets.scripts -}}
+    {{ if not .header }}{{ $scripts = $scripts | append (resources.Get .vendor) }}{{ end }}
   {{- end -}}
 {{- end -}}
+
+<script>hljs.highlightAll();</script>
+
+{{- $scripts = $scripts | append (resources.Get "js/util.js") | append (resources.Get "js/main.js" | resources.ExecuteAsTemplate "js/main.js" $.Site) -}}
+
+{{- /* Backwards compatibility for deprecated parameter ".Site.Params.staticman.staticman" */ -}}
+{{- if or $.Site.Params.staticman.enabled $.Site.Params.staticman.staticman -}}
+  {{- $scripts = $scripts | append (resources.Get "js/staticman.js" | resources.ExecuteAsTemplate "js/staticman.js" $.Site.Params.staticman) -}}
+{{- end -}}
+
+{{- $scripts = $scripts | resources.Concat "js/bundle.js" | minify | fingerprint -}}
+<script src="{{ $scripts.RelPermalink }}" integrity="{{ $scripts.Data.Integrity }}"></script>
+
 {{ if and .Site.Params.staticman.recaptcha.siteKey .Site.Params.staticman.recaptcha.encryptedKey }}
   <script src='https://www.google.com/recaptcha/api.js'></script>
 {{- end -}}
+
 {{- template "_internal/google_analytics_async.html" . -}}

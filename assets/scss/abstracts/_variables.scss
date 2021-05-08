@@ -1,0 +1,42 @@
+// -----------------------------------------------------------------------------
+// This file contains all site-wide variables.
+// -----------------------------------------------------------------------------
+
+/* Font */
+
+$header-font: "Raleway", Helvetica, sans-serif;
+$body-font: "Source Sans Pro", Helvetica, sans-serif;
+$code-font: "Courier New", monospace;
+$fa-free-font: "Font Awesome 5 Free";
+$fa-brands-font: "Font Awesome 5 Brands";
+$header-color: 	hsl(0, 1%, 23%);
+$accent-color: 	hsl(175, 60%, 45%);
+$accent-hover: hsla(175, 60%, 45%, 0.25);
+$warning-color: hsl(332, 60%, 45%);
+$warning-hover: hsla(332, 60%, 45%, 0.25);
+$gray: hsl(0, 0%, 67%);
+$dark-gray: 	hsl(210, 13%, 50%);
+$light-gray: hsl(0, 0%, 96%);
+
+/* Background & Border */
+
+$white: hsl(0, 0%, 100%);
+$black: hsl(0, 0%, 0%);
+$border-color: hsla(0, 0%, 63%, 0.3);
+$input-color: hsla(0, 0%, 63%, 0.07);
+$active-color: hsla(175, 60%, 45%, 0.05);
+$primary-border: 1px solid $border-color;
+$secondary-border: 1px dotted hsla(0, 0%, 63%, 0.7);
+$cellborder-color: hsl(0, 0%, 88%);
+$headerbg-color: hsl(0, 0%, 93%);
+
+/* Other */
+
+$avatar-size: 3.75em;
+$hover: 0.2s ease-in-out;
+$hover-slow: 0.35s ease-in-out;
+$shadow-1: 0 3px 6px hsla(0, 0%, 0%, 0.16), 0 3px 6px hsla(0, 0% , 0%, 0.23);
+$shadow-2: 0 10px 20px hsla(0, 0%, 0%, 0.19), 0 6px 6px hsla(0, 0%, 0%, 0.23);
+$shadow-3: 0 14px 28px hsla(0, 0%, 0%, 0.25), 0 10px 10px hsla(0, 0%, 0%, 0.22);
+$shadow-4: 0 19px 38px hsla(0, 0%, 0%, 0.30), 0 15px 12px hsla(0, 0%, 0% ,0.22);
+$shadow-scroll: inset 0 0 6px hsla(0, 0%, 0%, 0.3);

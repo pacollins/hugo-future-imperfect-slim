@@ -1,0 +1,23 @@
+#socnet-share {
+  @include display-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 1em 1em 0 0;
+  @include break(laptop-up) {
+    justify-content: flex-start;
+  }
+  a {
+    margin-bottom: 0.5em;
+    padding: 0.5em;
+    width: 4em;
+    @include break(laptop-up) {
+      margin-right: 0.25em;
+    }
+    i {
+      font-size: 1em;
+    }
+  }
+  p {
+    display: none;
+  }
+}

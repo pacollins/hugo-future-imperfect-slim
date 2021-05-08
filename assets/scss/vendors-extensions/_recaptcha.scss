@@ -1,0 +1,6 @@
+.g-recaptcha {
+  @include prefix(transform, scale(0.955), (webkit, ms));
+  @include prefix(transform-origin, 0 0, (webkit, ms));
+  margin: -0.25em 0 0.25em 0;
+  width: 0;
+}

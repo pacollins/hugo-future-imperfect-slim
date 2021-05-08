@@ -18,57 +18,26 @@
   {{ end }}
   {{ with .Site.Params.Social.twitter}}<meta property="twitter:site" content="{{ . }}">{{ end }}
 
+  {{- $assets := resources.Get "assets.json" | unmarshal -}}
+  {{- $mainCSSOptions := (dict "targetPath" "css/bundle.min.css" "outputStyle" "compressed") -}}
   {{- if .Site.Params.enableCDN -}}
-    {{- if .Site.Params.highlightjs -}}<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/{{ .Site.Params.highlightjsTheme | default "default" }}.min.css">{{- end -}}
-    {{- range .Site.Params.cssFiles -}}
-      {{- if eq . "default" -}}
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,800,900|Source+Sans+Pro:400,700">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
-        <script src="https://kit.fontawesome.com/be54eb011a.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
-        {{- $mainCSSOptions := (dict "targetPath" "css/main.min.css" "outputStyle" "compressed") -}}
-        {{- $main := resources.Get "scss/main.scss" | resources.ToCSS $mainCSSOptions | resources.Fingerprint -}}
-        <link rel="stylesheet" href="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}">
-        {{- if eq (i18n "letter_direction") "RTL" -}}
-          {{- $rtl := resources.Get "css/rtl.css" | minify -}}
-          <link rel="stylesheet" href="{{ $rtl.RelPermalink }}">
-        {{- end -}}
-        <link rel="stylesheet" href="{{ "css/add-on.css" | relURL }}">
-      {{- else }}
-        <link rel="stylesheet" href="{{ . | relURL }}">
-      {{- end -}}
-    {{- end -}}
-  {{- else -}}
-    {{- range .Site.Params.cssFiles -}}
-      {{- if eq . "default" -}}
-        {{- $cssSlice := slice -}}
-        {{- if $.Site.Params.highlightjs -}}
-          {{ with $.Site.Params.highlightjsTheme }}
-            <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/{{ . }}.min.css">
-          {{ else }}
-            {{- $cssSlice = $cssSlice | append (resources.Get "css/default.css") -}}
-          {{ end }}
-        {{- end -}}
-        {{- $assets := resources.Get "assets.json" | unmarshal -}}
-        {{- range $assets.styles -}}
-          {{- $cssSlice = $cssSlice | append (resources.Get . ) -}}
-        {{- end -}}
-        {{- $cssSlice = $cssSlice | append (resources.Get "scss/main.scss" | toCSS) -}}
-        {{- $css := $cssSlice | resources.Concat "css/bundle.css" | minify | fingerprint -}}
-        <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
-        {{- if eq (i18n "letter_direction") "RTL" -}}
-          {{- $rtl := resources.Get "css/rtl.css" | minify -}}
-          <link rel="stylesheet" href="{{ $rtl.RelPermalink }}">
-        {{- end -}}
-        <link rel="stylesheet" href="{{ "css/add-on.css" | relURL }}">
-      {{- else }}
-        <link rel="stylesheet" href="{{ . | relURL }}">
-      {{- end -}}
-    {{- end -}}
+    {{- if .Site.Params.highlightjs -}}<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/{{ .Site.Params.highlightjsTheme | default "default" }}.min.css">{{- end -}}
+    {{- range $assets.styles -}}
+      <link rel="stylesheet" href="{{ .cdn }}">
+    {{ end }}
+  <!-- TODO: Header Scripts CDN -->
   {{- end -}}
+  <!-- TODO: Header Scripts Local -->
+  {{- $styles := resources.Get "scss/main.scss" | resources.ExecuteAsTemplate "bundle.scss" . | toCSS $mainCSSOptions | fingerprint -}}
+  <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}">
+  {{- if eq (i18n "letter_direction") "RTL" -}}
+    {{- $rtl := resources.Get "css/rtl.css" | minify -}}
+    <link rel="stylesheet" href="{{ $rtl.RelPermalink }}">
+  {{- end -}}
+
   {{- .Scratch.Set "Permalink" .Permalink -}}
   {{- .Scratch.Set "Title" .Title -}}
+
   {{- if .Params.Author -}}
     {{- .Scratch.Set "Author" .Params.Author -}}
   {{- else -}}

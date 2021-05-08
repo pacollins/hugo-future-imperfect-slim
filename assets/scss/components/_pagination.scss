@@ -1,0 +1,44 @@
+/* Pagination */
+
+.pagination {
+  @include display-flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1.5em auto;
+  padding: 1em;
+  max-width: 55em;
+  .button {
+    margin: 1em;
+    width: 50%;
+  }
+}
+
+.left,
+.right {
+  span {
+    display: none;
+    @include break(tablet-up) {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+  }
+  &::before {
+    font-family: $fa-free-font;
+    font-weight: 900;
+    text-decoration: inherit;
+  }
+}
+
+.left::before {
+  content: "\f053";
+  float: left;
+  padding-right: 0.5em;
+}
+
+.right::before {
+  content: "\f054";
+  float: right;
+  padding-left: 0.5em;
+}
