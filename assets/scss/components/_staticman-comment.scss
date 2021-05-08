@@ -1,0 +1,96 @@
+.comment {
+  header {
+    @include display-flex;
+    background: $headerbg-color;
+    align-items: center;
+    border-radius: 50px 0 0 50px;
+    @include break(mobile-l-up) {
+      border-radius: 0;
+    }
+    div {
+      @include display-flex;
+      flex-direction: column;
+      flex-grow: 1;
+      align-items: center;
+      @include break(mobile-l-up) {
+        flex-direction: row;
+      }
+    }
+  }
+  &.comment-reply {
+    margin-left: $avatar-size/2;
+    @include break(mobile-l-up) {
+      margin-left: $avatar-size;
+    }
+  }
+}
+
+.comment-author-container {
+  @include display-flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  @include break(mobile-l-up) {
+    align-items: flex-start;
+    flex-grow: 1;
+  }
+  @include break(laptop-up) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.comment-avatar {
+  margin: 0 0 0 1em;
+  width: $avatar-size;
+  height: $avatar-size;
+  flex-grow: 0;
+  @include break(mobile-l-up) {
+    margin: 0 .5em 0 0;
+    &.circle {
+      @include prefix(clip-path, none, webkit);
+    }
+  }
+}
+
+.comment-author {
+  font-size: 0.9em;
+  margin: 0;
+  @include break(laptop-up) {
+    margin-right: .5em;
+    padding-right: .5em;
+    border-right: $primary-border;
+  }
+}
+
+.comment-reply-btn {
+  border: 0;
+  &::before {
+    font-family: $fa-free-font;
+    font-weight: 900;
+    content: "\f3e5";
+    margin-right: .5em;
+    width: 20px;
+  }
+  @include break(mobile-l-up) {
+    margin-right: 1.5em;
+  }
+}
+
+.comment-content {
+  margin: 1em;
+}
+
+/* TODO: Assess Value
+  .reply-target {
+    font-size: 0.9em;
+    border: 0;
+    &::before {
+      font-family: $fa-free-font;
+      font-weight: 900;
+      content: "\f3e5";
+      margin-right: .5em;
+      width: 20px;
+    }
+  }
+*/

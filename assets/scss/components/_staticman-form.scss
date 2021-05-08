@@ -1,0 +1,42 @@
+.new-comment {
+  &.loading {
+    opacity: 0.5;
+  }
+  .reply-notice {
+    .comment-avatar {
+      width: 2em;
+      height: 2em;
+      margin: 0 0.6em;
+    }
+    .reply-close-btn {
+      padding: unset;
+      border: none;
+      vertical-align: top;
+      font-size: 1em;
+      line-height: 0;
+      height: 0;
+      &:hover {
+        border: none;
+      }
+    }
+    .reply-name {
+      vertical-align: middle;
+      &::before {
+        font-family: $fa-free-font;
+        font-weight: 900;
+        content: "\f3e5";
+        margin-right: .5em;
+        width: 20px;
+      }
+    }
+  }
+}
+
+.submit-success {
+  border: 1px solid $accent-color;
+  background: $accent-hover;
+}
+.submit-failed {
+  border: 1px solid $warning-color;
+  background: $warning-hover;
+}

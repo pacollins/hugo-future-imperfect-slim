@@ -1,0 +1,20 @@
+#site-footer {
+  grid-area: footer;
+  border-top: $primary-border;
+  margin: 3em 2em;
+  padding-top: 3em;
+}
+
+#back-to-top {
+  bottom: 15px;
+  color: $gray;
+  display: none;
+  position: fixed;
+  right: 15px;
+  border: 0;
+  transition: color $hover, transform $hover;
+  &:hover {
+    color: $accent-color !important;
+    transform: translateY(-10px);
+  }
+}

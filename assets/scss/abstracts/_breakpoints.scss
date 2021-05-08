@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// This file contains all site-wide breakpoints.
+// -----------------------------------------------------------------------------
+
+$breakpoints: (
+  mobile-m-up: 320px,
+  mobile-l-up: 375px,
+  tall: 600px,
+  tablet-up: 425px,
+  laptop-up: 768px,
+  desktop-up: 1024px,
+  desktop-m-up: 1440px,
+  desktop-l-up: 1800px
+);
+
+@mixin break($breakpoint) {
+    @if map-has-key($breakpoints, $breakpoint) {
+        $value: map-get($breakpoints, $breakpoint);
+        $param: "min-width";
+        @if $breakpoint == tall {$param: "min-height";}
+        @media screen and ($param: $value) {
+            @content
+        }
+    }
+    @else {
+      @warn "Unknown `#{$breakpoint}` in $breakpoints";
+    }
+};

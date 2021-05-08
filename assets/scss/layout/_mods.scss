@@ -1,0 +1,6 @@
+.hidden-single-column {
+  display: none;
+  @include break(laptop-up) {
+    @include display-flex;
+  }
+}

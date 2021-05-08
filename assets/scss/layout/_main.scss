@@ -1,0 +1,31 @@
+#site-main {
+  grid-area: main;
+}
+
+#wrapper {
+  display: -ms-grid;
+  display: grid;
+  grid-template-areas:
+    "intro"
+    "main"
+    "sidebar"
+    "footer";
+  grid-template-rows: auto 1fr auto auto;
+  margin: 0 auto;
+  max-width: 90em;
+  min-height: 100vh;
+  transition: opacity $hover-slow;
+  @include break(desktop-up) {
+    grid-template-areas:
+      "intro main"
+      "sidebar main"
+      "footer main"
+      "blank main";
+    grid-template-columns: 22em 1fr;
+    grid-template-rows: auto auto auto 1fr;
+    padding: 0 2.5em;
+  }
+  &.overlay {
+    opacity: 0.25;
+  }
+}

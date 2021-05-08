@@ -1,0 +1,29 @@
+// name, color(hsl), unicode, font[opt], weight[opt]
+$brands: (
+  (twitter, hsl(197, 100%, 47%), "\f099"),
+  (facebook, hsl(221, 44%, 41%), "\f09a"),
+  (linkedin, hsl(201, 100%, 35%), "\f08c"),
+  (pinterest, hsl(357, 70%, 46%), "\f0d2"),
+  (reddit, hsl(20, 100%, 50%), "\f281"),
+  (email, hsl(0, 0%, 27%), "\f0e0", $fa-free-font, 900)
+);
+
+@each $name, $color, $icon, $font-family, $font-weight in $brands {
+  .#{$name} {
+    background-color: $color;
+    @if $font-weight {
+      font-weight: $font-weight;
+    }
+    &:hover {
+      background-color: darken($color, 10%);
+    }
+    &::before {
+    @if $font-family {
+      font-family: $font-family;
+    } @else {
+      font-family: $fa-brands-font;
+    }
+    content: $icon;
+    }
+  }
+}

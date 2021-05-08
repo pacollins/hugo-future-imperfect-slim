@@ -1,0 +1,28 @@
+// -----------------------------------------------------------------------------
+// This file contains all site-wide mixins.
+// -----------------------------------------------------------------------------
+
+@mixin prefix($property, $value, $vendors:null ) {
+  $prefixes: ('webkit', 'moz', 'ms', 'o');
+  @if ($vendors) {
+    @each $vendor in $vendors {
+      @if index($prefixes, $vendor){
+        -#{$vendor}-#{$property}: #{$value};
+      }
+    }
+    #{$property}: #{$value};
+  }
+  @else {
+    @each $prefix in $prefixes {
+      -#{$prefix}-#{$property}: #{$value};
+    }
+    #{$property}: #{$value};
+  }
+}
+
+@mixin display-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}

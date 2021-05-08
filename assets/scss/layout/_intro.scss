@@ -1,0 +1,30 @@
+#site-intro {
+  grid-area: intro;
+  align-items: center;
+  @include display-flex;
+  flex-direction: column;
+  margin-top: 0.5em;
+  padding: 1em;
+  text-align: center;
+  a {
+    border: 0;
+  }
+  p {
+    opacity: 0.6;
+  }
+  header {
+    h1 {
+      font-size: 1.25em;
+      margin-bottom: 0;
+    }
+  }
+  main {
+    p {
+      font-size: 0.7em;
+      letter-spacing: 0.25em;
+      line-height: 2.5;
+      margin-bottom: 0;
+      text-transform: uppercase;
+    }
+  }
+}

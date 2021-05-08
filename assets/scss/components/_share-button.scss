@@ -1,0 +1,18 @@
+.share-btn {
+  font-size: 1.5em;
+  border-radius: 4px;
+  box-shadow: $shadow-1;
+  letter-spacing: 0;
+  color: $white;
+  text-align: center;
+  transition: background-color $hover;
+  &:active {
+    position: relative;
+    top: 2px;
+    box-shadow: none;
+    color: darken($white, 10%);
+  }
+  &:hover {
+    color: $white;
+  }
+}

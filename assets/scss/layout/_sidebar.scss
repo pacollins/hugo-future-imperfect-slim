@@ -1,0 +1,50 @@
+#site-sidebar {
+  grid-area: sidebar;
+  header h1 {
+    font-size: 1em;
+  }
+  > * {
+    border-top: $primary-border;
+    margin: 3em 2em 0 2em;
+    padding-top: 3em;
+  }
+  > *:first-child {
+    @include break(desktop-up) {
+      margin-top: 0;
+    }
+  }
+    ul {
+      font-family: $header-font;
+      font-size: 0.9em;
+      letter-spacing: 0.25em;
+      line-height: 1.65;
+      text-transform: uppercase;
+      list-style: none;
+      padding: 0;
+    }
+  footer {
+    margin: auto;
+    width: max-content;
+  }
+}
+
+#categories {
+}
+
+#recent-posts {
+  @include display-flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  > header {
+    -webkit-box-flex: 1;
+    @include prefix(flex, 1 1 100%, (ms, webkit));
+  }
+}
+
+#mini-bio {
+  p {
+    opacity: 0.65;
+    font-size: 0.9em;
+    padding: 0;
+  }
+}
