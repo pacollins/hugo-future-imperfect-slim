@@ -1,8 +1,8 @@
 {{- if .Site.Params.enableCDN -}}
   {{- if .Site.Params.highlightjs -}}
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
-    {{ with .Site.Params.highlightjsLang }}{{ range . }}<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/languages/{{ . }}.min.js"></script>{{ end }}{{ end }}
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/highlight.min.js"></script>
+    {{ with .Site.Params.highlightjsLang }}{{ range . }}<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/languages/{{ . }}.min.js"></script>{{ end }}{{ end }}
+    <script>hljs.highlightAll();</script>
   {{- end -}}
   {{- range .Site.Params.jsFiles -}}
     {{- if eq . "default" -}}
@@ -25,8 +25,8 @@
   {{- if .Site.Params.highlightjs -}}
     {{- $hljs := resources.Get "js/highlight.js" -}}
     <script src="{{ $hljs.RelPermalink }}"></script>
-    {{ with .Site.Params.highlightjsLang }}{{ range . }}<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/languages/{{ . }}.min.js"></script>{{ end }}{{ end }}
-    <script>hljs.initHighlightingOnLoad();</script>
+    {{ with .Site.Params.highlightjsLang }}{{ range . }}<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/languages/{{ . }}.min.js"></script>{{ end }}{{ end }}
+    <script>hljs.highlightAll();</script>
   {{- end -}}
   {{- range .Site.Params.jsFiles -}}
     {{- $jsSlice := slice -}}

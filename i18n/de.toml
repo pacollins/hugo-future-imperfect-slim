@@ -4,13 +4,13 @@
 
 # Sidebar
 [recent_posts]
-  other = "Letzte Artikel"
+  other = "Neuste Artikel"
 [see_more]
-  other = "Mehr Erfahren"
+  other = "Mehr erfahren"
 [learn_more]
-  other = "Mehr Erfahren"
+  other = "Mehr erfahren"
 [attribution]
-  other = "Thema: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>Ein <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 Port</a> | Unterstützt von: <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
+  other = "Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>Ein <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 Port</a> | Unterstützt von: <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
 
 # Sections
 [about]
@@ -27,7 +27,7 @@
   other = "Kategorien"
 [tags]
   one = "Stichwort"
-  other = "Stichworte"
+  other = "Stichwörter"
 [next_page]
   other = "Nächste Seite"
 [previous_page]
@@ -35,15 +35,15 @@
 
 # Post
 [reading_time]
-  other = "{{ .Count }}-Minuten Lessen"
+  other = "Lesezeit: {{ .Count }} Minuten"
 [read_more]
   other = "Weiterlesen"
 [share_post]
   other = "Teilen"
 [check_out]
-  other = "Schauen Sie sich diesen Beitrag von an"
+  other = "Schauen Sie sich diesen Beitrag an"
 [say_something]
-  other = "Sag Etwas"
+  other = "Sag etwas"
 [comments]
   other = "Bemerkungen"
 [nothing_yet]
@@ -53,23 +53,23 @@
 [error_msg]
   other = "Entschuldigung, bei Ihrer Einreichung ist ein Fehler aufgetreten. Bitte stellen Sie sicher, dass alle erforderlichen Felder ausgefüllt wurden, und versuchen Sie es erneut."
 [success_msg]
-  other = "Vielen Dank für Ihren Kommentar! Es wird auf der Website angezeigt, sobald es genehmigt wurde."
+  other = "Vielen Dank für Ihren Kommentar! Es wird auf der Website angezeigt, sobald er genehmigt wurde."
 
 # Form
 [form_name]
-  other = "Dein Name"
+  other = "Ihr Name"
 [form_email]
-  other = "Deine E-Mail"
+  other = "Ihre E-Mail"
 [form_website]
-  other = "Deine Website"
+  other = "Ihre Webseite"
 [form_subject]
-  other = "Dein Fach"
+  other = "Betreff"
 [form_body]
-  other = "Deine Nachricht"
+  other = "Ihre Nachricht"
 [reset]
   other = "Zurücksetzen"
 [submitted]
-  other = "Eingereicht"
+  other = "Versendet"
 [submit]
   other = "Senden"
 
@@ -77,6 +77,6 @@
 [404_pagenotfound]
   other = "Seite nicht gefunden"
 [404_sorry]
-  other = "Entschuldigung, die Seite, die Sie suchen, ist leider nicht gibt."
+  other = "Entschuldigung, die Seite, die Sie suchen, gibt es leider nicht."
 [404_back]
-  other = "Gehe zurück"
+  other = "Zurückgehen"
