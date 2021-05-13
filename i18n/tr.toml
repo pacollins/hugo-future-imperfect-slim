@@ -1,0 +1,83 @@
+# Format
+[date_format]
+  other = "2 Ocak 2006"
+
+# Sidebar
+[recent_posts]
+  other = "Son gönderiler"
+[see_more]
+  other = "Daha fazla gör"
+[learn_more]
+  other = "Daha fazla öğren"
+[attribution]
+  other = "Tema: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>Bir <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP uyarlaması</a> | <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a> tarafından desteklenir"
+
+# Sections
+[about]
+  other = "Hakkında"
+[contact]
+  other = "İletişim"
+[contact_replies]
+  one = "Genelde 1 saat içinde geri dönüş sağlar."
+  other = "Genelde {{ .Count }} saat içinde geri dönüş sağlar."
+[blog]
+  other = "Blog"
+[categories]
+  one = "Kategori"
+  other = "Kategoriler"
+[tags]
+  one = "Etiket"
+  other = "Etiketler"
+[next_page]
+  other = "Sonraki Sayfa"
+[previous_page]
+  other = "Önceki Sayfa"
+
+# Post
+[reading_time]
+  one = "1 dakikalık okuma süresi"
+  other = "{{ .Count }} dakikalık okuma süresi"
+[read_more]
+  other = "Daha fazla oku"
+[share_post]
+  other = "Bu gönderiyi paylaş"
+[check_out]
+  other = "Şu kişi tarafından yazılmıştır:"
+[say_something]
+  other = "Bir şeyler söyle"
+[comments]
+  other = "Yorumlar"
+[nothing_yet]
+  other = "Henüz bir şey yok."
+[reply]
+  other = "Yanıtla"
+[error_msg]
+  other = "Üzgünüz, gönderiminizle ilgili bir hata oluştu. Lütfen tüm gerekli alanların doldurulduğundan emin olun ve tekrar deneyin."
+[success_msg]
+  other = "Yorumunuz için teşekkürler! Onaylandıktan sonra sitede gösterilecektir."
+
+# Form
+[form_name]
+  other = "İsminiz"
+[form_email]
+  other = "E-posta adresiniz"
+[form_website]
+  other = "Web siteniz"
+[form_subject]
+  other = "Konu"
+[form_body]
+  other = "Mesajınız"
+[reset]
+  other = "Sıfırla"
+[submitted]
+  other = "Gönderildi"
+[submit]
+  other = "Gönder"
+
+# 404
+[404_pagenotfound]
+  other = "Sayfa Bulunamadı"
+[404_sorry]
+  other = "Maalesef görüntülemeye çalıştığınız sayfa mevcut değil."
+[404_back]
+  other = "Geri Dön"

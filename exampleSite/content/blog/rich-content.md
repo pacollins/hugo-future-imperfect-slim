@@ -14,11 +14,13 @@ Hugo ships with several [Built-in Shortcodes](https://gohugo.io/content-manageme
 <!--more-->
 ---
 
-## Instagram Simple Shortcode
+<!-- See https://github.com/gohugoio/hugo/issues/7866
+## Instagram Shortcode Simple
 
-{{< instagram_simple BGvuInzyFAe hidecaption >}}
+{{/*< instagram BGvuInzyFAe hidecaption >*/}}
 
 <br>
+-->
 
 ---
 

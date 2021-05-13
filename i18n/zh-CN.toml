@@ -8,7 +8,7 @@
 [see_more]
   other = "查看更多"
 [learn_more]
-  other = "学到更多"
+  other = "详细了解"
 [attribution]
   other = "主题: <a href='https://themes.gohugo.io/hugo-future-imperfect-slim/' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>移植自 <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP</a> | 由 <a href='https://gohugo.io/' target='_blank' rel='noopener' title='{{ .Site.Hugo.Version }}'>Hugo</a> 驱动"
 
@@ -18,7 +18,7 @@
 [contact]
   other = "联络"
 [contact_replies]
-  other = "一般回应需时 {{ .Count }} 小时"
+  other = "一般需要 {{ .Count }} 小时回复"
 [blog]
   other = "博客"
 [categories]
@@ -38,7 +38,7 @@
 [share_post]
   other = "分享这篇文章"
 [check_out]
-  other = "查看此帖子的作者"
+  other = "查看本文的作者"
 [say_something]
   other = "说些什么"
 [comments]
@@ -48,9 +48,9 @@
 [reply]
   other = "回覆"
 [error_msg]
-  other = "很抱歉，您的提交存在错误。请确保所有必填字段都已填写正确，然后再试一次。"
+  other = "很抱歉，你的提交存在错误。请确保所有必填字段都已填写正确，然后再试一次。"
 [success_msg]
-  other = "感谢您的评论！被批准后它会立即在此站点展示。"
+  other = "感谢你的评论！被批准后它会立即在此站点展示。"
 
 # Form
 [form_name]
@@ -58,7 +58,7 @@
 [form_email]
   other = "你的邮件"
 [form_website]
-  other = "您的网页"
+  other = "你的网页"
 [form_subject]
   other = "你的主题"
 [form_body]
@@ -66,14 +66,14 @@
 [reset]
   other = "重设"
 [submitted]
-  other = "已送出"
+  other = "已发送"
 [submit]
-  other = "送出"
+  other = "发送"
 
 # 404
 [404_pagenotfound]
-  other = "找不到页面"
+  other = "页面无法找到"
 [404_sorry]
-  other = "抱歉，您正在寻找的页面并不存在。"
+  other = "抱歉，你正在寻找的页面并不存在。"
 [404_back]
-  other = "回去"
+  other = "返回"

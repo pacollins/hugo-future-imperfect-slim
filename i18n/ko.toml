@@ -1,0 +1,79 @@
+# Format
+[date_format]
+  other = "2006-01-02"
+
+# Sidebar
+[recent_posts]
+  other = "최신 글"
+[see_more]
+  other = "더 보기"
+[learn_more]
+  other = "더 알아보기"
+[attribution]
+  other = "Theme: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>A <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP port</a> | Powered by <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugo</a>"
+
+# Sections
+[about]
+  other = "About"
+[contact]
+  other = "Contact"
+[contact_replies]
+  other = "대체로 {{ .Count }}시간이내에 답신을 드리고 있습니다."
+[blog]
+  other = "블로그"
+[categories]
+  other = "카테고리"
+[tags]
+  other = "태그"
+[next_page]
+  other = "다음 페이지"
+[previous_page]
+  other = "이전 페이지"
+
+# Post
+[reading_time]
+  other = "{{ .Count }}분 소요"
+[read_more]
+  other = "더 읽기"
+[share_post]
+  other = "이 글을 공유하기"
+[check_out]
+  other = "이 글을 체크아웃"
+[say_something]
+  other = "한마디 해주세요"
+[comments]
+  other = "코멘트"
+[nothing_yet]
+  other = "아직 없습니다."
+[reply]
+  other = "답글하기"
+[error_msg]
+  other = "전송 중에 에러가 발생하였습니다. 필수 항목을 전부 입력하였는지 확인한 뒤에 다시 시도해 주십시오."
+[success_msg]
+  other = "코멘트 감사힙니다! 코멘트는 승인 된 후에 표시됩니다."
+
+# Form
+[form_name]
+  other = "귀하의 성함"
+[form_email]
+  other = "귀하의 이메일"
+[form_website]
+  other = "귀하의 웹 사이트"
+[form_subject]
+  other = "주제"
+[form_body]
+  other = "내용"
+[reset]
+  other = "초기화"
+[submitted]
+  other = "전송했습니다."
+[submit]
+  other = "전송"
+
+# 404
+[404_pagenotfound]
+  other = "페이지를 찾을 수 없습니다."
+[404_sorry]
+  other = "죄송합니다. 보시려는 페이지가 존재하지 않습니다."
+[404_back]
+  other = "뒤로가기"
