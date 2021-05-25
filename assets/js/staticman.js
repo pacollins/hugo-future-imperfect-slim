@@ -42,7 +42,7 @@
           if (status >= 200 && status < 400) {
             formSubmitted();
           } else {
-            formError(err);
+            formError();
           }
         }
       };
@@ -57,8 +57,7 @@
       form.classList.remove('loading');
     }
 
-    function formError(err) {
-      console.log(err);
+    function formError() {
       showAlert('failed');
       form.classList.remove('loading');
     }
