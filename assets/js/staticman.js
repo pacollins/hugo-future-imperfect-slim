@@ -1,10 +1,10 @@
 (function() {
   let form = document.querySelector('.new-comment');
   if (form) {
-    form.addEventListener('submit', function () {
+    form.querySelector('#comment-form-submit').addEventListener('click', function () {
       form.classList.add('loading');
-      form.querySelector('input[type="submit"]:enabled').classList.add('hidden'); // hide "submit"
-      form.querySelector('input[type="submit"]:disabled').classList.remove('hidden'); // show "submitted"
+      form.querySelector('#comment-form-submit').classList.add('hidden'); // hide "submit"
+      form.querySelector('#comment-form-submitted').classList.remove('hidden'); // show "submitted"
 
       // Construct form action URL form JS to avoid spam
       let api = '{{ .api }}';
@@ -72,8 +72,8 @@
         form.querySelector('.submit-success').classList.add('hidden'); // hide submit success message
         form.querySelector('.submit-failed').classList.remove('hidden');  // show submit failed message
       }
-      form.querySelector('input[type="submit"]:enabled').classList.remove('hidden'); // show "submit"
-      form.querySelector('input[type="submit"]:disabled').classList.add('hidden');  // hide "submitted"
+      form.querySelector('#comment-form-submit').classList.remove('hidden'); // show "submit"
+      form.querySelector('#comment-form-submitted').classList.add('hidden');  // hide "submitted"
     }
 
     // empty all text & hidden fields but not options
@@ -116,6 +116,6 @@
     form.querySelector('.reply-close-btn').addEventListener('click', resetReplyTarget);
 
     // clear form when reset button is clicked
-    form.querySelector('input[type="reset"]').addEventListener('click', clearForm);
+    form.querySelector('#comment-form-reset').addEventListener('click', clearForm);
   }
 })();
