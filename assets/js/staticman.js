@@ -31,7 +31,6 @@
       });
       let formData = JSON.stringify(xhrObj);  // some API don't accept FormData objects
 
-
       let xhr = new XMLHttpRequest();
       xhr.open('POST', url);
       xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
@@ -47,8 +46,6 @@
         }
       };
       xhr.send(formData);
-
-      return false;
     });
 
     function formSubmitted() {
