@@ -61,11 +61,9 @@
 
     function showAlert(msg) {
       if (msg == 'success') {
-        form.querySelector('.submit-notice').classList.add('submit-success')
         form.querySelector('.submit-success').classList.remove('hidden');  // show submit success message
         form.querySelector('.submit-failed').classList.add('hidden'); // hide submit failed message
       } else {
-        form.querySelector('.submit-notice').classList.add('submit-failed')
         form.querySelector('.submit-success').classList.add('hidden'); // hide submit success message
         form.querySelector('.submit-failed').classList.remove('hidden');  // show submit failed message
       }
@@ -76,8 +74,6 @@
     // empty all text & hidden fields but not options
     function clearForm() {
       resetReplyTarget();
-      form.querySelector('.submit-notice').classList.remove('submit-success'); // IE10 compatibility
-      form.querySelector('.submit-notice').classList.remove('submit-failed');
       form.querySelector('.submit-success').classList.add('hidden'); // hide submission status
       form.querySelector('.submit-failed').classList.add('hidden'); // hide submission status
     }
