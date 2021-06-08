@@ -76,7 +76,6 @@
     // empty all text & hidden fields but not options
     function clearForm() {
       resetReplyTarget();
-      console.log('test');
       form.querySelector('.submit-notice').classList.remove('submit-success'); // IE10 compatibility
       form.querySelector('.submit-notice').classList.remove('submit-failed');
       form.querySelector('.submit-success').classList.add('hidden'); // hide submission status
