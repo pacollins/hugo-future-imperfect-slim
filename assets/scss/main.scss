@@ -411,6 +411,13 @@ input[type="button"],
   }
 }
 
+button[type="button"],
+button[type="reset"] {
+  width: 100%;
+  margin: 0.25em 0;
+  padding: 0 1em;
+}
+
 label {
   color: $header-color;
   display: block;
