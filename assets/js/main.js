@@ -45,7 +45,7 @@ $('#back-to-top').click(function() {
 
 // Search
 var idx = null;         // Lunr index
-var supportedSearchLanguages = ['ar', 'da', 'de', 'es', 'fi', 'fr', 'hu', 'it', 'nl', 'no', 'pt', 'ro', 'ru', 'sv', 'tr', 'vi', 'zh']; // lunr.XX.js lang modules defined in assets.json
+var supportedSearchLanguages = ['ar', 'da', 'de', 'en', 'es', 'fi', 'fr', 'hu', 'it', 'nl', 'no', 'pt', 'ro', 'ru', 'sv', 'tr', 'vi', 'zh']; // lunr.XX.js lang modules defined in assets.json
 var resultDetails = []; // Will hold the data for the search results (titles and summaries)
 var $searchResults;     // The element on the page holding search results
 var $searchInput;       // The search box element
