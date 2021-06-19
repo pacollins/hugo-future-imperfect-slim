@@ -28,6 +28,7 @@ disableLanguages        = []
   imageStretch          = ""
   removeBlur            = false
   socialShare           = ["twitter", "facebook", "reddit", "linkedin", "pinterest", "email"]
+  shareFromPost         = true
   hideEmptyStats        = false
 
   [params.meta]

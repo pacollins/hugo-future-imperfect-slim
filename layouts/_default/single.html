@@ -2,13 +2,15 @@
   <article>
     <div class="post">
       {{ .Render "header" }}
-      <div id="socnet-share">
-        {{ partial "share-buttons" . }}
-      </div>
       <div class="content">
         {{ .Render "featured" }}
         {{ .Content }}
       </div>
+      {{ if .Site.Params.shareFromPost }}
+      <div id="socnet-share">
+        <h4>{{ i18n "share_post" }}:</h4>{{ partial "share-buttons" . }}
+      </div>
+      {{ end }}
       <footer>
         {{ .Render "stats" }}
       </footer>
