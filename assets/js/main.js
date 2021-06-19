@@ -45,6 +45,7 @@ $('#back-to-top').click(function() {
 
 // Search
 var idx = null;         // Lunr index
+var supportedSearchLanguages = ['ar', 'da', 'de', 'es', 'fi', 'fr', 'hu', 'it', 'nl', 'no', 'pt', 'ro', 'ru', 'sv', 'tr', 'vi', 'zh']; // lunr.XX.js lang modules defined in assets.json
 var resultDetails = []; // Will hold the data for the search results (titles and summaries)
 var $searchResults;     // The element on the page holding search results
 var $searchInput;       // The search box element
@@ -74,6 +75,9 @@ window.onload = function () {
       // Build the index so Lunr can search it.  The `ref` field will hold the URL
       // to the page/post.  title, excerpt, and body will be fields searched.
       idx = lunr(function () {
+        var configuredLanguages = "{{.Site.Languages}}".replace(/\]|\[/g, '').split(' ');
+        var languages = configuredLanguages.filter(lang => supportedSearchLanguages.includes(lang));
+        this.use(lunr.multiLanguage(...languages));
         this.ref('ref');
         this.field('title');
         this.field('data');

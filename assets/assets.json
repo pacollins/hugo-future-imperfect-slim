@@ -9,7 +9,28 @@
    "scripts" : [
       "js/jquery-3.5.1.js",
       "js/fancybox.js",
+      
       "js/lunr.js",
+      "js/lunr.stemmer.support.js",
+      "js/lunr.ar.js",
+      "js/lunr.da.js",
+      "js/lunr.de.js",
+      "js/lunr.es.js",
+      "js/lunr.fi.js",
+      "js/lunr.fr.js",
+      "js/lunr.hu.js",
+      "js/lunr.it.js",
+      "js/lunr.nl.js",
+      "js/lunr.no.js",
+      "js/lunr.pt.js",
+      "js/lunr.ro.js",
+      "js/lunr.ru.js",
+      "js/lunr.sv.js",
+      "js/lunr.tr.js",
+      "js/lunr.vi.js",
+      "js/lunr.zh.js",
+      "js/lunr.multi.js",
+      
       "js/util.js"
    ]
 }
