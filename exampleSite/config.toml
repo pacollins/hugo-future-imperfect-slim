@@ -13,6 +13,11 @@ disableLanguages        = []
 [markup.goldmark.renderer]
   unsafe                = true
 
+[module]
+  [module.hugoVersion]
+  extended              = true
+  min                   = "0.62.0"
+
 [outputs]
   home                  = ["html", "json", "rss"]
 
@@ -75,7 +80,7 @@ disableLanguages        = []
     repo                = ""
     issueTerm           = "pathname"
     issueNumber         = ""
-    label               = "" 
+    label               = ""
     theme               = "github-light"
 
   [params.staticman]
