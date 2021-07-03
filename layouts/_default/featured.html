@@ -4,7 +4,7 @@
   {{- $stretch := .Site.Params.imageStretch -}}
   {{- $blur := .Site.Params.removeBlur -}}
   {{- if .Params.featured -}}
-    {{- $src = (path.Join "img" (cond (eq .Params.featuredpath "date") (.Page.Date.Format "2006/01") (.Params.featuredpath)) .Params.featured) | absURL -}}
+    {{- $src = (path.Join "img" (cond (eq .Params.featuredpath "date") (.Page.Date.Format "2006/01") (.Params.featuredpath)) .Params.featured) | relURL -}}
     {{- $alt = .Params.featuredalt -}}
     {{- with .Params.featuredstretch -}}
       {{- $stretch = . -}}
@@ -14,7 +14,7 @@
     {{- end -}}
   {{- else if .Params.images -}}
     {{- range first 1 .Params.images -}}
-      {{- $src = .src | absURL -}}
+      {{- $src = .src | relURL -}}
       {{- $alt = .alt -}}
       {{- with .stretch -}}
         {{- $stretch = . -}}

@@ -405,7 +405,7 @@ input[type="button"],
   width: fit-content;
   &:hover {
     border: 1px solid $accent-color;
-    color: $accent-color !important;
+    color: $accent-color;
     &:active {
       background-color: $active-color;
     }
@@ -1344,7 +1344,7 @@ figcaption {
   border: 0;
   transition: color $hover, transform $hover;
   &:hover {
-    color: $accent-color !important;
+    color: $accent-color;
     transform: translateY(-10px);
   }
 }
