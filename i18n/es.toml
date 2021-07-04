@@ -18,7 +18,7 @@
 [contact]
   other = "Contacto"
 [contact_replies]
-  one = "Responde normalmente en 1 hora."
+  one = "Responde normalmente en {{ .Count }} hora."
   other = "Responde normalmente en {{ .Count }} horas."
 [blog]
   other = "Blog"
@@ -35,7 +35,7 @@
 
 # Post
 [reading_time]
-  one = "Lectura De 1 Minuto"
+  one = "Lectura De {{ .Count }} Minuto"
   other = "Lectura De {{ .Count }} Minutos"
 [read_more]
   other = "Lee Mas"

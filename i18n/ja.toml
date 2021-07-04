@@ -18,7 +18,6 @@
 [contact]
   other = "お問い合わせ"
 [contact_replies]
-  one = "通常、1 時間以内に返信します。"
   other = "通常、{{ .Count }} 時間以内に返信します。"
 [blog]
   other = "ブログ"
@@ -33,7 +32,6 @@
 
 # Post
 [reading_time]
-  one = "1 分で読めます"
   other = "{{ .Count }} 分で読めます"
 [read_more]
   other = "続きを読む"

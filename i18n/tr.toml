@@ -18,7 +18,7 @@
 [contact]
   other = "İletişim"
 [contact_replies]
-  one = "Genelde 1 saat içinde geri dönüş sağlar."
+  one = "Genelde {{ .Count }} saat içinde geri dönüş sağlar."
   other = "Genelde {{ .Count }} saat içinde geri dönüş sağlar."
 [blog]
   other = "Blog"
@@ -35,7 +35,7 @@
 
 # Post
 [reading_time]
-  one = "1 dakikalık okuma süresi"
+  one = "{{ .Count }} dakikalık okuma süresi"
   other = "{{ .Count }} dakikalık okuma süresi"
 [read_more]
   other = "Daha fazla oku"

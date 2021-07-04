@@ -18,7 +18,7 @@
 [contact]
   other = "Contact"
 [contact_replies]
-  one = "Antwoord gewoonlijk binnen 1 uur."
+  one = "Antwoord gewoonlijk binnen {{ .Count }} uur."
   other = "Antwoord gewoonlijk binnen {{ .Count }} uur."
 [blog]
   other = "Blog"
@@ -35,7 +35,7 @@
 
 # Post
 [reading_time]
-  one = "1 minuut leestijd"
+  one = "{{ .Count }} minuut leestijd"
   other = "{{ .Count }} minuten leestijd"
 [read_more]
   other = "Lees verder"
