@@ -1,12 +1,30 @@
 <meta charset="utf-8">
 <title>{{ .Title }}{{ if ne .Title .Site.Title }} - {{ .Site.Title }}{{ end }}</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- TODO: Do we want to add rel=author? -->
+<meta name="description" content="{{ .Description | default .Site.Params.meta.description }}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="twitter:card" content="summary_large_image">
+{{- with .Site.Params.Social.twitter }}<meta name="twitter:site" content="@{{ . }}">{{ end }}
+<!-- TODO: Add w/ better author support <meta name="twitter:creator" content="@.author" /> -->
+{{ with .Site.Title }}<meta property="og:site_name" content="{{ . }}">{{ end }}
+{{ with .Title }}<meta property="og:title" content="{{ . }}">{{ end }}
+<meta property="og:description" content="{{ .Description | default .Site.Params.meta.description }}">
+<meta property="og:type" content="{{ cond .IsHome "website" "article" }}">
+<meta property="og:url" content="{{ .RelPermalink | absURL }}">
+{{- with or (.Params.openGraph) (.Params.images) -}}
+  {{ range . }}
+    <meta property="og:image" content="{{ .src | absURL }}">
+    <meta property="og:image:alt" content="{{ .alt }}">
+  {{- end -}}
+{{ else }}
+  <meta property="og:image" content="{{ .Site.Params.intro.pic.src | absURL }}">
+{{ end }}
+
 {{ if .Site.Params.meta.favicon }}
+  <link rel="manifest" href="{{ "favicon/site.webmanifest" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
   <link rel="apple-touch-icon" sizes="180x180" href="{{ "favicon/apple-touch-icon.png" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon/favicon-32x32.png" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon/favicon-16x16.png" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
-  <link rel="manifest" href="{{ "favicon/site.webmanifest" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
   {{ if .Site.Params.meta.svg }}
     <link rel="mask-icon" href="{{ "favicon/safari-pinned-tab.svg" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}" color="{{ .Site.Params.meta.msColor }}">
     <link rel="shortcut icon" href="{{ "favicon/favicon.ico" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
@@ -14,4 +32,6 @@
   {{ end }}
   <meta name="msapplication-TileColor" content="{{ .Site.Params.meta.msColor }}">
   <meta name="theme-color" content="{{ .Site.Params.meta.iOSColor }}">
+{{ else }}
+  <link rel="shortcut icon" href="{{ "favicon.ico" | relURL}}{{ with .Site.Params.meta.faviconVersion }}?v={{ . }}{{ end }}">
 {{ end }}

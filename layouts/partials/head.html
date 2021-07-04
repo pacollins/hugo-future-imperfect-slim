@@ -1,24 +1,7 @@
 <head>
   {{ partial "meta" . }}
-  {{- hugo.Generator -}}
-
-  {{ with .Site.Title }}<meta property="og:site_name" content="{{ . }}">{{ end }}
-  {{ with .Title }}<meta property="og:title" content="{{ . }}">{{ end }}
-  <meta property="og:description" content="{{ .Description | default .Site.Params.meta.description }}">
-  <meta property="description" content="{{ .Description | default .Site.Params.meta.description }}">
-  <meta property="og:url" content="{{ .RelPermalink | absURL }}">
-  <meta property="og:type" content="{{ cond .IsHome "website" "article" }}">
-  {{ with or (.Params.openGraph) (.Params.images) }}
-    {{ range . }}
-      <meta property="og:image" content="{{ .src | absURL }}">
-      <meta property="og:image:alt" content="{{ .alt }}">
-    {{ end }}
-  {{ else }}
-    <meta property="og:image" content="{{ .Site.Params.intro.pic.src | absURL }}">
-  {{ end }}
-  {{ with .Site.Params.Social.twitter}}<meta property="twitter:site" content="{{ . }}">{{ end }}
-
-  {{- if .Site.Params.enableCDN -}}
+  {{ hugo.Generator }}
+  {{ if .Site.Params.enableCDN }}
     {{- if .Site.Params.highlightjs -}}<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.6.0/styles/{{ .Site.Params.highlightjsTheme | default "default" }}.min.css">{{- end -}}
     {{- range .Site.Params.cssFiles -}}
       {{- if eq . "default" -}}
