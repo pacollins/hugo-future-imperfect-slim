@@ -1,6 +1,6 @@
 # Format
 [date_format]
-  other = "02.01.2006"
+  other = "2 January 2006"
 
 # Sidebar
 [recent_posts]
@@ -18,7 +18,7 @@
 [contact]
   other = "Kontakt"
 [contact_replies]
-  one = "Antworten innerhalb von 1 Stunde."
+  one = "Antworten innerhalb von {{ .Count }} Stunde."
   other = "Antworten innerhalb von {{ .Count }} Stunden."
 [blog]
   other = "Blog"
