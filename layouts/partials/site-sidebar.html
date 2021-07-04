@@ -9,7 +9,7 @@
           {{ .Render "featured" }}
         <header>
           <h2><a href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
-          <time class="published" datetime="{{ .Date }}">{{ .Render "date" }}</time>
+          <time class="published" datetime="{{ .Date }}">{{ .Render "date/date" }}</time>
         </header>
       </article>
       {{ end }}

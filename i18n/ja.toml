@@ -1,6 +1,6 @@
 # Format
 [date_format]
-  other = "2006-01-02"
+  other = "2006/01/02"
 
 # Sidebar
 [recent_posts]
