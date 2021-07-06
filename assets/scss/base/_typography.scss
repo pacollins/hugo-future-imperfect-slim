@@ -1,0 +1,131 @@
+// -----------------------------------------------------------------------------
+// This file contains typography styles.
+// -----------------------------------------------------------------------------
+
+@use 'abstracts' as *;
+
+html {
+  font-size: 100%;
+}
+
+body,
+input,
+select,
+textarea,
+pre {
+  color: $black;
+  font-family: $body-font;
+  font-size: 1.125rem;
+  line-height: 1.5;
+}
+
+p {
+  letter-spacing: 0.05rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+a {
+  color: inherit;
+  border-bottom: $secondary-border;
+  text-decoration: none;
+  transition: border-bottom-color $hover, color $hover;
+  &:hover {
+    border-bottom-color: transparent;
+    color: $accent-color;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $header-color;
+  font-family: $header-font;
+  letter-spacing: 0.25rem;
+  text-transform: uppercase;
+  a {
+    border-bottom: 0;
+  }
+}
+
+h1, .h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+h2, .h2 {
+  font-size: 3rem;
+  font-weight: 200;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+h3, .h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 4rem;
+}
+
+h4, .h4,
+h5,
+h6 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  margin-top: 3rem;
+}
+
+blockquote {
+  border-left: 4px solid $accent-color;
+  font-style: italic;
+  margin-left: 2rem;
+  padding: 0.5rem 2rem;
+}
+
+cite {
+  display: block;
+  font-style: normal;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  &:before {
+    margin-right: 0.25rem;
+    content: "—";
+  }
+}
+
+code, kbd, samp {
+  border: $primary-border;
+  font-family: $code-font;
+  font-size: 0.9rem;
+  margin: 0.25rem;
+  padding: 0.25rem;
+
+}
+
+pre {
+  display: table;
+  table-layout: fixed;
+  line-height: 1.25;
+  width: 100%;
+  code {
+    display: block;
+    padding: 0 1rem;
+    overflow-x: auto;
+    &::-webkit-scrollbar {
+      height: 0.25em;
+    }
+    &::-webkit-scrollbar-track {
+      -webkit-box-shadow: $shadow-scroll;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $gray;
+      outline: 1px solid $dark-gray;
+    }
+  }
+}
