@@ -21,14 +21,25 @@
   }
 }());
 
+(function() {
+  var tableRows = document.querySelectorAll('tr');
+  for (let i = 0; i < tableRows.length; i++) {
+    tableRows[i].onclick = function() {
+      var c = 0;
+      while (c < tableRows.length) {
+        if (this == tableRows[c]) {
+          tableRows[c++].classList.toggle('active');
+        } else {
+          tableRows[c++].classList.remove('active');
+        }
+      }
+    };
+  }
+}());
+
 // Place any jQuery/helper plugins in here.
 
 (function($) {
-
-  $('table tr td:first-child').on('click touch', function() {
-    $(this).parent().toggleClass('active');
-    $(this).parent().siblings().removeClass('active');
-  })
 
   var tables = document.getElementsByTagName('table');
   for (i = 0; i < tables.length; i++) {
