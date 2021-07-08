@@ -21,21 +21,26 @@
   }
 }());
 
-(function() {
-  var tableRows = document.querySelectorAll('tr');
-  for (let i = 0; i < tableRows.length; i++) {
-    tableRows[i].onclick = function() {
-      var c = 0;
-      while (c < tableRows.length) {
-        if (this == tableRows[c]) {
-          tableRows[c++].classList.toggle('active');
-        } else {
-          tableRows[c++].classList.remove('active');
-        }
-      }
+var tables = document.querySelectorAll('table');
+
+function closeRows(openTable,openRow) {
+  var rows = openTable.querySelectorAll('tr');
+  for (let r = 0; r < rows.length; r++) {
+    if (r !== openRow) {
+      rows[r].classList.remove('active');
+    }
+  }
+}
+
+for (let t = 0; t < tables.length; t++) {
+  var rows = tables[t].querySelectorAll('tr');
+  for (let r = 0; r < rows.length; r++) {
+    rows[r].onclick = function() {
+      this.classList.toggle('active');
+      closeRows(tables[t],r);
     };
   }
-}());
+}
 
 // Place any jQuery/helper plugins in here.
 

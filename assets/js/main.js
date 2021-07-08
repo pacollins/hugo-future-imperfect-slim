@@ -1,32 +1,43 @@
-// Flyout Menu Functions
-var toggles = {
-  ".search-toggle": "#search-input",
-  ".lang-toggle": "#lang-menu",
-  ".share-toggle": "#share-menu",
-  ".nav-toggle": "#site-nav-menu"
-};
+const menus = [
+  { button: "search-button", menu: "search" },
+  { button: "lang-button", menu: "lang-menu" },
+  { button: "share-button", menu: "share-menu"} ,
+  { button: "nav-button", menu: "site-nav-menu"}
+];
 
-$.each(toggles, function(toggle, menu) {
-  $(toggle).on("click", function() {
-    if ($(menu).hasClass("active")) {
-      $(".menu").removeClass("active");
-      $("#wrapper").removeClass("overlay");
-    } else {
-      $("#wrapper").addClass("overlay");
-      $(".menu").not($(menu + ".menu")).removeClass("active");
-      $(menu).addClass("active");
-      if (menu == "#search-input") {$("#search-results").toggleClass("active");}
+function closeMenus(openMenu) {
+  for (const {button, menu} of menus) {
+    if (menu != openMenu) {
+      document.getElementById(menu).classList.remove('active');
     }
-  });
-});
-
-// Click anywhere outside a flyout to close
-$(document).on("click", function(e) {
-  if ($(e.target).is(".lang-toggle, .lang-toggle span, #lang-menu, .share-toggle, .share-toggle i, #share-menu, .search-toggle, .search-toggle i, #search-input, #search-results .mini-post, .nav-toggle, .nav-toggle i, #site-nav") === false) {
-    $(".menu").removeClass("active");
-    $("#wrapper").removeClass('overlay');
   }
-});
+}
+
+for (const {button, menu} of menus) {
+  var buttons = document.getElementsByClassName(button);
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].onclick = function() {
+      var menuClasses = document.getElementById(menu).classList;
+      var wrapperClasses = document.getElementById("wrapper").classList;
+      if (menuClasses.contains('active')) {
+        menuClasses.remove('active');
+        wrapperClasses.remove('overlay');
+      } else {
+        menuClasses.add('active');
+        wrapperClasses.add('overlay');
+      }
+      closeMenus(menu);
+    };
+  }
+}
+
+document.onclick = function(e){
+  var path = e.composedPath().includes(document.getElementById('site-header'));
+  if (!path) {
+    document.getElementById("wrapper").classList.remove('overlay');
+    closeMenus();
+  }
+};
 
 // Check to see if the window is top if not then display button
 $(window).scroll(function() {
