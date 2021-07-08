@@ -8,21 +8,29 @@ html {
   font-size: 100%;
 }
 
-body,
-input,
-select,
-textarea,
-pre {
+body {
   color: $black;
   font-family: $body-font;
   font-size: 1.125rem;
   line-height: 1.5;
+  ::-webkit-scrollbar {
+    height: 0.25em;
+    width: 0.25em;
+  }
+  ::-webkit-scrollbar-track {
+    -webkit-box-shadow: $shadow-scroll;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: $gray;
+    outline: 1px solid $dark-gray;
+  }
 }
 
 p {
   letter-spacing: 0.05rem;
   margin-bottom: 1rem;
   margin-top: 1rem;
+  text-indent: 2rem;
 }
 
 a {
@@ -117,15 +125,5 @@ pre {
     display: block;
     padding: 0 1rem;
     overflow-x: auto;
-    &::-webkit-scrollbar {
-      height: 0.25em;
-    }
-    &::-webkit-scrollbar-track {
-      -webkit-box-shadow: $shadow-scroll;
-    }
-    &::-webkit-scrollbar-thumb {
-      background-color: $gray;
-      outline: 1px solid $dark-gray;
-    }
   }
 }

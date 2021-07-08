@@ -5,28 +5,28 @@
 {{ range .Site.Params.socialShare }}
   {{ if eq . "twitter" }}
     <!-- TODO: Add Hashtags &amp;hashtags=one,two,three -->
-    <a href="//twitter.com/share?text={{ $title }}&amp;url={{ $permalink }}&amp;hashtags=words,twice" target="_blank" rel="noopener" class="nav share-btn twitter">
-        <p>Twitter</p>
+    <a href="//twitter.com/share?text={{ $title }}&amp;url={{ $permalink }}&amp;hashtags=words,twice" target="_blank" rel="noopener" class="share-btn twitter">
+        <span class="sr-only">Twitter</span>
       </a>
   {{ else if eq . "facebook" }}
-      <a href="//www.facebook.com/sharer/sharer.php?u={{ $permalink }}" target="_blank" rel="noopener" class="nav share-btn facebook">
-        <p>Facebook</p>
+      <a href="//www.facebook.com/sharer/sharer.php?u={{ $permalink }}" target="_blank" rel="noopener" class="share-btn facebook">
+        <span class="sr-only">Facebook</span>
         </a>
   {{ else if eq . "reddit" }}
-    <a href="//www.reddit.com/submit?url={{ $permalink }}&amp;title={{ $title }}" target="_blank" rel="noopener" class="nav share-btn reddit">
-          <p>Reddit</p>
+    <a href="//www.reddit.com/submit?url={{ $permalink }}&amp;title={{ $title }}" target="_blank" rel="noopener" class="share-btn reddit">
+          <span class="sr-only">Reddit</span>
         </a>
   {{ else if eq . "linkedin" }}
-        <a href="//www.linkedin.com/shareArticle?url={{ $permalink }}&amp;title={{ $title }}" target="_blank" rel="noopener" class="nav share-btn linkedin">
-            <p>LinkedIn</p>
+        <a href="//www.linkedin.com/shareArticle?url={{ $permalink }}&amp;title={{ $title }}" target="_blank" rel="noopener" class="share-btn linkedin">
+            <span class="sr-only">LinkedIn</span>
           </a>
   {{ else if eq . "pinterest" }}
-        <a href="//www.pinterest.com/pin/create/button/?url={{ $permalink }}&amp;description={{ $title }}" target="_blank" rel="noopener" class="nav share-btn pinterest">
-          <p>Pinterest</p>
+        <a href="//www.pinterest.com/pin/create/button/?url={{ $permalink }}&amp;description={{ $title }}" target="_blank" rel="noopener" class="share-btn pinterest">
+          <span class="sr-only">Pinterest</span>
         </a>
   {{ else if eq . "email" }}
-        <a href="mailto:?subject={{ i18n "check_out" }} {{ $author }}&amp;body={{ $permalink }}" target="_blank" class="nav share-btn email" data-proofer-ignore>
-          <p>Email</p>
+        <a href="mailto:?subject={{ i18n "check_out" }} {{ $author }}&amp;body={{ $permalink }}" target="_blank" class="share-btn email" data-proofer-ignore>
+          <span class="sr-only">Email</span>
         </a>
   {{ end }}
 {{ end }}
