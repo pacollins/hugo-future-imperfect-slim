@@ -1,0 +1,19 @@
+@use 'abstracts' as *;
+
+#back-to-top {
+  bottom: 15px;
+  color: $gray;
+  cursor: pointer;
+  opacity: 0;
+  position: fixed;
+  right: 15px;
+  border: 0;
+  transition: color $hover, transform $hover, opacity $hover;
+  &:hover {
+    color: $accent-color !important;
+    transform: translateY(-10px);
+  }
+  &.active {
+    opacity: 1;
+  }
+}

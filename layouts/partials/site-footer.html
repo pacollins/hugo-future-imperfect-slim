@@ -1,14 +1,54 @@
-<footer id="site-footer">
-  {{ if or (.Site.Params.footer.rssFooter) (.Site.Params.footer.socialFooter) }}
-      <ul class="socnet-icons">
-        {{ if .Site.Params.footer.rssFooter }}{{ partial "rss-icon" . }}{{ end }}
-        {{ if .Site.Params.footer.socialFooter }}{{ partial "socnet-icon" . }}{{ end }}
-      </ul>
+<footer id="site-sidebar">
+  {{ if gt .Site.Params.sidebar.postAmount 0 }}
+    <section id="recent-posts" class="sidebar">
+      <h1>{{ i18n "recent_posts" }}</h1> <!-- TODO: Add Link -->
+      {{ range first (.Site.Params.sidebar.postAmount | default 5) (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+      <article class="content post mini">
+          {{ .Render "featured" }}
+        <header class="content-summary mini">
+          <h1 class="content-title mini"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+          <time class="content-date mini" datetime="{{ .Date }}">{{ .Render "date" }}</time>
+        </header>
+      </article>
+      {{ end }}
+    </section>
   {{ end }}
-  <p class="copyright">
-    {{ (.Site.Copyright | safeHTML) | default (print "\u00A9 " .Site.LastChange.Year " " (.Site.Params.author | default .Site.Title)) }}
-      <br>
-    {{ i18n "attribution" . | safeHTML }}
-  </p>
+
+  {{ if .Site.Params.sidebar.categories }}
+    {{ if ne ($.Scratch.Get "showCategories") false }}
+      <section id="categories" class="sidebar">
+        <h1><a href="{{ "categories" | relLangURL }}">{{ i18n "categories" (len .Site.Taxonomies.categories) }}</a></h1>
+        <ul class="categories">
+          {{ $.Scratch.Set "categories" (cond .Site.Params.sidebar.categoriesByCount .Site.Taxonomies.categories.ByCount .Site.Taxonomies.categories.Alphabetical) }}
+          {{ range $key, $value := $.Scratch.Get "categories" }}
+            <li>
+              <a href="{{ printf "%s/%s" "categories" $value.Name | urlize | relLangURL }}/">{{ $value.Name }}<span class="count">{{ $value.Count }}</span></a>
+            </li>
+          {{ end }}
+        </ul>
+      </section>
+    {{ end }}
+  {{ end }}
+
+  {{ if .Site.Params.sidebar.about }}
+    <section id="about" class="sidebar">
+      <h1>{{ i18n "about" }}</h1> <!-- TODO: Add Link -->
+      <p>{{ .Site.Params.sidebar.about | safeHTML }}</p>
+    </section>
+  {{ end }}
+
+  <section id="copyright" class="sidebar">
+    {{ if or (.Site.Params.footer.rssFooter) (.Site.Params.footer.socialFooter) }}
+      <ul class="social-icons">
+        {{ if .Site.Params.footer.rssFooter }}{{ partial "rss-icon" . }}{{ end }}
+        {{ if .Site.Params.footer.socialFooter }}{{ partial "social-icons" . }}{{ end }}
+      </ul>
+    {{ end }}
+    <p class="copyright">
+      {{ (.Site.Copyright | safeHTML) | default (print "\u00A9 " .Site.LastChange.Year " " (.Site.Params.author | default .Site.Title)) }}
+        <br>
+      {{ i18n "attribution" . | safeHTML }}
+    </p>
+  </section>
 </footer>
-<a id="back-to-top" href="#" class="fas fa-arrow-up fa-2x"></a>
+<i id="back-to-top" class="fas fa-arrow-up fa-2x"></i>
