@@ -47,12 +47,12 @@
   {{ $file := $.Scratch.Get "file" }}
   {{ $caption  := $.Scratch.Get "caption" }}
   {{ $gallery := $.Scratch.Get "gallery" }}
-  <figure>
+  <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
     <div class="frame">
-      <a class="art" data-fancybox="{{ $gallery }}" href="{{ path.Join $path $file | relURL }}" data-caption="{{ $caption }}">
-        <img src="{{ path.Join $path $file | absURL }}" alt="{{ $caption }}">
+      <a href="{{ path.Join $path $file | relURL }}" class="art" itemprop="contentUrl">
+        <img src="{{ path.Join $path $file | absURL }}" itemprop="thumbnail" alt="{{ $caption }}">
       </a>
     </div>
-    <figcaption>{{ $caption }}</figcaption>
+    <figcaption itemprop="caption description">{{ $caption }}</figcaption>
   </figure>
 {{ end }}

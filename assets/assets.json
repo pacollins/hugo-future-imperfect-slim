@@ -19,12 +19,12 @@
 	],
 	"scripts": [
 		{
-			"vendor": "js/jquery-3.5.1.js",
-			"cdn": "https://code.jquery.com/jquery-3.5.1.min.js"
+			"vendor": "js/photoswipe.js",
+			"cdn": "https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe.min.js"
 		},
 		{
-			"vendor": "js/fancybox.js",
-			"cdn": "https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.js"
+			"vendor": "js/photoswipe-ui-default.js",
+			"cdn": "https://cdnjs.cloudflare.com/ajax/libs/photoswipe/4.1.3/photoswipe-ui-default.min.js"
 		},
 		{
 			"vendor": "js/lunr.js",

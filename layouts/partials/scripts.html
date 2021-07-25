@@ -20,7 +20,7 @@
   {{- end -}}
 {{- end -}}
 
-<script>hljs.highlightAll();</script>
+{{ if .Site.Params.highlightjs }}<script>hljs.highlightAll();</script>{{ end }}
 
 {{- $scripts = $scripts | append (resources.Get "js/util.js") | append (resources.Get "js/main.js" | resources.ExecuteAsTemplate "js/main.js" $.Site) -}}
 

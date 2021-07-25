@@ -1,0 +1,9 @@
+.pswp {
+  z-index: 10000;
+  button {
+    min-width: unset;
+    &:hover {
+      border: unset;
+    }
+  }
+}
