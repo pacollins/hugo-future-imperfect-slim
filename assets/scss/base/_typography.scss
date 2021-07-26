@@ -95,17 +95,21 @@ blockquote {
   font-style: italic;
   margin-left: 2rem;
   padding: 0.5rem 2rem;
+  cite {
+    color: $black;
+    display: block;
+    font-style: normal;
+    font-weight: bold;
+    margin: 0.5rem 0 0 0;
+    &:before {
+      margin-right: 0.25rem;
+      content: "—";
+    }
+  }
 }
 
 cite {
-  display: block;
-  font-style: normal;
-  font-weight: bold;
-  margin-top: 0.5rem;
-  &:before {
-    margin-right: 0.25rem;
-    content: "—";
-  }
+  color: $gray;
 }
 
 code, kbd, samp {

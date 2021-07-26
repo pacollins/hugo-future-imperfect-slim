@@ -107,19 +107,6 @@ menu {
       box-shadow: unset;
     }
   }
-  .nav-buttons button {
-    display: block;
-    @include break(mobile-l) {
-      &:nth-last-child(-n+1) {
-        display: none;
-      }
-    }
-    @include break(tablet-s) {
-      &:nth-last-child(-n+3) {
-        display: none;
-      }
-    }
-  }
 }
 
 .nav-link {
@@ -146,10 +133,11 @@ menu {
 }
 
 .toggle {
-  display: none;
   height: 4rem;
   padding: 0;
   text-transform: uppercase;
+  transform: scaleX(1);
+  transition: $hover;
   width: 4rem;
   i {
     font-size: 1.5rem;
@@ -158,18 +146,19 @@ menu {
     display: block;
     color: $accent-color;
   }
-  &:not(.inactive) {
-    &:nth-last-child(-n+1) {
-      display: block;
-    }
-    @include break(mobile-l) {
-      &:nth-last-child(-n+2) {
-        display: block;
+  &.inactive {
+    transform: scaleX(0);
+    width: 0;
+  }
+  &:not(.active) {
+    @include break(mobile-l, max) {
+      &:nth-last-child(n+2) {
+        display: none;
       }
     }
-    @include break(tablet-s) {
-      &:nth-last-child(-n+4) {
-        display: block;
+    @include break(tablet-s, max) {
+      &:nth-last-child(n+3) {
+        display: none;
       }
     }
   }

@@ -1,5 +1,5 @@
 var initPhotoSwipeFromDOM = function(gallerySelector) {
-  var images = document.querySelectorAll('.content-body .art');
+  var images = document.querySelectorAll('.content-body .gallery a');
   for (i = 0; i < images.length; i++) {
     const img = new Image();
     img.src = images[i].getAttribute('href');
@@ -8,7 +8,7 @@ var initPhotoSwipeFromDOM = function(gallerySelector) {
   // parse slide data (url, title, size ...) from DOM elements
   // (children of gallerySelector)
   var parseThumbnailElements = function(el) {
-    var thumbElements = el.querySelectorAll('.frame'),
+    var thumbElements = el.querySelectorAll('.gallery'),
         numNodes = thumbElements.length,
         items = [],
         figureEl,

@@ -1,8 +1,8 @@
 <!--
     Inside Double Brackets:
-    fancybox path="path" file="file" caption="caption" gallery="gallery"
-    fancybox "path" "file" "caption" "gallery"
-    # of Params: 2-4
+    gallery path="path" file="file" caption="caption" type="type" source="source"
+    gallery "path" "file" "caption" "type" "source"
+    # of Params: 2-5
     Positional or Named
     position 0, name: path
         Can pass in the following values:
@@ -13,28 +13,30 @@
         Name of the file including the file extension
     position 2, name: caption
         Text for the caption of the image
-    position 3, name: gallery
-        Name of the gallery the image should be included in
+    position 3, name: type
+        Type of frame to use; currently accepts "art"
+    position 4, name: source
+        Copyright source for figure
 -->
 {{ $numOfParams := len .Params}}
-{{ if and (ge $numOfParams 2) (le $numOfParams 4) }}
+{{ if and (ge $numOfParams 2) (le $numOfParams 5) }}
   {{ if .IsNamedParams }}
     {{ $.Scratch.Set "path" (.Get "path") }}
     {{ $.Scratch.Set "file" (.Get "file") }}
     {{ $.Scratch.Set "caption"  (.Get "caption") }}
-    {{ $.Scratch.Set "gallery" (.Get "gallery") }}
+    {{ $.Scratch.Set "type" (.Get "type") }}
+    {{ $.Scratch.Set "source"  (.Get "source") }}
   {{ else }}
     {{ $.Scratch.Set "path" (.Get 0) }}
     {{ $.Scratch.Set "file" (.Get 1) }}
-    {{ if ge $numOfParams 3 }}
-      {{ $.Scratch.Set "caption" (.Get 2) }}
-    {{ else }}
-      {{ $.Scratch.Set "caption" "" }}
+    {{ with (.Get 2) }}
+      {{ $.Scratch.Set "caption" . }}
     {{ end }}
-    {{ if ge $numOfParams 4 }}
-      {{ $.Scratch.Set "gallery" (.Get 3) }}
-    {{ else }}
-      {{ $.Scratch.Set "gallery" ""}}
+    {{ with (.Get 3) }}
+      {{ $.Scratch.Set "type" . }}
+    {{ end }}
+    {{ with (.Get 4) }}
+      {{ $.Scratch.Set "source" . }}
     {{ end }}
   {{ end }}
   {{ $.Scratch.Set "structType" "shortcode" }}
@@ -46,13 +48,14 @@
   {{ $path := $.Scratch.Get "path" }}
   {{ $file := $.Scratch.Get "file" }}
   {{ $caption  := $.Scratch.Get "caption" }}
-  {{ $gallery := $.Scratch.Get "gallery" }}
+  {{ $type := $.Scratch.Get "type" }}
+  {{ $source := $.Scratch.Get "source" }}
   <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-    <div class="gallery">
-      <a href="{{ path.Join $path $file | relURL }}" class="art" itemprop="contentUrl">
-        <img src="{{ path.Join $path $file | absURL }}" itemprop="thumbnail" alt="{{ $caption }}">
-      </a>
-    </div>
-    <figcaption itemprop="caption description">{{ $caption }}</figcaption>
+      <div class="gallery{{ with $type }} {{ . }}{{ end }}">
+        <a href="{{ path.Join $path $file | relURL }}" itemprop="contentUrl">
+          <img src="{{ path.Join $path $file | absURL }}" itemprop="thumbnail" alt="{{ $caption }}">
+        </a>
+      </div>
+    {{ if or $caption $source }}<figcaption itemprop="caption description">{{ with $caption }}{{ .}}{{ end }}{{ with $source }} <cite class="source">{{ . }}</cite>{{ end }}</figcaption>{{ end }}
   </figure>
 {{ end }}
