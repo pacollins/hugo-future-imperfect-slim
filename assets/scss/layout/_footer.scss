@@ -1,8 +1,55 @@
-#site-footer {
-  grid-area: footer;
+// -----------------------------------------------------------------------------
+// This file contains footer layout styles.
+// -----------------------------------------------------------------------------
+
+@use 'abstracts' as *;
+
+section {
+  align-items: center;
+  @include display-flex;
+  flex-direction: column;
+  padding: 1rem;
+  text-align: center;
+  p {
+    font-size: 0.9rem;
+    opacity: 0.6;
+    text-indent: 0;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+  }
+}
+
+footer section {
   border-top: $primary-border;
-  margin: 3em 2em;
+  margin-top: 3em;
   padding-top: 3em;
+}
+
+#recent-posts {
+  align-items: unset;
+  @include display-flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  h1 {
+    flex-basis: 100%;
+  }
+  article {
+    flex-basis: 100%;
+    @include break(tablet-s) {
+      flex-basis: 49%;
+    }
+    @include break(laptop) {
+      flex-basis: 100%;
+    }
+  }
+}
+
+.copyright {
+  color: $gray;
+  font-size: 0.8rem;
+  text-transform: uppercase;
 }
 
 #back-to-top {
