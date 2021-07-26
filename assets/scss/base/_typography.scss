@@ -14,15 +14,13 @@ body {
   font-size: 1.125rem;
   line-height: 1.5;
   ::-webkit-scrollbar {
-    height: 0.25em;
-    width: 0.25em;
-  }
-  ::-webkit-scrollbar-track {
-    -webkit-box-shadow: $shadow-scroll;
+    height: 14px;
+    width: 14px;
   }
   ::-webkit-scrollbar-thumb {
+    background-clip: padding-box;
     background-color: $gray;
-    outline: 1px solid $dark-gray;
+    border: 4px solid rgba(0, 0, 0, 0);
   }
 }
 
@@ -41,6 +39,9 @@ a {
   &:hover {
     border-bottom-color: transparent;
     color: $accent-color;
+  }
+  &.image {
+    border-bottom: 0;
   }
 }
 
@@ -113,7 +114,7 @@ code, kbd, samp {
   font-size: 0.9rem;
   margin: 0.25rem;
   padding: 0.25rem;
-
+  overflow-x: auto;
 }
 
 pre {
@@ -121,9 +122,11 @@ pre {
   table-layout: fixed;
   line-height: 1.25;
   width: 100%;
+  white-space: pre-wrap;
   code {
+    border-left: 4px solid $accent-color;
     display: block;
-    padding: 0 1rem;
-    overflow-x: auto;
+    padding: 1rem;
+    white-space: pre;
   }
 }

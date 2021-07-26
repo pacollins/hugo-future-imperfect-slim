@@ -142,12 +142,12 @@ $brands: (
       background-color: darken($color, 10%);
     }
     &::before {
-    @if $font-family {
-      font-family: $font-family;
-    } @else {
-      font-family: $fa-brands-font;
-    }
-    content: $icon;
+      @if $font-family {
+        font-family: $font-family;
+      } @else {
+        font-family: $fa-brands-font;
+      }
+      content: $icon;
     }
   }
 }
@@ -190,4 +190,25 @@ $masks: (
   .#{$name} {
     @include prefix(clip-path, $clip, webkit);
   }
+}
+
+/* ==========================================================================
+Helpers
+========================================================================== */
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.stretchV {
+  height: 100%;
+}
+
+.stretchH {
+  width: 100%;
+}
+
+.cover {
+  object-fit: cover;
+  width: 100%;
 }
