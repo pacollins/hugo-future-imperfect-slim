@@ -2,9 +2,12 @@
   {{- if $index -}}, {{- end -}}
     {
     "title": "{{ .Title | plainify }}",
-    "date": "{{ .Render "date" }}",
+    "ref": "{{ .RelPermalink | plainify }}",
+    "timestamp": "{{ .Date }}",
+    "date": "{{ default (i18n "date_format") | .Date.Format }}",
+    {{ with .Params.author }}"author": "{{ . | plainify }}",{{ end }}
+    {{ if .Site.Params.ReadingTime }}"readtime": "{{ i18n "reading_time" .ReadingTime | plainify }}",{{ end }}
     "description": "{{ .Params.description | plainify }}",
-    "body": {{ .Content | plainify | jsonify }},
-    "ref": "{{ .RelPermalink | plainify }}"
+    "body": {{ .Content | plainify | jsonify }}
   }
 {{- end -}}]
