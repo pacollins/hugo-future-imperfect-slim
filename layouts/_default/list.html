@@ -5,10 +5,10 @@
   {{ end }}
   <div class="pagination">
     {{ if .Paginator.HasPrev }}
-      <a href="{{ .Paginator.Prev.URL }}" class="button left"><span>{{ i18n "previous_page" }}</span></a>
+      <a href="{{ .Paginator.Prev.URL }}" class="button left">{{ i18n "previous_page" }}</a>
     {{ end }}
     {{ if .Paginator.HasNext }}
-      <a href="{{ .Paginator.Next.URL }}" class="button right"><span>{{ i18n "next_page" }}</span></a>
+      <a href="{{ .Paginator.Next.URL }}" class="button right">{{ i18n "next_page" }}</a>
     {{ end }}
   </div>
 {{ end }}
