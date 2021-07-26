@@ -1,0 +1,58 @@
+@use 'abstracts' as *;
+
+.comment {
+  margin-bottom: 1rem;
+  p {
+    font-size: unset;
+    opacity: unset;
+  }
+}
+
+.comment-reply {
+  margin-left: $avatar-size/2;
+}
+
+.comment-header {
+  align-items: center;
+  font-family: $header-font;
+  background: $headerbg-color;
+  @include display-flex;
+  @include break(mobile-m, max) {
+    border-radius: 50px 0 0 50px;
+  }
+}
+
+.comment-meta {
+  align-items: center;
+  @include display-flex;
+  flex-grow: 1;
+  @include break(mobile-m, max) {
+    flex-direction: column;
+  }
+}
+
+.comment-avatar {
+  height: $avatar-size;
+  @include break(mobile-m, max) {
+    border-radius: 100%;
+    margin: 1rem;
+  }
+}
+
+.comment-author {
+  border-right: $primary-border;
+  font-size: 1rem;
+  margin: 0 1rem;
+  padding-right: 1rem;
+}
+
+.comment-date {
+  font-weight: 200;
+  @include break(mobile-m) {
+    border: 0;
+  }
+}
+
+.comment-reply-btn {
+  margin: 0 1rem;
+}

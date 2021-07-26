@@ -1,72 +1,70 @@
 {{ if .Site.DisqusShortname }}
-  <div class='post'>
+  <section class="content comments">
     {{ template "_internal/disqus.html" . }}
-  </div>
+  </section>
 
 {{ else if .Site.Params.utterances.enabled }}
-  <script src='https://utteranc.es/client.js'
-          repo='{{ .Site.Params.utterances.repo }}'
-          issue-term='{{ .Site.Params.utterances.issueTerm }}'
-          issue-number='{{ .Site.Params.utterances.issueNumber }}'
-          label='{{ .Site.Params.utterances.label }}'
-          theme='{{ .Site.Params.utterances.theme }}'
-          crossorigin='anonymous'
+  <script src="https://utteranc.es/client.js"
+          repo="{{ .Site.Params.utterances.repo }}"
+          issue-term="{{ .Site.Params.utterances.issueTerm }}"
+          issue-number="{{ .Site.Params.utterances.issueNumber }}"
+          label="{{ .Site.Params.utterances.label }}"
+          theme="{{ .Site.Params.utterances.theme }}"
+          crossorigin="anonymous"
           async>
   </script>
 
 {{/* Backwards compatibility for deprecated parameter ".Site.Params.staticman.staticman" */}}
 {{ else if or .Site.Params.staticman.enabled .Site.Params.staticman.staticman }}
-  <div class='post'>
+  <section class="content comments">
     {{/* $entryId stores the transformed current path for sorting Staticman data file */}}
     {{- $entryId := .File.UniqueID -}}
+    <h2 id="say-something">{{ i18n "say_something" }}</h2>
+    <form id="comment-form" class="comment-form" method="POST">
+      {{/* Display reply target */}}
+      <h3 class="reply-notice" hidden>
+        <p class="reply-name h4"></p>
+        <button class="close-btn "><i class="fas fa-times"></i></button>
+      </h3>
+
+      {{/* Hidden fields */}}
+      <input type="hidden" name="options[entryId]" value="{{ $entryId }}">
+      <input type="hidden" name="fields[replyThread]">
+      <input type="hidden" name="fields[replyID]" value="">
+      <input type="hidden" name="fields[replyName]" value="">
+
+      {{/* User input fields */}}
+      <input required name="fields[name]" type="text" placeholder="{{ i18n "form_name" }}">
+      <input name="fields[website]" type="text" placeholder="{{ i18n "form_website" }}">
+      <input required name="fields[email]" type="email" placeholder="{{ i18n "form_email" }}">
+      <textarea required name="fields[body]" placeholder="{{ i18n "form_body" }}" rows="10"></textarea>
+
+      {{/* reCAPTHCA v2 */}}
+      {{ if and .Site.Params.staticman.recaptcha.siteKey .Site.Params.staticman.recaptcha.encryptedKey }}
+      {{ with .Site.Params.staticman.recaptcha }}
+        <input hidden name="options[reCaptcha][siteKey]" value="{{ .sitekey }}">
+        <input hidden name="options[reCaptcha][secret]" value="{{ .encryptedkey }}">
+        <div class="g-recaptcha" data-sitekey="{{ .sitekey }}"></div>
+      {{ end }}
+      {{ end }}
+
+      {{/* Start comment form alert messaging */}}
+      <div class="submit-notice">
+        <p class="success" hidden>{{ i18n "success_msg" }}</p>
+        <p class="failure" hidden>{{ i18n "error_msg" }}</p>
+      </div>
+
+      {{/* Form buttons */}}
+      <div class="form-buttons">
+        <input type="submit" value="{{ i18n "submit" }}" class="button">
+        <input type="submit" value="{{ i18n "submitted" }}" class="hidden button" disabled> <!-- TODO: What? -->
+        <input type="reset" value="{{ i18n "reset" }}" class="button">
+      </div>
+    </form>
+
     {{/* Additional div wrapper for proper consistent margin */}}
-    <div>
-      <h2 id='say-something'>{{ i18n "say_something" }}</h2>
-        <form id='comment-form' class='new-comment' method='POST'>
-          {{/* Display reply target */}}
-          <h3 class='reply-notice hidden'>
-            <span class='reply-name'></span>
-            <a class='reply-close-btn button'><i class='fas fa-times'></i></a>
-          </h3>
-
-          {{/* Hidden fields */}}
-          <input type='hidden' name='options[entryId]' value='{{ $entryId }}'>
-          <input type='hidden' name='fields[replyThread]' value=''>
-          <input type='hidden' name='fields[replyID]' value=''>
-          <input type='hidden' name='fields[replyName]' value=''>
-
-          {{/* User input fields */}}
-          <input required name='fields[name]' type='text' placeholder='{{ i18n "form_name" }}'>
-          <input name='fields[website]' type='text' placeholder='{{ i18n "form_website" }}'>
-          <input required name='fields[email]' type='email' placeholder='{{ i18n "form_email" }}'>
-          <textarea required name='fields[body]' placeholder='{{ i18n "form_body" }}' rows='10'></textarea>
-
-          {{/* reCAPTHCA v2 */}}
-          {{ if and .Site.Params.staticman.recaptcha.siteKey .Site.Params.staticman.recaptcha.encryptedKey }}
-          {{ with .Site.Params.staticman.recaptcha }}
-            <input hidden name='options[reCaptcha][siteKey]' value='{{ .sitekey }}'>
-            <input hidden name='options[reCaptcha][secret]' value='{{ .encryptedkey }}'>
-            <div class='g-recaptcha' data-sitekey='{{ .sitekey }}'></div>
-          {{ end }}
-          {{ end }}
-
-          {{/* Start comment form alert messaging */}}
-          <div class='submit-notice'>
-            <strong class='submit-notice-text submit-success hidden'>{{ i18n "success_msg" }}</strong>
-            <strong class='submit-notice-text submit-failed hidden'>{{ i18n "error_msg" }}</strong>
-          </div>
-
-          {{/* Form buttons */}}
-          <input type='submit' value='{{ i18n "submit" }}' class='button'>
-          <input type='submit' value='{{ i18n "submitted" }}' class='hidden button' disabled>
-          <input type='reset' value='{{ i18n "reset" }}' class='button'>
-        </form>
-    </div>
-
-    {{/* Additional div wrapper for proper consistent margin */}}
-    <div class='comments-container'>
-      <h2>{{ i18n "comments" }}</h2>
-
+    <h2 id="comments">{{ i18n "comments" }}</h2>
+      <div class="comments-container">
       {{- if .Site.Data.comments -}}
         {{/* $comments collects comment files for the current blog entry */}}
         {{- $comments := index $.Site.Data.comments $entryId -}}
@@ -78,28 +76,26 @@
               {{- $threadID := ._id }}
               {{- range $comments -}}
                 {{ if or (in ._id $threadID) (in .replyThread $threadID) }}
-                  <article id='{{ ._id }}' class='comment{{ with .replyThread }} comment-reply{{ end }}' data-reply-thread='{{ $threadID }}'>
-                    <header>
-                      <img class='comment-avatar circle' src='https://www.gravatar.com/avatar/{{ .email }}?s=100' alt="{{ .name }}'s Gravatar">
-                      <div>
-                        <div class='comment-author-container'>
-                          <h3 class='comment-author'>
-                            {{- if .website -}}
-                              <a rel='external nofollow' href='{{ .website }}'>{{ .name }}</a>
-                            {{- else -}}
-                              {{- .name -}}
-                            {{- end -}}
-                          </h3>
-                          <a class='comment-date' href='#{{ ._id }}' title='Permalink to this comment'>
-                            <time datetime='{{ .date }}'>{{ dateFormat "02 Jan 06 15:04" .date }}</time>
-                          </a>
-                        </div>
-                        <!-- TODO: Assess Value (ref ln#73): <a href='#{{ .replyID }}' class='reply-target'>{{ .replyName }}</a> -->
-                        <!-- TODO: Assess Value: <span class ="comment-threadID hidden">{{ .replyThread }}</span> -->
-                        <a class='comment-reply-btn' href='#say-something'>{{ i18n "reply" }}</a>
+                  <article id="{{ ._id }}" class="comment{{ with .replyThread }} comment-reply{{ end }}" data-reply-thread="{{ $threadID }}">
+                    <header class="comment-header">
+                      <img class="comment-avatar" src="https://www.gravatar.com/avatar/{{ .email }}?s=100" alt="{{ .name }}'s Gravatar">
+                      <div class="comment-meta">
+                        <h3 class="comment-author">
+                          {{- if .website -}}
+                            <a rel="external nofollow" href="{{ .website }}">{{ .name }}</a>
+                          {{- else -}}
+                            {{- .name -}}
+                          {{- end -}}
+                        </h3>
+                        <a class="comment-date" href="#{{ ._id }}" title="Permalink to this comment">
+                          <time datetime="{{ .date }}">{{ dateFormat "02 Jan 06 15:04" .date }}</time>
+                        </a>
                       </div>
+                      <!-- TODO: Assess Value (ref ln#73): <a href="#{{ .replyID }}" class="reply-target">{{ .replyName }}</a> -->
+                      <!-- TODO: Assess Value: <span class ="comment-threadID hidden">{{ .replyThread }}</span> -->
+                      <a class="comment-reply-btn" href="#say-something">{{ i18n "reply" }}</a>
                     </header>
-                    <div class='comment-content'>
+                    <div class="comment-content">
                       {{ .body | markdownify }}
                     </div>
                   </article>
@@ -110,5 +106,5 @@
         {{ end }}
       {{ end }}
     </div>
-  </div>
+  </section>
 {{ end }}
