@@ -1,18 +1,11 @@
-// -----------------------------------------------------------------------------
-// This file contains share button styles.
-// -----------------------------------------------------------------------------
-
 @use 'abstracts' as *;
 
 .share-btn {
   color: $white;
-  border-radius: 5px;
   box-shadow: $shadow-1;
-  display: grid;
   font-size: 2rem;
-  height: 4rem;
   margin: 0.5rem 1rem;
-  place-items: center;
+  text-align: center;
   position: relative;
   top: 0px;
   transition: $hover;
@@ -25,5 +18,18 @@
     box-shadow: none;
     color: darken($white, 10%);
     top: 2px;
+  }
+}
+
+#social-share {
+  display: flex;
+  padding: 0.5rem 0;
+  a {
+    border-radius: 100%;
+    display:inline-block;
+    font-size: 1rem;
+    line-height: 2.5rem;
+    margin: 0 0.25rem;
+    width: 2.5rem;
   }
 }

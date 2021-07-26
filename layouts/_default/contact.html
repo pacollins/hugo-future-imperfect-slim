@@ -1,12 +1,14 @@
 {{ define "main" }}
-  <article class="post">
-    <header>
-      <div class="title">
-        <h1><a href="{{ .RelPermalink }}">{{ i18n "contact" }}</a></h1>
-        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  <article class="content post">
+    <header class="content-header">
+      <div class="content-summary">
+        <h1 class="content-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        {{ with .Description }}
+          <p class="content-description">{{ . }}</p>
+        {{ end }}
       </div>
     </header>
-      <div id="content">
+    <div class="content-body">
         {{ .Content }}
         <div class="contact-container">
           {{ if .Params.netlify }}
@@ -15,25 +17,13 @@
             <form id="contact" action="{{ .Params.emailService }}" method="post" center width="300px">
           {{ end }}
           <h4>{{ i18n "contact_replies" .Params.contactanswertime }}</h4>
-          <fieldset>
-            <input placeholder="{{ i18n "form_name" }}" type="text" name="name" tabindex="1" required autofocus>
-          </fieldset>
-          <fieldset>
-            <input placeholder="{{ i18n "form_email" }}" type="email" name="_replyto" tabindex="2" required>
-          </fieldset>
-          <fieldset>
-            <input placeholder="{{ i18n "form_subject" }}" type="text" name="_subject" tabindex="3" required>
-          </fieldset>
-          <fieldset>
-            <textarea placeholder="{{ i18n "form_body" }}" type="text" name="message" tabindex="4" required></textarea>
-          </fieldset>
-          <fieldset>
-            <input type="hidden" name="_language" value="{{ .Lang }}">
-          </fieldset>
-          <fieldset>
-            <div data-netlify-recaptcha="true"></div>
-            <button name="submit" class="button" type="submit" id="contact-submit" tabindex="5">{{ i18n "submit" }}</button>
-          </fieldset>
+          <input placeholder="{{ i18n "form_name" }}" type="text" name="name" tabindex="1" required autofocus>
+          <input placeholder="{{ i18n "form_email" }}" type="email" name="_replyto" tabindex="2" required>
+          <input placeholder="{{ i18n "form_subject" }}" type="text" name="_subject" tabindex="3" required>
+          <textarea placeholder="{{ i18n "form_body" }}" type="text" name="message" tabindex="4" required></textarea>
+          <input type="hidden" name="_language" value="{{ .Lang }}">
+          <div data-netlify-recaptcha="true"></div>
+          <button name="submit" class="button" type="submit" id="contact-submit" tabindex="5">{{ i18n "submit" }}</button>
         </form>
       </div>
     </div>

@@ -1,0 +1,17 @@
+@use 'abstracts' as *;
+
+.social-icons {
+  @include display-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-left: 0;
+  li {
+    list-style-type: none;
+    margin: 0 0.5rem;
+    width: 1rem;
+  }
+  a {
+    opacity: 0.6; // TODO: Color?
+    border: 0;
+  }
+}

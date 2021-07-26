@@ -1,12 +1,14 @@
 {{ define "main" }}
-  <article class="post">
-    <header>
-      <div class="title">
-        <h1><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
-        {{ with .Description }}<p>{{ . }}</p>{{ end }}
+  <article class="content post">
+    <header class="content-header">
+      <div class="content-summary">
+        <h1 class="content-title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+        {{ with .Description }}
+          <p class="content-description">{{ . }}</p>
+        {{ end }}
       </div>
     </header>
-    <div id="content">
+    <div class="content-body">
       {{ .Content }}
     </div>
   </article>

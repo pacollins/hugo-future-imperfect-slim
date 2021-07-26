@@ -1,10 +1,14 @@
-/* Pagination */
+// -----------------------------------------------------------------------------
+// This file contains pagination styles.
+// -----------------------------------------------------------------------------
+
+@use 'abstracts' as *;
 
 .pagination {
   @include display-flex;
   justify-content: space-around;
   align-items: center;
-  margin: 1.5em auto;
+  margin: 0 auto;
   padding: 1em;
   max-width: 55em;
   .button {
@@ -15,14 +19,14 @@
 
 .left,
 .right {
-  span {
+  font-size: 1rem;
+  @include break(mobile-l, max) {
     display: none;
-    @include break(tablet-up) {
-      display: block;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
+  }
+  @include break(mobile-l) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
   &::before {
     font-family: $fa-free-font;

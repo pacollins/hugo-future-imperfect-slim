@@ -1,0 +1,148 @@
+@use 'abstracts' as *;
+
+.content {
+  background:	$white;
+  flex-direction: column;
+  hyphens: auto;
+  margin: 0 5% 1rem 5%;
+  padding: 2rem 1rem;
+  word-wrap: break-word;
+  @include break(tablet-l) {
+    padding: 2rem 4rem;
+    margin: 0 auto 1rem auto;
+  }
+  @include break(laptop) {
+    margin: 0 0 1rem 0;
+  }
+  &.mini {
+    width: 100%;
+    margin: 0 auto 1rem auto;
+  }
+}
+
+.content-header {
+  @include display-flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  text-align: center;
+  @include break(tablet-l) {
+    justify-content: space-between;
+    text-align: left;
+    flex-direction: row;
+    &.mini {
+      flex-direction: column;
+    }
+  }
+  p {
+    margin: 0;
+    text-indent: 0;
+  }
+  div {
+    @include break(tablet-l, max) {
+      padding: 1rem;
+    }
+    &:last-of-type {
+      border-bottom: $primary-border;
+    }
+  }
+}
+
+.content-summary {
+    padding: 1rem 0;
+  @include break(tablet-l) {
+    border-bottom: $primary-border;
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 2rem;
+  }
+  &.mini {
+    padding: 1rem;
+    text-align: left;
+  }
+}
+
+.content-title {
+  font-size: 2rem;
+  margin: 0 0 1rem 0;
+  &.mini {
+    margin: 0 0 0.5rem 0;
+    font-size: 0.8rem;
+  }
+}
+
+.content-meta {
+  @include break(tablet-l) {
+    border-left: $primary-border;
+    @include display-flex;
+    flex-basis: 12rem;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 2rem;
+    text-align: right;
+    &.mini {
+      text-align: left;
+    }
+  }
+}
+
+.content-date {
+  font-weight: 700;
+  &.mini {
+  font-size: 1rem;
+  font-weight: 400;
+  }
+}
+
+.content-body {
+  padding: 1rem;
+  @include break(tablet-l) {
+    padding: 1rem 4rem;
+  }
+}
+
+.image { // TODO: Ratios?!?!?!
+  display: grid;
+  flex-basis: 100%;
+  overflow: hidden;
+  padding-bottom: 30%;
+  place-items: center;
+  position: relative;
+  &[style]:before {
+    content: "";
+    position: absolute;
+    background-image: var(--bg-image);
+    background-size: 100% 100%;
+    width: 100%;
+    height: 100%;
+    @include prefix(filter, blur(8px), webkit);
+    @include prefix(transform, scale(1.1), (webkit, ms));
+  }
+  img {
+    position: absolute;
+    max-height: 100%;
+    transition: transform $hover-slow;
+    z-index: 1;
+    &:hover {
+      @include prefix(transform, scale(1.05), (webkit, ms));
+    }
+  }
+}
+
+.content-footer {
+  @include display-flex;
+  flex-direction: column;
+  padding: 2rem;
+  @include break(tablet-l) {
+    flex-direction: row;
+  }
+  .categories, .tags {
+    justify-content: center;
+    li {
+      flex-grow: 0;
+    }
+  }
+}
+
+.post {
+  padding: 0;
+}
