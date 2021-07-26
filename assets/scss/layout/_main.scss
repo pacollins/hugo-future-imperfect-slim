@@ -1,31 +1,40 @@
-#site-main {
-  grid-area: main;
+// -----------------------------------------------------------------------------
+// This file contains main layout styles.
+// -----------------------------------------------------------------------------
+
+@use 'abstracts' as *;
+
+html {
+  background: #ddd;
+}
+
+$areas: (intro, main, footer);
+@each $area in $areas {
+  #site-#{$area} {
+    grid-area: $area;
+  }
 }
 
 #wrapper {
-  display: -ms-grid;
   display: grid;
-  grid-template-areas:
-    "intro"
-    "main"
-    "sidebar"
-    "footer";
-  grid-template-rows: auto 1fr auto auto;
-  margin: 0 auto;
-  max-width: 90em;
-  min-height: 100vh;
-  transition: opacity $hover-slow;
-  @include break(desktop-up) {
-    grid-template-areas:
-      "intro main"
-      "sidebar main"
-      "footer main"
-      "blank main";
-    grid-template-columns: 22em 1fr;
-    grid-template-rows: auto auto auto 1fr;
-    padding: 0 2.5em;
+  grid-template-areas: "intro" "main" "footer";
+  justify-items: center;
+  margin: 5rem auto;
+  @include break(laptop, max) {
+    max-width: 55rem;
   }
-  &.overlay {
-    opacity: 0.25;
+  @include break(laptop) {
+    column-gap: 2.5rem;
+    grid-template-areas: "intro main" "footer main" "blank main";
+    grid-template-columns: 1fr 2fr;
+    max-width: 80rem;
+    padding: 0 1rem;
   }
+}
+
+.overlay {
+  opacity: 0.25;
+  height: 100%;
+  z-index: 10;
+    pointer-events:none;
 }
