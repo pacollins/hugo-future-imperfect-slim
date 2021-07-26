@@ -1,7 +1,5 @@
-@import 'header',
-        'navbar',
-        'intro',
-        'sidebar',
-        'main',
-        'footer',
-        'mods';
+@forward 'header';
+@forward 'intro';
+@forward 'main';
+@forward 'footer';
+@forward 'mods';

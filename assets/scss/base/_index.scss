@@ -1,4 +1,3 @@
-@import 'base',
-        'fonts',
-        'typography',
-        'helpers';
+@forward 'base';
+@forward 'typography';
+@forward 'helpers';

@@ -8,18 +8,13 @@
 * gohugo.io | @pacollins
 */
 
-@import 'abstracts',
-        {{- if not site.Params.enableCDN -}}
-          {{- if site.Params.highlightjs -}}
-            'vendors/{{ site.Params.highlightjsTheme | default "default" }}',
-          {{- end -}}
-          {{- $assets := resources.Get "assets.json" | unmarshal -}}
-          {{- range $assets.styles -}}
-            'vendors/{{ .vendor }}',
-          {{- end -}}
-        {{- end -}}
-        'base',
-        'components',
-        'layout',
-        'vendors-extensions',
-        'user';
+@charset 'utf-8';
+
+@use 'vendors/normalize';
+@use 'abstracts';
+@use 'base';
+@use 'components';
+@use 'layout';
+@use 'vendors';
+@use 'vendors-ext';
+@use 'user';
