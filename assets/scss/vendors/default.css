@@ -9,14 +9,27 @@
   https://raw.githubusercontent.com/highlightjs/highlight.js/main/src/styles/default.css
 */
 
-.hljs {
+/*
+This is left on purpose making default.css the single file that can be lifted
+as-is from the repository directly without the need for a build step
+
+Typically this "required" baseline CSS is added by `makestuff.js` during build.
+*/
+pre code.hljs {
   display: block;
   overflow-x: auto;
   padding: 1em;
+}
+
+code.hljs {
+  padding: 3px 5px;
+}
+/* end baseline CSS */
+
+.hljs {
   background: #F0F0F0;
   color: #444;
 }
-
 
 /* Base color: saturation 0; */
 
@@ -47,7 +60,8 @@
 .hljs-keyword,
 .hljs-attribute,
 .hljs-selector-tag,
-.hljs-meta-keyword,
+.hljs-meta .hljs-keyword,
+
 .hljs-doctag,
 .hljs-name {
   font-weight: bold;
@@ -104,7 +118,7 @@
   color: #1f7199;
 }
 
-.hljs-meta-string {
+.hljs-meta .hljs-string {
   color: #4d99bf;
 }
 

@@ -1,3 +1,5 @@
+@use 'abstracts' as *;
+
 .g-recaptcha {
   @include prefix(transform, scale(0.955), (webkit, ms));
   @include prefix(transform-origin, 0 0, (webkit, ms));

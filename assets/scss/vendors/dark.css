@@ -1,8 +1,6 @@
 /*
-
-Dark style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
-https://raw.githubusercontent.com/highlightjs/highlight.js/main/src/styles/dark.css
-
+  Dark style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiacs.Org>
+  https://raw.githubusercontent.com/highlightjs/highlight.js/main/src/styles/dark.css
 */
 
 .hljs {
@@ -17,6 +15,7 @@ https://raw.githubusercontent.com/highlightjs/highlight.js/main/src/styles/dark.
 .hljs-link {
   color: white;
 }
+
 
 .hljs-subst {
   /* default */
