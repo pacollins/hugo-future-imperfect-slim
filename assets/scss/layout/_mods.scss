@@ -1,6 +1,12 @@
+// -----------------------------------------------------------------------------
+// This file contains modified layout styles.
+// -----------------------------------------------------------------------------
+
+@use 'abstracts' as *;
+
 .hidden-single-column {
   display: none;
-  @include break(laptop-up) {
+  @include break(tablet-l) {
     @include display-flex;
   }
 }

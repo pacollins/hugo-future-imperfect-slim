@@ -3,26 +3,28 @@
 // -----------------------------------------------------------------------------
 
 $breakpoints: (
-  mobile-m-up: 320px,
-  mobile-l-up: 375px,
   tall: 600px,
-  tablet-up: 425px,
-  laptop-up: 768px,
-  desktop-up: 1024px,
-  desktop-m-up: 1440px,
-  desktop-l-up: 1800px
+  mobile-s: 320px,
+  mobile-m: 375px,
+  mobile-l: 425px,
+  tablet-s: 570px,
+  tablet-l: 768px,
+  laptop: 1024px,
+  1440p: 1440px,
+  4k: 2560px
 );
 
-@mixin break($breakpoint) {
-    @if map-has-key($breakpoints, $breakpoint) {
-        $value: map-get($breakpoints, $breakpoint);
-        $param: "min-width";
-        @if $breakpoint == tall {$param: "min-height";}
-        @media screen and ($param: $value) {
-            @content
+@mixin break($breakpoint, $limit:min) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    $value: map-get($breakpoints, $breakpoint);
+    $param: "min-width";
+    @if $breakpoint == tall {$param: $limit+"-height";}
+    @else {$param: $limit+"-width";}
+    @media screen and ($param: $value) {
+      @content
         }
-    }
-    @else {
-      @warn "Unknown `#{$breakpoint}` in $breakpoints";
-    }
+  }
+  @else {
+    @warn "Unknown `#{$breakpoint}` in $breakpoints";
+  }
 };

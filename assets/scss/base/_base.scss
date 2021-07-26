@@ -56,6 +56,7 @@ hr {
 
 fieldset {
   border: 1px solid $accent-color;
+  margin-bottom: 1rem;
 }
 
 legend {
@@ -226,7 +227,7 @@ table {
   margin: 0 auto;
   table-layout: fixed;
   width: 100%;
-  @include break(laptop-up) {
+  @include break(tablet-l) {
     display: block;
     overflow-x: auto;
   }
@@ -237,25 +238,22 @@ table {
 
 thead, tfoot {
   background-color: $headerbg-color;
-  display: none;
-  @include break(laptop-up) {
-    display: table-header-group;
+  @include break(tablet-l, max) {
+    display: none;
   }
 }
 
 tr {
-  border: 1px solid $border-color;
-  display: block;
   transition: $hover;
-  @include break(laptop-up) {
-    border: 0;
-    display: table-row;
+  @include break(tablet-l, max) {
+    border: 1px solid $border-color;
+    display: block;
+  }
+  @include break(tablet-l) {
     &:hover {
       background-color: $accent-hover;
     }
-  }
-  &:nth-child(even) {
-    @include break(laptop-up) {
+    &:nth-child(even) {
       background-color: $light-gray;
       &:hover {
         background-color: $accent-hover;
@@ -277,7 +275,7 @@ tr {
     width: 0.8rem;
     transform: rotate(45deg) scale(1);
     transition: all $hover;
-    @include break(laptop-up) {
+    @include break(tablet-l) {
       display: none;
     }
   }
@@ -297,22 +295,25 @@ tr {
 
 th, td {
   padding: 0.5rem 1rem;
-  @include break(laptop-up) {
+  @include break(tablet-l) {
     text-align: center;
   }
 }
 
 th {
-  @include break(laptop-up) {
-    text-transform: uppercase;
-  }
+  text-transform: uppercase;
 }
 
 td {
   border-bottom: 1px solid $border-color;
   display: flex;
   justify-content: space-between;
-  @include break(laptop-up) {
+  @include break(tablet-l,max) {
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+  @include break(tablet-l) {
     display: table-cell;
     &[align="left"] {text-align: left;}
     &[align="center"] {text-align: center;}
@@ -327,32 +328,23 @@ td {
     font-weight: bold;
     max-width: 45%;
     text-transform: uppercase;
-    @include break(laptop-up) {
+    @include break(tablet-l) {
       display: none;
     }
   }
   &:first-child {
-    background-color: $headerbg-color;
     text-align: left;
-    @include break(laptop-up) {
-      background-color: unset;
+    @include break(tablet-l, max) {
+      background-color: $headerbg-color;
     }
   }
   &:not(:first-child) {
-    opacity: 0;
-    position: absolute;
     transition: none;
-    z-index: -1;
-    @include break(laptop-up) {
-      opacity: 1;
-      position: relative;
-      z-index: 0;
+    @include break(tablet-l, max) {
+      opacity: 0;
+      position: absolute;
+      z-index: -1;
     }
   }
-  &:last-child {
-    border-bottom: 0;
-    @include break(laptop-up) {
-      border-bottom: 1px solid $border-color;
-    }
-  }
+
 }
