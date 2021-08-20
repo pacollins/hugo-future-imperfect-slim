@@ -1,6 +1,6 @@
 # For a description of these parameters, please visit the theme wiki.
 # https://github.com/pacollins/hugo-future-imperfect-slim/wiki/config.toml
-baseurl                 = "https://example.com/"
+baseurl                 = "https://hugo-future-imperfect-slim.netlify.app/"
 DefaultContentLanguage  = "en"
 title                   = "Hugo Future Imperfect Slim"
 theme                   = "hugo-future-imperfect-slim"
@@ -12,6 +12,11 @@ disableLanguages        = []
 
 [markup.goldmark.renderer]
   unsafe                = true
+
+[module]
+  [module.hugoVersion]
+  extended              = true
+  min                   = "0.62.0"
 
 [outputs]
   home                  = ["html", "json", "rss"]
@@ -75,7 +80,7 @@ disableLanguages        = []
     repo                = ""
     issueTerm           = "pathname"
     issueNumber         = ""
-    label               = "" 
+    label               = ""
     theme               = "github-light"
 
   [params.staticman]
