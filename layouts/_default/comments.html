@@ -57,9 +57,9 @@
           </div>
 
           {{/* Form buttons */}}
-          <input type='submit' value='{{ i18n "submit" }}' class='button'>
-          <input type='submit' value='{{ i18n "submitted" }}' class='hidden button' disabled>
-          <input type='reset' value='{{ i18n "reset" }}' class='button'>
+          <button type='button' id="comment-form-submit" class='button'>{{ i18n "submit" }}</button>
+          <button type='button' id="comment-form-submitted" class='hidden button' disabled>{{ i18n "submitted" }}</button>
+          <button type='reset' id="comment-form-reset" class='button'>{{ i18n "reset" }}</button>
         </form>
     </div>
 
