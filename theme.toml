@@ -3,16 +3,16 @@ license = "Creative Commons Attribution 3.0 Unported"
 licenselink = "https://github.com/pacollins/hugo-future-imperfect-slim/blob/master/LICENSE.md"
 description = "Future Imperfect Theme - Slimmed Down"
 homepage = "https://github.com/pacollins/hugo-future-imperfect-slim"
+demosite = "https://hugo-future-imperfect-slim.netlify.app/"
 tags = ["Academic", "Academicons", "Blog", "Contact Form", "CSS Grid", "Disqus",
         "Fancybox", "Font Awesome", "Gallery", "Google Analytics", "Google News",
         "Highlight.js", "Jquery", "Lunr.js", "Multilingual", "Netlify",
         "Responsive", "Search",  "Open Graph", "Staticman", "Syntax Highlighting",
-        "Twitter Cards"]
+        "Twitter Cards", "Utteranc.es"]
 features = ["Academicons v1.8.6", "Disqus", "Fancybox v3.5.7", "Font Awesome v5.13.0",
-            "Google Analytics", "Google News", "Highlight.js v10.0.3", "Jquery v3.5.1",
+            "Google Analytics", "Google News", "Highlight.js v10.6.0", "Jquery v3.5.1",
             "Lunr.js v2.3.8", "Netlify", "Open Graph", "Staticman", "Theme Update Notification",
-            "Twitter Cards"]
-min_version = "v0.62.0/extended"
+            "Twitter Cards", "Utteranc.es"]
 
 [author]
   name = "Patrick Collins"

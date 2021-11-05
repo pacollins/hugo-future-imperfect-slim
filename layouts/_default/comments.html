@@ -1,24 +1,36 @@
 {{ if .Site.DisqusShortname }}
-  <article class="post">
+  <div class='post'>
     {{ template "_internal/disqus.html" . }}
-  </article>
+  </div>
+
+{{ else if .Site.Params.utterances.enabled }}
+  <script src='https://utteranc.es/client.js'
+          repo='{{ .Site.Params.utterances.repo }}'
+          issue-term='{{ .Site.Params.utterances.issueTerm }}'
+          issue-number='{{ .Site.Params.utterances.issueNumber }}'
+          label='{{ .Site.Params.utterances.label }}'
+          theme='{{ .Site.Params.utterances.theme }}'
+          crossorigin='anonymous'
+          async>
+  </script>
 
 {{/* Backwards compatibility for deprecated parameter ".Site.Params.staticman.staticman" */}}
 {{ else if or .Site.Params.staticman.enabled .Site.Params.staticman.staticman }}
-  <article class="post">
+  <div class='post'>
     {{/* $entryId stores the transformed current path for sorting Staticman data file */}}
     {{- $entryId := .File.UniqueID -}}
     {{/* Additional div wrapper for proper consistent margin */}}
     <div>
-      <h2 id="say-something">{{ i18n "say_something" }}</h2>
-        <form id="comment-form" class="new-comment" method="POST">
+      <h2 id='say-something'>{{ i18n "say_something" }}</h2>
+        <form id='comment-form' class='new-comment' method='POST'>
           {{/* Display reply target */}}
           <h3 class='reply-notice hidden'>
             <span class='reply-name'></span>
+            <a class='reply-close-btn button'><i class='fas fa-times'></i></a>
           </h3>
 
           {{/* Hidden fields */}}
-          <input type="hidden" name="options[entryId]" value="{{ $entryId }}">
+          <input type='hidden' name='options[entryId]' value='{{ $entryId }}'>
           <input type='hidden' name='fields[replyThread]' value=''>
           <input type='hidden' name='fields[replyID]' value=''>
           <input type='hidden' name='fields[replyName]' value=''>
@@ -32,9 +44,9 @@
           {{/* reCAPTHCA v2 */}}
           {{ if and .Site.Params.staticman.recaptcha.siteKey .Site.Params.staticman.recaptcha.encryptedKey }}
           {{ with .Site.Params.staticman.recaptcha }}
-            <input hidden name="options[reCaptcha][siteKey]" value="{{ .sitekey }}">
-            <input hidden name="options[reCaptcha][secret]" value="{{ .encryptedkey }}">
-            <div class="g-recaptcha" data-sitekey="{{ .sitekey }}"></div>
+            <input hidden name='options[reCaptcha][siteKey]' value='{{ .sitekey }}'>
+            <input hidden name='options[reCaptcha][secret]' value='{{ .encryptedkey }}'>
+            <div class='g-recaptcha' data-sitekey='{{ .sitekey }}'></div>
           {{ end }}
           {{ end }}
 
@@ -45,14 +57,14 @@
           </div>
 
           {{/* Form buttons */}}
-          <input type='submit' value='{{ i18n "submit" }}' class='button'>
-          <input type='submit' value='{{ i18n "submitted" }}' class='hidden button' disabled>
-          <input type='reset' value='{{ i18n "reset" }}' class='button'>
+          <button type='button' id="comment-form-submit" class='button'>{{ i18n "submit" }}</button>
+          <button type='button' id="comment-form-submitted" class='hidden button' disabled>{{ i18n "submitted" }}</button>
+          <button type='reset' id="comment-form-reset" class='button'>{{ i18n "reset" }}</button>
         </form>
     </div>
 
     {{/* Additional div wrapper for proper consistent margin */}}
-    <div>
+    <div class='comments-container'>
       <h2>{{ i18n "comments" }}</h2>
 
       {{- if .Site.Data.comments -}}
@@ -66,31 +78,31 @@
               {{- $threadID := ._id }}
               {{- range $comments -}}
                 {{ if or (in ._id $threadID) (in .replyThread $threadID) }}
-                  <div id="{{ ._id }}" class="comment{{ with .replyThread }} comment-reply{{ end }}">
+                  <article id='{{ ._id }}' class='comment{{ with .replyThread }} comment-reply{{ end }}' data-reply-thread='{{ $threadID }}'>
                     <header>
-                      <img class="comment-avatar circle" src="https://www.gravatar.com/avatar/{{ .email }}?s=100" alt="{{ .name }}'s Gravatar">
+                      <img class='comment-avatar circle' src='https://www.gravatar.com/avatar/{{ .email }}?s=100' alt="{{ .name }}'s Gravatar">
                       <div>
-                        <div class="comment-author-container">
-                          <h3 class="comment-author">
+                        <div class='comment-author-container'>
+                          <h3 class='comment-author'>
                             {{- if .website -}}
-                              <a rel="external nofollow" href="{{ .website }}">{{ .name }}</a>
+                              <a rel='external nofollow' href='{{ .website }}'>{{ .name }}</a>
                             {{- else -}}
                               {{- .name -}}
                             {{- end -}}
                           </h3>
-                          <a class="comment-date" href="#{{ ._id }}" title="Permalink to this comment">
-                            <time datetime="{{ .date }}">{{ dateFormat "02 Jan 06 15:04" .date }}</time>
+                          <a class='comment-date' href='#{{ ._id }}' title='Permalink to this comment'>
+                            <time datetime='{{ .date }}'>{{ dateFormat "02 Jan 06 15:04" .date }}</time>
                           </a>
                         </div>
                         <!-- TODO: Assess Value (ref ln#73): <a href='#{{ .replyID }}' class='reply-target'>{{ .replyName }}</a> -->
                         <!-- TODO: Assess Value: <span class ="comment-threadID hidden">{{ .replyThread }}</span> -->
-                        <a class="comment-reply-btn" href="#say-something">{{ i18n "reply" }}</a>
+                        <a class='comment-reply-btn' href='#say-something'>{{ i18n "reply" }}</a>
                       </div>
                     </header>
-                    <div class="comment-content">
+                    <div class='comment-content'>
                       {{ .body | markdownify }}
                     </div>
-                  </div>
+                  </article>
                 {{ end }}
               {{ end }}
             {{ end }}
@@ -98,5 +110,5 @@
         {{ end }}
       {{ end }}
     </div>
-  </article>
+  </div>
 {{ end }}
