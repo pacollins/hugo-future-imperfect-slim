@@ -48,7 +48,7 @@
   {{ $caption  := $.Scratch.Get "caption" }}
   {{ $gallery := $.Scratch.Get "gallery" }}
   <figure>
-    <a data-fancybox="{{ $gallery }}" href="{{ path.Join $path $file | relURL }}" data-caption="{{ $caption }}"><img src="{{ path.Join $path $file | absURL }}"></a>
+    <a data-fancybox="{{ $gallery }}" href="{{ path.Join $path $file | relURL }}" data-caption="{{ $caption }}"><img src="{{ path.Join $path $file | relURL }}"></a>
     <figcaption>{{ $caption }}</figcaption>
   </figure>
 {{ end }}
