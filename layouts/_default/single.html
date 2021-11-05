@@ -7,6 +7,9 @@
       </div>
       <div class="content">
         {{ .Render "featured" }}
+        {{ if and (gt .WordCount .Site.Params.tocWords) ( .Site.Params.toc ) }}
+          {{ .TableOfContents }}
+        {{ end }}
         {{ .Content }}
       </div>
       <footer>

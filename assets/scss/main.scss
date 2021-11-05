@@ -1401,6 +1401,15 @@ figcaption {
   }
 }
 
+#TableOfContents {
+  border: $secondary-border;
+
+  ul {
+    list-style-type: none;
+    padding-inline-start: 1.5em;
+  }
+}
+
 /* ==========================================================================
    Add-Ons
    ========================================================================== */
