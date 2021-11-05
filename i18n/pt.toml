@@ -1,6 +1,6 @@
 # Format
 [date_format]
-  other = "2 de January, 2006"
+  other = "2 January 2006"
 
 # Sidebar
 [recent_posts]
@@ -18,7 +18,7 @@
 [contact]
   other = "Contato"
 [contact_replies]
-  one = "Resposta tipicamente em 1 hora."
+  one = "Resposta tipicamente em {{ .Count }} hora."
   other = "Resposta tipicamente em {{ .Count }} horas."
 [blog]
   other = "Blog"
@@ -35,7 +35,7 @@
 
 # Post
 [reading_time]
-  one = "1 Minuto De Leitura"
+  one = "{{ .Count }} Minuto De Leitura"
   other = "{{ .Count }} Minutos De Leitura"
 [read_more]
   other = "Leia Mais"

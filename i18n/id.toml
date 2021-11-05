@@ -18,15 +18,13 @@
 [contact]
   other = "Kontak"
 [contact_replies]
-  one = "Biasanya dibalas dalam 1 jam."
+  one = "Biasanya dibalas dalam {{ .Count }} jam."
   other = "Biasanya dibalas dalam {{ .Count }} jam."
 [blog]
   other = "Blog"
 [categories]
-  one = "Kategori"
   other = "Kategori"
 [tags]
-  one = "Tag"
   other = "Tag"
 [next_page]
   other = "Halaman Selanjutnya"

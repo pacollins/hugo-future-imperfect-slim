@@ -1,6 +1,6 @@
 # Format
 [date_format]
-  other = "2-1-2006"
+  other = "2 January 2006"
 
 # Sidebar
 [recent_posts]
@@ -16,28 +16,35 @@
 [about]
   other = "O Mnie"
 [contact]
- other = "Kontakt"
+  other = "Kontakt"
 [contact_replies]
-  one = "Odpowiada zazwyczaj w ciagu 1 godzina."
-  other = "Odpowiada zazwyczaj w ciagu {{ .Count }} godziny."
+  one = "Odpowiedzi zazwyczaj w ciągu {{ .Count }} godziny."
+  few = "Odpowiedzi zazwyczaj w ciągu {{ .Count }} godzin."
+  many = "Odpowiedzi zazwyczaj w ciągu {{ .Count }} godzin."
+  other = "Odpowiada zazwyczaj w ciagu {{ .Count }} godzin."
 [blog]
   other = "Blog"
 [categories]
   one = "Kategoria"
-  many = "Kategorie"
-  other = "Kategorie"
+  few = "Kategorie"
+  many = "Kategorii"
+  other = "Kategorii"
 [tags]
   one = "Tag"
-  other = "Tagi"
+  few = "Tagi"
+  many = "Tagów"
+  other = "Tagów"
 [next_page]
   other = "Następna Strona"
 [previous_page]
-   other = "Poprzednia Strona"
+  other = "Poprzednia Strona"
 
 # Post
 [reading_time]
-  one = "1 Minuta Czytania"
-  other = "{{ .Count }} Minuty Czytania"
+  one = "{{ .Count }} minuta czytania"
+  few = "{{ .Count }} minuty czytania"
+  many = "{{ .Count }} minut czytania"
+  other = "{{ .Count }} minut czytania"
 [read_more]
   other = "Czytaj Więcej"
 [share_post]
