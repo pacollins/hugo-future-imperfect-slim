@@ -37,7 +37,7 @@
   {{ if .Site.Params.header.languageMenu }}{{ partial "language-menu" . }}{{ end }}
   {{ if .Site.Params.header.shareMenu }}
     <menu id="share-menu" class="flyout-menu menu">
-      <h1>Share Post</h1>
+      <h1>{{ i18n "share_post" }}</h1>
       {{ partial "share-buttons" . }}
     </menu>
   {{ end }}

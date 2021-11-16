@@ -2,9 +2,11 @@
   <article>
     <div class="post">
       {{ .Render "header" }}
+      {{ if default true .Site.Params.shareFromPost }}
       <div id="socnet-share">
         {{ partial "share-buttons" . }}
       </div>
+      {{ end }}
       <div class="content">
         {{ .Render "featured" }}
         {{ if and (gt .WordCount .Site.Params.tocWords) ( .Site.Params.toc ) }}
