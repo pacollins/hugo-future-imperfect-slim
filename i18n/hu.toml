@@ -1,0 +1,83 @@
+# Format
+[date_format]
+  other = "January 2, 2006"
+
+# Sidebar
+[recent_posts]
+  other = "Legújabb cikkek"
+[see_more]
+  other = "Tovább"
+[learn_more]
+  other = "Tovább"
+[attribution]
+  other = "Sablon: <a href='https://github.com/pacollins/hugo-future-imperfect-slim' target='_blank' rel='noopener'>Hugo Future Imperfect Slim</a><br>Egy <a href='https://html5up.net/future-imperfect' target='_blank' rel='noopener'>HTML5 UP átvétel</a> | <a href='https://gohugo.io/' title='{{ .Site.Hugo.Version }}' target='_blank' rel='noopener'>Hugoval</a> működik"
+
+# Sections
+[about]
+  other = "Rólunk"
+[contact]
+  other = "Kapcsolat"
+[contact_replies]
+  one = "Jellemzően egy órán belül válaszol"
+  other = "Jellemzően {{ .Count }} órán belül válaszol."
+[blog]
+  other = "Blog"
+[categories]
+  one = "Kategória"
+  other = "Kategóriák"
+[tags]
+  one = "Címke"
+  other = "Címkék"
+[next_page]
+  other = "Következő oldal"
+[previous_page]
+  other = "Előző oldal"
+
+# Post
+[reading_time]
+  one = "Egyperces olvasnivaló"
+  other = "{{ .Count }} pernyi olvasnivaló"
+[read_more]
+  other = "Olvass tovább"
+[share_post]
+  other = "Oszd meg"
+[check_out]
+  other = "Nézd meg ezt a cikket"
+[say_something]
+  other = "Mondj valamit"
+[comments]
+  other = "Megjegyzése"
+[nothing_yet]
+  other = "Itt nincs semmmi."
+[reply]
+  other = "Válasz"
+[error_msg]
+  other = "Hiba történt! Kérlek, nézd meg, hogy minden kötelező mezőt kitöltöttél-e és próbáld újra."
+[success_msg]
+  other = "Köszönjük a megjegyzésed! Elfogadás után meg fog jelenni a honlapon."
+
+# Form
+[form_name]
+  other = "Neved"
+[form_email]
+  other = "E-mail címed"
+[form_website]
+  other = "Honlapod"
+[form_subject]
+  other = "Tárgy"
+[form_body]
+  other = "Üzenet"
+[reset]
+  other = "Mégse"
+[submitted]
+  other = "Beküldve"
+[submit]
+  other = "Beküldés"
+
+# 404
+[404_pagenotfound]
+  other = "Az oldal nem található"
+[404_sorry]
+  other = "A keresett oldal nem található"
+[404_back]
+  other = "Visszalépés"
