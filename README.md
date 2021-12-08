@@ -6,7 +6,7 @@ The goal of this theme is to continue the development of the [original theme](ht
 This version takes that port and modernizes it with **CSS Grid** and **Modern
 Hugo functions**.
 
-Check out the [live demo](https://themes.gohugo.io/theme/hugo-future-imperfect-slim/)
+Check out the [live demo](https://themes.gohugo.io/themes/hugo-future-imperfect-slim/)
 on the Hugo Theme Showcase.
 
 ![Hugo Future Imperfect Screenshot](https://raw.githubusercontent.com/pacollins/hugo-future-imperfect-slim/master/images/screenshot.png)
